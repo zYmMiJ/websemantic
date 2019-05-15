@@ -1,14 +1,7 @@
 package translator;
-
+ 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.OWLAxiom;
@@ -19,7 +12,7 @@ import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 
 public class Translator {
 	
-		
+		// Translator
 		private OWLOntologyManager manager;
 		private OWLOntology ontology;
 		
