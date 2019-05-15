@@ -14,7 +14,7 @@ public class Parameter {
 		
 		// par exemple : # Environment parameters 
 		this.nom = n;
-		// par exemple DESIGNDATE=2018-06-01 v=np
+		// par exemple DESIGNDATE=2018-06-01 np=v
 		this.valeur = v;
 		this.nomparam = np;
 	}

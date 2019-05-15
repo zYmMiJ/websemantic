@@ -12,19 +12,24 @@ import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 
 public class Translator {
 	
-		// Translator
 		private OWLOntologyManager manager;
 		private OWLOntology ontology;
 		
 		private File fileOwl;
 		private File fileBash;
 		
+		private static int experimentParameters = 0;
+		private static int experimentInfoParameters = 1;
+		private static int documentationParameters = 2;
+		private static int experimentVariation = 3;
+		private static int defaultValues = 4;
+		 
 		public Translator(String fileOwlName, String fileBashName) {
 			
 			manager = OWLManager.createOWLOntologyManager();
 			this.fileOwl = new File(fileOwlName);
 			loadOntology(fileOwl);
-			
+
 			this.fileBash = new File(fileBashName);
 			
 		}
@@ -35,24 +40,25 @@ public class Translator {
 			ParserBash parser= new ParserBash(fileBash);
 			// Rend la liste avec les parametres
 			List<Parameter> list = parser.fileToList();
-			
+			// Affiche les données parser
+			parser.printDataParsed(list);
 			// Affiche l'hypothèses
-			System.out.println("Hyp :"+list.get(3).getValeur().get(2));
+			System.out.println("Hyp :"+list.get(experimentVariation).getValeur().get(2));
 			// Recherche par paramètre
-			System.out.println("Recherche :"+list.get(3).getOneParam("HYPOTHESIS") );
+			System.out.println("Recherche :"+list.get(experimentVariation).getOneParam("HYPOTHESIS") );
 			
-			System.out.println("Ontology before Maker :");
-			printOntologyWithAxiom();
+			//System.out.println("Ontology before Maker :");
+			//printOntologyWithAxiom();
 			
 			// Traduction de nos données du parser en owl
 			MakerDatatype makerData = new MakerDatatype(manager, ontology);
 			MakerIndividual makerIndividual = new MakerIndividual(manager, ontology);
 			
-			makerData.makeDataType("HypothesisFormulation", list.get(3).getOneParam("HYPOTHESIS"));
+			makerData.makeDataType( "HypothesisFormulation", list.get(3).getOneParam("HYPOTHESIS") );
 			makerIndividual.makeIndividual("Hypothesis", "Hypothesis0001");
 			
-			System.out.println("Ontology after Maker :");
-			printOntologyWithAxiom();
+			//System.out.println("Ontology after Maker :");
+			//printOntologyWithAxiom();
 			
 			
 			

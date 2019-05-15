@@ -6,15 +6,36 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ParserBash extends Parser{
+	
+	private static Pattern pattern;
+    private static Matcher matcher;
+    
+    private final static Pattern ENV_VAR_PATTERN =
+    	    Pattern.compile("\\$\\{([A-Za-z0-9_.-]+)(?::([^\\}]*))?\\}");
 	
 	public ParserBash(File file) {
 		super(file);
 		// TODO Auto-generated constructor stub
 	}
 
+	public void printDataParsed(List<Parameter> list) {
+		Iterator<Parameter> it = list.iterator();
+		 
+		while (it.hasNext()) {
+			Parameter s = it.next();
+			System.out.println(s.getNom());
+			System.out.println(s.getNomParam());
+			System.out.println(s.getValeur());
+			System.out.println("-------------------");
+		}
+	}
+	
 	public List<Parameter> fileToList(){
 		
 		// Ligne du buffer
@@ -89,3 +110,15 @@ public class ParserBash extends Parser{
 	}
 
 }
+
+/*
+ 		String test = "OPT=\"-DnbAgents=${NBAGENTS} -DnbIterations=${NBITERATIONS} -DnbRuns=${NBRUNS} -DreportPrecRec\"";
+    	
+    	//Pattern p = Pattern.compile(ENV_VAR_PATTERN); // Capture du contenu entre <b> et </b> (groupe 1)
+		Matcher m = ENV_VAR_PATTERN.matcher(test);
+		while(m.find())
+		{
+			System.out.println(m.group());  // Tout le motif
+			System.out.println(m.group(1)); // Le contenu entre <b> et </b>
+		}
+*/
