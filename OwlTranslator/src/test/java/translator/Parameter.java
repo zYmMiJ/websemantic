@@ -27,7 +27,6 @@ public class Parameter {
 		return this.valeur;
 	}
 	
-	
 	public List<String> getNomParam() {
 		return this.nomparam;
 	}
@@ -46,6 +45,10 @@ public class Parameter {
 	
 	public void setValeur(List<String> v) {
 		this.valeur = v;
+	}
+	
+	public void setValeur(int i,String res) {
+		this.valeur.set(i, res);
 	}
 	
 	public boolean isValeurEmpty() {
@@ -69,13 +72,51 @@ public class Parameter {
 			
 			String s = it.next();
 			// System.out.println(s);
-			if ( s.equals(p) ) {
+			if ( s.contains(p) ) {
 				// System.out.println("On a trouver s equals p( "+s+" ), on rend :"+this.valeur.get(i));
 				return this.valeur.get(i);
 			}
 			i ++;
 		}
-		return null;
+		return "erreur";
+	}
+	/*
+	 * Method qui set les parametres d'environnement du script
+	 * Entrée le paramètred'env ${nom} et nom
+	 * Le nom nous permet d'aller chercher la valeur
+	 */
+	public void setEnvParameter(String env, String nom) {
+		Iterator<String> it = this.valeur.iterator();
+		int count = 0;
+		
+		// Parcours des valeurs
+		while (it.hasNext()) {
+			it.next();
+			String s = this.valeur.get(count);
+			// Si une valeurs contient une variable  d'env
+			if ( s.contains(env) ) {
+
+				Iterator<String> it2 = this.nomparam.iterator();
+				int i = 0;
+				// On parcours tous les paramètres pour aller la chercher
+				while (it2.hasNext()) {
+					String b = it2.next();
+					System.out.println("Pour :"+env+" on verifie si "+b+"="+nom);
+					if ( nom.equals(b) ) {
+						System.out.println("On remplace par "+getOneParam(nom));
+						s = s.replace(env, getOneParam(nom));
+						this.setValeur(i,s);
+						break;
+					}
+					i++;
+				}
+
+			}
+			count ++;
+		}
+	}
+	public void replaceEnvParam(String replace) {
+		
 	}
 
 }

@@ -6,21 +6,36 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ParserBash extends Parser{
 	
+	// 
 	private static Pattern pattern;
     private static Matcher matcher;
+    // Liste qu'on return <varenv,nom>
+    private static Map<String, String> listVarEnv = new HashMap<String, String>();
     
+    // regex de :${...}
     private final static Pattern ENV_VAR_PATTERN =
     	    Pattern.compile("\\$\\{([A-Za-z0-9_.-]+)(?::([^\\}]*))?\\}");
 	
 	public ParserBash(File file) {
 		super(file);
+		try {
+			this.setEnvParameters();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		// TODO Auto-generated constructor stub
 	}
 
@@ -64,7 +79,9 @@ public class ParserBash extends Parser{
 			 List<String> tmpLdata= new ArrayList<String>();
 			 
 			// Parcours du fichier par ligne
-			while ( (line = br.readLine()) != null ) { 
+			while ( (line = br.readLine()) != null ) {
+				
+				 
 				line = line.replace('"', ' ');
 				if ( line.contains("#") == true) {
 					nom = line;
@@ -109,6 +126,47 @@ public class ParserBash extends Parser{
 		return list;
 	}
 
+	public void setEnvParameters() throws IOException{		
+		// buffer pour lecture du fichier
+		BufferedReader br = new BufferedReader(new FileReader(this.file));
+		
+		// Ligne du buffer
+		String line; 
+		
+		while ( (line = br.readLine()) != null ) { 
+			
+			// Init le matcher des var env
+			Matcher m = ENV_VAR_PATTERN.matcher(line);
+			
+			// On cherche si correspondonce
+			while( m.find() ){
+				// System.out.println(m.group());  // Tout le motif	
+				// System.out.println(m.group(1)); // Le contenu entre <b> et </b>
+				
+				this.listVarEnv.put( m.group(),m.group(1) ); 
+			}
+		}
+	}
+	
+	public void setAllEnvParameters(List<Parameter> list) {
+		System.out.println("Parcours de l'objet HashMap : ");
+	    Set<Entry<String, String>> setHm = listVarEnv.entrySet();
+	    
+	    int i = 0;
+		Iterator<Parameter> itP = list.iterator();
+		 
+		while (itP.hasNext()) {
+			Parameter s = itP.next();
+	
+			Iterator<Entry<String, String>> it = setHm.iterator();
+			while( it.hasNext() ){
+		       Entry<String, String> e = it.next();
+		       list.get(i).setEnvParameter(e.getKey(), e.getValue() );
+		      }
+			i ++;
+		}
+		
+	}
 }
 
 /*

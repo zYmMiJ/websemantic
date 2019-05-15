@@ -40,12 +40,18 @@ public class Translator {
 			ParserBash parser= new ParserBash(fileBash);
 			// Rend la liste avec les parametres
 			List<Parameter> list = parser.fileToList();
-			// Affiche les données parser
+			System.out.println("Avant----------------------------");
 			parser.printDataParsed(list);
+			parser.setAllEnvParameters(list);
+			System.out.println("Après---------------------------------");
+			parser.printDataParsed(list);
+		
+			// Affiche les données parser
+			//parser.printDataParsed(list);
 			// Affiche l'hypothèses
-			System.out.println("Hyp :"+list.get(experimentVariation).getValeur().get(2));
+			//System.out.println("Hyp :"+list.get(experimentVariation).getValeur().get(2));
 			// Recherche par paramètre
-			System.out.println("Recherche :"+list.get(experimentVariation).getOneParam("HYPOTHESIS") );
+			//System.out.println("Recherche :"+list.get(experimentVariation).getOneParam("HYPOTHESIS") );
 			
 			//System.out.println("Ontology before Maker :");
 			//printOntologyWithAxiom();
