@@ -1,15 +1,9 @@
 package translator;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
+import org.apache.log4j.Logger;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLOntology;
@@ -25,6 +19,8 @@ public class Translator {
 		
 		private File fileOwl;
 		private File fileBash;
+		
+		private static final Logger LOG = Logger.getLogger(Translator.class);
 		
 		public Translator(String fileOwlName, String fileBashName) {
 			
@@ -44,24 +40,17 @@ public class Translator {
 			List<Parameter> list = parser.fileToList();
 			
 			// Affiche l'hypothèses
-			System.out.println("Hyp :"+list.get(3).getValeur().get(2));
-			// Recherche par paramètre
-			System.out.println("Recherche :"+list.get(3).getOneParam("HYPOTHESIS") );
-			
-			System.out.println("Ontology before Maker :");
-			printOntologyWithAxiom();
-			
+			LOG.info("Hyp :"+list.get(3).getValeur().get(2));
+			LOG.info("Recherche :"+list.get(3).getOneParam("HYPOTHESIS"));
+				
 			// Traduction de nos données du parser en owl
 			MakerDatatype makerData = new MakerDatatype(manager, ontology);
 			MakerIndividual makerIndividual = new MakerIndividual(manager, ontology);
 			
 			makerData.makeDataType("HypothesisFormulation", list.get(3).getOneParam("HYPOTHESIS"));
-			makerIndividual.makeIndividual("Hypothesis", "Hypothesis0001");
+			makerIndividual.makeIndividual("Hypothesis", "HypothesisIndividual");
 			
-			System.out.println("Ontology after Maker :");
-			printOntologyWithAxiom();
-			
-			
+			//saveOntology();
 			
 		}
 		
