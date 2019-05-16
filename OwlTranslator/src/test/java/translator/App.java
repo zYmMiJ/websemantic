@@ -8,7 +8,7 @@ public class App {
 		
 		BasicConfigurator.configure();
 		
-		Translator translate = new Translator("prototype1.owl", "params.sh");
+		Translator translate = new Translator("prototype1T.owl", "params.sh");
 		translate.run();
 	}
 

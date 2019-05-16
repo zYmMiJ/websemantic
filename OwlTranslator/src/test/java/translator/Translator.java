@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.OWLAxiom;
+import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
@@ -47,10 +48,11 @@ public class Translator {
 			MakerDatatype makerData = new MakerDatatype(manager, ontology);
 			MakerIndividual makerIndividual = new MakerIndividual(manager, ontology);
 			
-			makerData.makeDataType("HypothesisFormulation", list.get(3).getOneParam("HYPOTHESIS"));
-			makerIndividual.makeIndividual("Hypothesis", "HypothesisIndividual");
+			OWLNamedIndividual individualOWL = makerIndividual.makeIndividual("Hypothesis", "HypothesisIndividual");
+			makerData.makeDataType("HypothesisFormulation", list.get(3).getOneParam("HYPOTHESIS"), individualOWL);
 			
-			//saveOntology();
+			
+			saveOntology();
 			
 		}
 		

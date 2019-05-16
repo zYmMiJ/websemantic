@@ -27,7 +27,7 @@ public class MakerDatatype extends MakerAxiom{
 	 * @param nameData
 	 * @param data
 	 */
-	public void makeDataType(String nameData, String data) {
+	public void makeDataType(String nameData, String data, OWLNamedIndividual individualOWL) {
 		
 		OWLDataProperty dataOWL = getDataProprety(nameData);
 		
@@ -36,7 +36,7 @@ public class MakerDatatype extends MakerAxiom{
 		PrefixManager pm = new DefaultPrefixManager(null, null, dataIRI);
 		
 		//Make a Individual
-		OWLNamedIndividual individualOWL = factory.getOWLNamedIndividual(":"+nameData, pm);
+		//OWLNamedIndividual individualOWL = factory.getOWLNamedIndividual(":"+nameData, pm);
 		
 		//Make the axiom related to the DataType
 		OWLAxiom axiomDataAssertion = factory.getOWLDataPropertyAssertionAxiom(dataOWL, individualOWL, data);

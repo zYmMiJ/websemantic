@@ -1,0 +1,8 @@
+Person=
+ExperimentInstance=
+Experiment=
+Data=
+Hypothesis=
+Environnement=
+Script=
+Analysis=

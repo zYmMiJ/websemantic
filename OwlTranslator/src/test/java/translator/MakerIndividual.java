@@ -3,7 +3,6 @@ package translator;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
@@ -27,15 +26,13 @@ public class MakerIndividual extends MakerAxiom{
 	 * @param nameClass
 	 * @param nameIndividual
 	 */
-	public void makeIndividual(String nameClass, String nameIndividual) {
+	public OWLNamedIndividual makeIndividual(String nameClass, String nameIndividual) {
 		
 		this.classOWL = getClass(nameClass);
 		
 		//Manage prefix
 		String classIRI = classOWL.getIRI().getNamespace();
 		PrefixManager pm = new DefaultPrefixManager(null, null, classIRI);
-		
-		//TODO : tester si l'individual n'existe pas déjà
 		
 		//Make a Individual
 		OWLNamedIndividual individualOWL = factory.getOWLNamedIndividual(":"+nameIndividual, pm);
@@ -46,6 +43,8 @@ public class MakerIndividual extends MakerAxiom{
 		
 		addAxiom(axiomClassAssertion);
 		addAxiom(axiomDeclaration);
+		
+		return individualOWL;
 	}
 	
 	/**
