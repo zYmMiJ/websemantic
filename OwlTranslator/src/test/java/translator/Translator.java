@@ -1,6 +1,7 @@
 package translator;
  
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import org.semanticweb.owlapi.apibinding.OWLManager;
@@ -39,35 +40,8 @@ public class Translator {
 			// Fichier à parser
 			ParserBash parser= new ParserBash(fileBash);
 			// Rend la liste avec les parametres
-			List<Parameter> list = parser.fileToList();
-			System.out.println("Avant----------------------------");
-			parser.printDataParsed(list);
-			parser.setAllEnvParameters(list);
-			System.out.println("Après---------------------------------");
-			parser.printDataParsed(list);
-		
-			// Affiche les données parser
-			//parser.printDataParsed(list);
-			// Affiche l'hypothèses
-			//System.out.println("Hyp :"+list.get(experimentVariation).getValeur().get(2));
-			// Recherche par paramètre
-			//System.out.println("Recherche :"+list.get(experimentVariation).getOneParam("HYPOTHESIS") );
-			
-			//System.out.println("Ontology before Maker :");
-			//printOntologyWithAxiom();
-			
-			// Traduction de nos données du parser en owl
-			MakerDatatype makerData = new MakerDatatype(manager, ontology);
-			MakerIndividual makerIndividual = new MakerIndividual(manager, ontology);
-			
-			makerData.makeDataType( "HypothesisFormulation", list.get(3).getOneParam("HYPOTHESIS") );
-			makerIndividual.makeIndividual("Hypothesis", "Hypothesis0001");
-			
-			//System.out.println("Ontology after Maker :");
-			//printOntologyWithAxiom();
-			
-			
-			
+			List<DataParsed> list = parser.fileToList();
+			parser.setAllEnvParameters(list);		
 		}
 		
 		private void loadOntology (File file) {

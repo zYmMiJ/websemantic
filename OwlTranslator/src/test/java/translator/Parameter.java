@@ -67,7 +67,7 @@ public class Parameter {
 	public String getOneParam(String p) {
 		 Iterator<String> it = this.nomparam.iterator();
 		 int i = 0;
-		 // System.out.println("On recherche p: "+p+" dans :");
+		// System.out.println("On recherche p: "+p+" dans :");
 		while (it.hasNext()) {
 			
 			String s = it.next();
