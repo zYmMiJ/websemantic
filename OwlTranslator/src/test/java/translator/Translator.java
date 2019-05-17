@@ -1,6 +1,10 @@
 package translator;
-
+ 
 import java.io.File;
+<<<<<<< HEAD
+=======
+import java.io.IOException;
+>>>>>>> develop
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -14,7 +18,6 @@ import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 
 public class Translator {
 	
-		
 		private OWLOntologyManager manager;
 		private OWLOntology ontology;
 		
@@ -28,7 +31,7 @@ public class Translator {
 			manager = OWLManager.createOWLOntologyManager();
 			this.fileOwl = new File(fileOwlName);
 			loadOntology(fileOwl);
-			
+
 			this.fileBash = new File(fileBashName);
 			
 		}
@@ -38,6 +41,7 @@ public class Translator {
 			// Fichier à parser
 			ParserBash parser= new ParserBash(fileBash);
 			// Rend la liste avec les parametres
+
 			List<Parameter> list = parser.fileToList();
 			
 			// Affiche l'hypothèses

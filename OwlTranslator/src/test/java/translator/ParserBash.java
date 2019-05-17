@@ -6,76 +6,65 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ParserBash extends Parser{
 	
+	// 
+	private static Pattern pattern;
+    private static Matcher matcher;
+    // Liste qu'on return <varenv,nom>
+    private List<DataParsed> listVarEnv = new ArrayList<DataParsed>();
+    
+    // regex de :${...}
+    private final static Pattern ENV_VAR_PATTERN =
+    	    Pattern.compile("\\$\\{([A-Za-z0-9_.-]+)(?::([^\\}]*))?\\}");
+	
 	public ParserBash(File file) {
 		super(file);
-		// TODO Auto-generated constructor stub
 	}
 
-	public List<Parameter> fileToList(){
+	public void printDataParsed(List<DataParsed> list) {
+
+		Iterator<DataParsed> it = list.iterator();
+		 int i = 0;
+		while (it.hasNext()) {
+			DataParsed s = it.next();
+			System.out.println(i+".");
+			System.out.println(s.getFirstBox()+" ; "+s.getSecondBox());
+			System.out.println("-------------------");
+			i ++;
+		}
+
+	}
+	
+	public List<DataParsed> fileToList(){
 		
-		// Ligne du buffer
-		String line; 
-		// Variable pour split
-		String[] tmp = null;
 		
-		// Pour savoir quands parser
-		 Boolean b = true;
-		 // regex
-		 String reg = "=";
-		  
-		 // Liste qu'on return
-		 List<Parameter> list = new ArrayList<Parameter>();
+		String line;// Ligne du buffer
+		String[] tmp = null;// Variable pour split
+		String reg = "=";// regex	  
+		List<DataParsed> list = new ArrayList<DataParsed>();// Liste qu'on return
 		 
 		// Lecture du fichier
 		try {
-			// Buffer qui permet de lire le fichier
-			BufferedReader br = new BufferedReader(new FileReader(file));
-			// compteur des lignes
-			int count = 0;
-			// 
-			String nom = "ERREUR";
-			// Liste temporaire
-			 List<String> tmpLvaleur= new ArrayList<String>();
-			 List<String> tmpLdata= new ArrayList<String>();
-			 
+			BufferedReader br = new BufferedReader(new FileReader(file));// Buffer qui permet de lire le fichier
 			// Parcours du fichier par ligne
-			while ( (line = br.readLine()) != null ) { 
-				line = line.replace('"', ' ');
-				if ( line.contains("#") == true) {
-					nom = line;
-				}
-				if ( line.contains("#") == false && count > 3 && line.length() > 2) {
-					// Split Donnée/Valeur
-					
-					tmp = line.split(reg);
-					// Ajout des Données List Temporaire
-					tmpLdata.add(tmp[1]);
-					tmpLvaleur.add(tmp[0]);
-				}
-				if ( line.contains("#") == true && count > 3 && b == true) {
-					// Création d'une nouvelle liste 
-					List<String> Ldata= new ArrayList<String>();
-					List<String> Lvaleur= new ArrayList<String>();
-					// Copie de la liste
-					Ldata.addAll(tmpLdata);
-					Lvaleur.addAll(tmpLvaleur);
-					// Création des données à parser
-					Parameter d = new Parameter(nom,Ldata,Lvaleur);
-					// Ajout des données parser 
-					list.add(d);
-					// Clear de la liste temporaire 
-					tmpLvaleur.clear();
-					tmpLdata.clear();
-					// On peut recommencer à remplir cette liste temporaire
-					b = true;
-				}
-				// compte les lignes
-				count ++;
-				
+			while ( (line = br.readLine()) != null ) {
+				line = line.replace('"',' ');	
+				if ( line.contains("#") != true  && line.length() > 2) {
+					tmp = line.split(reg,2);
+					System.out.println();
+					list.add(new DataParsed( tmp[0], tmp[1] ));
+				}	
 			  }
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block Erreur LectureFichier
@@ -88,4 +77,72 @@ public class ParserBash extends Parser{
 		return list;
 	}
 
+	/*
+	 * Pas Encore Utilisable mb mais tu peut quands meme recup les donn�es avec List DataParsed
+	 */
+	/*
+	 * Creation des parametres d'environnements
+	 */
+	public void createEnvParameters() throws IOException{		
+		
+		BufferedReader br = new BufferedReader(new FileReader(this.file));// buffer pour lecture du fichier
+		String line;// Ligne du buffer
+		
+		while ( (line = br.readLine()) != null ) { 
+			
+			// Init le matcher des var env
+			Matcher m = ENV_VAR_PATTERN.matcher(line);
+			Boolean add = true;
+			// On cherche si correspondonce
+			while( m.find() ){
+				Iterator<DataParsed> it = this.listVarEnv.iterator();
+				while (it.hasNext()) {
+					DataParsed s = it.next();
+					if( m.group().equals(s.getFirstBox()) ) {
+						add = false;
+						break;
+					}
+				}
+				if ( add ) {
+					this.listVarEnv.add( new DataParsed( m.group(), m.group(1) )); 
+				}
+			}
+		}
+		//this.printDataParsed(this.listVarEnv);
+	}
+	/*
+	 * Set les variables d'envs 
+	 */
+	public void setAllEnvParameters(List<DataParsed> list) {
+		//this.printDataParsed(list);
+		Iterator<DataParsed> it = listVarEnv.iterator();
+		Iterator<DataParsed> it2 = list.iterator();
+		int i = 0;
+		System.out.println("Avant---");
+		this.printDataParsed(listVarEnv);
+		while (it.hasNext()) {
+			it.next(); 
+			i ++;
+		}
+		System.out.println("Lenght :"+i);
+		
+		while (it2.hasNext()) {
+			DataParsed l = it2.next();
+			for( int j = 0; j<7 ;j ++) {
+				if( l.getFirstBox().contains(listVarEnv.get(j).getSecondBox()) ) {
+					listVarEnv.get(j).setFirstBox(l.getSecondBox());
+				}
+			}
+		}
+		System.out.println("Après---");
+		this.printDataParsed(listVarEnv);
+		//System.out.println("Fin");
+	}
+	/*
+	 * Remplace les variables d'env
+	 */
+	public void replaceEnvParameters(List<DataParsed> list) {
+		
+	}
 }
+
