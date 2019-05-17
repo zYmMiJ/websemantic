@@ -1,17 +1,16 @@
 package translator;
 
+import java.util.NoSuchElementException;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 import org.semanticweb.owlapi.model.AxiomType;
-import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLDataProperty;
+import org.semanticweb.owlapi.model.OWLEntity;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
-import org.semanticweb.owlapi.model.PrefixManager;
-import org.semanticweb.owlapi.util.DefaultPrefixManager;
 import org.apache.log4j.Logger;
 
 public class MakerDatatype extends MakerAxiom{
@@ -27,19 +26,15 @@ public class MakerDatatype extends MakerAxiom{
 	 * @param nameData
 	 * @param data
 	 */
-	public void makeDataType(String nameData, String data, OWLNamedIndividual individualOWL) {
+	public void makeDataType(String nameDataProperty, String data, OWLNamedIndividual individualOWL) {
 		
-		OWLDataProperty dataOWL = getDataProprety(nameData);
+		LOG.info("nameData : "+nameDataProperty);
+		LOG.info("data : "+data);
 		
-		//Manage prefix
-		String dataIRI = dataOWL.getIRI().getNamespace();;
-		PrefixManager pm = new DefaultPrefixManager(null, null, dataIRI);
-		
-		//Make a Individual
-		//OWLNamedIndividual individualOWL = factory.getOWLNamedIndividual(":"+nameData, pm);
+		OWLDataProperty dataPropertyOWL = getDataProprety(nameDataProperty);
 		
 		//Make the axiom related to the DataType
-		OWLAxiom axiomDataAssertion = factory.getOWLDataPropertyAssertionAxiom(dataOWL, individualOWL, data);
+		OWLAxiom axiomDataAssertion = factory.getOWLDataPropertyAssertionAxiom(dataPropertyOWL, individualOWL, data);
 		OWLAxiom axiomDeclaration = factory.getOWLDeclarationAxiom(individualOWL);
 		
 		addAxiom(axiomDataAssertion);
@@ -63,11 +58,10 @@ public class MakerDatatype extends MakerAxiom{
 		//Step3 : select the Axiom with the fragment corresponding
 		Stream<OWLAxiom> streamStep3 = streamStep2.filter(fragmentEquals(fragment));
 		//Step4 : select the interesting part in the stream
-		OWLDataProperty result = (OWLDataProperty) streamStep3.findFirst().get().signature().findFirst().get();
-		
-		LOG.info("FOUND : "+result);
-		
+		OWLDataProperty result = streamStep3.findFirst().get().dataPropertiesInSignature().findFirst().get();
 		return result;
+		
+		
 		
 	}
 	

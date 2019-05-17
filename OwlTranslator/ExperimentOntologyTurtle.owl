@@ -1,0 +1,667 @@
+@prefix : <http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology> .
+
+<http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#formulates
+:formulates rdf:type owl:ObjectProperty ;
+            rdfs:domain <http://www.hozo.jp/owl/EXPOApr19.xml/HumanLanguage> ;
+            rdfs:range <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion> ,
+                       :ExperimentalGoal ,
+                       :ExperimentalHypothesis .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#hasAttribut
+:hasAttribut rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#hasPart
+:hasPart rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_ExperimentalEquiment
+:has_ExperimentalEquiment rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf :hasPart ;
+                          rdfs:domain :ExperimentalDesign ;
+                          rdfs:range :ExperimentalEquipment .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_ID
+:has_ID rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :hasPart ;
+        rdfs:domain :AdminInfoAboutExperiment ;
+        rdfs:range :IDExperiment .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_OSVersion
+:has_OSVersion rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :hasAttribut ;
+               rdfs:domain <http://www.hozo.jp/owl/EXPOApr19.xml/Software> ;
+               rdfs:range :OSVersion .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_administrationInfo
+:has_administrationInfo rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :hasAttribut ;
+                        rdfs:domain :ScientificExperiment ;
+                        rdfs:range :AdminInfoAboutExperiment .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_analyst
+:has_analyst rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasPart ;
+             rdfs:domain <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion> ;
+             rdfs:range <http://www.semanticweb.org/mint/ontologies/2019/4/untitled-ontology-3#Analyst> .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_author
+:has_author rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :hasPart ;
+            rdfs:domain :AdminInfoAboutExperiment ;
+            rdfs:range :Author .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_classification
+:has_classification rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :hasAttribut ;
+                    rdfs:domain :ScientificExperiment ;
+                    rdfs:range :ClassificationOfExperiment .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_component
+:has_component rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :hasPart ;
+               rdfs:domain <http://www.hozo.jp/owl/EXPOApr19.xml/Hardware> ;
+               rdfs:range :HardwareComponent .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_date
+:has_date rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :hasAttribut ;
+          rdfs:domain :ExperimentalDesign ;
+          rdfs:range :DesignDate .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_designer
+:has_designer rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasPart ;
+              rdfs:domain :ExperimentalDesign ;
+              rdfs:range <http://www.semanticweb.org/mint/ontologies/2019/4/untitled-ontology-3#Designer> .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_experimentalConclusion
+:has_experimentalConclusion rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf :hasPart ;
+                            rdfs:domain :ExperimentalResults ;
+                            rdfs:range <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion> .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_experimentalDesign
+:has_experimentalDesign rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :hasPart ;
+                        rdfs:domain :ScientificExperiment ;
+                        rdfs:range :ExperimentalDesign .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_experimentalGoal
+:has_experimentalGoal rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :hasPart ;
+                      rdfs:domain :ScientificExperiment ;
+                      rdfs:range :ExperimentalGoal .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_experimentalHypothesis
+:has_experimentalHypothesis rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf :hasPart ;
+                            rdfs:domain :ScientificExperiment ;
+                            rdfs:range :ExperimentalHypothesis .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_experimentalObservation
+:has_experimentalObservation rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf :hasPart ;
+                             rdfs:domain :ExperimentalResults ;
+                             rdfs:range <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation> .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_experimentalResults
+:has_experimentalResults rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :hasPart ;
+                         rdfs:domain :ScientificExperiment ;
+                         rdfs:range :ExperimentalResults .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_experimentationDate
+:has_experimentationDate rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :hasPart ;
+                         rdfs:domain :AdminInfoAboutExperiment ;
+                         rdfs:range :ExperimentationDate .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_experimenter
+:has_experimenter rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :hasPart ;
+                  rdfs:domain :Procedure ;
+                  rdfs:range <http://www.semanticweb.org/mint/ontologies/2019/4/untitled-ontology-3#Experimenter> .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_hash
+:has_hash rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :hasPart ;
+          rdfs:domain :AdminInfoAboutExperiment ;
+          rdfs:range :Hash .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_label
+:has_label rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasPart ;
+           rdfs:domain :NameOfExperiment ;
+           rdfs:range :LabelOfExperiment .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_logBackVersion
+:has_logBackVersion rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :hasPart ;
+                    rdfs:domain :JavaPath ;
+                    rdfs:range :LogbackVersion .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_name
+:has_name rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :hasPart ;
+          rdfs:domain :AdminInfoAboutExperiment ;
+          rdfs:range :NameOfExperiment .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_parameter
+:has_parameter rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :hasAttribut ;
+               rdfs:domain :Script ;
+               rdfs:range :NumberOfAgents ,
+                          :NumberOfIterations ,
+                          :NumberOfRuns ,
+                          :Operators ,
+                          :Option ,
+                          :PostFix ,
+                          :TypeOfExperiment .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_path
+:has_path rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :hasAttribut ;
+          rdfs:domain <http://www.hozo.jp/owl/EXPOApr19.xml/Software> ;
+          rdfs:range :JavaPath .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_performer
+:has_performer rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :hasPart ;
+               rdfs:domain :Procedure ;
+               rdfs:range :Performer .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_personalName
+:has_personalName rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :hasAttribut ;
+                  rdfs:domain :Actor ;
+                  rdfs:range :PersonalName .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_procedure
+:has_procedure rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :hasPart ;
+               rdfs:domain :ExperimentalDesign ;
+               rdfs:range :Procedure .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#has_title
+:has_title rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasPart ;
+           rdfs:domain :AdminInfoAboutExperiment ;
+           rdfs:range :TitleOfExperiment .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#HasHardwareComponentExpression
+:HasHardwareComponentExpression rdf:type owl:DatatypeProperty ;
+                                rdfs:domain :HardwareComponent ;
+                                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#HasPostFixValue
+:HasPostFixValue rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :PostFix ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#hasClassificationExpression
+:hasClassificationExpression rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf owl:topDataProperty ;
+                             rdfs:domain :ClassificationByDomain ;
+                             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#hasData
+:hasData rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain <http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData> .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#hasDate
+:hasDate rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Date ;
+         rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#hasFile
+:hasFile rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :Script ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#hasGoalExpression
+:hasGoalExpression rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :ExperimentalGoal ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#hasHash
+:hasHash rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Hash ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#hasHypothesisExpression
+:hasHypothesisExpression rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :ExperimentalHypothesis ;
+                         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#hasLogbackVersionExpression
+:hasLogbackVersionExpression rdf:type owl:DatatypeProperty ;
+                             rdfs:domain :OSVersion ;
+                             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#hasName
+:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :Name ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#hasNumberOfAgents
+:hasNumberOfAgents rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :NumberOfAgents ;
+                   rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#hasNumberOfIterartions
+:hasNumberOfIterartions rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :NumberOfIterations ;
+                        rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#hasNumberOfRuns
+:hasNumberOfRuns rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :NumberOfRuns ;
+                 rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#hasOSVersionExpression
+:hasOSVersionExpression rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :LogbackVersion ;
+                        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#hasOperatorsValue
+:hasOperatorsValue rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Operators ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#hasOptionValue
+:hasOptionValue rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Option ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#hasPath
+:hasPath rdf:type owl:DatatypeProperty ;
+         rdfs:domain :JavaPath ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#hasTypeOfExperimentValue
+:hasTypeOfExperimentValue rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :TypeOfExperiment ;
+                          rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData
+<http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation> .
+
+
+###  http://www.hozo.jp/owl/EXPOApr19.xml/ComputeLanguage
+<http://www.hozo.jp/owl/EXPOApr19.xml/ComputeLanguage> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.hozo.jp/owl/EXPOApr19.xml/Language> .
+
+
+###  http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion
+<http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion> rdf:type owl:Class ;
+                                                              rdfs:subClassOf :ExperimentalResultsEntity .
+
+
+###  http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation
+<http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation> rdf:type owl:Class ;
+                                                               rdfs:subClassOf :ExperimentalResultsEntity .
+
+
+###  http://www.hozo.jp/owl/EXPOApr19.xml/Hardware
+<http://www.hozo.jp/owl/EXPOApr19.xml/Hardware> rdf:type owl:Class ;
+                                                rdfs:subClassOf :ExperimentalEquipment .
+
+
+###  http://www.hozo.jp/owl/EXPOApr19.xml/HumanLanguage
+<http://www.hozo.jp/owl/EXPOApr19.xml/HumanLanguage> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.hozo.jp/owl/EXPOApr19.xml/Language> .
+
+
+###  http://www.hozo.jp/owl/EXPOApr19.xml/Language
+<http://www.hozo.jp/owl/EXPOApr19.xml/Language> rdf:type owl:Class ;
+                                                rdfs:subClassOf :Entity .
+
+
+###  http://www.hozo.jp/owl/EXPOApr19.xml/Number
+<http://www.hozo.jp/owl/EXPOApr19.xml/Number> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://www.hozo.jp/owl/EXPOApr19.xml/Quantity> .
+
+
+###  http://www.hozo.jp/owl/EXPOApr19.xml/Quantity
+<http://www.hozo.jp/owl/EXPOApr19.xml/Quantity> rdf:type owl:Class ;
+                                                rdfs:subClassOf :Entity .
+
+
+###  http://www.hozo.jp/owl/EXPOApr19.xml/Software
+<http://www.hozo.jp/owl/EXPOApr19.xml/Software> rdf:type owl:Class ;
+                                                rdfs:subClassOf :ExperimentalEquipment .
+
+
+###  http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate
+<http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData> .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#Actor
+:Actor rdf:type owl:Class ;
+       rdfs:subClassOf :Entity .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#AdminInfoAboutExperiment
+:AdminInfoAboutExperiment rdf:type owl:Class ;
+                          rdfs:subClassOf :ExperimentEntity .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#Attribute
+:Attribute rdf:type owl:Class ;
+           rdfs:subClassOf :Entity .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#Author
+:Author rdf:type owl:Class ;
+        rdfs:subClassOf :Actor .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#ClassificationByDomain
+:ClassificationByDomain rdf:type owl:Class ;
+                        rdfs:subClassOf :ClassificationOfExperiment .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#ClassificationOfExperiment
+:ClassificationOfExperiment rdf:type owl:Class ;
+                            rdfs:subClassOf :ExperimentEntity .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#ComputationalExp
+:ComputationalExp rdf:type owl:Class ;
+                  rdfs:subClassOf :ScientificExperiment .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#Date
+:Date rdf:type owl:Class ;
+      rdfs:subClassOf :Attribute .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#DesignDate
+:DesignDate rdf:type owl:Class ;
+            rdfs:subClassOf :Date .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#Entity
+:Entity rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#ExperimentEntity
+:ExperimentEntity rdf:type owl:Class ;
+                  rdfs:subClassOf :Entity .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#ExperimentParameter
+:ExperimentParameter rdf:type owl:Class ;
+                     rdfs:subClassOf :Attribute .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#ExperimentalDesign
+:ExperimentalDesign rdf:type owl:Class ;
+                    rdfs:subClassOf :ExperimentEntity .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#ExperimentalDesignEntity
+:ExperimentalDesignEntity rdf:type owl:Class ;
+                          rdfs:subClassOf :Entity .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#ExperimentalEquipment
+:ExperimentalEquipment rdf:type owl:Class ;
+                       rdfs:subClassOf :ExperimentalDesignEntity .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#ExperimentalGoal
+:ExperimentalGoal rdf:type owl:Class ;
+                  rdfs:subClassOf :ExperimentEntity .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#ExperimentalHypothesis
+:ExperimentalHypothesis rdf:type owl:Class ;
+                        rdfs:subClassOf :ExperimentEntity .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#ExperimentalResults
+:ExperimentalResults rdf:type owl:Class ;
+                     rdfs:subClassOf :ExperimentEntity .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#ExperimentalResultsEntity
+:ExperimentalResultsEntity rdf:type owl:Class ;
+                           rdfs:subClassOf :Entity .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#ExperimentationDate
+:ExperimentationDate rdf:type owl:Class ;
+                     rdfs:subClassOf :Date .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#FirstName
+:FirstName rdf:type owl:Class ;
+           rdfs:subClassOf :PersonalName .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#HardwareAttribute
+:HardwareAttribute rdf:type owl:Class ;
+                   rdfs:subClassOf :Attribute .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#HardwareComponent
+:HardwareComponent rdf:type owl:Class ;
+                   rdfs:subClassOf :HardwareAttribute .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#Hash
+:Hash rdf:type owl:Class ;
+      rdfs:subClassOf :Attribute .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#IDExperiment
+:IDExperiment rdf:type owl:Class ;
+              rdfs:subClassOf :Name .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#JavaPath
+:JavaPath rdf:type owl:Class ;
+          rdfs:subClassOf :Path .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#LabelOfExperiment
+:LabelOfExperiment rdf:type owl:Class ;
+                   rdfs:subClassOf :Name .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#LastName
+:LastName rdf:type owl:Class ;
+          rdfs:subClassOf :PersonalName .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#LogbackVersion
+:LogbackVersion rdf:type owl:Class ;
+                rdfs:subClassOf :Version .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#Name
+:Name rdf:type owl:Class ;
+      rdfs:subClassOf :Attribute .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#NameOfExperiment
+:NameOfExperiment rdf:type owl:Class ;
+                  rdfs:subClassOf :Name .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#NumberOfAgents
+:NumberOfAgents rdf:type owl:Class ;
+                rdfs:subClassOf :ExperimentParameter .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#NumberOfIterations
+:NumberOfIterations rdf:type owl:Class ;
+                    rdfs:subClassOf :ExperimentParameter .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#NumberOfRuns
+:NumberOfRuns rdf:type owl:Class ;
+              rdfs:subClassOf :ExperimentParameter .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#OSVersion
+:OSVersion rdf:type owl:Class ;
+           rdfs:subClassOf :Version .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#Operators
+:Operators rdf:type owl:Class ;
+           rdfs:subClassOf :ExperimentParameter .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#Option
+:Option rdf:type owl:Class ;
+        rdfs:subClassOf :ExperimentParameter .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#Path
+:Path rdf:type owl:Class ;
+      rdfs:subClassOf :SoftwareAttribute .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#Performer
+:Performer rdf:type owl:Class ;
+           rdfs:subClassOf :Actor .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#PersonalName
+:PersonalName rdf:type owl:Class ;
+              rdfs:subClassOf :Name .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#PostFix
+:PostFix rdf:type owl:Class ;
+         rdfs:subClassOf :ExperimentParameter .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#Procedure
+:Procedure rdf:type owl:Class ;
+           rdfs:subClassOf :ExperimentalDesignEntity .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#ScientificExperiment
+:ScientificExperiment rdf:type owl:Class ;
+                      rdfs:subClassOf :Entity .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#Script
+:Script rdf:type owl:Class ;
+        rdfs:subClassOf :Procedure .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#SoftwareAttribute
+:SoftwareAttribute rdf:type owl:Class ;
+                   rdfs:subClassOf :Attribute .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#TitleOfExperiment
+:TitleOfExperiment rdf:type owl:Class ;
+                   rdfs:subClassOf :Name .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#TypeOfExperiment
+:TypeOfExperiment rdf:type owl:Class ;
+                  rdfs:subClassOf :ExperimentParameter .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/ExperimentOntology#Version
+:Version rdf:type owl:Class ;
+         rdfs:subClassOf :SoftwareAttribute .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/untitled-ontology-3#Analyst
+<http://www.semanticweb.org/mint/ontologies/2019/4/untitled-ontology-3#Analyst> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf :Actor .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/untitled-ontology-3#Designer
+<http://www.semanticweb.org/mint/ontologies/2019/4/untitled-ontology-3#Designer> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf :Actor .
+
+
+###  http://www.semanticweb.org/mint/ontologies/2019/4/untitled-ontology-3#Experimenter
+<http://www.semanticweb.org/mint/ontologies/2019/4/untitled-ontology-3#Experimenter> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf :Actor .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,15 +1,16 @@
 package translator;
  
 import java.io.File;
-<<<<<<< HEAD
-=======
 import java.io.IOException;
->>>>>>> develop
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.semanticweb.owlapi.apibinding.OWLManager;
-import org.semanticweb.owlapi.model.OWLAxiom;
+import org.semanticweb.owlapi.io.OWLOntologyDocumentTarget;
+import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
@@ -36,34 +37,73 @@ public class Translator {
 			
 		}
 		
-		public void run() {
+		public void run() throws IOException {
 			
-			// Fichier à parser
-			ParserBash parser= new ParserBash(fileBash);
-			// Rend la liste avec les parametres
-
-			List<Parameter> list = parser.fileToList();
+			Parser parserBash = new Parser(fileBash);
+			Tools tools = new Tools(ontology);
 			
-			// Affiche l'hypothèses
-			LOG.info("Hyp :"+list.get(3).getValeur().get(2));
-			LOG.info("Recherche :"+list.get(3).getOneParam("HYPOTHESIS"));
-				
-			// Traduction de nos données du parser en owl
+			//List with parameter and value
+			List<DataParsed> listParameterValue = parserBash.fileToList();
+			Map<String, String> mapParameterValue = new HashMap<String, String>();
+			for(DataParsed data:listParameterValue) {
+				mapParameterValue.put(data.getFirstBox(), data.getSecondBox());
+			}
+			
+			//List with NameClass and DataProperties
+			List<DataParsed> listClassDataP  = tools.joinClassAndDataProperty();
+			Map<String, String> mapClassDataP = new HashMap<String, String>();
+			for(DataParsed data:listClassDataP) {
+				LOG.info("listClassDataP : "+data.getFirstBox()+" / "+data.getSecondBox());
+				mapClassDataP.put(data.getFirstBox(), data.getSecondBox());
+			}
+			
+			//Create and Make list with Association : "NameClass=PARAM"
+			
+			//File fileAssociation = tools.listOWLClasstoFile("FileAssociation.txt");
+			File fileAssociation = new File("FileAssociationEnable.txt");
+			
+			Parser parserFileAssociation = new Parser(fileAssociation); 
+			List<DataParsed> listClassParam = parserFileAssociation.fileToList();
+			
 			MakerDatatype makerData = new MakerDatatype(manager, ontology);
 			MakerIndividual makerIndividual = new MakerIndividual(manager, ontology);
 			
-			OWLNamedIndividual individualOWL = makerIndividual.makeIndividual("Hypothesis", "HypothesisIndividual");
-			makerData.makeDataType("HypothesisFormulation", list.get(3).getOneParam("HYPOTHESIS"), individualOWL);
+			String label = mapParameterValue.get("LABEL");
 			
+			for(DataParsed data : listClassParam) {
+				
+				//On selectionne dans la liste Class/Paramètre : la Class
+				String nameClass = data.getFirstBox();
+				LOG.info("CLASS : "+nameClass);
+				//On crée un Individual
+				OWLNamedIndividual individualOWL = makerIndividual.makeIndividual(nameClass, nameClass+label);
+				
+				//On selectionne dans la liste Class/Paramètre : le paramètre
+				String nameParam = data.getSecondBox();
+				//On selectionne dans la liste Paramètre/Valeur : la valeur
+				String dataValue = mapParameterValue.get(nameParam);
+				//On selectionne dans la liste Class/Propriété : la propriété
+				String nameDataPpt = mapClassDataP.get(nameClass);
+				
+				//Si la propriété existe on crée une data
+				if(nameDataPpt!="" && dataValue!=null) {
+					LOG.info("VALUE : "+dataValue);
+					makerData.makeDataType(nameDataPpt, dataValue, individualOWL);		
+				}
+			}
 			
-			saveOntology();
+			OWLOntology ontologyOutput = ontology;
+			
+			File outFile = new File("ExperimentOntologyTurtleData.owl");
+			IRI outIRI=IRI.create(outFile);	
+			saveOntology(ontologyOutput, outIRI);
 			
 		}
 		
 		private void loadOntology (File file) {
 			
 			try {
-				ontology = manager.loadOntologyFromOntologyDocument(file);
+				this.ontology = manager.loadOntologyFromOntologyDocument(file);
 
 			} catch (OWLOntologyCreationException e) {
 				e.printStackTrace();
@@ -71,31 +111,16 @@ public class Translator {
 			
 		}
 		
-		private void saveOntology() {
+		private void saveOntology(OWLOntology ontologyOutput, IRI outIRI) {
 			try {
-				manager.saveOntology(this.ontology);
+				manager.saveOntology(ontologyOutput,outIRI);
+				LOG.info("Ontology Saved.");
 			} catch (OWLOntologyStorageException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		
-		//TODO: update depracte
-		private void printOntologyWithAxiom() {
-
-			
-			//StreamDocumentSource(InputStream is);
-			//InputStream targetStream = new FileInputStream(file);
-			int i=0;
-			
-			for (OWLAxiom axiome :  ontology.getAxioms()) {
-				System.out.println(i+" - "+axiome);
-				i++;
-			}
-			
-			System.out.println();
-				
-		}
+	 	
 
 }
 
