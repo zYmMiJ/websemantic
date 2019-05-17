@@ -30,13 +30,6 @@ public class ParserBash extends Parser{
 	
 	public ParserBash(File file) {
 		super(file);
-		try {
-			this.setEnvParameters();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		// TODO Auto-generated constructor stub
 	}
 
 	public void printDataParsed(List<DataParsed> list) {
@@ -85,9 +78,12 @@ public class ParserBash extends Parser{
 	}
 
 	/*
-	 * 
+	 * Pas Encore Utilisable mb mais tu peut quands meme recup les données avec List DataParsed
 	 */
-	public void setEnvParameters() throws IOException{		
+	/*
+	 * Creation des parametres d'environnements
+	 */
+	public void createEnvParameters() throws IOException{		
 		
 		BufferedReader br = new BufferedReader(new FileReader(this.file));// buffer pour lecture du fichier
 		String line;// Ligne du buffer
@@ -114,7 +110,9 @@ public class ParserBash extends Parser{
 		}
 		//this.printDataParsed(this.listVarEnv);
 	}
-	
+	/*
+	 * Set les variables d'envs 
+	 */
 	public void setAllEnvParameters(List<DataParsed> list) {
 		//this.printDataParsed(list);
 		Iterator<DataParsed> it = listVarEnv.iterator();
@@ -140,6 +138,11 @@ public class ParserBash extends Parser{
 		this.printDataParsed(listVarEnv);
 		//System.out.println("Fin");
 	}
-
+	/*
+	 * Remplace les variables d'env
+	 */
+	public void replaceEnvParameters(List<DataParsed> list) {
+		
+	}
 }
 

@@ -19,12 +19,6 @@ public class Translator {
 		private File fileOwl;
 		private File fileBash;
 		
-		private static int experimentParameters = 0;
-		private static int experimentInfoParameters = 1;
-		private static int documentationParameters = 2;
-		private static int experimentVariation = 3;
-		private static int defaultValues = 4;
-		 
 		public Translator(String fileOwlName, String fileBashName) {
 			
 			manager = OWLManager.createOWLOntologyManager();
@@ -41,7 +35,7 @@ public class Translator {
 			ParserBash parser= new ParserBash(fileBash);
 			// Rend la liste avec les parametres
 			List<DataParsed> list = parser.fileToList();
-			parser.setAllEnvParameters(list);		
+			//parser.setAllEnvParameters(list);		
 		}
 		
 		private void loadOntology (File file) {
