@@ -6,10 +6,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.apache.log4j.Logger;
@@ -56,29 +59,48 @@ public class Tools {
 		
 	}
 	
+	public File listOWLDataPptToFile(String filePath) throws IOException {
+		
+		FileOutputStream outputStream;
+		outputStream = new FileOutputStream(filePath);
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(outputStream));
+		
+		//TODO
+		Set<OWLDataProperty> set = ontology.getDataPropertiesInSignature();
+		
+		for (OWLDataProperty dataPpt : set) {
+			String nameClass = dataPpt.getIRI().getFragment()+"=";
+			bw.write(nameClass);
+			bw.newLine();
+		}
+		bw.close();
+		
+		LOG.info("File created : "+filePath);
+		
+		
+		return new File(filePath);
+		
+	}
+	
 	//TODO : pour plusieurs dataPPT
-	public List<DataParsed> joinClassAndDataProperty(){
+	public Map<String, List<String>> joinClassAndDataProperty(){
 		
-		ArrayList<DataParsed> list = new ArrayList<DataParsed>();
+		HashMap<String, List<String>> map = new HashMap<String, List<String>>();
 		Set<OWLClass> set = ontology.getClassesInSignature();
-		
-		int i=0;
 		
 		for (OWLClass cls : set) {
 			String nameClass = cls.getIRI().getFragment();
 			
-			DataParsed data = new DataParsed(nameClass,
+			List<String> data = 
 					associateDataPpt(nameClass) != null ?
-					associateDataPpt(nameClass).toString() : "");
-			list.add(i, data);
-			
-			i++;
+					associateDataPpt(nameClass) : new ArrayList();
+			map.put(nameClass, data);
 		}
-		return list;
+		return map;
 	}
 	
 	//Search a OWLDataProperty with the fragment of the Domain Class
-	private String associateDataPpt(String fragment){
+	private List<String> associateDataPpt(String fragment){
 	
 		//Step1 : declare a OWLAxiom stream
 		Stream<OWLAxiom> streamStep1 = ontology.axioms();
@@ -87,23 +109,35 @@ public class Tools {
 		//Step3 : select the Axiom with fragment
 		Stream<OWLAxiom> streamStep3 = streamStep2.filter(fragmentEquals(fragment));
 		
+		List<OWLAxiom> list = streamStep3.collect(Collectors.toList());
+		List<String> listFragment = new ArrayList<String>();
+		
+		for(OWLAxiom axiom : list)
+			listFragment.add(getFragmentInDataPpt(axiom));
+		
+		return listFragment;
+			
 		//Step 4 : return the axiom
-		Optional<OWLAxiom> result = streamStep3.findFirst();
+		/*Optional<OWLAxiom> result = streamStep3.findAny();
 		
 		if(result.isPresent())
 			return result.get().dataPropertiesInSignature().findFirst().get().getIRI().getFragment();
-		else 
-			return null;	
+		else
+			return null;*/	
 	}
 	
-	private static Predicate<OWLAxiom> isDataPropertyDomain()
+	private String getFragmentInDataPpt(OWLAxiom axiom) {
+		return axiom.dataPropertiesInSignature().findFirst().get().getIRI().getFragment();
+	}
+	
+	private Predicate<OWLAxiom> isDataPropertyDomain()
 	{
 	    return p -> p.isOfType(AxiomType.DATA_PROPERTY_DOMAIN);
 	}
 	
 	//TODO : change getFragment : pour cela il faut utiliser la signature et en créer une en amont
 	@SuppressWarnings("deprecation")
-	private static Predicate<OWLAxiom> fragmentEquals(String fragment){
+	private Predicate<OWLAxiom> fragmentEquals(String fragment){
 		//Test if the fragment of the axiom is the same that the parameter 
 		
 		return p -> p.classesInSignature().findFirst().get().getIRI().getFragment().compareTo(fragment)==0;

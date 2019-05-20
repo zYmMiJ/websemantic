@@ -1,0 +1,388 @@
+@prefix : <http://www.inria.fr/moex/ExperimentOntology#> .
+@prefix xp: <http://www.inria.fr/moex/ExperimentOntology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.inria.fr/moex/ExperimentOntology> .
+
+<http://www.inria.fr/moex/ExperimentOntology> rdf:type owl:Ontology ;
+                                               owl:versionIRI <http://www.inria.fr/moex/ExperimentOntology/1.0> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2003/06/sw-vocab-status/ns#term_status
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.inria.fr/moex/ExperimentOntology#has_ExperimentalEquiment
+xp:has_ExperimentalEquiment rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf owl:topObjectProperty ;
+                            rdfs:domain xp:ExperimentalDesign ;
+                            rdfs:range xp:ExperimentalEquipment .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#has_analyst
+xp:has_analyst rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion> ;
+               rdfs:range <http://www.w3.org/2000/10/swap/pim/contact#Person> .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#has_designer
+xp:has_designer rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain xp:ExperimentalDesign ;
+                rdfs:range <http://www.w3.org/2000/10/swap/pim/contact#Person> .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#has_experimentalConclusion
+xp:has_experimentalConclusion rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf owl:topObjectProperty ;
+                              rdfs:domain xp:ExperimentalResults ;
+                              rdfs:range <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion> .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#has_experimentalDesign
+xp:has_experimentalDesign rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf owl:topObjectProperty ;
+                          rdfs:domain xp:ComputionalExperiment ;
+                          rdfs:range xp:ExperimentalDesign .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#has_experimentalGoal
+xp:has_experimentalGoal rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf owl:topObjectProperty ;
+                        rdfs:domain xp:ComputionalExperiment ;
+                        rdfs:range xp:ExperimentalGoal .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#has_experimentalHypothesis
+xp:has_experimentalHypothesis rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf owl:topObjectProperty ;
+                              rdfs:domain xp:ComputionalExperiment ;
+                              rdfs:range xp:ExperimentalHypothesis .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#has_experimentalObservation
+xp:has_experimentalObservation rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf owl:topObjectProperty ;
+                               rdfs:domain xp:ExperimentalResults ;
+                               rdfs:range <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation> .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#has_experimentalResults
+xp:has_experimentalResults rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf owl:topObjectProperty ;
+                           rdfs:domain xp:ComputionalExperiment ;
+                           rdfs:range xp:ExperimentalResults .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#has_experimenter
+xp:has_experimenter rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:domain xp:Procedure ;
+                    rdfs:range <http://www.w3.org/2000/10/swap/pim/contact#Person> .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#has_performer
+xp:has_performer rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain xp:Procedure ;
+                 rdfs:range <http://www.w3.org/2000/10/swap/pim/contact#Person> .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#has_procedure
+xp:has_procedure rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain xp:ExperimentalDesign ;
+                 rdfs:range xp:Procedure .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.inria.fr/moex/ExperimentOntology#hasClassificationExpression
+xp:hasClassificationExpression rdf:type owl:DatatypeProperty ;
+                               rdfs:domain xp:ClassificationByDomain ;
+                               rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#hasDesignDate
+xp:hasDesignDate rdf:type owl:DatatypeProperty ;
+                 rdfs:domain xp:ExperimentalDesign ;
+                 rdfs:range xsd:dateTime .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#hasExperimentID
+xp:hasExperimentID rdf:type owl:DatatypeProperty ;
+                   rdfs:domain xp:ComputionalExperiment ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#hasExperimentLabel
+xp:hasExperimentLabel rdf:type owl:DatatypeProperty ;
+                      rdfs:domain xp:ComputionalExperiment ;
+                      rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#hasExperimentName
+xp:hasExperimentName rdf:type owl:DatatypeProperty ;
+                     rdfs:domain xp:ComputionalExperiment ;
+                     rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#hasExperimentTitle
+xp:hasExperimentTitle rdf:type owl:DatatypeProperty ;
+                      rdfs:domain xp:ComputionalExperiment ;
+                      rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#hasExperimentationDate
+xp:hasExperimentationDate rdf:type owl:DatatypeProperty ;
+                          rdfs:domain xp:ExperimentalResultsEntity ;
+                          rdfs:range xsd:dateTime .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#hasGoalExpression
+xp:hasGoalExpression rdf:type owl:DatatypeProperty ;
+                     rdfs:domain xp:ExperimentalGoal ;
+                     rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#hasHardwareComponent
+xp:hasHardwareComponent rdf:type owl:DatatypeProperty ;
+                        rdfs:domain <http://www.hozo.jp/owl/EXPOApr19.xml/Hardware> ;
+                        rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#hasHash
+xp:hasHash rdf:type owl:DatatypeProperty ;
+           rdfs:domain xp:ComputionalExperiment ;
+           rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#hasHypothesisFormal
+xp:hasHypothesisFormal rdf:type owl:DatatypeProperty ;
+                       rdfs:domain xp:ExperimentalHypothesis ;
+                       rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#hasHypothesisLabel
+xp:hasHypothesisLabel rdf:type owl:DatatypeProperty ;
+                      rdfs:domain xp:ExperimentalHypothesis ;
+                      rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#hasJavaPath
+xp:hasJavaPath rdf:type owl:DatatypeProperty ;
+               rdfs:domain <http://www.hozo.jp/owl/EXPOApr19.xml/Software> ;
+               rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#hasLogbackVersion
+xp:hasLogbackVersion rdf:type owl:DatatypeProperty ;
+                     rdfs:domain <http://www.hozo.jp/owl/EXPOApr19.xml/Software> ;
+                     rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#hasNumberOfAgents
+xp:hasNumberOfAgents rdf:type owl:DatatypeProperty ;
+                     rdfs:domain xp:Procedure ;
+                     rdfs:range xsd:int .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#hasNumberOfIterations
+xp:hasNumberOfIterations rdf:type owl:DatatypeProperty ;
+                         rdfs:domain xp:Procedure ;
+                         rdfs:range xsd:int .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#hasNumberOfRuns
+xp:hasNumberOfRuns rdf:type owl:DatatypeProperty ;
+                   rdfs:domain xp:Procedure ;
+                   rdfs:range xsd:int .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#hasOSVersion
+xp:hasOSVersion rdf:type owl:DatatypeProperty ;
+                rdfs:domain <http://www.hozo.jp/owl/EXPOApr19.xml/Software> ;
+                rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#hasOperators
+xp:hasOperators rdf:type owl:DatatypeProperty ;
+                rdfs:domain xp:Procedure ;
+                rdfs:range xsd:string .
+
+
+###  http://www.w3.org/2002/07/owl#topDataProperty
+owl:topDataProperty rdfs:domain xp:Procedure ;
+                    rdfs:range xsd:string .
+
+
+###  http://xmlns.com/foaf/0.1/familyName
+<http://xmlns.com/foaf/0.1/familyName> rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+                                       rdfs:range rdfs:Literal ;
+                                       rdfs:comment "The family name of some person." ;
+                                       rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
+                                       rdfs:label "familyName" ;
+                                       <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+###  http://xmlns.com/foaf/0.1/firstName
+<http://xmlns.com/foaf/0.1/firstName> rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+                                      rdfs:range rdfs:Literal ;
+                                      rdfs:comment "The first name of a person." ;
+                                      rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
+                                      rdfs:label "firstName" ;
+                                      <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://schema.org/Person
+<http://schema.org/Person> rdf:type owl:Class ;
+                           owl:equivalentClass <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData
+<http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation> .
+
+
+###  http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion
+<http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion> rdf:type owl:Class ;
+                                                              rdfs:subClassOf xp:ExperimentalResultsEntity .
+
+
+###  http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation
+<http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation> rdf:type owl:Class ;
+                                                               rdfs:subClassOf xp:ExperimentalResultsEntity .
+
+
+###  http://www.hozo.jp/owl/EXPOApr19.xml/Hardware
+<http://www.hozo.jp/owl/EXPOApr19.xml/Hardware> rdf:type owl:Class ;
+                                                rdfs:subClassOf xp:ExperimentalEquipment .
+
+
+###  http://www.hozo.jp/owl/EXPOApr19.xml/Software
+<http://www.hozo.jp/owl/EXPOApr19.xml/Software> rdf:type owl:Class ;
+                                                rdfs:subClassOf xp:ExperimentalEquipment .
+
+
+###  http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate
+<http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData> .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#ClassificationByDomain
+xp:ClassificationByDomain rdf:type owl:Class ;
+                          rdfs:subClassOf xp:ClassificationOfExperiment .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#ClassificationOfExperiment
+xp:ClassificationOfExperiment rdf:type owl:Class ;
+                              rdfs:subClassOf xp:ExperimentEntity .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment
+xp:ComputionalExperiment rdf:type owl:Class ;
+                         rdfs:subClassOf xp:Entity .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#Entity
+xp:Entity rdf:type owl:Class .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#ExperimentEntity
+xp:ExperimentEntity rdf:type owl:Class ;
+                    rdfs:subClassOf xp:Entity .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign
+xp:ExperimentalDesign rdf:type owl:Class ;
+                      rdfs:subClassOf xp:ExperimentEntity .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesignEntity
+xp:ExperimentalDesignEntity rdf:type owl:Class ;
+                            rdfs:subClassOf xp:Entity .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment
+xp:ExperimentalEquipment rdf:type owl:Class ;
+                         rdfs:subClassOf xp:ExperimentalDesignEntity .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal
+xp:ExperimentalGoal rdf:type owl:Class ;
+                    rdfs:subClassOf xp:ExperimentEntity .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis
+xp:ExperimentalHypothesis rdf:type owl:Class ;
+                          rdfs:subClassOf xp:ExperimentEntity .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults
+xp:ExperimentalResults rdf:type owl:Class ;
+                       rdfs:subClassOf xp:ExperimentEntity .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity
+xp:ExperimentalResultsEntity rdf:type owl:Class ;
+                             rdfs:subClassOf xp:Entity .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#Procedure
+xp:Procedure rdf:type owl:Class ;
+             rdfs:subClassOf xp:ExperimentalDesignEntity .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#Script
+xp:Script rdf:type owl:Class ;
+          rdfs:subClassOf xp:Procedure .
+
+
+###  http://www.w3.org/2000/10/swap/pim/contact#Person
+<http://www.w3.org/2000/10/swap/pim/contact#Person> rdf:type owl:Class ;
+                                                    owl:equivalentClass <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+<http://xmlns.com/foaf/0.1/Agent> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+<http://xmlns.com/foaf/0.1/Organization> rdf:type owl:Class ;
+                                         owl:disjointWith <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> ;
+                                   owl:disjointWith <http://xmlns.com/foaf/0.1/Project> ;
+                                   rdfs:comment "A person." ;
+                                   rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
+                                   rdfs:label "Person" ;
+                                   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://xmlns.com/foaf/0.1/Project
+<http://xmlns.com/foaf/0.1/Project> rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

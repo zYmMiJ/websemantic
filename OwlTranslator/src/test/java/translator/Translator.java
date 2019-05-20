@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.semanticweb.owlapi.apibinding.OWLManager;
@@ -16,6 +17,9 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
+
+import com.google.common.collect.BiMap;
+import com.google.common.collect.HashBiMap;
 
 public class Translator {
 	
@@ -50,17 +54,15 @@ public class Translator {
 			}
 			
 			//List with NameClass and DataProperties
-			List<DataParsed> listClassDataP  = tools.joinClassAndDataProperty();
-			Map<String, String> mapClassDataP = new HashMap<String, String>();
-			for(DataParsed data:listClassDataP) {
-				LOG.info("listClassDataP : "+data.getFirstBox()+" / "+data.getSecondBox());
-				mapClassDataP.put(data.getFirstBox(), data.getSecondBox());
-			}
+			Map<String, List<String>> mapClassDataP = tools.joinClassAndDataProperty();
+			Set<String> keyClassDataP = mapClassDataP.keySet();
+			for(String data: keyClassDataP)
+				LOG.info("MapClassDataP : "+data+" / "+mapClassDataP.get(data));
 			
-			//Create and Make list with Association : "NameClass=PARAM"
 			
-			//File fileAssociation = tools.listOWLClasstoFile("FileAssociation.txt");
-			File fileAssociation = new File("FileAssociationEnable.txt");
+			//Create and Make list with Association : "DataPpt=PARAM"
+			File fileAssociation = tools.listOWLDataPptToFile("FileAssociation.txt");
+			//File fileAssociation = new File("FileAssociationEnable.txt");
 			
 			Parser parserFileAssociation = new Parser(fileAssociation); 
 			List<DataParsed> listClassParam = parserFileAssociation.fileToList();
@@ -82,14 +84,15 @@ public class Translator {
 				String nameParam = data.getSecondBox();
 				//On selectionne dans la liste Paramètre/Valeur : la valeur
 				String dataValue = mapParameterValue.get(nameParam);
-				//On selectionne dans la liste Class/Propriété : la propriété
-				String nameDataPpt = mapClassDataP.get(nameClass);
 				
-				//Si la propriété existe on crée une data
-				if(nameDataPpt!="" && dataValue!=null) {
-					LOG.info("VALUE : "+dataValue);
-					makerData.makeDataType(nameDataPpt, dataValue, individualOWL);		
-				}
+				//On selectionne dans la liste Class/Propriété : la propriété
+				for (String nameDataPpt :mapClassDataP.get(nameClass)) {
+					//Si la propriété existe on crée une data
+					if(nameDataPpt!="" && dataValue!=null) {
+						LOG.info("VALUE : "+dataValue);
+						makerData.makeDataType(nameDataPpt, dataValue, individualOWL);		
+					}
+				}	
 			}
 			
 			OWLOntology ontologyOutput = ontology;
