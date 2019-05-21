@@ -16,12 +16,17 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.log4j.FileAppender;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PatternLayout;
+
 public class Parser{
-	
+	private static final Logger LOG = Logger.getLogger(Parser.class);
 	private File file;
 	//
 	private static Pattern pattern;
     private static Matcher matcher;
+    private static int numberOfEnvVar;
     // Liste qu'on return <varenv,nom>
     private List<DataParsed> listVarEnv = new ArrayList<DataParsed>();
     
@@ -29,7 +34,7 @@ public class Parser{
     private final static Pattern ENV_VAR_PATTERN =
     	    Pattern.compile("\\$\\{([A-Za-z0-9_.-]+)(?::([^\\}]*))?\\}");
 	
-	public Parser(File file) {
+	public Parser(File file) { 
 		this.file = file; 
 	}
 
@@ -39,7 +44,7 @@ public class Parser{
 		 int i = 0;
 		while (it.hasNext()) {
 			DataParsed s = it.next();
-			System.out.println(i+".");
+			System.out.print(i+".");
 			System.out.println(s.getFirstBox()+" ; "+s.getSecondBox());
 			System.out.println("-------------------");
 			i ++;
@@ -59,7 +64,7 @@ public class Parser{
 			// Parcours du fichier par ligne
 			while ( (line = br.readLine()) != null ) {
 				line = line.replace('"',' ');	
-				if (line.contains("#") != true  && line.length() > 2) {
+				if ( line.contains("#") != true  && line.length() > 2) {
 					tmp = line.split(reg,2);
 					list.add(new DataParsed( tmp[0], tmp[1] ));
 				}	
@@ -74,7 +79,7 @@ public class Parser{
 		
 		return list;
 	}
-	
+
 	public List<DataParsed> fileAssociationToList(){
 		
 		String line;// Ligne du buffer
@@ -105,16 +110,13 @@ public class Parser{
 	}
 
 	/*
-	 * Pas Encore Utilisable mb mais tu peut quands meme recup les donn�es avec List DataParsed
-	 */
-	/*
 	 * Creation des parametres d'environnements
 	 */
 	public void createEnvParameters() throws IOException{		
 		
 		BufferedReader br = new BufferedReader(new FileReader(this.file));// buffer pour lecture du fichier
 		String line;// Ligne du buffer
-		
+		int i = 0;
 		while ( (line = br.readLine()) != null ) { 
 			
 			// Init le matcher des var env
@@ -131,45 +133,66 @@ public class Parser{
 					}
 				}
 				if ( add ) {
-					this.listVarEnv.add( new DataParsed( m.group(), m.group(1) )); 
+					this.listVarEnv.add( new DataParsed( m.group(), m.group(1) ));
+					i++;
 				}
 			}
 		}
+		this.numberOfEnvVar = i;
 		//this.printDataParsed(this.listVarEnv);
 	}
 	/*
 	 * Set les variables d'envs 
 	 */
 	public void setAllEnvParameters(List<DataParsed> list) {
-		//this.printDataParsed(list);
-		Iterator<DataParsed> it = listVarEnv.iterator();
-		Iterator<DataParsed> it2 = list.iterator();
-		int i = 0;
-		System.out.println("Avant---");
-		this.printDataParsed(listVarEnv);
-		while (it.hasNext()) {
-			it.next(); 
-			i ++;
-		}
-		System.out.println("Lenght :"+i);
-		
-		while (it2.hasNext()) {
-			DataParsed l = it2.next();
-			for( int j = 0; j<7 ;j ++) {
-				if( l.getFirstBox().contains(listVarEnv.get(j).getSecondBox()) ) {
-					listVarEnv.get(j).setFirstBox(l.getSecondBox());
-				}
-			}
-		}
-		System.out.println("Après---");
-		this.printDataParsed(listVarEnv);
-		//System.out.println("Fin");
+		//this.printDataParsed(listVarEnv);
+        LOG.info("setAllEnvParameters");
+        //this.printDataParsed(listVarEnv);
+        for(DataParsed data:list) {
+        	for( int i = 0;i < numberOfEnvVar; i ++) {
+            	if( listVarEnv.get(i).getSecondBox().contains(data.getFirstBox()) ) {
+            		setEnvParameters(data.getFirstBox(), data.getSecondBox(),i,list);
+            		break;
+            	}
+            }
+    	}
+        this.printDataParsed(listVarEnv);
 	}
 	/*
-	 * Remplace les variables d'env
+	 * Remplace les variables d'env par leurs valeurs
 	 */
-	public void replaceEnvParameters(List<DataParsed> list) {
-		
+	public void setEnvParameters(String s,String res,int i,List<DataParsed> list) {
+		String A = listVarEnv.get(i).getSecondBox();
+		if ( res.contains("{")) {
+			Matcher m = ENV_VAR_PATTERN.matcher(res);
+			if( m.find() ) {
+				for( int j = 0; j< i;j++) {
+					if( listVarEnv.get(j).getFirstBox().equals(m.group(0)) ) {
+						res = res.replace(m.group(0), listVarEnv.get(j).getSecondBox());
+					}
+				}
+				 
+			}
+		}
+		listVarEnv.get(i).setSecondBox( res );
+	}
+	/*
+	 * Remplace dans nos données les valeurs d'env par leurs valeurs
+	 */
+	public List<DataParsed> replaceVarEnv(List<DataParsed> list){
+		int j = 0;
+		 for(DataParsed data:list) {
+			 for( int i = 0;i < numberOfEnvVar; i ++) {
+	            	if( data.getSecondBox().contains(listVarEnv.get(i).getFirstBox()) ) {
+	            		String s = data.getSecondBox();
+	            		s = s.replace(listVarEnv.get(i).getFirstBox(), listVarEnv.get(i).getSecondBox());
+	            		list.get(j).setSecondBox(s);
+	            	}
+	            }
+			 j ++;
+		 }
+		 this.printDataParsed(list);
+		return list;
 	}
 }
 
