@@ -19,6 +19,7 @@ import org.semanticweb.owlapi.model.AxiomType;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLDataProperty;
+import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLOntology;
 
 public class Generator {
@@ -87,6 +88,57 @@ public class Generator {
 		return new File(filePath);
 	}
 	
+	public Map<OWLClass, List<OWLObjectProperty>> toMapClass_ObjectProperty(List<OWLClass> listClass){
+		
+		Map<OWLClass, List<OWLObjectProperty>> mapClass_ObjectProperty = new HashMap<OWLClass, List<OWLObjectProperty>>();
+		
+		for (OWLClass cls : listClass)
+			mapClass_ObjectProperty.put(cls, toListObjectProperty(cls));
+			
+		return mapClass_ObjectProperty;
+	}
+	
+	private List<OWLObjectProperty> toListObjectProperty(OWLClass cls){
+		
+		//Step1 : declare a OWLAxiom stream
+		Stream<OWLAxiom> streamStep1 = ontology.axioms();
+		//Step2 : select the stream of DATA_PROPERTY_RANGE Axiom
+		Stream<OWLAxiom> streamStep2 = streamStep1.filter(isDataObjectDomain());
+		//Step3 : select the Axiom with fragment
+		Stream<OWLAxiom> streamStep3 = streamStep2.filter(classEquals(cls));
+		
+		List<OWLAxiom> listOWLAxiom = streamStep3.collect(Collectors.toList());
+		List<OWLObjectProperty> listOWLObjectProperty = new ArrayList<OWLObjectProperty>();
+		
+		for(OWLAxiom element : listOWLAxiom)
+			listOWLObjectProperty.add(element.objectPropertiesInSignature().findFirst().get());
+		
+		return listOWLObjectProperty;
+	}
+	
+	public File toFileOWLObjectProperty(String filePath, Map<OWLClass, List<OWLObjectProperty>> mapClass_ObjectProperty) throws IOException {
+		
+		FileOutputStream outputStream;
+		outputStream = new FileOutputStream(filePath);
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(outputStream));
+		
+		Set<OWLClass> setOWLClass = mapClass_ObjectProperty.keySet();
+		
+		for(OWLClass cls : setOWLClass) {
+			for(OWLObjectProperty objectProperty : mapClass_ObjectProperty.get(cls)) {
+				String line = objectProperty.getIRI()+"=";
+				bw.write(line);
+				bw.newLine();
+			}
+		}
+		bw.close();
+		
+		LOG.info("File created : "+filePath);
+		
+		return new File(filePath);
+	}
+	
+	
 	private Predicate<OWLAxiom> isDataPropertyDomain()
 	{
 	    return p -> p.isOfType(AxiomType.DATA_PROPERTY_DOMAIN);
@@ -95,6 +147,11 @@ public class Generator {
 	private Predicate<OWLAxiom> classEquals(OWLClass cls){
 		//Test if the Class in the axiom is the same that the Class in parameter 
 		return p -> p.classesInSignature().findFirst().get().equals(cls);
+	}
+	
+	private Predicate<OWLAxiom> isDataObjectDomain()
+	{
+	    return p -> p.isOfType(AxiomType.OBJECT_PROPERTY_DOMAIN);
 	}
 
 }

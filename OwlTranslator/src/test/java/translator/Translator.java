@@ -14,6 +14,7 @@ import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLDataProperty;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
+import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
@@ -54,12 +55,9 @@ public class Translator {
 			Map<String, String> mapParameter_Value = new HashMap<String, String>();
 			//TODO
 			List<DataParsed> listParameter_Value = parserBash.fileToList();
-			
-			
 			for(DataParsed data:listParameter_Value) {
 				mapParameter_Value.put(data.getFirstBox(), data.getSecondBox());
 			}
-			
 			
 			//File of OWLDataProperty with the corresponding parameter, need to complete manually or not
 			File fileDataProperty_Parameter;
@@ -86,6 +84,60 @@ public class Translator {
 			for(OWLDataProperty elem : setDataProperty) {
 				mapDataProperty_Value.put(elem, mapParameter_Value.get(mapDataProperty_Parameter.get(elem)));
 			}
+			
+			//-----------------------------------------------------------
+			
+			//List of OWLClass with their OWLObjectProperties, input : Ontology
+			Map<OWLClass, List<OWLObjectProperty>> mapClass_ObjectProperty = generator.toMapClass_ObjectProperty(listClass);
+			
+			//File of OWLObjectProperty with the corresponding parameter, need to complete manually or not
+			File fileObjectProperty_Parameter;
+			boolean statutFileOP = true;
+			if(statutFileOP) 
+				fileObjectProperty_Parameter = new File("ObjectProperty_ParameterCompleted.txt");
+			else 
+				fileObjectProperty_Parameter = generator.toFileOWLObjectProperty("ObjectProperty_Parameter.txt", mapClass_ObjectProperty);
+			
+			//Parse of the File ObjectProperty_ParameterCompleted
+			Parser parserFileAssociationObject = new Parser(fileObjectProperty_Parameter);
+			
+			//List of OWLObjectProperty with corresponding value
+			Map<OWLObjectProperty, String> mapObjectProperty_Parameter = new HashMap<OWLObjectProperty, String>();
+			List<DataParsed> listObjectProperty_Parameter = parserFileAssociationObject.fileAssociationToList();
+			for(DataParsed data : listObjectProperty_Parameter) {
+				OWLDataFactory factory = manager.getOWLDataFactory();
+				System.out.println("BOX1 : "+data.getFirstBox());
+				System.out.println("BOX2 : "+data.getSecondBox());
+				mapObjectProperty_Parameter.put(factory.getOWLObjectProperty(data.getFirstBox()), data.getSecondBox());
+			}
+			
+			//List of OWLObjectProperty with the corresponding value, join between mapObjectProperty_Parameter and mapObjectProperty_Value
+			Map<OWLObjectProperty, String> mapObjectProperty_Value = new HashMap<OWLObjectProperty, String>();
+			Set<OWLObjectProperty> setObjectProperty = mapObjectProperty_Parameter.keySet();
+			for(OWLObjectProperty elem : setObjectProperty) {
+				System.out.println("ELEM : "+elem);
+				System.out.println("Value : "+mapObjectProperty_Value.get(mapObjectProperty_Parameter.get(elem)));
+				mapObjectProperty_Value.put(elem, mapParameter_Value.get(mapObjectProperty_Parameter.get(elem)));
+			}
+			
+			for(OWLClass cls : listClass) {
+				System.out.println("CLASS : "+cls);
+				for(OWLObjectProperty ppt : mapClass_ObjectProperty.get(cls)) {
+					System.out.println("PROPERTY : "+ppt);
+					
+					String data=mapObjectProperty_Value.get(ppt);
+					if(data!=null)
+						System.out.println("DATA : "+data);
+				}		
+			}
+			
+			//Recup différentes valeurs
+			//Instancier les personnages
+			//Param -- Property
+			//Associer property à personnage
+			//Make
+			
+			//-------------------------------------------------------------------------------------------
 			
 			//Initialize the makers
 			MakerDatatype makerData = new MakerDatatype(manager, ontology);
