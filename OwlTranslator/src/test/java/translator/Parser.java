@@ -60,7 +60,11 @@ public class Parser{
 				line = line.replace("\42","");	
 				if ( line.contains("#") != true  && line.length() > 2) {
 					tmp = line.split(reg,2);
-					list.add(new DataParsed( tmp[0], tmp[1] ));
+					//TODO
+					if (tmp.length >= 2) {
+						list.add(new DataParsed( tmp[0], tmp[1] ));
+					}
+					
 				}	
 			  }
 		} catch (FileNotFoundException e) {

@@ -111,7 +111,7 @@ public class Translator {
 			
 			//Save the new Ontology
 			OWLOntology ontologyOutput = ontology;
-			File outFile = new File("ExperimentOntologyTurtleData"+label+".ttl");
+			File outFile = new File("DataTurtleOutput/"+label+".ttl");
 			
 			IRI outIRI=IRI.create(outFile);
 			saveOntology(ontologyOutput, outIRI);
