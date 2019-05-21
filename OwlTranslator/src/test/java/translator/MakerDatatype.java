@@ -24,6 +24,7 @@ public class MakerDatatype extends MakerAxiom{
 		
 		//Make the axiom related to the DataType
 		OWLAxiom axiomDataAssertion = factory.getOWLDataPropertyAssertionAxiom(dataProperty, individualOWL, data);
+		LOG.info("axiomDataAssertion"+axiomDataAssertion);
 		OWLAxiom axiomDeclaration = factory.getOWLDeclarationAxiom(individualOWL);
 		
 		addAxiom(axiomDataAssertion);

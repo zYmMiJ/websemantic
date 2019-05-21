@@ -5,8 +5,6 @@ import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
-import org.semanticweb.owlapi.model.PrefixManager;
-import org.semanticweb.owlapi.util.DefaultPrefixManager;
 import org.apache.log4j.Logger;
 
 public class MakerIndividual extends MakerAxiom{
@@ -23,16 +21,16 @@ public class MakerIndividual extends MakerAxiom{
 	 * @param ClassOWL
 	 * @param nameIndividual
 	 */
-	public OWLNamedIndividual makeIndividual(OWLClass cls, String nameIndividual) {
+	public OWLNamedIndividual makeIndividual(OWLClass cls, String label) {
 		
 		this.classOWL = cls;
 		
 		//Manage prefix
-		String classIRI = classOWL.getIRI().getNamespace();
-		PrefixManager pm = new DefaultPrefixManager(null, null, classIRI);
-		
+		String nameClass = classOWL.getIRI().getShortForm();
+		String namespace = classOWL.getIRI().getNamespace();
+			
 		//Make a Individual
-		OWLNamedIndividual individualOWL = factory.getOWLNamedIndividual(":"+nameIndividual, pm);
+		OWLNamedIndividual individualOWL = factory.getOWLNamedIndividual(namespace, nameClass+label);
 		
 		//Make the axiom related to the Individual
 		OWLAxiom axiomClassAssertion = factory.getOWLClassAssertionAxiom(classOWL, individualOWL);
@@ -41,7 +39,7 @@ public class MakerIndividual extends MakerAxiom{
 		addAxiom(axiomClassAssertion);
 		addAxiom(axiomDeclaration);
 		
-		LOG.info("ADD : Individual - "+nameIndividual);
+		LOG.info("ADD : Individual - "+individualOWL.getIRI());
 		
 		return individualOWL;
 	}

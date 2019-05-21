@@ -53,7 +53,6 @@ public class Translator {
 			//List of Parameter with its value, input : Bash
 			Map<String, String> mapParameter_Value = new HashMap<String, String>();
 			List<DataParsed> listParameter_Value = parserBash.fileToList();
-			//TODO : DataParsed
 			for(DataParsed data:listParameter_Value) {
 				mapParameter_Value.put(data.getFirstBox(), data.getSecondBox());
 			}
@@ -72,11 +71,9 @@ public class Translator {
 			
 			//List of OWLDataProperty with the corresponding parameter, input : selected manually (File .txt)
 			Map<OWLDataProperty, String> mapDataProperty_Parameter = new HashMap<OWLDataProperty, String>();
-			//TODO : DataParsed
 			List<DataParsed> listDataProperty_Parameter = parserFileAssociation.fileAssociationToList();
 			for(DataParsed data : listDataProperty_Parameter) {
 				OWLDataFactory factory = manager.getOWLDataFactory();
-				//TODO : ça marche ??
 				mapDataProperty_Parameter.put(factory.getOWLDataProperty(data.getFirstBox()), data.getSecondBox());
 			}
 			
@@ -99,7 +96,7 @@ public class Translator {
 				LOG.info("CLASS : "+cls);
 				
 				//Make a Instance with the class
-				OWLNamedIndividual individualOWL = makerIndividual.makeIndividual(cls, cls.getIRI().getShortForm()+label);
+				OWLNamedIndividual individualOWL = makerIndividual.makeIndividual(cls, label);
 				
 				for(OWLDataProperty ppt : mapClass_DataProperty.get(cls)) {
 						String data=mapDataProperty_Value.get(ppt);
@@ -108,11 +105,14 @@ public class Translator {
 				}
 			}
 			
-			OWLOntology ontologyOutput = ontology;
 			
+			//Save the new Ontology
+			OWLOntology ontologyOutput = ontology;
 			File outFile = new File("ExperimentOntologyTurtleData.owl");
-			IRI outIRI=IRI.create(outFile);	
+			
+			IRI outIRI=IRI.create(outFile);
 			saveOntology(ontologyOutput, outIRI);
+
 			
 		}
 		
@@ -136,7 +136,8 @@ public class Translator {
 				e.printStackTrace();
 			}
 		}
-	 	
+		
+		
 
 }
 

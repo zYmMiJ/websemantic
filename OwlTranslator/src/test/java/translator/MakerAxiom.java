@@ -16,15 +16,12 @@ public abstract class MakerAxiom {
 		this.ontology = ontology;
 		this.manager = manager;
 		this.factory = this.manager.getOWLDataFactory();
-		
 	}
 	
 	//TODO : Gestion des erreurs
 	protected void addAxiom(OWLAxiom axiom) {
-			
 		AddAxiom addAxiom = new AddAxiom(ontology, axiom);
 		manager.applyChange(addAxiom);
-					
 	}
 
 }
