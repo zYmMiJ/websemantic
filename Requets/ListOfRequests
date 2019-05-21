@@ -1,0 +1,15 @@
+Listes des requetes basés sur proto_4.png:
+
+1.Récupérer tous les noms d'XP, leurs buts, hypothèses et conclusion.
+2.Récupérer toutes les personnes qui ont travaillées sur au moins une XP et leurs roles.
+3.Récupérer le nombres d'itérations d'une expérience X.
+4.Lister toutes les expériences dérivées de l'expérience X.
+5.Lister les expériences qui ont les X agents/classes en communs.
+6.Les expériences où l’hypothèse teste des composantes similaire à une expérience X.
+7.Les expériences qui ont comme résustats X.
+8.Les expériences qui ne vérifie pas l'hypothèses X.
+9.Les expériences qui vérifie l'hypothèses X.
+10.Les expériences effectuer entre deux dates.
+11.Les expériences qui ont moins de X itérations.
+12.Les expériences qui ont moins de X agents.
+13.Pour une meme hypothèse, avec des résultats différents récuperer les facteurs divergents.
