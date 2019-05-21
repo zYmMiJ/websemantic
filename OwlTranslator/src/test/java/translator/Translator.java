@@ -52,7 +52,10 @@ public class Translator {
 			
 			//List of Parameter with its value, input : Bash
 			Map<String, String> mapParameter_Value = new HashMap<String, String>();
+			//TODO
 			List<DataParsed> listParameter_Value = parserBash.fileToList();
+			
+			
 			for(DataParsed data:listParameter_Value) {
 				mapParameter_Value.put(data.getFirstBox(), data.getSecondBox());
 			}
@@ -89,7 +92,7 @@ public class Translator {
 			MakerIndividual makerIndividual = new MakerIndividual(manager, ontology);
 			
 			//Give a label at the NamedIndiviual
-			String label = mapParameter_Value.get("LABEL");
+			String label = "_"+mapParameter_Value.get("LABEL");
 			
 			for(OWLClass cls : listClass) {
 				
@@ -108,7 +111,7 @@ public class Translator {
 			
 			//Save the new Ontology
 			OWLOntology ontologyOutput = ontology;
-			File outFile = new File("ExperimentOntologyTurtleData.owl");
+			File outFile = new File("ExperimentOntologyTurtleData"+label+".ttl");
 			
 			IRI outIRI=IRI.create(outFile);
 			saveOntology(ontologyOutput, outIRI);

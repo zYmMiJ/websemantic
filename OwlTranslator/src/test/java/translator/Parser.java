@@ -6,19 +6,13 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
+
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.log4j.FileAppender;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PatternLayout;
 
 public class Parser{
 	private static final Logger LOG = Logger.getLogger(Parser.class);
@@ -63,7 +57,7 @@ public class Parser{
 			BufferedReader br = new BufferedReader(new FileReader(file));// Buffer qui permet de lire le fichier
 			// Parcours du fichier par ligne
 			while ( (line = br.readLine()) != null ) {
-				line = line.replace('"',' ');	
+				line = line.replace("\42","");	
 				if ( line.contains("#") != true  && line.length() > 2) {
 					tmp = line.split(reg,2);
 					list.add(new DataParsed( tmp[0], tmp[1] ));
@@ -76,6 +70,15 @@ public class Parser{
 			// TODO Auto-generated catch block Erreur LectureLigne
 			e.printStackTrace();
 		}
+		
+		try {
+			this.createEnvParameters();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.setAllEnvParameters(list);
+		this.replaceVarEnv(list);
 		
 		return list;
 	}
@@ -156,7 +159,7 @@ public class Parser{
             	}
             }
     	}
-        this.printDataParsed(listVarEnv);
+        LOG.info(listVarEnv);
 	}
 	/*
 	 * Remplace les variables d'env par leurs valeurs
@@ -191,7 +194,7 @@ public class Parser{
 	            }
 			 j ++;
 		 }
-		 this.printDataParsed(list);
+		LOG.info(list);
 		return list;
 	}
 }

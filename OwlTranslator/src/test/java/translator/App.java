@@ -38,7 +38,7 @@ public class App {
         rootLogger.addAppender(fileAppender);// Affiche dans le fichier
  
 		
-		Translator translate = new Translator("ExperimentOntology3.owl", "params.sh");
+		Translator translate = new Translator("ExperimentOntology3.owl", "/home/rcouret/Documents/Experiments/20181112-NOOR/params.sh");
 		translate.run();
 	}
 
