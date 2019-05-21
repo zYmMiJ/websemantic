@@ -1,8 +1,5 @@
 package translator;
 
-import java.util.Optional;
-import java.util.stream.Stream;
-
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
@@ -23,12 +20,12 @@ public class MakerIndividual extends MakerAxiom{
 	
 	/**
 	 * Make a NamedIndividual, individual of Class name, with a specific name.
-	 * @param nameClass
+	 * @param ClassOWL
 	 * @param nameIndividual
 	 */
-	public OWLNamedIndividual makeIndividual(String nameClass, String nameIndividual) {
+	public OWLNamedIndividual makeIndividual(OWLClass cls, String nameIndividual) {
 		
-		this.classOWL = getClass(nameClass);
+		this.classOWL = cls;
 		
 		//Manage prefix
 		String classIRI = classOWL.getIRI().getNamespace();
@@ -44,25 +41,9 @@ public class MakerIndividual extends MakerAxiom{
 		addAxiom(axiomClassAssertion);
 		addAxiom(axiomDeclaration);
 		
+		LOG.info("ADD : Individual - "+nameIndividual);
+		
 		return individualOWL;
-	}
-	
-	/**
-	 * Find and return the class corresponding to the fragment in ontology
-	 * @param fragment
-	 * @return OWLClass finded
-	 */
-	//TODO : Gestion des erreurs
-	private OWLClass getClass(String fragment) {
-		//Declare a stream with the ontology's classes
-		Stream<OWLClass> stream = ontology.classesInSignature();
-		//Filter th stream to find the fragment
-		@SuppressWarnings("deprecation")
-		Optional<OWLClass> result = stream.filter(p -> p.getIRI().getFragment().compareTo(fragment)==0).findFirst();
-		
-		LOG.info("FOUND : "+result.get());
-		
-		return result.get();
 	}
 	
 }

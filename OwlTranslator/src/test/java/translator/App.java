@@ -10,7 +10,7 @@ public class App {
 		
 		BasicConfigurator.configure();
 		
-		Translator2 translate = new Translator2("ExperimentOntology3.owl", "params.sh");
+		Translator translate = new Translator("ExperimentOntology3.owl", "params.sh");
 		translate.run();
 	}
 

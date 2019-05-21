@@ -3,23 +3,21 @@ package translator;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.semanticweb.owlapi.apibinding.OWLManager;
-import org.semanticweb.owlapi.io.OWLOntologyDocumentTarget;
 import org.semanticweb.owlapi.model.IRI;
+import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.model.OWLDataFactory;
+import org.semanticweb.owlapi.model.OWLDataProperty;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
-
-import com.google.common.collect.BiMap;
-import com.google.common.collect.HashBiMap;
 
 public class Translator {
 	
@@ -44,55 +42,70 @@ public class Translator {
 		public void run() throws IOException {
 			
 			Parser parserBash = new Parser(fileBash);
-			Tools tools = new Tools(ontology);
+			Generator generator = new Generator(ontology);
 			
-			//List with parameter and value
-			List<DataParsed> listParameterValue = parserBash.fileToList();
-			Map<String, String> mapParameterValue = new HashMap<String, String>();
-			for(DataParsed data:listParameterValue) {
-				mapParameterValue.put(data.getFirstBox(), data.getSecondBox());
+			//List of OWLClass, input : Ontology or selected manually (File .txt)
+			List<OWLClass> listClass = generator.toListClass();
+			
+			//List of OWLClass with their OWLDataProperties, input : Ontology
+			Map<OWLClass, List<OWLDataProperty>> mapClass_DataProperty = generator.toMapClass_DataProperty(listClass);
+			
+			//List of Parameter with its value, input : Bash
+			Map<String, String> mapParameter_Value = new HashMap<String, String>();
+			List<DataParsed> listParameter_Value = parserBash.fileToList();
+			//TODO : DataParsed
+			for(DataParsed data:listParameter_Value) {
+				mapParameter_Value.put(data.getFirstBox(), data.getSecondBox());
 			}
 			
-			//List with NameClass and DataProperties
-			Map<String, List<String>> mapClassDataP = tools.joinClassAndDataProperty();
-			Set<String> keyClassDataP = mapClassDataP.keySet();
-			for(String data: keyClassDataP)
-				LOG.info("MapClassDataP : "+data+" / "+mapClassDataP.get(data));
 			
+			//File of OWLDataProperty with the corresponding parameter, need to complete manually or not
+			File fileDataProperty_Parameter;
+			boolean statutFileDP = true;
+			if(statutFileDP) 
+				fileDataProperty_Parameter = new File("DataProperty_ParameterCompleted.txt");
+			else 
+				fileDataProperty_Parameter = generator.toFileOWLDataProperty("DataProperty_Parameter.txt", mapClass_DataProperty);
 			
-			//Create and Make list with Association : "DataPpt=PARAM"
-			File fileAssociation = tools.listOWLDataPptToFile("FileAssociation.txt");
-			//File fileAssociation = new File("FileAssociationEnable.txt");
+			//Parse of the File DataProperty_ParameterCompleted
+			Parser parserFileAssociation = new Parser(fileDataProperty_Parameter);
 			
-			Parser parserFileAssociation = new Parser(fileAssociation); 
-			List<DataParsed> listClassParam = parserFileAssociation.fileToList();
+			//List of OWLDataProperty with the corresponding parameter, input : selected manually (File .txt)
+			Map<OWLDataProperty, String> mapDataProperty_Parameter = new HashMap<OWLDataProperty, String>();
+			//TODO : DataParsed
+			List<DataParsed> listDataProperty_Parameter = parserFileAssociation.fileAssociationToList();
+			for(DataParsed data : listDataProperty_Parameter) {
+				OWLDataFactory factory = manager.getOWLDataFactory();
+				//TODO : ça marche ??
+				mapDataProperty_Parameter.put(factory.getOWLDataProperty(data.getFirstBox()), data.getSecondBox());
+			}
 			
+			//List of OWLDataProperty with the corresponding value, join between mapDataProperty_Parameter and mapParameter_Value
+			Map<OWLDataProperty, String> mapDataProperty_Value = new HashMap<OWLDataProperty, String>();
+			Set<OWLDataProperty> setDataProperty = mapDataProperty_Parameter.keySet();
+			for(OWLDataProperty elem : setDataProperty) {
+				mapDataProperty_Value.put(elem, mapParameter_Value.get(mapDataProperty_Parameter.get(elem)));
+			}
+			
+			//Initialize the makers
 			MakerDatatype makerData = new MakerDatatype(manager, ontology);
 			MakerIndividual makerIndividual = new MakerIndividual(manager, ontology);
 			
-			String label = mapParameterValue.get("LABEL");
+			//Give a label at the NamedIndiviual
+			String label = mapParameter_Value.get("LABEL");
 			
-			for(DataParsed data : listClassParam) {
+			for(OWLClass cls : listClass) {
 				
-				//On selectionne dans la liste Class/Paramètre : la Class
-				String nameClass = data.getFirstBox();
-				LOG.info("CLASS : "+nameClass);
-				//On crée un Individual
-				OWLNamedIndividual individualOWL = makerIndividual.makeIndividual(nameClass, nameClass+label);
+				LOG.info("CLASS : "+cls);
 				
-				//On selectionne dans la liste Class/Paramètre : le paramètre
-				String nameParam = data.getSecondBox();
-				//On selectionne dans la liste Paramètre/Valeur : la valeur
-				String dataValue = mapParameterValue.get(nameParam);
+				//Make a Instance with the class
+				OWLNamedIndividual individualOWL = makerIndividual.makeIndividual(cls, cls.getIRI().getShortForm()+label);
 				
-				//On selectionne dans la liste Class/Propriété : la propriété
-				for (String nameDataPpt :mapClassDataP.get(nameClass)) {
-					//Si la propriété existe on crée une data
-					if(nameDataPpt!="" && dataValue!=null) {
-						LOG.info("VALUE : "+dataValue);
-						makerData.makeDataType(nameDataPpt, dataValue, individualOWL);		
-					}
-				}	
+				for(OWLDataProperty ppt : mapClass_DataProperty.get(cls)) {
+						String data=mapDataProperty_Value.get(ppt);
+						if(data!=null)
+							makerData.makeDataType(ppt, data, individualOWL);
+				}
 			}
 			
 			OWLOntology ontologyOutput = ontology;

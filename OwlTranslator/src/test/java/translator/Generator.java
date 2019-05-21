@@ -21,13 +21,13 @@ import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLDataProperty;
 import org.semanticweb.owlapi.model.OWLOntology;
 
-public class Tools2 {
+public class Generator {
 	
 	private OWLOntology ontology;
 	
-	private static final Logger LOG = Logger.getLogger(Tools.class);
+	private static final Logger LOG = Logger.getLogger(Generator.class);
 	
-	public Tools2(OWLOntology ontology) {
+	public Generator(OWLOntology ontology) {
 		this.ontology=ontology;
 	}
 	
@@ -75,7 +75,7 @@ public class Tools2 {
 		
 		for(OWLClass cls : setOWLClass) {
 			for(OWLDataProperty dataProperty : mapClass_DataProperty.get(cls)) {
-				String line = dataProperty.getIRI().getShortForm()+"=";
+				String line = dataProperty.getIRI()+"=";
 				bw.write(line);
 				bw.newLine();
 			}

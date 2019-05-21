@@ -411,6 +411,10 @@ owl:topDataProperty rdfs:domain :Procedure ;
 # #################################################################
 # 
 # 
+# http://schema.org/Person${DATE}-NOOR
+
+<http://schema.org/Person${DATE}-NOOR> a owl:NamedIndividual , <http://schema.org/Person> .
+# 
 # http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData${DATE}-NOOR
 
 <http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData${DATE}-NOOR> a owl:NamedIndividual , <http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData> .
@@ -429,7 +433,10 @@ owl:topDataProperty rdfs:domain :Procedure ;
 # 
 # http://www.hozo.jp/owl/EXPOApr19.xml/Software${DATE}-NOOR
 
-<http://www.hozo.jp/owl/EXPOApr19.xml/Software${DATE}-NOOR> a owl:NamedIndividual , <http://www.hozo.jp/owl/EXPOApr19.xml/Software> .
+<http://www.hozo.jp/owl/EXPOApr19.xml/Software${DATE}-NOOR> a owl:NamedIndividual , <http://www.hozo.jp/owl/EXPOApr19.xml/Software> ;
+	:hasJavaPath "lib/lazylav/ll.jar:lib/slf4j/logback-classic-${LOGBACK_VERSION}.jar:lib/slf4j/logback-core-${LOGBACK_VERSION}.jar:." ;
+	:hasLogbackVersion "1.2.3" ;
+	:hasOSVersion "stretch" .
 # 
 # http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate${DATE}-NOOR
 
@@ -445,7 +452,11 @@ owl:topDataProperty rdfs:domain :Procedure ;
 # 
 # http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment${DATE}-NOOR
 
-<http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment${DATE}-NOOR> a owl:NamedIndividual , :ComputionalExperiment .
+<http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment${DATE}-NOOR> a owl:NamedIndividual , :ComputionalExperiment ;
+	:hasExperimentLabel "${DATE}-NOOR" ;
+	:hasExperimentName "${LABEL}" ;
+	:hasExperimentTitle " Revision of networks of ontologies with random strenghening " ;
+	:hasHash "d230f8c69b7c97c4c570785e554aabcb2bbe09e1" .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#Entity${DATE}-NOOR
 
@@ -457,7 +468,8 @@ owl:topDataProperty rdfs:domain :Procedure ;
 # 
 # http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign${DATE}-NOOR
 
-<http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign${DATE}-NOOR> a owl:NamedIndividual , :ExperimentalDesign .
+<http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign${DATE}-NOOR> a owl:NamedIndividual , :ExperimentalDesign ;
+	:hasDesignDate "2018-06-01" .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesignEntity${DATE}-NOOR
 
@@ -473,7 +485,8 @@ owl:topDataProperty rdfs:domain :Procedure ;
 # 
 # http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis${DATE}-NOOR
 
-<http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis${DATE}-NOOR> a owl:NamedIndividual , :ExperimentalHypothesis .
+<http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis${DATE}-NOOR> a owl:NamedIndividual , :ExperimentalHypothesis ;
+	:hasHypothesisLabel " The random version of strengthening does not differ much from the most specific and most general ones " .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults${DATE}-NOOR
 
@@ -481,15 +494,23 @@ owl:topDataProperty rdfs:domain :Procedure ;
 # 
 # http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity${DATE}-NOOR
 
-<http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity${DATE}-NOOR> a owl:NamedIndividual , :ExperimentalResultsEntity .
+<http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity${DATE}-NOOR> a owl:NamedIndividual , :ExperimentalResultsEntity ;
+	:hasExperimentationDate "20181112" .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#Procedure${DATE}-NOOR
 
-<http://www.inria.fr/moex/ExperimentOntology#Procedure${DATE}-NOOR> a owl:NamedIndividual , :Procedure .
+<http://www.inria.fr/moex/ExperimentOntology#Procedure${DATE}-NOOR> a owl:NamedIndividual , :Procedure ;
+	:hasNumberOfIterations "10000" ;
+	:hasNumberOfRuns "10" ;
+	:hasOperators " delete replace refine add addjoin refadd " .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#Script${DATE}-NOOR
 
 <http://www.inria.fr/moex/ExperimentOntology#Script${DATE}-NOOR> a owl:NamedIndividual , :Script .
+# 
+# http://www.w3.org/2000/10/swap/pim/contact#Person${DATE}-NOOR
+
+<http://www.w3.org/2000/10/swap/pim/contact#Person${DATE}-NOOR> a owl:NamedIndividual , <http://www.w3.org/2000/10/swap/pim/contact#Person> .
 # 
 # http://xmlns.com/foaf/0.1/Agent${DATE}-NOOR
 

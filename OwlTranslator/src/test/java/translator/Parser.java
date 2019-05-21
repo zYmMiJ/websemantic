@@ -59,7 +59,36 @@ public class Parser{
 			// Parcours du fichier par ligne
 			while ( (line = br.readLine()) != null ) {
 				line = line.replace('"',' ');	
-				if ( line.contains("#") != true  && line.length() > 2) {
+				if (line.contains("#") != true  && line.length() > 2) {
+					tmp = line.split(reg,2);
+					list.add(new DataParsed( tmp[0], tmp[1] ));
+				}	
+			  }
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block Erreur LectureFichier
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block Erreur LectureLigne
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
+	public List<DataParsed> fileAssociationToList(){
+		
+		String line;// Ligne du buffer
+		String[] tmp = null;// Variable pour split
+		String reg = "=";// regex	  
+		List<DataParsed> list = new ArrayList<DataParsed>();// Liste qu'on return
+		 
+		// Lecture du fichier
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(file));// Buffer qui permet de lire le fichier
+			// Parcours du fichier par ligne
+			while ( (line = br.readLine()) != null ) {
+				line = line.replace('"',' ');	
+				if (line.length() > 2) {
 					tmp = line.split(reg,2);
 					list.add(new DataParsed( tmp[0], tmp[1] ));
 				}	

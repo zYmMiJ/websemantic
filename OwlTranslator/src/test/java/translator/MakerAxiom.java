@@ -5,14 +5,12 @@ import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
-import org.apache.log4j.Logger;
 
 public abstract class MakerAxiom {
 	
 	protected OWLOntology ontology;
 	protected OWLDataFactory factory;
 	protected OWLOntologyManager manager;
-	private static final Logger LOG = Logger.getLogger(MakerAxiom.class);
 	
 	public MakerAxiom(OWLOntologyManager manager, OWLOntology ontology) {
 		this.ontology = ontology;
@@ -26,7 +24,6 @@ public abstract class MakerAxiom {
 			
 		AddAxiom addAxiom = new AddAxiom(ontology, axiom);
 		manager.applyChange(addAxiom);
-		LOG.info("APPENDED : "+axiom);
 					
 	}
 
