@@ -1,0 +1,26 @@
+DEBUG   2019-05-22 16:01:27,826 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioFunctionalSyntaxParserFactory
+DEBUG   2019-05-22 16:01:27,829 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioManchesterSyntaxParserFactory
+DEBUG   2019-05-22 16:01:27,830 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioOWLXMLParserFactory
+DEBUG   2019-05-22 16:01:27,831 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.jsonld.JSONLDParserFactory
+DEBUG   2019-05-22 16:01:27,832 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.binary.BinaryRDFParserFactory
+DEBUG   2019-05-22 16:01:27,833 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.n3.N3ParserFactory
+DEBUG   2019-05-22 16:01:27,834 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.nquads.NQuadsParserFactory
+DEBUG   2019-05-22 16:01:27,836 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.ntriples.NTriplesParserFactory
+DEBUG   2019-05-22 16:01:27,837 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.rdfjson.RDFJSONParserFactory
+DEBUG   2019-05-22 16:01:27,838 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.rdfxml.RDFXMLParserFactory
+DEBUG   2019-05-22 16:01:27,839 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.trix.TriXParserFactory
+DEBUG   2019-05-22 16:01:27,840 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.turtle.TurtleParserFactory
+DEBUG   2019-05-22 16:01:27,842 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.trig.TriGParserFactory
+DEBUG   2019-05-22 16:01:27,843 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semarglproject.sesame.rdf.rdfa.SesameRDFaParserFactory
+DEBUG   2019-05-22 16:01:27,873 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.XMLSchemaDatatypeHandler
+DEBUG   2019-05-22 16:01:27,874 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.RDFDatatypeHandler
+DEBUG   2019-05-22 16:01:27,874 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.DBPediaDatatypeHandler
+DEBUG   2019-05-22 16:01:27,875 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.VirtuosoGeometryDatatypeHandler
+DEBUG   2019-05-22 16:01:27,876 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.GeoSPARQLDatatypeHandler
+DEBUG   2019-05-22 16:01:27,878 [main] org.openrdf.rio.LanguageHandlerRegistry  - Registered service class org.openrdf.rio.languages.RFC3066LanguageHandler
+DEBUG   2019-05-22 16:01:27,986 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.TripleLogger  - Total number of triples: 176
+DEBUG   2019-05-22 16:01:28,044 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.TripleLogger  - Loaded OntologyID(Anonymous-2)
+INFO    2019-05-22 16:01:28,044 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.OWLRDFConsumer  - dumping remaining triples
+INFO    2019-05-22 16:01:28,046 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.OWLRDFConsumer  - done dumping remaining triples
+DEBUG   2019-05-22 16:01:28,049 [main] org.semanticweb.owlapi.rio.RioParserImpl$RioParserRDFHandler  - owlParse: timing=170
+DEBUG   2019-05-22 16:01:28,050 [main] org.semanticweb.owlapi.rio.RioParserImpl  - rioParse: timing=171

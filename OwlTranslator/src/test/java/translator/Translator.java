@@ -198,9 +198,6 @@ public class Translator {
 			//Add in the listValueProperty the different and unique Value corresponding at the property
 			Set<OWLObjectProperty> setProperty =  mapObjectProperty_Parameter.keySet();
 			List<String> listValueProperty = new ArrayList<String>();
-			//Save the new Ontology
-			OWLOntology ontologyOutput = ontology;
-			File outFile = new File("DataTurtleOutput/"+label+".ttl");
 			
 			for(OWLObjectProperty ppt: setProperty) {
 				String param = mapObjectProperty_Parameter.get(ppt);

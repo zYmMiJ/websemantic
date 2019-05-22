@@ -26,6 +26,8 @@ public class MakerDatatype extends MakerAxiom{
 		OWLAxiom axiomDataAssertion = factory.getOWLDataPropertyAssertionAxiom(dataProperty, individualOWL, data);
 		OWLAxiom axiomDeclaration = factory.getOWLDeclarationAxiom(individualOWL);
 		
+		//OWLDataPropertyRangeAxiom rangeAxiom = factory.getOWLDataPropertyRangeAxiom(hasAge, integerGE18);
+		
 		addAxiom(axiomDataAssertion);
 		addAxiom(axiomDeclaration);
 		
