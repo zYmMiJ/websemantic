@@ -1,5 +1,6 @@
 package translator;
 
+import java.io.File;
 import java.io.IOException;
 
 import org.apache.log4j.ConsoleAppender;
@@ -12,8 +13,18 @@ public class App {
 	public static void main(String[] args) throws IOException {
 		configLOG();
 		
-		Translator translate = new Translator("ExperimentOntology3.owl", "/home/rcouret/Documents/Experiments/20181112-NOOR/params.sh");
-		translate.run();
+		File repertoire = new File("ExperimentsInput");
+  		System.out.println(	"Repertoire ? "+repertoire.isDirectory());
+  		File[] files=repertoire.listFiles();
+  		
+  		for(int i = 0; i < files.length ; i++){
+  			
+  			String paramFileName = repertoire.getCanonicalPath()+"/"+files[i].getName()+"/params.sh";
+  			System.out.println(	paramFileName );
+  			Translator translate = new Translator("ExperimentOntology3.owl", paramFileName);
+  			translate.run();
+  			
+  		}
 		
 	}
 	
@@ -42,7 +53,6 @@ public class App {
         // Affiche dans la console 
         //rootLogger.addAppender(consoleAppender);
         rootLogger.addAppender(fileAppender);// Affiche dans le fichier
-		
 	}
 
 }
