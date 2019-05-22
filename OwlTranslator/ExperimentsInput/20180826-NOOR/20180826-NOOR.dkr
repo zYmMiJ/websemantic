@@ -1,0 +1,61 @@
+ARG version="stretch"
+FROM lazylav:${version}
+ARG version="stretch"
+
+ENV OSVERS=stretch
+ENV LOGBACK_VERSION=1.2.3
+ENV JPATH=lib/lazylav/ll.jar:lib/slf4j/logback-classic-${LOGBACK_VERSION}.jar:lib/slf4j/logback-core-${LOGBACK_VERSION}.jar:.
+ENV LLHASH=759ff097b96520c12aa84f3749927f9a22022e62
+ENV DESIGNDATE=2018-05-03
+ENV DATE=20180826
+ENV LABEL=${DATE}-NOOR
+ENV NAME=${LABEL}
+ENV PERFORMER=JEuz
+ENV NBAGENTS=4
+ENV NBITERATIONS=2000
+ENV NBRUNS=10
+ENV OUTPUT=${LABEL}
+ENV OPS="add addjoin"
+ENV OPT="-DnbAgents=${NBAGENTS} -DnbIterations=${NBITERATIONS} -DnbRuns=${NBRUNS} -DreportPrecRec -Drealistic"
+ENV LOADOPT="-DloadDir=expeRun -DloadEnv -DloadAgents -DreplayGames"
+ENV TOCOPY="logback.xml"
+ENV DIRPREF=${NBAGENTS}-${NBITERATIONS}
+ENV VARIATIONOF=20180305-NOOR
+ENV EXPE="Revision of networks of ontologies with most specific strenghening"
+ENV HYPOTHESIS="Addjoin achieves the same as add but faster"
+ENV SETTING="Same as [[${VARIATIONOF}]] after correction of expansion..."
+ENV CLASSES="NOOEnvironment, AlignmentAdjustingAgent, AlignmentRevisionExperiment, ActionLogger, AverageLogger, Monitor"
+ENV DESIGNER=${PERFORMER}
+ENV EXPERIMENTER=${PERFORMER}
+ENV ANALYST=${PERFORMER}
+
+ENV OUTPUT=/results/20180826-NOOR
+
+RUN if ! [ "$version" = "stretch" ]; then \
+        git pull ; \
+    else \
+        git fetch ; \
+        git checkout $LLHASH \
+        && wget -qO- https://logback.qos.ch/dist/logback-${LOGBACK_VERSION}.tar.gz | tar xz \
+        && mv ./logback-${LOGBACK_VERSION}/logback-classic-${LOGBACK_VERSION}.jar /lazylav/lib/slf4j/  \
+        && mv ./logback-${LOGBACK_VERSION}/logback-core-${LOGBACK_VERSION}.jar /lazylav/lib/slf4j/ \
+        && rm -rf ./logback* ; \ 
+    fi
+
+RUN ant compileall
+
+COPY ./logback.xml ./logback.xml
+
+ENTRYPOINT ["bash", \
+            "-c", \
+            "bash scripts/runexp.sh -d ${DIRPREF}-nothing java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=nothing -DsaveDir=expeRun -DsaveInit -DsaveParams -DsaveGames ; \
+            bash scripts/runexp.sh -d ${DIRPREF}-add java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=add ${LOADOPT} ; \
+            bash scripts/runexp.sh -d ${DIRPREF}-addjoin java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=addjoin ${LOADOPT} ; \
+            bash scripts/runexp.sh -d ${DIRPREF}-add-syntactic java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=add -Dsyntactic=true ${LOADOPT} -DsaveDir=addRes -DsaveFinal ; \
+            bash scripts/runexp.sh -d ${DIRPREF}-addjoin-syntactic java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=addjoin -Dsyntactic=true ${LOADOPT} -DsaveDir=addjoinRes -DsaveFinal ; \
+            bash scripts/runexp.sh -d ${DIRPREF}-real-nothing java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -Drealistic -DrevisionModality=nothing -DsaveDir=expeRun -DsaveInit -DsaveParams -DsaveGames ; \
+            bash scripts/runexp.sh -d ${DIRPREF}-real-add java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -Drealistic -DrevisionModality=add ${LOADOPT} ; \
+            bash scripts/runexp.sh -d ${DIRPREF}-real-addjoin java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -Drealistic -DrevisionModality=addjoin ${LOADOPT} ; \
+            bash scripts/runexp.sh -d ${DIRPREF}-real-add-syntactic java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -Drealistic -DrevisionModality=add -Dsyntactic=true ${LOADOPT} -DsaveDir=addRes -DsaveFinal ; \
+            bash scripts/runexp.sh -d ${DIRPREF}-real-addjoin-syntactic java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -Drealistic -DrevisionModality=addjoin -Dsyntactic=true ${LOADOPT} -DsaveDir=addjoinRes -DsaveFinal ; \
+            "]

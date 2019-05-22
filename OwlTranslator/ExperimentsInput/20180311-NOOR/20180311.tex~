@@ -1,0 +1,169 @@
+\documentclass{article}
+
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\begin{document}
+
+\begin{center}
+\begin{tikzpicture}
+\pgfplotsset{legend style={at={(0.42,-0.15)},draw=none,anchor=north,legend columns=-1}}
+
+\begin{axis}[ymin=0,ymax=1,xmax=2000,xlabel=$Games$,ylabel={$F$-$measure/Success$~$rate$},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false,, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed \nextlist
+[6 of]color list}]
+
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-delete.tsv}; 
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-replace.tsv};
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-refine.tsv};
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-add.tsv};
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-addjoin.tsv}; 
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-refadd.tsv};
+
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-delete.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-replace.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-refine.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-add.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-addjoin.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-refadd.tsv};
+
+%x expr=\thisrow{maxlevel}+10, y=L2
+\legend{delete,replace,refine,add,addjoin,refadd}
+\end{axis} 
+
+\end{tikzpicture}
+delete/replace/refine/add/addjoin/refadd
+\end{center}
+
+
+\begin{center}
+\begin{tikzpicture}
+\pgfplotsset{legend style={at={(0.42,-0.15)},draw=none,anchor=north,legend columns=-1}}
+
+\begin{axis}[ymin=0,ymax=1,xmax=2000,xlabel=$Games$,ylabel={$Precision/Recall$},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false,, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed \nextlist
+[6 of]color list}]
+
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-delete.tsv}; 
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-replace.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-refine.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-add.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-addjoin.tsv}; 
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-refadd.tsv};
+
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-delete.tsv}; 
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-replace.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-refine.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-add.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-addjoin.tsv}; 
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-refadd.tsv};
+
+%x expr=\thisrow{maxlevel}+10, y=L2
+\legend{delete,replace,refine,add,addjoin,refadd}
+\end{axis} 
+
+\end{tikzpicture}
+delete/replace/refine/add/addjoin/refadd
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+\pgfplotsset{legend style={at={(0.42,-0.15)},draw=none,anchor=north,legend columns=-1}}
+
+\begin{axis}[ymin=0,ymax=100,xmax=2000,xlabel=$Games$,ylabel={$Size$},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false,, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+[6 of]color list}]
+
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-delete.tsv}; 
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-replace.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-refine.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-add.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-addjoin.tsv}; 
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-refadd.tsv};
+
+%x expr=\thisrow{maxlevel}+10, y=L2
+\legend{delete,replace,refine,add,addjoin,refadd}
+\end{axis} 
+
+\end{tikzpicture}
+delete/replace/refine/add/addjoin/refadd
+\end{center}
+
+
+\begin{center}
+\begin{tikzpicture}
+
+\begin{axis}[ymin=0,ymax=1,xmax=2000,xlabel=$Games$,ylabel=$Success~rate/F-measure$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={}}, axis y line=left,height=5cm,width=\linewidth]
+
+\addplot[color=blue] plot table [x=rank,y=avg-srate] {str-4-10000-addjoin.tsv};
+\addplot[color=red]  plot table [x=rank,y=avg-srate] {str-4-10000-add.tsv};
+
+\addplot[color=blue,dashed]  plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-addjoin.tsv};
+\addplot[color=red,dashed]  plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-add.tsv};
+
+%x expr=\thisrow{maxlevel}+10, y=L2
+\end{axis} 
+
+\end{tikzpicture}
+add vs. addjoin
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+
+\begin{axis}[ymin=0,ymax=1,xmax=2000,xlabel=$Games$,ylabel={$F$-$measure/Success$~$rate$},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={}}, axis y line=left,height=5cm,width=\linewidth]
+
+\addplot[color=blue] plot table [x=rank,y=avg-srate] {str-4-10000-refine.tsv};
+\addplot[color=red]  plot table [x=rank,y=avg-srate] {str-4-10000-replace.tsv};
+
+\addplot[color=blue,dashed]  plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-refine.tsv};
+\addplot[color=red,dashed]  plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-replace.tsv};
+
+%x expr=\thisrow{maxlevel}+10, y=L2
+\end{axis} 
+
+\end{tikzpicture}
+refine/replace
+\end{center}
+
+
+\begin{center}
+\begin{tikzpicture}
+
+\begin{axis}[ymin=0,ymax=1,xmax=2000,xlabel=$Games$,ylabel=$Precision/Recall$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={}}, axis y line=left,height=5cm,width=\linewidth]
+
+\addplot[color=blue]  plot table [x=rank,y=avg-prec] {str-4-10000-addjoin.tsv}; 
+\addplot[color=green] plot table [x=rank,y=avg-prec] {str-4-10000-refadd.tsv};
+\addplot[color=red]  plot table [x=rank,y=avg-prec] {str-4-10000-refine.tsv};
+
+\addplot[color=blue] plot table [x=rank,y=avg-rec] {str-4-10000-addjoin.tsv};
+\addplot[color=green] plot table [x=rank,y=avg-rec] {str-4-10000-refadd.tsv};
+\addplot[color=red] plot table [x=rank,y=avg-rec] {str-4-10000-refine.tsv};
+
+\end{axis} 
+
+\end{tikzpicture}
+addjoin/refadd/refine
+\end{center}
+
+\begin{center}
+\footnotesize
+\begin{tabular}{lccccccc}
+ &  Success &  & Incoherence  & Semantic & Semantic & Semantic & \\ 
+Operator &  rate & Size &  degree & Precision & F-measure & Recall & Convergence\\ \hline
+reference & 1.0 & 86 & 0.0 & 1.0 & 1.0 & 1.0 & -\\
+%initial & 0.24 & 54 & 0.34 & 0.11 & 0.20 & 0.89 & -\\
+\hline
+delete	& 1.00	& 6	& 0.00	& 1.00	& 0.13	& 0.07	& 290\\
+replace	& 0.99	& 12	& 0.02	& 0.96	& 0.25	& 0.14	& 1224\\
+refine	& 0.99	& 20	& 0.03	& 0.95	& 0.38	& 0.24	& 1224\\
+add	& 0.98	& 31	& 0.16	& 0.79	& 0.52	& 0.39	& 1526\\
+addjoin	& 0.99	& 31	& 0.16	& 0.79	& 0.52	& 0.39	& 1526\\
+refadd	& 0.99	& 48	& 0.15	& 0.79	& 0.67	& 0.58	& 1554\\
+\end{tabular}
+\end{center}
+
+\end{document}

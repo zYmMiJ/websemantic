@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8' standalone='no'?>
+
+<rdf:RDF xmlns='http://knowledgeweb.semanticweb.org/heterogeneity/alignment#'
+     xml:base='http://knowledgeweb.semanticweb.org/heterogeneity/alignment#'
+     xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+     xmlns:align='http://knowledgeweb.semanticweb.org/heterogeneity/alignment#'
+     xmlns:alext='http://exmo.inrialpes.fr/align/ext/1.0/'
+     xmlns:xsd='http://www.w3.org/2001/XMLSchema#'>
+  <OntologyNetwork>
+    <ontology rdf:resource='http://lazylav.exmo.inria.fr/ontology/2'/>
+    <ontology rdf:resource='http://lazylav.exmo.inria.fr/ontology/3'/>
+    <ontology rdf:resource='http://lazylav.exmo.inria.fr/ontology/0'/>
+    <ontology rdf:resource='http://lazylav.exmo.inria.fr/ontology/1'/>
+
+    <alignment rdf:resource='file:3___1.rdf'/>
+    <alignment rdf:resource='file:2___1.rdf'/>
+    <alignment rdf:resource='file:3___0.rdf'/>
+    <alignment rdf:resource='file:2___3.rdf'/>
+    <alignment rdf:resource='file:2___0.rdf'/>
+    <alignment rdf:resource='file:0___1.rdf'/>
+  </OntologyNetwork>
+</rdf:RDF>

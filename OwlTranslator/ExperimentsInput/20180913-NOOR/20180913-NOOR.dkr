@@ -1,0 +1,60 @@
+ARG version="stretch"
+FROM lazylav:${version}
+ARG version="stretch"
+
+ENV OSVERS=stretch
+ENV LOGBACK_VERSION=1.2.3
+ENV JPATH=lib/lazylav/ll.jar:lib/slf4j/logback-classic-${LOGBACK_VERSION}.jar:lib/slf4j/logback-core-${LOGBACK_VERSION}.jar:.
+ENV LLHASH=759ff097b96520c12aa84f3749927f9a22022e62
+ENV DESIGNDATE=2018-09-13
+ENV DATE=20180913
+ENV LABEL=${DATE}-NOOR
+ENV NAME=${LABEL}
+ENV PERFORMER=JEuz
+ENV NBAGENTS=4
+ENV NBITERATIONS=20000
+ENV NBRUNS=10
+ENV OPS="delete replace refine add addjoin refadd"
+ENV OPT="-DnbAgents=${NBAGENTS} -DnbIterations=${NBITERATIONS} -DnbRuns=${NBRUNS} -DreportPrecRec"
+ENV LOADOPT="-DloadDir=expeRun -DloadEnv -DloadAgents -DreplayGames"
+ENV DIRPREF=${NBAGENTS}-${NBITERATIONS}
+ENV TOCOPY="expeRun logback.xml"
+ENV VARIATIONOF=20180828-NOOR
+ENV EXPE="Revision of networks of ontologies with strenghening on longer span"
+ENV HYPOTHESIS="Strenghening with refadd, relaxation, expansion, generation reaches 100% recall"
+ENV SETTING="Same as [[${VARIATIONOF}]] on 20000 games"
+ENV CLASSES="NOOEnvironment, AlignmentAdjustingAgent, AlignmentRevisionExperiment, ActionLogger, AverageLogger, Monitor"
+ENV DESIGNER=JEuz
+ENV EXPERIMENTER=${PERFORMER}
+ENV ANALYST=${PERFORMER}
+
+ENV OUTPUT=/results/
+
+RUN if ! [ "$version" = "stretch" ]; then \
+        git pull ; \
+    else \
+        git fetch ; \
+        git checkout $LLHASH \
+        && wget -qO- https://logback.qos.ch/dist/logback-${LOGBACK_VERSION}.tar.gz | tar xz \
+        && mv ./logback-${LOGBACK_VERSION}/logback-classic-${LOGBACK_VERSION}.jar /lazylav/lib/slf4j/  \
+        && mv ./logback-${LOGBACK_VERSION}/logback-core-${LOGBACK_VERSION}.jar /lazylav/lib/slf4j/ \
+        && rm -rf ./logback* ; \ 
+    fi
+
+RUN ant compileall
+
+COPY ./expeRun ./expeRun
+COPY ./logback.xml ./logback.xml
+
+ENTRYPOINT ["bash", \
+            "-c", \
+            "OUTPUT=${OUTPUT}${LABEL} ; \
+            bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-nothing java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=nothing -DsaveDir=expeRun -DsaveGames -DloadDir=expeRun -DloadEnv -DloadAgents ; \
+            for op in ${OPS} ; \
+            do \
+            bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-gen-strgen java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 -Dgenerative -Dstrengthen=mostgeneral ; \
+            bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-gen-strspc java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 -Dgenerative -Dstrengthen=mostspecific ; \
+            bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-gen-empty-strgen java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 -Dgenerative -DstartEmpty -Dstrengthen=mostgeneral ; \
+            bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-gen-empty-strspc java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 -Dgenerative -DstartEmpty -Dstrengthen=mostspecific ; \
+            done ; \
+            "]

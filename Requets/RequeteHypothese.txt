@@ -1,0 +1,12 @@
+1.
+Noms d'XP:
+SELECT ?Name ?XP 
+WHERE {
+  ?XP xp:hasExperimentLabel ?Name 
+
+}
+Les Hypothèses:
+SELECT ?XP  ?Hypothesis
+WHERE {
+  ?XP xp:hasHypothesisLabel ?Hypothesis  .
+}

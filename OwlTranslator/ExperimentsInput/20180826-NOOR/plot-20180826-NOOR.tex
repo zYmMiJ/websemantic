@@ -1,0 +1,222 @@
+\documentclass[multi={tikzpicture},convert]{standalone}
+%\documentclass[convert={density=300,size=1080x800,outext=.png}]{standalone}
+
+\usepackage{comment}
+
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+
+\pgfplotsset{compat=1.14} % what a mess
+  
+\begin{document}
+
+%\section{add vs. addjoin}
+
+% \begin{comment}
+% Prediction:
+% \begin{enumerate}
+% \item They have the same size at convergence
+% \item Addjoin converges faster
+% \item Addjoin has a higher semantic precision (idem for syntactic)
+% \item Addjoin has a lower semantic recall (syntactic are equal)
+% \end{enumerate}
+
+% Observations:
+% \begin{enumerate}
+% \item They have the same size at convergence: TRUE
+% \item Addjoin converges faster: TRUE (in all situations)
+% \item Addjoin has a higher semantic precision (idem for syntactic) all the time: TRUE (in all situations)
+% \item Addjoin has a lower semantic recall (syntactic are equal) all the time: WRONG on 3 times but with too much alea (gen, clever-nr , im80 that it is difficult to take seriously
+% \end{enumerate}
+% \end{comment}
+
+% \begin{tabular}{l|ccc|ccc|cccc}
+% add	& 0.89	& 46	& 0.16	& 0.80	& 0.58	& 0.45	& 0.51	& 0.36	& 0.28	& 944\\
+% addjoin	& 0.93	& 46	& 0.16	& 0.80	& 0.58	& 0.45	& 0.51	& 0.36	& 0.28	& 944\\
+% \end{tabular}
+
+\begin{tikzpicture}
+\pgfplotsset{legend style={at={(0.42,-0.15)},draw=none,anchor=north,legend columns=-1}}
+
+\begin{axis}[ymin=0,ymax=100,xmax=2000,xlabel=$Games$,ylabel=$Size$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed \nextlist
+[2 of]color list}]
+
+\addplot plot table [x=rank,y=avg-size] {str-4-2000-real-add.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-4-2000-real-addjoin.tsv};
+
+\addplot plot table [x=rank,y=avg-size] {str-4-2000-real-add-syntactic.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-4-2000-real-addjoin-syntactic.tsv};
+
+\legend{add, addjoin}
+\end{axis} 
+
+\end{tikzpicture}
+%4 agents, 2000 games, 10 runs: add vs. addjoin, size
+
+% \begin{comment}
+% \section{F-measure...}
+
+% No anticipation for F-measure.
+
+% \begin{center}
+% \begin{tikzpicture}
+% \pgfplotsset{legend style={at={(0.42,-0.15)},draw=none,anchor=north,legend columns=-1}}
+
+% \begin{axis}[ymin=0,ymax=1,xmax=2000,xlabel=$Games$,ylabel={$F$-$measure$},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=5cm,width=\linewidth,
+% cycle multi list={
+% solid,dashed \nextlist
+% [2 of]color list}]
+
+% \addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-2000-real-add.tsv};
+% \addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-2000-real-addjoin.tsv};
+
+% \addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-2000-real-add-syntactic.tsv};
+% \addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-2000-real-addjoin-syntactic.tsv};
+
+% \legend{add, addjoin}
+% \end{axis} 
+
+% \end{tikzpicture}
+% 4 agents, 2000 games, 10 runs: add vs. addjoin, F-measure
+% \end{center}
+% \end{comment}
+
+%\subsection{Precision}
+
+\begin{tikzpicture}
+\pgfplotsset{legend style={at={(0.42,-0.15)},draw=none,anchor=north,legend columns=-1}}
+
+\begin{axis}[ymin=0,xmax=2000,ymax=1,xlabel=$Games$,ylabel=$Success~rate$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+[2 of]color list}]
+
+\addplot plot table [x=rank,y=avg-prec] {str-4-2000-real-add.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-4-2000-real-addjoin.tsv};
+
+\legend{add, addjoin}
+\end{axis} 
+
+\end{tikzpicture}
+%4 agents, 2000 games, 10 runs: add vs. addjoin, semantic (plain) and syntactic (dashed) precision
+
+\begin{tikzpicture}
+\pgfplotsset{legend style={at={(0.42,-0.15)},draw=none,anchor=north,legend columns=-1}}
+
+\begin{axis}[ymin=0,xmax=2000,ymax=1,xlabel=$Games$,ylabel=$Prec$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed \nextlist
+[2 of]color list}]
+
+\addplot plot table [x=rank,y=avg-prec] {str-4-2000-real-add.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-4-2000-real-addjoin.tsv};
+
+\addplot plot table [x=rank,y=avg-prec] {str-4-2000-real-add-syntactic.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-4-2000-real-addjoin-syntactic.tsv};
+
+\legend{add, addjoin}
+\end{axis} 
+
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\pgfplotsset{legend style={at={(0.42,-0.15)},draw=none,anchor=north,legend columns=-1}}
+
+\begin{axis}[ymin=0,ymax=1,xmax=2000,xlabel=$Games$,ylabel=$Rec$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed \nextlist
+[2 of]color list}]
+
+\addplot plot table [x=rank,y=avg-rec] {str-4-2000-real-add.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-2000-real-addjoin.tsv};
+
+\addplot plot table [x=rank,y=avg-rec] {str-4-2000-real-add-syntactic.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-2000-real-addjoin-syntactic.tsv};
+
+\legend{add, addjoin}
+\end{axis} 
+
+\end{tikzpicture}
+%4 agents, 2000 games, 10 runs: add vs. addjoin, recall
+
+%%% THE SAME NON REALISTIC
+
+\begin{tikzpicture}
+\pgfplotsset{legend style={at={(0.42,-0.15)},draw=none,anchor=north,legend columns=-1}}
+
+\begin{axis}[ymin=0,ymax=100,xmax=2000,xlabel=$Games$,ylabel=$Size$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed \nextlist
+[2 of]color list}]
+
+\addplot plot table [x=rank,y=avg-size] {str-4-2000-add.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-4-2000-addjoin.tsv};
+
+\addplot plot table [x=rank,y=avg-size] {str-4-2000-add-syntactic.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-4-2000-addjoin-syntactic.tsv};
+
+\legend{add, addjoin}
+\end{axis} 
+
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\pgfplotsset{legend style={at={(0.42,-0.15)},draw=none,anchor=north,legend columns=-1}}
+
+\begin{axis}[ymin=0,xmax=2000,ymax=1,xlabel=$Games$,ylabel=$Success~rate$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+[2 of]color list}]
+
+\addplot plot table [x=rank,y=avg-prec] {str-4-2000-add.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-4-2000-addjoin.tsv};
+
+\legend{add, addjoin}
+\end{axis} 
+
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\pgfplotsset{legend style={at={(0.42,-0.15)},draw=none,anchor=north,legend columns=-1}}
+
+\begin{axis}[ymin=0,xmax=2000,ymax=1,xlabel=$Games$,ylabel=$Prec$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed \nextlist
+[2 of]color list}]
+
+\addplot plot table [x=rank,y=avg-prec] {str-4-2000-add.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-4-2000-addjoin.tsv};
+
+\addplot plot table [x=rank,y=avg-prec] {str-4-2000-add-syntactic.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-4-2000-addjoin-syntactic.tsv};
+
+\legend{add, addjoin}
+\end{axis} 
+
+\end{tikzpicture}
+
+
+\begin{tikzpicture}
+\pgfplotsset{legend style={at={(0.42,-0.15)},draw=none,anchor=north,legend columns=-1}}
+
+\begin{axis}[ymin=0,ymax=1,xmax=2000,xlabel=$Games$,ylabel=$Rec$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed \nextlist
+[2 of]color list}]
+
+\addplot plot table [x=rank,y=avg-rec] {str-4-2000-add.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-2000-addjoin.tsv};
+
+\addplot plot table [x=rank,y=avg-rec] {str-4-2000-add-syntactic.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-2000-addjoin-syntactic.tsv};
+
+\legend{add, addjoin}
+\end{axis} 
+
+\end{tikzpicture}
+
+
+\end{document}
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Lazy lavender session parameters</comment>
+<entry key="saveParams">true</entry>
+<entry key="saveGames">true</entry>
+<entry key="nbAgents">4</entry>
+<entry key="revisionModality">nothing</entry>
+<entry key="nbIterations">10000</entry>
+<entry key="saveDir">expeRun</entry>
+<entry key="reportPrecRec">true</entry>
+<entry key="saveInit">true</entry>
+<entry key="nbRuns">10</entry>
+</properties>

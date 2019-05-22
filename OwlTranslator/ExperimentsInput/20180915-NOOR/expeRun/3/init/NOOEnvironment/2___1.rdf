@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<rdf:RDF xmlns='http://knowledgeweb.semanticweb.org/heterogeneity/alignment#'
+         xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+         xmlns:xsd='http://www.w3.org/2001/XMLSchema#'
+         xmlns:alext='http://exmo.inrialpes.fr/align/ext/1.0/'
+         xmlns:align='http://knowledgeweb.semanticweb.org/heterogeneity/alignment#'>
+<Alignment rdf:about="file:2___1.rdf">
+  <xml>yes</xml>
+  <level>0</level>
+  <type>**</type>
+  <id>file:2___1.rdf</id>
+  <onto1>
+    <Ontology rdf:about="http://lazylav.exmo.inria.fr/ontology/2">
+      <location>http://lazylav.exmo.inria.fr/ontology/2</location>
+      <formalism>
+        <Formalism align:name="OWL2.0" align:uri="http://www.w3.org/2002/07/owl#"/>
+      </formalism>
+    </Ontology>
+  </onto1>
+  <onto2>
+    <Ontology rdf:about="http://lazylav.exmo.inria.fr/ontology/1">
+      <location>http://lazylav.exmo.inria.fr/ontology/1</location>
+      <formalism>
+        <Formalism align:name="OWL2.0" align:uri="http://www.w3.org/2002/07/owl#"/>
+      </formalism>
+    </Ontology>
+  </onto2>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://lazylav.exmo.inria.fr/ontology/2#1'/>
+      <entity2 rdf:resource='http://lazylav.exmo.inria.fr/ontology/1#11'/>
+      <relation>></relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://lazylav.exmo.inria.fr/ontology/2#0'/>
+      <entity2 rdf:resource='http://lazylav.exmo.inria.fr/ontology/1#100'/>
+      <relation>></relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://lazylav.exmo.inria.fr/ontology/2#011'/>
+      <entity2 rdf:resource='http://lazylav.exmo.inria.fr/ontology/1#01'/>
+      <relation>></relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://lazylav.exmo.inria.fr/ontology/2#01'/>
+      <entity2 rdf:resource='http://lazylav.exmo.inria.fr/ontology/1#001'/>
+      <relation>></relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://lazylav.exmo.inria.fr/ontology/2#010'/>
+      <entity2 rdf:resource='http://lazylav.exmo.inria.fr/ontology/1#011'/>
+      <relation>></relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://lazylav.exmo.inria.fr/ontology/2#00'/>
+      <entity2 rdf:resource='http://lazylav.exmo.inria.fr/ontology/1#0'/>
+      <relation>></relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://lazylav.exmo.inria.fr/ontology/2#00'/>
+      <entity2 rdf:resource='http://lazylav.exmo.inria.fr/ontology/1#010'/>
+      <relation>></relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://lazylav.exmo.inria.fr/ontology/2#00'/>
+      <entity2 rdf:resource='http://lazylav.exmo.inria.fr/ontology/1#10'/>
+      <relation>></relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://lazylav.exmo.inria.fr/ontology/2#top'/>
+      <entity2 rdf:resource='http://lazylav.exmo.inria.fr/ontology/1#top'/>
+      <relation>></relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://lazylav.exmo.inria.fr/ontology/2#top'/>
+      <entity2 rdf:resource='http://lazylav.exmo.inria.fr/ontology/1#top'/>
+      <relation>&lt;</relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://lazylav.exmo.inria.fr/ontology/2#001'/>
+      <entity2 rdf:resource='http://lazylav.exmo.inria.fr/ontology/1#00'/>
+      <relation>></relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://lazylav.exmo.inria.fr/ontology/2#11'/>
+      <entity2 rdf:resource='http://lazylav.exmo.inria.fr/ontology/1#110'/>
+      <relation>></relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://lazylav.exmo.inria.fr/ontology/2#11'/>
+      <entity2 rdf:resource='http://lazylav.exmo.inria.fr/ontology/1#1'/>
+      <relation>></relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://lazylav.exmo.inria.fr/ontology/2#10'/>
+      <entity2 rdf:resource='http://lazylav.exmo.inria.fr/ontology/1#000'/>
+      <relation>></relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+    </Cell>
+  </map>
+</Alignment>
+</rdf:RDF>

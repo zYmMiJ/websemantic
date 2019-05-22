@@ -1,0 +1,59 @@
+ARG version="stretch"
+FROM lazylav:${version}
+ARG version="stretch"
+
+ENV OSVERS=stretch
+ENV LOGBACK_VERSION=1.2.3
+ENV CLASSPATH=lib/lazylav/ll.jar:lib/slf4j/logback-classic-${LOGBACK_VERSION}.jar:lib/slf4j/logback-core-${LOGBACK_VERSION}.jar:.
+ENV LLHASH=759ff097b96520c12aa84f3749927f9a22022e62
+ENV DESIGNDATE=2018-08-31
+ENV DATE=20180915
+ENV LABEL=${DATE}-NOOR
+ENV NAME=${LABEL}
+ENV PERFORMER=JEuz
+ENV NBAGENTS=4
+ENV NBITERATIONS=10000
+ENV NBRUNS=10
+ENV OPS="delete replace refine add addjoin refadd"
+ENV POSTFIX=gen-real
+ENV PARAMS="-Dgenerative -Drealistic"
+ENV OUTPUT=${LABEL}
+ENV OPT="-DnbAgents=${NBAGENTS} -DnbIterations=${NBITERATIONS} -DnbRuns=${NBRUNS} -DreportPrecRec"
+ENV LOADOPT="-DloadDir=expeRun -DloadEnv -DloadAgents -DreplayGames"
+ENV TOCOPY="expeRun logback.xml"
+ENV DIRPREF=${NBAGENTS}-${NBITERATIONS}
+ENV VARIATIONOF=20180601-NOOR
+ENV EXPE="Revision of networks of ontologies with expansion, relaxation and generation starting with realistic alignment size"
+ENV HYPOTHESIS="Starting with realistic alignment size should get closer results to starting empty than non realistic size (expansion dominance)"
+ENV SETTING="Same as [[${VARIATIONOF}]] replaying the same runs as [[20180308-NOOR]] with realistic alignment size."
+ENV CLASSES="NOOEnvironment, AlignmentAdjustingAgent, AlignmentRevisionExperiment, ActionLogger, AverageLogger, Monitor"
+ENV DESIGNER=JEuz
+ENV EXPERIMENTER=${PERFORMER}
+ENV ANALYST=${PERFORMER}
+
+ENV OUTPUT=/results/20180915-NOOR
+
+RUN if ! [ "$version" = "stretch" ]; then \
+        git pull ; \
+    else \
+        git fetch ; \
+        git checkout $LLHASH \
+        && wget -qO- https://logback.qos.ch/dist/logback-${LOGBACK_VERSION}.tar.gz | tar xz \
+        && mv ./logback-${LOGBACK_VERSION}/logback-classic-${LOGBACK_VERSION}.jar /lazylav/lib/slf4j/  \
+        && mv ./logback-${LOGBACK_VERSION}/logback-core-${LOGBACK_VERSION}.jar /lazylav/lib/slf4j/ \
+        && rm -rf ./logback* ; \ 
+    fi
+
+RUN ant compileall
+
+COPY ./expeRun ./expeRun
+COPY ./logback.xml ./logback.xml
+
+ENTRYPOINT ["bash", \
+            "-c", \
+            "for op in delete replace refine add addjoin refadd ; \
+            do \
+            bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-${POSTFIX} java -Dlog.level=INFO -cp ${CLASSPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy ${PARAMS} ; \
+            bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-${POSTFIX} java -Dlog.level=INFO -cp ${CLASSPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 ${PARAMS} ; \
+            done ; \
+            "]

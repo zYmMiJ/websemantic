@@ -1,0 +1,47 @@
+# 20180305-NOOR
+ARG version="stretch"
+FROM lazylav:${version}
+ARG version="stretch"
+
+ENV LOGBACK_VERSION=${LOGBACK_VERSION:-1.2.3}
+
+ENV OUTPUT=${OUTPUT:-20180305-NOOR}
+
+RUN if ! [ "$version" = "stretch" ]; then \
+        git pull ; \
+    else \
+        git checkout 562f5c4b96893d30e2dc9fd59d935e013ce5219f ; \
+    fi
+
+RUN wget -qO- https://logback.qos.ch/dist/logback-${LOGBACK_VERSION}.tar.gz | tar xz \
+    && mv ./logback-${LOGBACK_VERSION}/logback-classic-${LOGBACK_VERSION}.jar /lazylav/lib/slf4j/  \
+    && mv ./logback-${LOGBACK_VERSION}/logback-core-${LOGBACK_VERSION}.jar /lazylav/lib/slf4j/ \
+    && rm -rf ./logback*
+
+RUN ant compileall
+
+COPY ./logback.xml ./logback.xml
+
+ENTRYPOINT ["bash", \
+            "-c", \
+            "sed -i -e '/mv nohup/{s/^[^#]/# /}' /lazylav/scripts/runexp.sh ; \
+            JPATH=lib/lazylav/ll.jar:lib/slf4j/logback-classic-${LOGBACK_VERSION}.jar:lib/slf4j/logback-core-${LOGBACK_VERSION}.jar:. ; \
+            OPT=\"-DnbAgents=4 -DnbIterations=2000 -DnbRuns=10 -DreportPrecRec\" ; \
+            # Dry test only for generating the runs  \
+            bash scripts/runexp.sh -d 4-2000-nothing java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=nothing -DsaveDir=expeRun -DsaveInit -DsaveParams -DsaveGames ; \
+            LOADOPT=\"-DloadDir=expeRun -DloadEnv -DloadAgents -DreplayGames\" ; \
+            bash scripts/runexp.sh -d 4-2000-add java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=add ${LOADOPT} ; \
+            bash scripts/runexp.sh -d 4-2000-addjoin java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=addjoin ${LOADOPT} ; \
+            bash scripts/runexp.sh -d 4-2000-add-syntactic java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=add -Dsyntactic=true ${LOADOPT} -DsaveDir=addRes -DsaveFinal ; \
+            bash scripts/runexp.sh -d 4-2000-addjoin-syntactic java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=addjoin -Dsyntactic=true ${LOADOPT} -DsaveDir=addjoinRes -DsaveFinal ; \
+            OPT=\"-DnbAgents=4 -DnbIterations=2000 -DnbRuns=10 -DreportPrecRec -Drealistic\" ; \
+            # Dry test only for generating the runs  \
+            bash scripts/runexp.sh -d 4-2000-real-nothing java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=nothing -DsaveDir=expeRun -DsaveInit -DsaveParams -DsaveGames ; \
+            LOADOPT=\"-DloadDir=expeRun -DloadEnv -DloadAgents -DreplayGames\" ; \
+            bash scripts/runexp.sh -d 4-2000-real-add java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=add ${LOADOPT} ; \
+            bash scripts/runexp.sh -d 4-2000-real-addjoin java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=addjoin ${LOADOPT} ; \
+            bash scripts/runexp.sh -d 4-2000-real-add-syntactic java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=add -Dsyntactic=true ${LOADOPT} -DsaveDir=addRes -DsaveFinal ; \
+            bash scripts/runexp.sh -d 4-2000-real-addjoin-syntactic java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=addjoin -Dsyntactic=true ${LOADOPT} -DsaveDir=addjoinRes -DsaveFinal ; \
+            mkdir -p /results/${OUTPUT} && \
+            find . -maxdepth 1 -type f  \\( -name '*.zip' -o -name '*.txt' -o -name '*.tsv' \\)  -exec mv '{}' $_ \\;" \
+]
