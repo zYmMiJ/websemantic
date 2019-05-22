@@ -98,11 +98,59 @@ public class Generator {
 		return mapClass_ObjectProperty;
 	}
 	
+	public Map<OWLObjectProperty, List<OWLClass>> toMapObjectPropertyDomain_Range(List<OWLClass> listClass){
+		
+		Map<OWLObjectProperty, List<OWLClass>> mapObjectPropertyDomain_Range = new HashMap<OWLObjectProperty, List<OWLClass>>();
+		
+		Map<OWLObjectProperty, OWLClass> mapDomain = new HashMap<OWLObjectProperty, OWLClass>();
+		Map<OWLObjectProperty, OWLClass> mapRange = new HashMap<OWLObjectProperty, OWLClass>();
+		
+		for(OWLClass cls : listClass){	
+				//DOMAIN
+				//Step1 : declare a OWLAxiom stream
+				Stream<OWLAxiom> streamStepD1 = ontology.axioms();
+				//Step2 : select the stream of OBJECT_PROPERTY_RANGE Axiom
+				Stream<OWLAxiom> streamStepD2 = streamStepD1.filter(isDataObjectDomain());
+				//Step3 : select the Axiom with fragment
+				Stream<OWLAxiom> streamStepD3 = streamStepD2.filter(classEquals(cls));
+				
+				List<OWLAxiom> listDomain = streamStepD3.collect(Collectors.toList());
+				for(OWLAxiom a : listDomain) {
+					mapDomain.put(a.objectPropertiesInSignature().findAny().get(), a.classesInSignature().findFirst().get());
+				}
+				
+				//RANGE
+				//Step1 : declare a OWLAxiom stream
+				Stream<OWLAxiom> streamStepR1 = ontology.axioms();
+				//Step2 : select the stream of DATA_PROPERTY_RANGE Axiom
+				Stream<OWLAxiom> streamStepR2 = streamStepR1.filter(isDataObjectRange());
+				//Step3 : select the Axiom with fragment
+				Stream<OWLAxiom> streamStepR3 = streamStepR2.filter(classEquals(cls));
+				
+				List<OWLAxiom> listRange = streamStepR3.collect(Collectors.toList());
+				for(OWLAxiom a : listRange) {
+					mapRange.put(a.objectPropertiesInSignature().findAny().get(), a.classesInSignature().findFirst().get());
+				}
+		}
+		
+		Set<OWLObjectProperty> setOWLObject = mapDomain.keySet();
+		
+		for(OWLObjectProperty ppt : setOWLObject) {
+			List<OWLClass> listDomain_Range = new ArrayList<OWLClass>();
+			listDomain_Range.add(mapDomain.get(ppt));
+			listDomain_Range.add(mapRange.get(ppt));
+			mapObjectPropertyDomain_Range.put(ppt, listDomain_Range);
+		}
+			
+		
+		return mapObjectPropertyDomain_Range;
+	}
+	
 	private List<OWLObjectProperty> toListObjectProperty(OWLClass cls){
 		
 		//Step1 : declare a OWLAxiom stream
 		Stream<OWLAxiom> streamStep1 = ontology.axioms();
-		//Step2 : select the stream of DATA_PROPERTY_RANGE Axiom
+		//Step2 : select the stream of OBJECT_PROPERTY_RANGE Axiom
 		Stream<OWLAxiom> streamStep2 = streamStep1.filter(isDataObjectDomain());
 		//Step3 : select the Axiom with fragment
 		Stream<OWLAxiom> streamStep3 = streamStep2.filter(classEquals(cls));
@@ -152,6 +200,11 @@ public class Generator {
 	private Predicate<OWLAxiom> isDataObjectDomain()
 	{
 	    return p -> p.isOfType(AxiomType.OBJECT_PROPERTY_DOMAIN);
+	}
+	
+	private Predicate<OWLAxiom> isDataObjectRange()
+	{
+	    return p -> p.isOfType(AxiomType.OBJECT_PROPERTY_RANGE);
 	}
 
 }

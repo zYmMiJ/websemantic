@@ -5512,3 +5512,1040 @@ DEBUG   2019-05-22 11:23:04,252 [main] org.openrdf.rio.RDFWriterRegistry  - Regi
 DEBUG   2019-05-22 11:23:04,253 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.turtle.TurtleWriterFactory
 DEBUG   2019-05-22 11:23:04,255 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.trig.TriGWriterFactory
 INFO    2019-05-22 11:23:04,406 [main] translator.Translator  - Ontology Saved.
+DEBUG   2019-05-22 13:42:36,577 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioFunctionalSyntaxParserFactory
+DEBUG   2019-05-22 13:42:36,579 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioManchesterSyntaxParserFactory
+DEBUG   2019-05-22 13:42:36,580 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioOWLXMLParserFactory
+DEBUG   2019-05-22 13:42:36,587 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.jsonld.JSONLDParserFactory
+DEBUG   2019-05-22 13:42:36,588 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.binary.BinaryRDFParserFactory
+DEBUG   2019-05-22 13:42:36,589 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.n3.N3ParserFactory
+DEBUG   2019-05-22 13:42:36,591 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.nquads.NQuadsParserFactory
+DEBUG   2019-05-22 13:42:36,592 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.ntriples.NTriplesParserFactory
+DEBUG   2019-05-22 13:42:36,594 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.rdfjson.RDFJSONParserFactory
+DEBUG   2019-05-22 13:42:36,595 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.rdfxml.RDFXMLParserFactory
+DEBUG   2019-05-22 13:42:36,597 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.trix.TriXParserFactory
+DEBUG   2019-05-22 13:42:36,600 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.turtle.TurtleParserFactory
+DEBUG   2019-05-22 13:42:36,601 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.trig.TriGParserFactory
+DEBUG   2019-05-22 13:42:36,602 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semarglproject.sesame.rdf.rdfa.SesameRDFaParserFactory
+DEBUG   2019-05-22 13:42:36,630 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.XMLSchemaDatatypeHandler
+DEBUG   2019-05-22 13:42:36,631 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.RDFDatatypeHandler
+DEBUG   2019-05-22 13:42:36,631 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.DBPediaDatatypeHandler
+DEBUG   2019-05-22 13:42:36,632 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.VirtuosoGeometryDatatypeHandler
+DEBUG   2019-05-22 13:42:36,632 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.GeoSPARQLDatatypeHandler
+DEBUG   2019-05-22 13:42:36,634 [main] org.openrdf.rio.LanguageHandlerRegistry  - Registered service class org.openrdf.rio.languages.RFC3066LanguageHandler
+DEBUG   2019-05-22 13:42:36,763 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.TripleLogger  - Total number of triples: 176
+DEBUG   2019-05-22 13:42:36,838 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.TripleLogger  - Loaded OntologyID(Anonymous-2)
+INFO    2019-05-22 13:42:36,838 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.OWLRDFConsumer  - dumping remaining triples
+INFO    2019-05-22 13:42:36,842 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.OWLRDFConsumer  - done dumping remaining triples
+DEBUG   2019-05-22 13:42:36,849 [main] org.semanticweb.owlapi.rio.RioParserImpl$RioParserRDFHandler  - owlParse: timing=214
+DEBUG   2019-05-22 13:42:36,849 [main] org.semanticweb.owlapi.rio.RioParserImpl  - rioParse: timing=214
+INFO    2019-05-22 13:42:37,051 [main] translator.Parser  - setAllEnvParameters
+INFO    2019-05-22 13:42:37,051 [main] translator.Parser  - [translator.DataParsed@894858, translator.DataParsed@7af707e0, translator.DataParsed@737edcfa, translator.DataParsed@3ecedf21, translator.DataParsed@74cf8b28, translator.DataParsed@36c54a56, translator.DataParsed@3359c978, translator.DataParsed@7ba63fe5]
+INFO    2019-05-22 13:42:37,053 [main] translator.Parser  - [translator.DataParsed@73386d72, translator.DataParsed@6f330eb9, translator.DataParsed@125c082e, translator.DataParsed@584f5497, translator.DataParsed@68ace111, translator.DataParsed@1f9d6c7b, translator.DataParsed@6df20ade, translator.DataParsed@4fbb001b, translator.DataParsed@4010d494, translator.DataParsed@341a8659, translator.DataParsed@4943defe, translator.DataParsed@5eefa415, translator.DataParsed@181d7f28, translator.DataParsed@78d50a3c, translator.DataParsed@2fb69ff6, translator.DataParsed@cda4919, translator.DataParsed@7f4d9395, translator.DataParsed@2f19f2aa, translator.DataParsed@344b8190, translator.DataParsed@6a078481, translator.DataParsed@79c5636f, translator.DataParsed@1929425f, translator.DataParsed@718607eb, translator.DataParsed@27f3b6d6, translator.DataParsed@757f675c, translator.DataParsed@2617f816, translator.DataParsed@676f0a60]
+INFO    2019-05-22 13:42:37,089 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_JEuz
+INFO    2019-05-22 13:42:37,097 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/firstName> : Jérome
+INFO    2019-05-22 13:42:37,098 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/familyName> : Euzenat
+INFO    2019-05-22 13:42:37,100 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_Iris Lohja
+INFO    2019-05-22 13:42:37,104 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/firstName> : Iris
+INFO    2019-05-22 13:42:37,105 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/familyName> : Lohja
+INFO    2019-05-22 13:42:37,105 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate>
+INFO    2019-05-22 13:42:37,106 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate_20181112-NOOR
+INFO    2019-05-22 13:42:37,106 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ClassificationOfExperiment>
+INFO    2019-05-22 13:42:37,106 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ClassificationOfExperiment_20181112-NOOR
+INFO    2019-05-22 13:42:37,107 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Script>
+INFO    2019-05-22 13:42:37,107 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Script_20181112-NOOR
+INFO    2019-05-22 13:42:37,107 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment>
+INFO    2019-05-22 13:42:37,107 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment_20181112-NOOR
+INFO    2019-05-22 13:42:37,108 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Person>
+INFO    2019-05-22 13:42:37,109 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_20181112-NOOR
+INFO    2019-05-22 13:42:37,109 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ClassificationByDomain>
+INFO    2019-05-22 13:42:37,109 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ClassificationByDomain_20181112-NOOR
+INFO    2019-05-22 13:42:37,109 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis>
+INFO    2019-05-22 13:42:37,109 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis_20181112-NOOR
+INFO    2019-05-22 13:42:37,110 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasHypothesisLabel> : The random version of strengthening does not differ much from the most specific and most general ones
+INFO    2019-05-22 13:42:37,110 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity>
+INFO    2019-05-22 13:42:37,111 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity_20181112-NOOR
+INFO    2019-05-22 13:42:37,111 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentationDate> : 20181112
+INFO    2019-05-22 13:42:37,111 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment>
+INFO    2019-05-22 13:42:37,111 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR
+INFO    2019-05-22 13:42:37,112 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentLabel> : 20181112-NOOR
+INFO    2019-05-22 13:42:37,112 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentName> : 20181112-NOOR
+INFO    2019-05-22 13:42:37,112 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentTitle> : Revision of networks of ontologies with random strenghening
+INFO    2019-05-22 13:42:37,113 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasHash> : d230f8c69b7c97c4c570785e554aabcb2bbe09e1
+INFO    2019-05-22 13:42:37,113 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign>
+INFO    2019-05-22 13:42:37,113 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR
+INFO    2019-05-22 13:42:37,117 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_designer> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_Iris Lohja>)
+INFO    2019-05-22 13:42:37,118 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_designer> : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_Iris Lohja>
+INFO    2019-05-22 13:42:37,119 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasDesignDate> : 2018-06-01
+INFO    2019-05-22 13:42:37,120 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Procedure>
+INFO    2019-05-22 13:42:37,121 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR
+INFO    2019-05-22 13:42:37,121 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimenter> <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 13:42:37,123 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimenter> : <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 13:42:37,124 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_performer> <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 13:42:37,124 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_performer> : <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 13:42:37,124 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasNumberOfIterations> : 10000
+INFO    2019-05-22 13:42:37,124 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasNumberOfRuns> : 10
+INFO    2019-05-22 13:42:37,125 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasOperators> : delete replace refine add addjoin refadd
+INFO    2019-05-22 13:42:37,125 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/Software>
+INFO    2019-05-22 13:42:37,127 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/Software_20181112-NOOR
+INFO    2019-05-22 13:42:37,128 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasLogbackVersion> : 1.2.3
+INFO    2019-05-22 13:42:37,128 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasOSVersion> : stretch
+INFO    2019-05-22 13:42:37,128 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasJavaPath> : lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:.
+INFO    2019-05-22 13:42:37,129 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData>
+INFO    2019-05-22 13:42:37,129 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData_20181112-NOOR
+INFO    2019-05-22 13:42:37,129 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults>
+INFO    2019-05-22 13:42:37,129 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR
+INFO    2019-05-22 13:42:37,129 [main] translator.Translator  - CLASS : <http://www.w3.org/2000/10/swap/pim/contact#Person>
+INFO    2019-05-22 13:42:37,129 [main] translator.MakerIndividual  - ADD : Individual - http://www.w3.org/2000/10/swap/pim/contact#Person_20181112-NOOR
+INFO    2019-05-22 13:42:37,130 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Project>
+INFO    2019-05-22 13:42:37,132 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Project_20181112-NOOR
+INFO    2019-05-22 13:42:37,132 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentEntity>
+INFO    2019-05-22 13:42:37,132 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentEntity_20181112-NOOR
+INFO    2019-05-22 13:42:37,132 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Agent>
+INFO    2019-05-22 13:42:37,135 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Agent_20181112-NOOR
+INFO    2019-05-22 13:42:37,136 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Entity>
+INFO    2019-05-22 13:42:37,136 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Entity_20181112-NOOR
+INFO    2019-05-22 13:42:37,136 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion>
+INFO    2019-05-22 13:42:37,136 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR
+INFO    2019-05-22 13:42:37,136 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_analyst> <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 13:42:37,137 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_analyst> : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 13:42:37,137 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesignEntity>
+INFO    2019-05-22 13:42:37,137 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesignEntity_20181112-NOOR
+INFO    2019-05-22 13:42:37,137 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/Hardware>
+INFO    2019-05-22 13:42:37,139 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/Hardware_20181112-NOOR
+INFO    2019-05-22 13:42:37,139 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Organization>
+INFO    2019-05-22 13:42:37,140 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Organization_20181112-NOOR
+INFO    2019-05-22 13:42:37,140 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation>
+INFO    2019-05-22 13:42:37,141 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation_20181112-NOOR
+INFO    2019-05-22 13:42:37,142 [main] translator.Translator  - CLASS : <http://schema.org/Person>
+INFO    2019-05-22 13:42:37,142 [main] translator.MakerIndividual  - ADD : Individual - http://schema.org/Person_20181112-NOOR
+INFO    2019-05-22 13:42:37,142 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal>
+INFO    2019-05-22 13:42:37,142 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal_20181112-NOOR
+DEBUG   2019-05-22 13:42:37,146 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.jsonld.JSONLDWriterFactory
+DEBUG   2019-05-22 13:42:37,148 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.binary.BinaryRDFWriterFactory
+DEBUG   2019-05-22 13:42:37,149 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.n3.N3WriterFactory
+DEBUG   2019-05-22 13:42:37,150 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.nquads.NQuadsWriterFactory
+DEBUG   2019-05-22 13:42:37,151 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.ntriples.NTriplesWriterFactory
+DEBUG   2019-05-22 13:42:37,152 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.rdfjson.RDFJSONWriterFactory
+DEBUG   2019-05-22 13:42:37,153 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.rdfxml.RDFXMLWriterFactory
+DEBUG   2019-05-22 13:42:37,153 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.trix.TriXWriterFactory
+DEBUG   2019-05-22 13:42:37,154 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.turtle.TurtleWriterFactory
+DEBUG   2019-05-22 13:42:37,155 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.trig.TriGWriterFactory
+INFO    2019-05-22 13:42:37,318 [main] translator.Translator  - Ontology Saved.
+DEBUG   2019-05-22 15:04:59,586 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioFunctionalSyntaxParserFactory
+DEBUG   2019-05-22 15:04:59,649 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioManchesterSyntaxParserFactory
+DEBUG   2019-05-22 15:04:59,649 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioOWLXMLParserFactory
+DEBUG   2019-05-22 15:04:59,650 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.jsonld.JSONLDParserFactory
+DEBUG   2019-05-22 15:04:59,651 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.binary.BinaryRDFParserFactory
+DEBUG   2019-05-22 15:04:59,653 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.n3.N3ParserFactory
+DEBUG   2019-05-22 15:04:59,654 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.nquads.NQuadsParserFactory
+DEBUG   2019-05-22 15:04:59,655 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.ntriples.NTriplesParserFactory
+DEBUG   2019-05-22 15:04:59,656 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.rdfjson.RDFJSONParserFactory
+DEBUG   2019-05-22 15:04:59,658 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.rdfxml.RDFXMLParserFactory
+DEBUG   2019-05-22 15:04:59,659 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.trix.TriXParserFactory
+DEBUG   2019-05-22 15:04:59,660 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.turtle.TurtleParserFactory
+DEBUG   2019-05-22 15:04:59,661 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.trig.TriGParserFactory
+DEBUG   2019-05-22 15:04:59,662 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semarglproject.sesame.rdf.rdfa.SesameRDFaParserFactory
+DEBUG   2019-05-22 15:04:59,779 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.XMLSchemaDatatypeHandler
+DEBUG   2019-05-22 15:04:59,780 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.RDFDatatypeHandler
+DEBUG   2019-05-22 15:04:59,780 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.DBPediaDatatypeHandler
+DEBUG   2019-05-22 15:04:59,781 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.VirtuosoGeometryDatatypeHandler
+DEBUG   2019-05-22 15:04:59,781 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.GeoSPARQLDatatypeHandler
+DEBUG   2019-05-22 15:04:59,784 [main] org.openrdf.rio.LanguageHandlerRegistry  - Registered service class org.openrdf.rio.languages.RFC3066LanguageHandler
+DEBUG   2019-05-22 15:04:59,951 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.TripleLogger  - Total number of triples: 176
+DEBUG   2019-05-22 15:05:00,027 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.TripleLogger  - Loaded OntologyID(Anonymous-2)
+INFO    2019-05-22 15:05:00,027 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.OWLRDFConsumer  - dumping remaining triples
+INFO    2019-05-22 15:05:00,032 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.OWLRDFConsumer  - done dumping remaining triples
+DEBUG   2019-05-22 15:05:00,039 [main] org.semanticweb.owlapi.rio.RioParserImpl$RioParserRDFHandler  - owlParse: timing=255
+DEBUG   2019-05-22 15:05:00,040 [main] org.semanticweb.owlapi.rio.RioParserImpl  - rioParse: timing=256
+INFO    2019-05-22 15:05:00,450 [main] translator.Parser  - setAllEnvParameters
+INFO    2019-05-22 15:05:00,450 [main] translator.Parser  - [translator.DataParsed@535b8c24, translator.DataParsed@4a951911, translator.DataParsed@55b62629, translator.DataParsed@a53bb6f, translator.DataParsed@5e63cad, translator.DataParsed@6759f091, translator.DataParsed@33a053d, translator.DataParsed@14a54ef6]
+INFO    2019-05-22 15:05:00,451 [main] translator.Parser  - [translator.DataParsed@20921b9b, translator.DataParsed@867ba60, translator.DataParsed@5ba745bc, translator.DataParsed@654b72c0, translator.DataParsed@55b5e331, translator.DataParsed@6034e75d, translator.DataParsed@15fc442, translator.DataParsed@3f3c7bdb, translator.DataParsed@456abb66, translator.DataParsed@2a3a299, translator.DataParsed@7da10b5b, translator.DataParsed@219f4597, translator.DataParsed@31be6b49, translator.DataParsed@2e16b08d, translator.DataParsed@5b989dc7, translator.DataParsed@70d8de, translator.DataParsed@42561fba, translator.DataParsed@595f4da5, translator.DataParsed@46b695ec, translator.DataParsed@408613cc, translator.DataParsed@325f7fa9, translator.DataParsed@11ce2e22, translator.DataParsed@63a5d002, translator.DataParsed@13cda7c9, translator.DataParsed@5aa6202e, translator.DataParsed@3af9aa66, translator.DataParsed@771158fb]
+INFO    2019-05-22 15:05:00,510 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_JEuz
+INFO    2019-05-22 15:05:00,516 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/firstName> : Jérome
+INFO    2019-05-22 15:05:00,516 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/familyName> : Euzenat
+INFO    2019-05-22 15:05:00,516 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_Iris Lohja
+INFO    2019-05-22 15:05:00,517 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/firstName> : Iris
+INFO    2019-05-22 15:05:00,517 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/familyName> : Lohja
+INFO    2019-05-22 15:05:00,517 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate>
+INFO    2019-05-22 15:05:00,517 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate_20181112-NOOR
+INFO    2019-05-22 15:05:00,517 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ClassificationOfExperiment>
+INFO    2019-05-22 15:05:00,517 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ClassificationOfExperiment_20181112-NOOR
+INFO    2019-05-22 15:05:00,518 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Script>
+INFO    2019-05-22 15:05:00,518 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Script_20181112-NOOR
+INFO    2019-05-22 15:05:00,518 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment>
+INFO    2019-05-22 15:05:00,518 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment_20181112-NOOR
+INFO    2019-05-22 15:05:00,518 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Person>
+INFO    2019-05-22 15:05:00,518 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_20181112-NOOR
+INFO    2019-05-22 15:05:00,519 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ClassificationByDomain>
+INFO    2019-05-22 15:05:00,519 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ClassificationByDomain_20181112-NOOR
+INFO    2019-05-22 15:05:00,519 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis>
+INFO    2019-05-22 15:05:00,519 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis_20181112-NOOR
+INFO    2019-05-22 15:05:00,519 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasHypothesisLabel> : The random version of strengthening does not differ much from the most specific and most general ones
+INFO    2019-05-22 15:05:00,519 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity>
+INFO    2019-05-22 15:05:00,519 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity_20181112-NOOR
+INFO    2019-05-22 15:05:00,520 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentationDate> : 20181112
+INFO    2019-05-22 15:05:00,520 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment>
+INFO    2019-05-22 15:05:00,521 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR
+INFO    2019-05-22 15:05:00,522 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentLabel> : 20181112-NOOR
+INFO    2019-05-22 15:05:00,522 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentName> : 20181112-NOOR
+INFO    2019-05-22 15:05:00,522 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentTitle> : Revision of networks of ontologies with random strenghening
+INFO    2019-05-22 15:05:00,522 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasHash> : d230f8c69b7c97c4c570785e554aabcb2bbe09e1
+INFO    2019-05-22 15:05:00,522 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign>
+INFO    2019-05-22 15:05:00,523 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR
+INFO    2019-05-22 15:05:00,525 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_designer> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_Iris Lohja>)
+INFO    2019-05-22 15:05:00,526 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_designer> : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_Iris Lohja>
+INFO    2019-05-22 15:05:00,526 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasDesignDate> : 2018-06-01
+INFO    2019-05-22 15:05:00,526 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Procedure>
+INFO    2019-05-22 15:05:00,526 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR
+INFO    2019-05-22 15:05:00,526 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimenter> <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 15:05:00,526 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimenter> : <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 15:05:00,526 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_performer> <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 15:05:00,527 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_performer> : <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 15:05:00,527 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasNumberOfIterations> : 10000
+INFO    2019-05-22 15:05:00,527 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasNumberOfRuns> : 10
+INFO    2019-05-22 15:05:00,527 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasOperators> : delete replace refine add addjoin refadd
+INFO    2019-05-22 15:05:00,527 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/Software>
+INFO    2019-05-22 15:05:00,528 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/Software_20181112-NOOR
+INFO    2019-05-22 15:05:00,528 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasLogbackVersion> : 1.2.3
+INFO    2019-05-22 15:05:00,528 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasOSVersion> : stretch
+INFO    2019-05-22 15:05:00,528 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasJavaPath> : lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:.
+INFO    2019-05-22 15:05:00,528 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData>
+INFO    2019-05-22 15:05:00,528 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData_20181112-NOOR
+INFO    2019-05-22 15:05:00,528 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults>
+INFO    2019-05-22 15:05:00,528 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR
+INFO    2019-05-22 15:05:00,529 [main] translator.Translator  - CLASS : <http://www.w3.org/2000/10/swap/pim/contact#Person>
+INFO    2019-05-22 15:05:00,530 [main] translator.MakerIndividual  - ADD : Individual - http://www.w3.org/2000/10/swap/pim/contact#Person_20181112-NOOR
+INFO    2019-05-22 15:05:00,530 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Project>
+INFO    2019-05-22 15:05:00,530 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Project_20181112-NOOR
+INFO    2019-05-22 15:05:00,530 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentEntity>
+INFO    2019-05-22 15:05:00,531 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentEntity_20181112-NOOR
+INFO    2019-05-22 15:05:00,531 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Agent>
+INFO    2019-05-22 15:05:00,531 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Agent_20181112-NOOR
+INFO    2019-05-22 15:05:00,531 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Entity>
+INFO    2019-05-22 15:05:00,531 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Entity_20181112-NOOR
+INFO    2019-05-22 15:05:00,531 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion>
+INFO    2019-05-22 15:05:00,531 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR
+INFO    2019-05-22 15:05:00,531 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_analyst> <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 15:05:00,531 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_analyst> : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 15:05:00,531 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesignEntity>
+INFO    2019-05-22 15:05:00,532 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesignEntity_20181112-NOOR
+INFO    2019-05-22 15:05:00,532 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/Hardware>
+INFO    2019-05-22 15:05:00,532 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/Hardware_20181112-NOOR
+INFO    2019-05-22 15:05:00,532 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Organization>
+INFO    2019-05-22 15:05:00,532 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Organization_20181112-NOOR
+INFO    2019-05-22 15:05:00,532 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation>
+INFO    2019-05-22 15:05:00,532 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation_20181112-NOOR
+INFO    2019-05-22 15:05:00,532 [main] translator.Translator  - CLASS : <http://schema.org/Person>
+INFO    2019-05-22 15:05:00,533 [main] translator.MakerIndividual  - ADD : Individual - http://schema.org/Person_20181112-NOOR
+INFO    2019-05-22 15:05:00,534 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal>
+INFO    2019-05-22 15:05:00,534 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal_20181112-NOOR
+DEBUG   2019-05-22 15:05:00,555 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.jsonld.JSONLDWriterFactory
+DEBUG   2019-05-22 15:05:00,557 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.binary.BinaryRDFWriterFactory
+DEBUG   2019-05-22 15:05:00,559 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.n3.N3WriterFactory
+DEBUG   2019-05-22 15:05:00,561 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.nquads.NQuadsWriterFactory
+DEBUG   2019-05-22 15:05:00,562 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.ntriples.NTriplesWriterFactory
+DEBUG   2019-05-22 15:05:00,564 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.rdfjson.RDFJSONWriterFactory
+DEBUG   2019-05-22 15:05:00,569 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.rdfxml.RDFXMLWriterFactory
+DEBUG   2019-05-22 15:05:00,571 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.trix.TriXWriterFactory
+DEBUG   2019-05-22 15:05:00,572 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.turtle.TurtleWriterFactory
+DEBUG   2019-05-22 15:05:00,574 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.trig.TriGWriterFactory
+INFO    2019-05-22 15:05:00,859 [main] translator.Translator  - Ontology Saved.
+DEBUG   2019-05-22 15:05:17,102 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioFunctionalSyntaxParserFactory
+DEBUG   2019-05-22 15:05:17,105 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioManchesterSyntaxParserFactory
+DEBUG   2019-05-22 15:05:17,109 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioOWLXMLParserFactory
+DEBUG   2019-05-22 15:05:17,122 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.jsonld.JSONLDParserFactory
+DEBUG   2019-05-22 15:05:17,123 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.binary.BinaryRDFParserFactory
+DEBUG   2019-05-22 15:05:17,124 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.n3.N3ParserFactory
+DEBUG   2019-05-22 15:05:17,132 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.nquads.NQuadsParserFactory
+DEBUG   2019-05-22 15:05:17,134 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.ntriples.NTriplesParserFactory
+DEBUG   2019-05-22 15:05:17,138 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.rdfjson.RDFJSONParserFactory
+DEBUG   2019-05-22 15:05:17,139 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.rdfxml.RDFXMLParserFactory
+DEBUG   2019-05-22 15:05:17,140 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.trix.TriXParserFactory
+DEBUG   2019-05-22 15:05:17,156 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.turtle.TurtleParserFactory
+DEBUG   2019-05-22 15:05:17,157 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.trig.TriGParserFactory
+DEBUG   2019-05-22 15:05:17,159 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semarglproject.sesame.rdf.rdfa.SesameRDFaParserFactory
+DEBUG   2019-05-22 15:05:17,221 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.XMLSchemaDatatypeHandler
+DEBUG   2019-05-22 15:05:17,222 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.RDFDatatypeHandler
+DEBUG   2019-05-22 15:05:17,226 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.DBPediaDatatypeHandler
+DEBUG   2019-05-22 15:05:17,228 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.VirtuosoGeometryDatatypeHandler
+DEBUG   2019-05-22 15:05:17,228 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.GeoSPARQLDatatypeHandler
+DEBUG   2019-05-22 15:05:17,237 [main] org.openrdf.rio.LanguageHandlerRegistry  - Registered service class org.openrdf.rio.languages.RFC3066LanguageHandler
+DEBUG   2019-05-22 15:05:17,486 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.TripleLogger  - Total number of triples: 176
+DEBUG   2019-05-22 15:05:17,602 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.TripleLogger  - Loaded OntologyID(Anonymous-2)
+INFO    2019-05-22 15:05:17,603 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.OWLRDFConsumer  - dumping remaining triples
+INFO    2019-05-22 15:05:17,608 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.OWLRDFConsumer  - done dumping remaining triples
+DEBUG   2019-05-22 15:05:17,615 [main] org.semanticweb.owlapi.rio.RioParserImpl$RioParserRDFHandler  - owlParse: timing=377
+DEBUG   2019-05-22 15:05:17,615 [main] org.semanticweb.owlapi.rio.RioParserImpl  - rioParse: timing=378
+INFO    2019-05-22 15:05:17,990 [main] translator.Parser  - setAllEnvParameters
+INFO    2019-05-22 15:05:17,995 [main] translator.Parser  - [translator.DataParsed@535b8c24, translator.DataParsed@4a951911, translator.DataParsed@55b62629, translator.DataParsed@a53bb6f, translator.DataParsed@5e63cad, translator.DataParsed@6759f091, translator.DataParsed@33a053d, translator.DataParsed@14a54ef6]
+INFO    2019-05-22 15:05:17,995 [main] translator.Parser  - [translator.DataParsed@20921b9b, translator.DataParsed@867ba60, translator.DataParsed@5ba745bc, translator.DataParsed@654b72c0, translator.DataParsed@55b5e331, translator.DataParsed@6034e75d, translator.DataParsed@15fc442, translator.DataParsed@3f3c7bdb, translator.DataParsed@456abb66, translator.DataParsed@2a3a299, translator.DataParsed@7da10b5b, translator.DataParsed@219f4597, translator.DataParsed@31be6b49, translator.DataParsed@2e16b08d, translator.DataParsed@5b989dc7, translator.DataParsed@70d8de, translator.DataParsed@42561fba, translator.DataParsed@595f4da5, translator.DataParsed@46b695ec, translator.DataParsed@408613cc, translator.DataParsed@325f7fa9, translator.DataParsed@11ce2e22, translator.DataParsed@63a5d002, translator.DataParsed@13cda7c9, translator.DataParsed@5aa6202e, translator.DataParsed@3af9aa66, translator.DataParsed@771158fb]
+INFO    2019-05-22 15:05:18,042 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_JEuz
+INFO    2019-05-22 15:05:18,049 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/firstName> : Jérome
+INFO    2019-05-22 15:05:18,055 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/familyName> : Euzenat
+INFO    2019-05-22 15:05:18,056 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_Iris Lohja
+INFO    2019-05-22 15:05:18,060 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/firstName> : Iris
+INFO    2019-05-22 15:05:18,061 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/familyName> : Lohja
+INFO    2019-05-22 15:05:18,063 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate>
+INFO    2019-05-22 15:05:18,063 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate_20181112-NOOR
+INFO    2019-05-22 15:05:18,065 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ClassificationOfExperiment>
+INFO    2019-05-22 15:05:18,065 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ClassificationOfExperiment_20181112-NOOR
+INFO    2019-05-22 15:05:18,069 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Script>
+INFO    2019-05-22 15:05:18,070 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Script_20181112-NOOR
+INFO    2019-05-22 15:05:18,070 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment>
+INFO    2019-05-22 15:05:18,071 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment_20181112-NOOR
+INFO    2019-05-22 15:05:18,072 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Person>
+INFO    2019-05-22 15:05:18,072 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_20181112-NOOR
+INFO    2019-05-22 15:05:18,073 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ClassificationByDomain>
+INFO    2019-05-22 15:05:18,073 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ClassificationByDomain_20181112-NOOR
+INFO    2019-05-22 15:05:18,073 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis>
+INFO    2019-05-22 15:05:18,073 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis_20181112-NOOR
+INFO    2019-05-22 15:05:18,074 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasHypothesisLabel> : The random version of strengthening does not differ much from the most specific and most general ones
+INFO    2019-05-22 15:05:18,074 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity>
+INFO    2019-05-22 15:05:18,074 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity_20181112-NOOR
+INFO    2019-05-22 15:05:18,075 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentationDate> : 20181112
+INFO    2019-05-22 15:05:18,079 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment>
+INFO    2019-05-22 15:05:18,079 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR
+INFO    2019-05-22 15:05:18,080 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentLabel> : 20181112-NOOR
+INFO    2019-05-22 15:05:18,080 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentName> : 20181112-NOOR
+INFO    2019-05-22 15:05:18,080 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentTitle> : Revision of networks of ontologies with random strenghening
+INFO    2019-05-22 15:05:18,083 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasHash> : d230f8c69b7c97c4c570785e554aabcb2bbe09e1
+INFO    2019-05-22 15:05:18,083 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign>
+INFO    2019-05-22 15:05:18,083 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR
+INFO    2019-05-22 15:05:18,085 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_designer> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_Iris Lohja>)
+INFO    2019-05-22 15:05:18,085 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_designer> : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_Iris Lohja>
+INFO    2019-05-22 15:05:18,093 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasDesignDate> : 2018-06-01
+INFO    2019-05-22 15:05:18,096 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Procedure>
+INFO    2019-05-22 15:05:18,096 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR
+INFO    2019-05-22 15:05:18,096 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimenter> <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 15:05:18,096 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimenter> : <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 15:05:18,097 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_performer> <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 15:05:18,097 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_performer> : <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 15:05:18,098 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasNumberOfIterations> : 10000
+INFO    2019-05-22 15:05:18,098 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasNumberOfRuns> : 10
+INFO    2019-05-22 15:05:18,101 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasOperators> : delete replace refine add addjoin refadd
+INFO    2019-05-22 15:05:18,108 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/Software>
+INFO    2019-05-22 15:05:18,109 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/Software_20181112-NOOR
+INFO    2019-05-22 15:05:18,109 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasLogbackVersion> : 1.2.3
+INFO    2019-05-22 15:05:18,109 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasOSVersion> : stretch
+INFO    2019-05-22 15:05:18,109 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasJavaPath> : lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:.
+INFO    2019-05-22 15:05:18,110 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData>
+INFO    2019-05-22 15:05:18,111 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData_20181112-NOOR
+INFO    2019-05-22 15:05:18,111 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults>
+INFO    2019-05-22 15:05:18,111 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR
+INFO    2019-05-22 15:05:18,111 [main] translator.Translator  - CLASS : <http://www.w3.org/2000/10/swap/pim/contact#Person>
+INFO    2019-05-22 15:05:18,111 [main] translator.MakerIndividual  - ADD : Individual - http://www.w3.org/2000/10/swap/pim/contact#Person_20181112-NOOR
+INFO    2019-05-22 15:05:18,111 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Project>
+INFO    2019-05-22 15:05:18,111 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Project_20181112-NOOR
+INFO    2019-05-22 15:05:18,113 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentEntity>
+INFO    2019-05-22 15:05:18,113 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentEntity_20181112-NOOR
+INFO    2019-05-22 15:05:18,113 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Agent>
+INFO    2019-05-22 15:05:18,114 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Agent_20181112-NOOR
+INFO    2019-05-22 15:05:18,114 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Entity>
+INFO    2019-05-22 15:05:18,114 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Entity_20181112-NOOR
+INFO    2019-05-22 15:05:18,114 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion>
+INFO    2019-05-22 15:05:18,114 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR
+INFO    2019-05-22 15:05:18,114 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_analyst> <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 15:05:18,115 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_analyst> : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 15:05:18,115 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesignEntity>
+INFO    2019-05-22 15:05:18,115 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesignEntity_20181112-NOOR
+INFO    2019-05-22 15:05:18,115 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/Hardware>
+INFO    2019-05-22 15:05:18,116 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/Hardware_20181112-NOOR
+INFO    2019-05-22 15:05:18,117 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Organization>
+INFO    2019-05-22 15:05:18,122 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Organization_20181112-NOOR
+INFO    2019-05-22 15:05:18,123 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation>
+INFO    2019-05-22 15:05:18,123 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation_20181112-NOOR
+INFO    2019-05-22 15:05:18,124 [main] translator.Translator  - CLASS : <http://schema.org/Person>
+INFO    2019-05-22 15:05:18,129 [main] translator.MakerIndividual  - ADD : Individual - http://schema.org/Person_20181112-NOOR
+INFO    2019-05-22 15:05:18,129 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal>
+INFO    2019-05-22 15:05:18,129 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal_20181112-NOOR
+DEBUG   2019-05-22 15:05:18,132 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.jsonld.JSONLDWriterFactory
+DEBUG   2019-05-22 15:05:18,133 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.binary.BinaryRDFWriterFactory
+DEBUG   2019-05-22 15:05:18,140 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.n3.N3WriterFactory
+DEBUG   2019-05-22 15:05:18,141 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.nquads.NQuadsWriterFactory
+DEBUG   2019-05-22 15:05:18,142 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.ntriples.NTriplesWriterFactory
+DEBUG   2019-05-22 15:05:18,144 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.rdfjson.RDFJSONWriterFactory
+DEBUG   2019-05-22 15:05:18,148 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.rdfxml.RDFXMLWriterFactory
+DEBUG   2019-05-22 15:05:18,149 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.trix.TriXWriterFactory
+DEBUG   2019-05-22 15:05:18,151 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.turtle.TurtleWriterFactory
+DEBUG   2019-05-22 15:05:18,155 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.trig.TriGWriterFactory
+INFO    2019-05-22 15:05:18,478 [main] translator.Translator  - Ontology Saved.
+DEBUG   2019-05-22 15:18:19,323 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioFunctionalSyntaxParserFactory
+DEBUG   2019-05-22 15:18:19,325 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioManchesterSyntaxParserFactory
+DEBUG   2019-05-22 15:18:19,325 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioOWLXMLParserFactory
+DEBUG   2019-05-22 15:18:19,326 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.jsonld.JSONLDParserFactory
+DEBUG   2019-05-22 15:18:19,327 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.binary.BinaryRDFParserFactory
+DEBUG   2019-05-22 15:18:19,328 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.n3.N3ParserFactory
+DEBUG   2019-05-22 15:18:19,329 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.nquads.NQuadsParserFactory
+DEBUG   2019-05-22 15:18:19,330 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.ntriples.NTriplesParserFactory
+DEBUG   2019-05-22 15:18:19,332 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.rdfjson.RDFJSONParserFactory
+DEBUG   2019-05-22 15:18:19,333 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.rdfxml.RDFXMLParserFactory
+DEBUG   2019-05-22 15:18:19,334 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.trix.TriXParserFactory
+DEBUG   2019-05-22 15:18:19,335 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.turtle.TurtleParserFactory
+DEBUG   2019-05-22 15:18:19,337 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.trig.TriGParserFactory
+DEBUG   2019-05-22 15:18:19,338 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semarglproject.sesame.rdf.rdfa.SesameRDFaParserFactory
+DEBUG   2019-05-22 15:18:19,369 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.XMLSchemaDatatypeHandler
+DEBUG   2019-05-22 15:18:19,370 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.RDFDatatypeHandler
+DEBUG   2019-05-22 15:18:19,371 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.DBPediaDatatypeHandler
+DEBUG   2019-05-22 15:18:19,372 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.VirtuosoGeometryDatatypeHandler
+DEBUG   2019-05-22 15:18:19,372 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.GeoSPARQLDatatypeHandler
+DEBUG   2019-05-22 15:18:19,374 [main] org.openrdf.rio.LanguageHandlerRegistry  - Registered service class org.openrdf.rio.languages.RFC3066LanguageHandler
+DEBUG   2019-05-22 15:18:19,484 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.TripleLogger  - Total number of triples: 176
+DEBUG   2019-05-22 15:18:19,540 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.TripleLogger  - Loaded OntologyID(Anonymous-2)
+INFO    2019-05-22 15:18:19,540 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.OWLRDFConsumer  - dumping remaining triples
+INFO    2019-05-22 15:18:19,542 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.OWLRDFConsumer  - done dumping remaining triples
+DEBUG   2019-05-22 15:18:19,545 [main] org.semanticweb.owlapi.rio.RioParserImpl$RioParserRDFHandler  - owlParse: timing=170
+DEBUG   2019-05-22 15:18:19,545 [main] org.semanticweb.owlapi.rio.RioParserImpl  - rioParse: timing=170
+INFO    2019-05-22 15:18:19,766 [main] translator.Parser  - setAllEnvParameters
+INFO    2019-05-22 15:18:19,767 [main] translator.Parser  - [translator.DataParsed@1929425f, translator.DataParsed@718607eb, translator.DataParsed@27f3b6d6, translator.DataParsed@757f675c, translator.DataParsed@2617f816, translator.DataParsed@676f0a60, translator.DataParsed@5d10455d, translator.DataParsed@535b8c24]
+INFO    2019-05-22 15:18:19,768 [main] translator.Parser  - [translator.DataParsed@4a951911, translator.DataParsed@55b62629, translator.DataParsed@a53bb6f, translator.DataParsed@5e63cad, translator.DataParsed@6759f091, translator.DataParsed@33a053d, translator.DataParsed@14a54ef6, translator.DataParsed@20921b9b, translator.DataParsed@867ba60, translator.DataParsed@5ba745bc, translator.DataParsed@654b72c0, translator.DataParsed@55b5e331, translator.DataParsed@6034e75d, translator.DataParsed@15fc442, translator.DataParsed@3f3c7bdb, translator.DataParsed@456abb66, translator.DataParsed@2a3a299, translator.DataParsed@7da10b5b, translator.DataParsed@219f4597, translator.DataParsed@31be6b49, translator.DataParsed@2e16b08d, translator.DataParsed@5b989dc7, translator.DataParsed@70d8de, translator.DataParsed@42561fba, translator.DataParsed@595f4da5, translator.DataParsed@46b695ec, translator.DataParsed@408613cc]
+INFO    2019-05-22 15:18:19,799 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_JEuz
+INFO    2019-05-22 15:18:19,808 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/firstName> : Jérome
+INFO    2019-05-22 15:18:19,809 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/familyName> : Euzenat
+INFO    2019-05-22 15:18:19,811 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_Iris Lohja
+INFO    2019-05-22 15:18:19,816 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/firstName> : Iris
+INFO    2019-05-22 15:18:19,818 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/familyName> : Lohja
+INFO    2019-05-22 15:18:19,819 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate>
+INFO    2019-05-22 15:18:19,820 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate_20181112-NOOR
+INFO    2019-05-22 15:18:19,820 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ClassificationOfExperiment>
+INFO    2019-05-22 15:18:19,821 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ClassificationOfExperiment_20181112-NOOR
+INFO    2019-05-22 15:18:19,821 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Script>
+INFO    2019-05-22 15:18:19,822 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Script_20181112-NOOR
+INFO    2019-05-22 15:18:19,822 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment>
+INFO    2019-05-22 15:18:19,822 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment_20181112-NOOR
+INFO    2019-05-22 15:18:19,824 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Person>
+INFO    2019-05-22 15:18:19,824 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_20181112-NOOR
+INFO    2019-05-22 15:18:19,826 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ClassificationByDomain>
+INFO    2019-05-22 15:18:19,826 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ClassificationByDomain_20181112-NOOR
+INFO    2019-05-22 15:18:19,827 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis>
+INFO    2019-05-22 15:18:19,828 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis_20181112-NOOR
+INFO    2019-05-22 15:18:19,828 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasHypothesisLabel> : The random version of strengthening does not differ much from the most specific and most general ones
+INFO    2019-05-22 15:18:19,830 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity>
+INFO    2019-05-22 15:18:19,831 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity_20181112-NOOR
+INFO    2019-05-22 15:18:19,831 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentationDate> : 20181112
+INFO    2019-05-22 15:18:19,832 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment>
+INFO    2019-05-22 15:18:19,832 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR
+INFO    2019-05-22 15:18:19,833 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentLabel> : 20181112-NOOR
+INFO    2019-05-22 15:18:19,833 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentName> : 20181112-NOOR
+INFO    2019-05-22 15:18:19,834 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentTitle> : Revision of networks of ontologies with random strenghening
+INFO    2019-05-22 15:18:19,834 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasHash> : d230f8c69b7c97c4c570785e554aabcb2bbe09e1
+INFO    2019-05-22 15:18:19,835 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign>
+INFO    2019-05-22 15:18:19,835 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR
+INFO    2019-05-22 15:18:19,839 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_designer> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_Iris Lohja>)
+INFO    2019-05-22 15:18:19,840 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_designer> : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_Iris Lohja>
+INFO    2019-05-22 15:18:19,841 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasDesignDate> : 2018-06-01
+INFO    2019-05-22 15:18:19,843 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Procedure>
+INFO    2019-05-22 15:18:19,844 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR
+INFO    2019-05-22 15:18:19,844 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimenter> <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 15:18:19,846 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimenter> : <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 15:18:19,847 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_performer> <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 15:18:19,849 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_performer> : <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 15:18:19,850 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasNumberOfIterations> : 10000
+INFO    2019-05-22 15:18:19,850 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasNumberOfRuns> : 10
+INFO    2019-05-22 15:18:19,850 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasOperators> : delete replace refine add addjoin refadd
+INFO    2019-05-22 15:18:19,851 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/Software>
+INFO    2019-05-22 15:18:19,851 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/Software_20181112-NOOR
+INFO    2019-05-22 15:18:19,852 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasLogbackVersion> : 1.2.3
+INFO    2019-05-22 15:18:19,853 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasOSVersion> : stretch
+INFO    2019-05-22 15:18:19,853 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasJavaPath> : lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:.
+INFO    2019-05-22 15:18:19,853 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData>
+INFO    2019-05-22 15:18:19,853 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData_20181112-NOOR
+INFO    2019-05-22 15:18:19,853 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults>
+INFO    2019-05-22 15:18:19,853 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR
+INFO    2019-05-22 15:18:19,853 [main] translator.Translator  - CLASS : <http://www.w3.org/2000/10/swap/pim/contact#Person>
+INFO    2019-05-22 15:18:19,853 [main] translator.MakerIndividual  - ADD : Individual - http://www.w3.org/2000/10/swap/pim/contact#Person_20181112-NOOR
+INFO    2019-05-22 15:18:19,853 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Project>
+INFO    2019-05-22 15:18:19,854 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Project_20181112-NOOR
+INFO    2019-05-22 15:18:19,854 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentEntity>
+INFO    2019-05-22 15:18:19,857 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentEntity_20181112-NOOR
+INFO    2019-05-22 15:18:19,858 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Agent>
+INFO    2019-05-22 15:18:19,858 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Agent_20181112-NOOR
+INFO    2019-05-22 15:18:19,858 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Entity>
+INFO    2019-05-22 15:18:19,858 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Entity_20181112-NOOR
+INFO    2019-05-22 15:18:19,858 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion>
+INFO    2019-05-22 15:18:19,858 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR
+INFO    2019-05-22 15:18:19,858 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_analyst> <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 15:18:19,859 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_analyst> : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 15:18:19,859 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesignEntity>
+INFO    2019-05-22 15:18:19,859 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesignEntity_20181112-NOOR
+INFO    2019-05-22 15:18:19,859 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/Hardware>
+INFO    2019-05-22 15:18:19,859 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/Hardware_20181112-NOOR
+INFO    2019-05-22 15:18:19,859 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Organization>
+INFO    2019-05-22 15:18:19,859 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Organization_20181112-NOOR
+INFO    2019-05-22 15:18:19,860 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation>
+INFO    2019-05-22 15:18:19,860 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation_20181112-NOOR
+INFO    2019-05-22 15:18:19,860 [main] translator.Translator  - CLASS : <http://schema.org/Person>
+INFO    2019-05-22 15:18:19,860 [main] translator.MakerIndividual  - ADD : Individual - http://schema.org/Person_20181112-NOOR
+INFO    2019-05-22 15:18:19,860 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal>
+INFO    2019-05-22 15:18:19,860 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal_20181112-NOOR
+DEBUG   2019-05-22 15:18:19,864 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.jsonld.JSONLDWriterFactory
+DEBUG   2019-05-22 15:18:19,871 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.binary.BinaryRDFWriterFactory
+DEBUG   2019-05-22 15:18:19,872 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.n3.N3WriterFactory
+DEBUG   2019-05-22 15:18:19,873 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.nquads.NQuadsWriterFactory
+DEBUG   2019-05-22 15:18:19,874 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.ntriples.NTriplesWriterFactory
+DEBUG   2019-05-22 15:18:19,875 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.rdfjson.RDFJSONWriterFactory
+DEBUG   2019-05-22 15:18:19,875 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.rdfxml.RDFXMLWriterFactory
+DEBUG   2019-05-22 15:18:19,876 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.trix.TriXWriterFactory
+DEBUG   2019-05-22 15:18:19,877 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.turtle.TurtleWriterFactory
+DEBUG   2019-05-22 15:18:19,878 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.trig.TriGWriterFactory
+INFO    2019-05-22 15:18:20,053 [main] translator.Translator  - Ontology Saved.
+DEBUG   2019-05-22 15:18:47,669 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioFunctionalSyntaxParserFactory
+DEBUG   2019-05-22 15:18:47,672 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioManchesterSyntaxParserFactory
+DEBUG   2019-05-22 15:18:47,672 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioOWLXMLParserFactory
+DEBUG   2019-05-22 15:18:47,673 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.jsonld.JSONLDParserFactory
+DEBUG   2019-05-22 15:18:47,675 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.binary.BinaryRDFParserFactory
+DEBUG   2019-05-22 15:18:47,676 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.n3.N3ParserFactory
+DEBUG   2019-05-22 15:18:47,677 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.nquads.NQuadsParserFactory
+DEBUG   2019-05-22 15:18:47,678 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.ntriples.NTriplesParserFactory
+DEBUG   2019-05-22 15:18:47,679 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.rdfjson.RDFJSONParserFactory
+DEBUG   2019-05-22 15:18:47,681 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.rdfxml.RDFXMLParserFactory
+DEBUG   2019-05-22 15:18:47,689 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.trix.TriXParserFactory
+DEBUG   2019-05-22 15:18:47,690 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.turtle.TurtleParserFactory
+DEBUG   2019-05-22 15:18:47,691 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.trig.TriGParserFactory
+DEBUG   2019-05-22 15:18:47,692 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semarglproject.sesame.rdf.rdfa.SesameRDFaParserFactory
+DEBUG   2019-05-22 15:18:47,731 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.XMLSchemaDatatypeHandler
+DEBUG   2019-05-22 15:18:47,731 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.RDFDatatypeHandler
+DEBUG   2019-05-22 15:18:47,732 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.DBPediaDatatypeHandler
+DEBUG   2019-05-22 15:18:47,733 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.VirtuosoGeometryDatatypeHandler
+DEBUG   2019-05-22 15:18:47,734 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.GeoSPARQLDatatypeHandler
+DEBUG   2019-05-22 15:18:47,737 [main] org.openrdf.rio.LanguageHandlerRegistry  - Registered service class org.openrdf.rio.languages.RFC3066LanguageHandler
+DEBUG   2019-05-22 15:18:47,836 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.TripleLogger  - Total number of triples: 176
+DEBUG   2019-05-22 15:18:47,890 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.TripleLogger  - Loaded OntologyID(Anonymous-2)
+INFO    2019-05-22 15:18:47,890 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.OWLRDFConsumer  - dumping remaining triples
+INFO    2019-05-22 15:18:47,892 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.OWLRDFConsumer  - done dumping remaining triples
+DEBUG   2019-05-22 15:18:47,895 [main] org.semanticweb.owlapi.rio.RioParserImpl$RioParserRDFHandler  - owlParse: timing=157
+DEBUG   2019-05-22 15:18:47,895 [main] org.semanticweb.owlapi.rio.RioParserImpl  - rioParse: timing=158
+INFO    2019-05-22 15:18:48,156 [main] translator.Parser  - setAllEnvParameters
+INFO    2019-05-22 15:18:48,157 [main] translator.Parser  - [translator.DataParsed@55b62629, translator.DataParsed@a53bb6f, translator.DataParsed@5e63cad, translator.DataParsed@6759f091, translator.DataParsed@33a053d, translator.DataParsed@14a54ef6, translator.DataParsed@20921b9b, translator.DataParsed@867ba60]
+INFO    2019-05-22 15:18:48,157 [main] translator.Parser  - [translator.DataParsed@5ba745bc, translator.DataParsed@654b72c0, translator.DataParsed@55b5e331, translator.DataParsed@6034e75d, translator.DataParsed@15fc442, translator.DataParsed@3f3c7bdb, translator.DataParsed@456abb66, translator.DataParsed@2a3a299, translator.DataParsed@7da10b5b, translator.DataParsed@219f4597, translator.DataParsed@31be6b49, translator.DataParsed@2e16b08d, translator.DataParsed@5b989dc7, translator.DataParsed@70d8de, translator.DataParsed@42561fba, translator.DataParsed@595f4da5, translator.DataParsed@46b695ec, translator.DataParsed@408613cc, translator.DataParsed@325f7fa9, translator.DataParsed@11ce2e22, translator.DataParsed@63a5d002, translator.DataParsed@13cda7c9, translator.DataParsed@5aa6202e, translator.DataParsed@3af9aa66, translator.DataParsed@771158fb, translator.DataParsed@91c4a3f, translator.DataParsed@62d0ac62]
+INFO    2019-05-22 15:18:48,177 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_JEuz
+INFO    2019-05-22 15:18:48,181 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/firstName> : Jérome
+INFO    2019-05-22 15:18:48,181 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/familyName> : Euzenat
+INFO    2019-05-22 15:18:48,188 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_Iris Lohja
+INFO    2019-05-22 15:18:48,190 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/firstName> : Iris
+INFO    2019-05-22 15:18:48,191 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/familyName> : Lohja
+INFO    2019-05-22 15:18:48,191 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate>
+INFO    2019-05-22 15:18:48,191 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate_20181112-NOOR
+INFO    2019-05-22 15:18:48,191 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ClassificationOfExperiment>
+INFO    2019-05-22 15:18:48,191 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ClassificationOfExperiment_20181112-NOOR
+INFO    2019-05-22 15:18:48,191 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Script>
+INFO    2019-05-22 15:18:48,191 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Script_20181112-NOOR
+INFO    2019-05-22 15:18:48,192 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment>
+INFO    2019-05-22 15:18:48,192 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment_20181112-NOOR
+INFO    2019-05-22 15:18:48,192 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Person>
+INFO    2019-05-22 15:18:48,192 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_20181112-NOOR
+INFO    2019-05-22 15:18:48,192 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ClassificationByDomain>
+INFO    2019-05-22 15:18:48,193 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ClassificationByDomain_20181112-NOOR
+INFO    2019-05-22 15:18:48,193 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis>
+INFO    2019-05-22 15:18:48,193 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis_20181112-NOOR
+INFO    2019-05-22 15:18:48,193 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasHypothesisLabel> : The random version of strengthening does not differ much from the most specific and most general ones
+INFO    2019-05-22 15:18:48,193 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity>
+INFO    2019-05-22 15:18:48,194 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity_20181112-NOOR
+INFO    2019-05-22 15:18:48,194 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentationDate> : 20181112
+INFO    2019-05-22 15:18:48,194 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment>
+INFO    2019-05-22 15:18:48,194 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR
+INFO    2019-05-22 15:18:48,194 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentLabel> : 20181112-NOOR
+INFO    2019-05-22 15:18:48,195 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentName> : 20181112-NOOR
+INFO    2019-05-22 15:18:48,195 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentTitle> : Revision of networks of ontologies with random strenghening
+INFO    2019-05-22 15:18:48,195 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasHash> : d230f8c69b7c97c4c570785e554aabcb2bbe09e1
+INFO    2019-05-22 15:18:48,195 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign>
+INFO    2019-05-22 15:18:48,195 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR
+INFO    2019-05-22 15:18:48,206 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_designer> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_Iris Lohja>)
+INFO    2019-05-22 15:18:48,206 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_designer> : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_Iris Lohja>
+INFO    2019-05-22 15:18:48,207 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasDesignDate> : 2018-06-01
+INFO    2019-05-22 15:18:48,207 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Procedure>
+INFO    2019-05-22 15:18:48,207 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR
+INFO    2019-05-22 15:18:48,207 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimenter> <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 15:18:48,207 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimenter> : <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 15:18:48,208 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_performer> <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 15:18:48,208 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_performer> : <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 15:18:48,208 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasNumberOfIterations> : 10000
+INFO    2019-05-22 15:18:48,208 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasNumberOfRuns> : 10
+INFO    2019-05-22 15:18:48,208 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasOperators> : delete replace refine add addjoin refadd
+INFO    2019-05-22 15:18:48,209 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/Software>
+INFO    2019-05-22 15:18:48,209 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/Software_20181112-NOOR
+INFO    2019-05-22 15:18:48,211 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasLogbackVersion> : 1.2.3
+INFO    2019-05-22 15:18:48,212 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasOSVersion> : stretch
+INFO    2019-05-22 15:18:48,212 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasJavaPath> : lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:.
+INFO    2019-05-22 15:18:48,212 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData>
+INFO    2019-05-22 15:18:48,212 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData_20181112-NOOR
+INFO    2019-05-22 15:18:48,212 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults>
+INFO    2019-05-22 15:18:48,213 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR
+INFO    2019-05-22 15:18:48,214 [main] translator.Translator  - CLASS : <http://www.w3.org/2000/10/swap/pim/contact#Person>
+INFO    2019-05-22 15:18:48,214 [main] translator.MakerIndividual  - ADD : Individual - http://www.w3.org/2000/10/swap/pim/contact#Person_20181112-NOOR
+INFO    2019-05-22 15:18:48,214 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Project>
+INFO    2019-05-22 15:18:48,214 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Project_20181112-NOOR
+INFO    2019-05-22 15:18:48,219 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentEntity>
+INFO    2019-05-22 15:18:48,220 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentEntity_20181112-NOOR
+INFO    2019-05-22 15:18:48,222 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Agent>
+INFO    2019-05-22 15:18:48,223 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Agent_20181112-NOOR
+INFO    2019-05-22 15:18:48,223 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Entity>
+INFO    2019-05-22 15:18:48,223 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Entity_20181112-NOOR
+INFO    2019-05-22 15:18:48,223 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion>
+INFO    2019-05-22 15:18:48,223 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR
+INFO    2019-05-22 15:18:48,223 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_analyst> <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 15:18:48,223 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_analyst> : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 15:18:48,223 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesignEntity>
+INFO    2019-05-22 15:18:48,224 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesignEntity_20181112-NOOR
+INFO    2019-05-22 15:18:48,224 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/Hardware>
+INFO    2019-05-22 15:18:48,226 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/Hardware_20181112-NOOR
+INFO    2019-05-22 15:18:48,226 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Organization>
+INFO    2019-05-22 15:18:48,226 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Organization_20181112-NOOR
+INFO    2019-05-22 15:18:48,226 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation>
+INFO    2019-05-22 15:18:48,226 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation_20181112-NOOR
+INFO    2019-05-22 15:18:48,227 [main] translator.Translator  - CLASS : <http://schema.org/Person>
+INFO    2019-05-22 15:18:48,227 [main] translator.MakerIndividual  - ADD : Individual - http://schema.org/Person_20181112-NOOR
+INFO    2019-05-22 15:18:48,227 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal>
+INFO    2019-05-22 15:18:48,227 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal_20181112-NOOR
+DEBUG   2019-05-22 15:18:48,231 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.jsonld.JSONLDWriterFactory
+DEBUG   2019-05-22 15:18:48,231 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.binary.BinaryRDFWriterFactory
+DEBUG   2019-05-22 15:18:48,232 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.n3.N3WriterFactory
+DEBUG   2019-05-22 15:18:48,233 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.nquads.NQuadsWriterFactory
+DEBUG   2019-05-22 15:18:48,234 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.ntriples.NTriplesWriterFactory
+DEBUG   2019-05-22 15:18:48,234 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.rdfjson.RDFJSONWriterFactory
+DEBUG   2019-05-22 15:18:48,235 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.rdfxml.RDFXMLWriterFactory
+DEBUG   2019-05-22 15:18:48,235 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.trix.TriXWriterFactory
+DEBUG   2019-05-22 15:18:48,236 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.turtle.TurtleWriterFactory
+DEBUG   2019-05-22 15:18:48,237 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.trig.TriGWriterFactory
+INFO    2019-05-22 15:18:48,443 [main] translator.Translator  - Ontology Saved.
+DEBUG   2019-05-22 15:41:32,181 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioFunctionalSyntaxParserFactory
+DEBUG   2019-05-22 15:41:32,186 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioManchesterSyntaxParserFactory
+DEBUG   2019-05-22 15:41:32,187 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioOWLXMLParserFactory
+DEBUG   2019-05-22 15:41:32,194 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.jsonld.JSONLDParserFactory
+DEBUG   2019-05-22 15:41:32,195 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.binary.BinaryRDFParserFactory
+DEBUG   2019-05-22 15:41:32,196 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.n3.N3ParserFactory
+DEBUG   2019-05-22 15:41:32,198 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.nquads.NQuadsParserFactory
+DEBUG   2019-05-22 15:41:32,200 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.ntriples.NTriplesParserFactory
+DEBUG   2019-05-22 15:41:32,201 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.rdfjson.RDFJSONParserFactory
+DEBUG   2019-05-22 15:41:32,203 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.rdfxml.RDFXMLParserFactory
+DEBUG   2019-05-22 15:41:32,204 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.trix.TriXParserFactory
+DEBUG   2019-05-22 15:41:32,209 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.turtle.TurtleParserFactory
+DEBUG   2019-05-22 15:41:32,210 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.trig.TriGParserFactory
+DEBUG   2019-05-22 15:41:32,211 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semarglproject.sesame.rdf.rdfa.SesameRDFaParserFactory
+DEBUG   2019-05-22 15:41:32,245 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.XMLSchemaDatatypeHandler
+DEBUG   2019-05-22 15:41:32,246 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.RDFDatatypeHandler
+DEBUG   2019-05-22 15:41:32,247 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.DBPediaDatatypeHandler
+DEBUG   2019-05-22 15:41:32,247 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.VirtuosoGeometryDatatypeHandler
+DEBUG   2019-05-22 15:41:32,248 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.GeoSPARQLDatatypeHandler
+DEBUG   2019-05-22 15:41:32,251 [main] org.openrdf.rio.LanguageHandlerRegistry  - Registered service class org.openrdf.rio.languages.RFC3066LanguageHandler
+DEBUG   2019-05-22 15:41:32,342 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.TripleLogger  - Total number of triples: 176
+DEBUG   2019-05-22 15:41:32,390 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.TripleLogger  - Loaded OntologyID(Anonymous-2)
+INFO    2019-05-22 15:41:32,390 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.OWLRDFConsumer  - dumping remaining triples
+INFO    2019-05-22 15:41:32,392 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.OWLRDFConsumer  - done dumping remaining triples
+DEBUG   2019-05-22 15:41:32,395 [main] org.semanticweb.owlapi.rio.RioParserImpl$RioParserRDFHandler  - owlParse: timing=143
+DEBUG   2019-05-22 15:41:32,395 [main] org.semanticweb.owlapi.rio.RioParserImpl  - rioParse: timing=144
+INFO    2019-05-22 15:41:32,616 [main] translator.Parser  - setAllEnvParameters
+INFO    2019-05-22 15:41:32,617 [main] translator.Parser  - [translator.DataParsed@1929425f, translator.DataParsed@718607eb, translator.DataParsed@27f3b6d6, translator.DataParsed@757f675c, translator.DataParsed@2617f816, translator.DataParsed@676f0a60, translator.DataParsed@5d10455d, translator.DataParsed@535b8c24]
+INFO    2019-05-22 15:41:32,618 [main] translator.Parser  - [translator.DataParsed@4a951911, translator.DataParsed@55b62629, translator.DataParsed@a53bb6f, translator.DataParsed@5e63cad, translator.DataParsed@6759f091, translator.DataParsed@33a053d, translator.DataParsed@14a54ef6, translator.DataParsed@20921b9b, translator.DataParsed@867ba60, translator.DataParsed@5ba745bc, translator.DataParsed@654b72c0, translator.DataParsed@55b5e331, translator.DataParsed@6034e75d, translator.DataParsed@15fc442, translator.DataParsed@3f3c7bdb, translator.DataParsed@456abb66, translator.DataParsed@2a3a299, translator.DataParsed@7da10b5b, translator.DataParsed@219f4597, translator.DataParsed@31be6b49, translator.DataParsed@2e16b08d, translator.DataParsed@5b989dc7, translator.DataParsed@70d8de, translator.DataParsed@42561fba, translator.DataParsed@595f4da5, translator.DataParsed@46b695ec, translator.DataParsed@408613cc]
+INFO    2019-05-22 15:41:32,762 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_JEuz
+INFO    2019-05-22 15:41:32,773 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/firstName> : Jérome
+INFO    2019-05-22 15:41:32,775 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/familyName> : Euzenat
+INFO    2019-05-22 15:41:32,776 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_Iris Lohja
+INFO    2019-05-22 15:41:32,776 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/firstName> : Iris
+INFO    2019-05-22 15:41:32,777 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/familyName> : Lohja
+INFO    2019-05-22 15:41:32,777 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate>
+INFO    2019-05-22 15:41:32,777 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate_20181112-NOOR
+DEBUG   2019-05-22 15:42:26,050 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioFunctionalSyntaxParserFactory
+DEBUG   2019-05-22 15:42:26,052 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioManchesterSyntaxParserFactory
+DEBUG   2019-05-22 15:42:26,053 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioOWLXMLParserFactory
+DEBUG   2019-05-22 15:42:26,060 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.jsonld.JSONLDParserFactory
+DEBUG   2019-05-22 15:42:26,061 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.binary.BinaryRDFParserFactory
+DEBUG   2019-05-22 15:42:26,063 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.n3.N3ParserFactory
+DEBUG   2019-05-22 15:42:26,064 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.nquads.NQuadsParserFactory
+DEBUG   2019-05-22 15:42:26,071 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.ntriples.NTriplesParserFactory
+DEBUG   2019-05-22 15:42:26,072 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.rdfjson.RDFJSONParserFactory
+DEBUG   2019-05-22 15:42:26,073 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.rdfxml.RDFXMLParserFactory
+DEBUG   2019-05-22 15:42:26,074 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.trix.TriXParserFactory
+DEBUG   2019-05-22 15:42:26,075 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.turtle.TurtleParserFactory
+DEBUG   2019-05-22 15:42:26,076 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.trig.TriGParserFactory
+DEBUG   2019-05-22 15:42:26,077 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semarglproject.sesame.rdf.rdfa.SesameRDFaParserFactory
+DEBUG   2019-05-22 15:42:26,114 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.XMLSchemaDatatypeHandler
+DEBUG   2019-05-22 15:42:26,115 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.RDFDatatypeHandler
+DEBUG   2019-05-22 15:42:26,116 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.DBPediaDatatypeHandler
+DEBUG   2019-05-22 15:42:26,116 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.VirtuosoGeometryDatatypeHandler
+DEBUG   2019-05-22 15:42:26,117 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.GeoSPARQLDatatypeHandler
+DEBUG   2019-05-22 15:42:26,119 [main] org.openrdf.rio.LanguageHandlerRegistry  - Registered service class org.openrdf.rio.languages.RFC3066LanguageHandler
+DEBUG   2019-05-22 15:42:26,205 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.TripleLogger  - Total number of triples: 176
+DEBUG   2019-05-22 15:42:26,270 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.TripleLogger  - Loaded OntologyID(Anonymous-2)
+INFO    2019-05-22 15:42:26,270 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.OWLRDFConsumer  - dumping remaining triples
+INFO    2019-05-22 15:42:26,275 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.OWLRDFConsumer  - done dumping remaining triples
+DEBUG   2019-05-22 15:42:26,281 [main] org.semanticweb.owlapi.rio.RioParserImpl$RioParserRDFHandler  - owlParse: timing=162
+DEBUG   2019-05-22 15:42:26,281 [main] org.semanticweb.owlapi.rio.RioParserImpl  - rioParse: timing=162
+INFO    2019-05-22 15:42:26,453 [main] translator.Parser  - setAllEnvParameters
+INFO    2019-05-22 15:42:26,453 [main] translator.Parser  - [translator.DataParsed@1929425f, translator.DataParsed@718607eb, translator.DataParsed@27f3b6d6, translator.DataParsed@757f675c, translator.DataParsed@2617f816, translator.DataParsed@676f0a60, translator.DataParsed@5d10455d, translator.DataParsed@535b8c24]
+INFO    2019-05-22 15:42:26,454 [main] translator.Parser  - [translator.DataParsed@4a951911, translator.DataParsed@55b62629, translator.DataParsed@a53bb6f, translator.DataParsed@5e63cad, translator.DataParsed@6759f091, translator.DataParsed@33a053d, translator.DataParsed@14a54ef6, translator.DataParsed@20921b9b, translator.DataParsed@867ba60, translator.DataParsed@5ba745bc, translator.DataParsed@654b72c0, translator.DataParsed@55b5e331, translator.DataParsed@6034e75d, translator.DataParsed@15fc442, translator.DataParsed@3f3c7bdb, translator.DataParsed@456abb66, translator.DataParsed@2a3a299, translator.DataParsed@7da10b5b, translator.DataParsed@219f4597, translator.DataParsed@31be6b49, translator.DataParsed@2e16b08d, translator.DataParsed@5b989dc7, translator.DataParsed@70d8de, translator.DataParsed@42561fba, translator.DataParsed@595f4da5, translator.DataParsed@46b695ec, translator.DataParsed@408613cc]
+INFO    2019-05-22 15:42:26,586 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_JEuz
+INFO    2019-05-22 15:42:26,596 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/firstName> : Jérome
+INFO    2019-05-22 15:42:26,597 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/familyName> : Euzenat
+INFO    2019-05-22 15:42:26,602 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_Iris Lohja
+INFO    2019-05-22 15:42:26,603 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/firstName> : Iris
+INFO    2019-05-22 15:42:26,603 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/familyName> : Lohja
+INFO    2019-05-22 15:42:26,603 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate>
+INFO    2019-05-22 15:42:26,603 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate_20181112-NOOR
+INFO    2019-05-22 15:42:26,603 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ClassificationOfExperiment>
+INFO    2019-05-22 15:42:26,604 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ClassificationOfExperiment_20181112-NOOR
+INFO    2019-05-22 15:42:26,604 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Script>
+INFO    2019-05-22 15:42:26,604 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Script_20181112-NOOR
+INFO    2019-05-22 15:42:26,608 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment>
+INFO    2019-05-22 15:42:26,608 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment_20181112-NOOR
+INFO    2019-05-22 15:42:26,608 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Person>
+INFO    2019-05-22 15:42:26,609 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_20181112-NOOR
+INFO    2019-05-22 15:42:26,609 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ClassificationByDomain>
+INFO    2019-05-22 15:42:26,609 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ClassificationByDomain_20181112-NOOR
+INFO    2019-05-22 15:42:26,609 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis>
+INFO    2019-05-22 15:42:26,609 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis_20181112-NOOR
+INFO    2019-05-22 15:42:26,609 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasHypothesisLabel> : The random version of strengthening does not differ much from the most specific and most general ones
+INFO    2019-05-22 15:42:26,609 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity>
+INFO    2019-05-22 15:42:26,610 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity_20181112-NOOR
+INFO    2019-05-22 15:42:26,610 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentationDate> : 20181112
+INFO    2019-05-22 15:42:26,610 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment>
+INFO    2019-05-22 15:42:26,610 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR
+INFO    2019-05-22 15:42:26,610 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentLabel> : 20181112-NOOR
+INFO    2019-05-22 15:42:26,611 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentName> : 20181112-NOOR
+INFO    2019-05-22 15:42:26,611 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentTitle> : Revision of networks of ontologies with random strenghening
+INFO    2019-05-22 15:42:26,611 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasHash> : d230f8c69b7c97c4c570785e554aabcb2bbe09e1
+INFO    2019-05-22 15:42:26,612 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign>
+INFO    2019-05-22 15:42:26,615 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR
+INFO    2019-05-22 15:42:26,618 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_designer> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_Iris Lohja>)
+INFO    2019-05-22 15:42:26,618 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_designer> : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_Iris Lohja>
+INFO    2019-05-22 15:42:26,619 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasDesignDate> : 2018-06-01
+INFO    2019-05-22 15:42:26,619 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Procedure>
+INFO    2019-05-22 15:42:26,619 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR
+INFO    2019-05-22 15:42:26,619 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimenter> <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 15:42:26,619 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimenter> : <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 15:42:26,619 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_performer> <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 15:42:26,620 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_performer> : <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 15:42:26,620 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasNumberOfIterations> : 10000
+INFO    2019-05-22 15:42:26,620 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasNumberOfRuns> : 10
+INFO    2019-05-22 15:42:26,622 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasOperators> : delete replace refine add addjoin refadd
+INFO    2019-05-22 15:42:26,622 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/Software>
+INFO    2019-05-22 15:42:26,622 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/Software_20181112-NOOR
+INFO    2019-05-22 15:42:26,622 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasLogbackVersion> : 1.2.3
+INFO    2019-05-22 15:42:26,623 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasOSVersion> : stretch
+INFO    2019-05-22 15:42:26,623 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasJavaPath> : lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:.
+INFO    2019-05-22 15:42:26,623 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData>
+INFO    2019-05-22 15:42:26,623 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData_20181112-NOOR
+INFO    2019-05-22 15:42:26,627 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults>
+INFO    2019-05-22 15:42:26,628 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR
+INFO    2019-05-22 15:42:26,629 [main] translator.Translator  - CLASS : <http://www.w3.org/2000/10/swap/pim/contact#Person>
+INFO    2019-05-22 15:42:26,629 [main] translator.MakerIndividual  - ADD : Individual - http://www.w3.org/2000/10/swap/pim/contact#Person_20181112-NOOR
+INFO    2019-05-22 15:42:26,629 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Project>
+INFO    2019-05-22 15:42:26,630 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Project_20181112-NOOR
+INFO    2019-05-22 15:42:26,634 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentEntity>
+INFO    2019-05-22 15:42:26,634 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentEntity_20181112-NOOR
+INFO    2019-05-22 15:42:26,635 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Agent>
+INFO    2019-05-22 15:42:26,635 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Agent_20181112-NOOR
+INFO    2019-05-22 15:42:26,635 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Entity>
+INFO    2019-05-22 15:42:26,635 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Entity_20181112-NOOR
+INFO    2019-05-22 15:42:26,635 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion>
+INFO    2019-05-22 15:42:26,635 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR
+INFO    2019-05-22 15:42:26,635 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_analyst> <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 15:42:26,636 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_analyst> : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 15:42:26,636 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesignEntity>
+INFO    2019-05-22 15:42:26,636 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesignEntity_20181112-NOOR
+INFO    2019-05-22 15:42:26,636 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/Hardware>
+INFO    2019-05-22 15:42:26,636 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/Hardware_20181112-NOOR
+INFO    2019-05-22 15:42:26,636 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Organization>
+INFO    2019-05-22 15:42:26,636 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Organization_20181112-NOOR
+INFO    2019-05-22 15:42:26,636 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation>
+INFO    2019-05-22 15:42:26,637 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation_20181112-NOOR
+INFO    2019-05-22 15:42:26,637 [main] translator.Translator  - CLASS : <http://schema.org/Person>
+INFO    2019-05-22 15:42:26,638 [main] translator.MakerIndividual  - ADD : Individual - http://schema.org/Person_20181112-NOOR
+INFO    2019-05-22 15:42:26,638 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal>
+INFO    2019-05-22 15:42:26,638 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal_20181112-NOOR
+INFO    2019-05-22 15:42:26,638 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimentalGoal> <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal_20181112-NOOR>)
+INFO    2019-05-22 15:42:26,639 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimentalGoal> : <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> --> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal_20181112-NOOR>
+INFO    2019-05-22 15:42:26,639 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimentalHypothesis> <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis_20181112-NOOR>)
+INFO    2019-05-22 15:42:26,639 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimentalHypothesis> : <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> --> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis_20181112-NOOR>
+INFO    2019-05-22 15:42:26,639 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimentalDesign> <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR>)
+INFO    2019-05-22 15:42:26,639 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimentalDesign> : <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> --> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR>
+INFO    2019-05-22 15:42:26,639 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimentalResults> <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR>)
+INFO    2019-05-22 15:42:26,639 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimentalResults> : <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> --> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR>
+INFO    2019-05-22 15:42:26,639 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_procedure> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR>)
+INFO    2019-05-22 15:42:26,640 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_procedure> : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> --> <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR>
+INFO    2019-05-22 15:42:26,640 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_ExperimentalEquiment> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment_20181112-NOOR>)
+INFO    2019-05-22 15:42:26,640 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_ExperimentalEquiment> : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> --> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment_20181112-NOOR>
+INFO    2019-05-22 15:42:26,640 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimentalObservation> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR> <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation_20181112-NOOR>)
+INFO    2019-05-22 15:42:26,641 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimentalObservation> : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR> --> <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation_20181112-NOOR>
+INFO    2019-05-22 15:42:26,641 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimentalConclusion> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR> <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR>)
+INFO    2019-05-22 15:42:26,641 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimentalConclusion> : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR> --> <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR>
+DEBUG   2019-05-22 15:42:26,645 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.jsonld.JSONLDWriterFactory
+DEBUG   2019-05-22 15:42:26,646 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.binary.BinaryRDFWriterFactory
+DEBUG   2019-05-22 15:42:26,647 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.n3.N3WriterFactory
+DEBUG   2019-05-22 15:42:26,648 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.nquads.NQuadsWriterFactory
+DEBUG   2019-05-22 15:42:26,649 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.ntriples.NTriplesWriterFactory
+DEBUG   2019-05-22 15:42:26,650 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.rdfjson.RDFJSONWriterFactory
+DEBUG   2019-05-22 15:42:26,651 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.rdfxml.RDFXMLWriterFactory
+DEBUG   2019-05-22 15:42:26,652 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.trix.TriXWriterFactory
+DEBUG   2019-05-22 15:42:26,652 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.turtle.TurtleWriterFactory
+DEBUG   2019-05-22 15:42:26,654 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.trig.TriGWriterFactory
+INFO    2019-05-22 15:42:26,876 [main] translator.Translator  - Ontology Saved.
+DEBUG   2019-05-22 15:48:29,561 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioFunctionalSyntaxParserFactory
+DEBUG   2019-05-22 15:48:29,564 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioManchesterSyntaxParserFactory
+DEBUG   2019-05-22 15:48:29,582 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioOWLXMLParserFactory
+DEBUG   2019-05-22 15:48:29,583 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.jsonld.JSONLDParserFactory
+DEBUG   2019-05-22 15:48:29,584 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.binary.BinaryRDFParserFactory
+DEBUG   2019-05-22 15:48:29,585 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.n3.N3ParserFactory
+DEBUG   2019-05-22 15:48:29,607 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.nquads.NQuadsParserFactory
+DEBUG   2019-05-22 15:48:29,608 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.ntriples.NTriplesParserFactory
+DEBUG   2019-05-22 15:48:29,609 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.rdfjson.RDFJSONParserFactory
+DEBUG   2019-05-22 15:48:29,611 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.rdfxml.RDFXMLParserFactory
+DEBUG   2019-05-22 15:48:29,612 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.trix.TriXParserFactory
+DEBUG   2019-05-22 15:48:29,613 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.turtle.TurtleParserFactory
+DEBUG   2019-05-22 15:48:29,614 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.trig.TriGParserFactory
+DEBUG   2019-05-22 15:48:29,616 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semarglproject.sesame.rdf.rdfa.SesameRDFaParserFactory
+DEBUG   2019-05-22 15:48:29,661 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.XMLSchemaDatatypeHandler
+DEBUG   2019-05-22 15:48:29,662 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.RDFDatatypeHandler
+DEBUG   2019-05-22 15:48:29,662 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.DBPediaDatatypeHandler
+DEBUG   2019-05-22 15:48:29,663 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.VirtuosoGeometryDatatypeHandler
+DEBUG   2019-05-22 15:48:29,664 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.GeoSPARQLDatatypeHandler
+DEBUG   2019-05-22 15:48:29,666 [main] org.openrdf.rio.LanguageHandlerRegistry  - Registered service class org.openrdf.rio.languages.RFC3066LanguageHandler
+DEBUG   2019-05-22 15:48:29,907 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.TripleLogger  - Total number of triples: 176
+DEBUG   2019-05-22 15:48:29,990 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.TripleLogger  - Loaded OntologyID(Anonymous-2)
+INFO    2019-05-22 15:48:29,994 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.OWLRDFConsumer  - dumping remaining triples
+INFO    2019-05-22 15:48:30,009 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.OWLRDFConsumer  - done dumping remaining triples
+DEBUG   2019-05-22 15:48:30,025 [main] org.semanticweb.owlapi.rio.RioParserImpl$RioParserRDFHandler  - owlParse: timing=358
+DEBUG   2019-05-22 15:48:30,025 [main] org.semanticweb.owlapi.rio.RioParserImpl  - rioParse: timing=358
+INFO    2019-05-22 15:48:30,296 [main] translator.Parser  - setAllEnvParameters
+INFO    2019-05-22 15:48:30,297 [main] translator.Parser  - [translator.DataParsed@1929425f, translator.DataParsed@718607eb, translator.DataParsed@27f3b6d6, translator.DataParsed@757f675c, translator.DataParsed@2617f816, translator.DataParsed@676f0a60, translator.DataParsed@5d10455d, translator.DataParsed@535b8c24]
+INFO    2019-05-22 15:48:30,297 [main] translator.Parser  - [translator.DataParsed@4a951911, translator.DataParsed@55b62629, translator.DataParsed@a53bb6f, translator.DataParsed@5e63cad, translator.DataParsed@6759f091, translator.DataParsed@33a053d, translator.DataParsed@14a54ef6, translator.DataParsed@20921b9b, translator.DataParsed@867ba60, translator.DataParsed@5ba745bc, translator.DataParsed@654b72c0, translator.DataParsed@55b5e331, translator.DataParsed@6034e75d, translator.DataParsed@15fc442, translator.DataParsed@3f3c7bdb, translator.DataParsed@456abb66, translator.DataParsed@2a3a299, translator.DataParsed@7da10b5b, translator.DataParsed@219f4597, translator.DataParsed@31be6b49, translator.DataParsed@2e16b08d, translator.DataParsed@5b989dc7, translator.DataParsed@70d8de, translator.DataParsed@42561fba, translator.DataParsed@595f4da5, translator.DataParsed@46b695ec, translator.DataParsed@408613cc]
+INFO    2019-05-22 15:48:30,354 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_JEuz
+INFO    2019-05-22 15:48:30,373 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/firstName> : Jérome
+INFO    2019-05-22 15:48:30,373 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/familyName> : Euzenat
+INFO    2019-05-22 15:48:30,373 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_Iris Lohja
+INFO    2019-05-22 15:48:30,374 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/firstName> : Iris
+INFO    2019-05-22 15:48:30,374 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/familyName> : Lohja
+INFO    2019-05-22 15:48:30,374 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate>
+INFO    2019-05-22 15:48:30,375 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate_20181112-NOOR
+INFO    2019-05-22 15:48:30,375 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ClassificationOfExperiment>
+INFO    2019-05-22 15:48:30,375 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ClassificationOfExperiment_20181112-NOOR
+INFO    2019-05-22 15:48:30,375 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Script>
+INFO    2019-05-22 15:48:30,375 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Script_20181112-NOOR
+INFO    2019-05-22 15:48:30,375 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment>
+INFO    2019-05-22 15:48:30,376 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment_20181112-NOOR
+INFO    2019-05-22 15:48:30,376 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Person>
+INFO    2019-05-22 15:48:30,376 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_20181112-NOOR
+INFO    2019-05-22 15:48:30,376 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ClassificationByDomain>
+INFO    2019-05-22 15:48:30,376 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ClassificationByDomain_20181112-NOOR
+INFO    2019-05-22 15:48:30,376 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis>
+INFO    2019-05-22 15:48:30,376 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis_20181112-NOOR
+INFO    2019-05-22 15:48:30,377 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasHypothesisLabel> : The random version of strengthening does not differ much from the most specific and most general ones
+INFO    2019-05-22 15:48:30,377 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity>
+INFO    2019-05-22 15:48:30,386 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity_20181112-NOOR
+INFO    2019-05-22 15:48:30,386 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentationDate> : 20181112
+INFO    2019-05-22 15:48:30,386 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment>
+INFO    2019-05-22 15:48:30,386 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR
+INFO    2019-05-22 15:48:30,387 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentLabel> : 20181112-NOOR
+INFO    2019-05-22 15:48:30,387 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentName> : 20181112-NOOR
+INFO    2019-05-22 15:48:30,387 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentTitle> : Revision of networks of ontologies with random strenghening
+INFO    2019-05-22 15:48:30,387 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasHash> : d230f8c69b7c97c4c570785e554aabcb2bbe09e1
+INFO    2019-05-22 15:48:30,387 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign>
+INFO    2019-05-22 15:48:30,387 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR
+INFO    2019-05-22 15:48:30,398 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_designer> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_Iris Lohja>)
+INFO    2019-05-22 15:48:30,399 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_designer> : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_Iris Lohja>
+INFO    2019-05-22 15:48:30,399 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasDesignDate> : 2018-06-01
+INFO    2019-05-22 15:48:30,399 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Procedure>
+INFO    2019-05-22 15:48:30,399 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR
+INFO    2019-05-22 15:48:30,399 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimenter> <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 15:48:30,399 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimenter> : <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 15:48:30,399 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_performer> <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 15:48:30,400 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_performer> : <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 15:48:30,400 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasNumberOfIterations> : 10000
+INFO    2019-05-22 15:48:30,400 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasNumberOfRuns> : 10
+INFO    2019-05-22 15:48:30,400 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasOperators> : delete replace refine add addjoin refadd
+INFO    2019-05-22 15:48:30,400 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/Software>
+INFO    2019-05-22 15:48:30,400 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/Software_20181112-NOOR
+INFO    2019-05-22 15:48:30,401 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasLogbackVersion> : 1.2.3
+INFO    2019-05-22 15:48:30,401 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasOSVersion> : stretch
+INFO    2019-05-22 15:48:30,401 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasJavaPath> : lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:.
+INFO    2019-05-22 15:48:30,401 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData>
+INFO    2019-05-22 15:48:30,401 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData_20181112-NOOR
+INFO    2019-05-22 15:48:30,401 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults>
+INFO    2019-05-22 15:48:30,412 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR
+INFO    2019-05-22 15:48:30,412 [main] translator.Translator  - CLASS : <http://www.w3.org/2000/10/swap/pim/contact#Person>
+INFO    2019-05-22 15:48:30,412 [main] translator.MakerIndividual  - ADD : Individual - http://www.w3.org/2000/10/swap/pim/contact#Person_20181112-NOOR
+INFO    2019-05-22 15:48:30,412 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Project>
+INFO    2019-05-22 15:48:30,412 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Project_20181112-NOOR
+INFO    2019-05-22 15:48:30,412 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentEntity>
+INFO    2019-05-22 15:48:30,412 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentEntity_20181112-NOOR
+INFO    2019-05-22 15:48:30,413 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Agent>
+INFO    2019-05-22 15:48:30,413 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Agent_20181112-NOOR
+INFO    2019-05-22 15:48:30,413 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Entity>
+INFO    2019-05-22 15:48:30,413 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Entity_20181112-NOOR
+INFO    2019-05-22 15:48:30,413 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion>
+INFO    2019-05-22 15:48:30,413 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR
+INFO    2019-05-22 15:48:30,413 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_analyst> <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 15:48:30,413 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_analyst> : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 15:48:30,413 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesignEntity>
+INFO    2019-05-22 15:48:30,414 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesignEntity_20181112-NOOR
+INFO    2019-05-22 15:48:30,414 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/Hardware>
+INFO    2019-05-22 15:48:30,414 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/Hardware_20181112-NOOR
+INFO    2019-05-22 15:48:30,414 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Organization>
+INFO    2019-05-22 15:48:30,414 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Organization_20181112-NOOR
+INFO    2019-05-22 15:48:30,414 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation>
+INFO    2019-05-22 15:48:30,414 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation_20181112-NOOR
+INFO    2019-05-22 15:48:30,414 [main] translator.Translator  - CLASS : <http://schema.org/Person>
+INFO    2019-05-22 15:48:30,414 [main] translator.MakerIndividual  - ADD : Individual - http://schema.org/Person_20181112-NOOR
+INFO    2019-05-22 15:48:30,414 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal>
+INFO    2019-05-22 15:48:30,415 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal_20181112-NOOR
+INFO    2019-05-22 15:48:30,415 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimentalGoal> <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal_20181112-NOOR>)
+INFO    2019-05-22 15:48:30,415 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimentalGoal> : <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> --> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal_20181112-NOOR>
+INFO    2019-05-22 15:48:30,415 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimentalHypothesis> <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis_20181112-NOOR>)
+INFO    2019-05-22 15:48:30,416 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimentalHypothesis> : <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> --> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis_20181112-NOOR>
+INFO    2019-05-22 15:48:30,416 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimentalDesign> <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR>)
+INFO    2019-05-22 15:48:30,416 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimentalDesign> : <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> --> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR>
+INFO    2019-05-22 15:48:30,416 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimentalResults> <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR>)
+INFO    2019-05-22 15:48:30,416 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimentalResults> : <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> --> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR>
+INFO    2019-05-22 15:48:30,416 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_procedure> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR>)
+INFO    2019-05-22 15:48:30,417 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_procedure> : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> --> <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR>
+INFO    2019-05-22 15:48:30,417 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_ExperimentalEquiment> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment_20181112-NOOR>)
+INFO    2019-05-22 15:48:30,417 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_ExperimentalEquiment> : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> --> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment_20181112-NOOR>
+INFO    2019-05-22 15:48:30,417 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimentalObservation> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR> <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation_20181112-NOOR>)
+INFO    2019-05-22 15:48:30,417 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimentalObservation> : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR> --> <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation_20181112-NOOR>
+INFO    2019-05-22 15:48:30,417 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimentalConclusion> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR> <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR>)
+INFO    2019-05-22 15:48:30,417 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimentalConclusion> : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR> --> <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR>
+DEBUG   2019-05-22 15:48:30,515 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.jsonld.JSONLDWriterFactory
+DEBUG   2019-05-22 15:48:30,517 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.binary.BinaryRDFWriterFactory
+DEBUG   2019-05-22 15:48:30,519 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.n3.N3WriterFactory
+DEBUG   2019-05-22 15:48:30,523 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.nquads.NQuadsWriterFactory
+DEBUG   2019-05-22 15:48:30,526 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.ntriples.NTriplesWriterFactory
+DEBUG   2019-05-22 15:48:30,527 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.rdfjson.RDFJSONWriterFactory
+DEBUG   2019-05-22 15:48:30,528 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.rdfxml.RDFXMLWriterFactory
+DEBUG   2019-05-22 15:48:30,529 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.trix.TriXWriterFactory
+DEBUG   2019-05-22 15:48:30,539 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.turtle.TurtleWriterFactory
+DEBUG   2019-05-22 15:48:30,539 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.trig.TriGWriterFactory
+INFO    2019-05-22 15:48:30,852 [main] translator.Translator  - Ontology Saved.
+DEBUG   2019-05-22 15:52:14,168 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioFunctionalSyntaxParserFactory
+DEBUG   2019-05-22 15:52:14,170 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioManchesterSyntaxParserFactory
+DEBUG   2019-05-22 15:52:14,170 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semanticweb.owlapi.rio.RioOWLXMLParserFactory
+DEBUG   2019-05-22 15:52:14,172 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.jsonld.JSONLDParserFactory
+DEBUG   2019-05-22 15:52:14,173 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.binary.BinaryRDFParserFactory
+DEBUG   2019-05-22 15:52:14,174 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.n3.N3ParserFactory
+DEBUG   2019-05-22 15:52:14,175 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.nquads.NQuadsParserFactory
+DEBUG   2019-05-22 15:52:14,176 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.ntriples.NTriplesParserFactory
+DEBUG   2019-05-22 15:52:14,178 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.rdfjson.RDFJSONParserFactory
+DEBUG   2019-05-22 15:52:14,180 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.rdfxml.RDFXMLParserFactory
+DEBUG   2019-05-22 15:52:14,181 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.trix.TriXParserFactory
+DEBUG   2019-05-22 15:52:14,182 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.turtle.TurtleParserFactory
+DEBUG   2019-05-22 15:52:14,184 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.openrdf.rio.trig.TriGParserFactory
+DEBUG   2019-05-22 15:52:14,185 [main] org.openrdf.rio.RDFParserRegistry  - Registered service class org.semarglproject.sesame.rdf.rdfa.SesameRDFaParserFactory
+DEBUG   2019-05-22 15:52:14,222 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.XMLSchemaDatatypeHandler
+DEBUG   2019-05-22 15:52:14,222 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.RDFDatatypeHandler
+DEBUG   2019-05-22 15:52:14,223 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.DBPediaDatatypeHandler
+DEBUG   2019-05-22 15:52:14,224 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.VirtuosoGeometryDatatypeHandler
+DEBUG   2019-05-22 15:52:14,225 [main] org.openrdf.rio.DatatypeHandlerRegistry  - Registered service class org.openrdf.rio.datatypes.GeoSPARQLDatatypeHandler
+DEBUG   2019-05-22 15:52:14,229 [main] org.openrdf.rio.LanguageHandlerRegistry  - Registered service class org.openrdf.rio.languages.RFC3066LanguageHandler
+DEBUG   2019-05-22 15:52:14,335 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.TripleLogger  - Total number of triples: 176
+DEBUG   2019-05-22 15:52:14,393 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.TripleLogger  - Loaded OntologyID(Anonymous-2)
+INFO    2019-05-22 15:52:14,393 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.OWLRDFConsumer  - dumping remaining triples
+INFO    2019-05-22 15:52:14,398 [main] org.semanticweb.owlapi.rdf.rdfxml.parser.OWLRDFConsumer  - done dumping remaining triples
+DEBUG   2019-05-22 15:52:14,406 [main] org.semanticweb.owlapi.rio.RioParserImpl$RioParserRDFHandler  - owlParse: timing=177
+DEBUG   2019-05-22 15:52:14,406 [main] org.semanticweb.owlapi.rio.RioParserImpl  - rioParse: timing=177
+INFO    2019-05-22 15:52:14,725 [main] translator.Parser  - setAllEnvParameters
+INFO    2019-05-22 15:52:14,726 [main] translator.Parser  - [translator.DataParsed@1929425f, translator.DataParsed@718607eb, translator.DataParsed@27f3b6d6, translator.DataParsed@757f675c, translator.DataParsed@2617f816, translator.DataParsed@676f0a60, translator.DataParsed@5d10455d, translator.DataParsed@535b8c24]
+INFO    2019-05-22 15:52:14,727 [main] translator.Parser  - [translator.DataParsed@4a951911, translator.DataParsed@55b62629, translator.DataParsed@a53bb6f, translator.DataParsed@5e63cad, translator.DataParsed@6759f091, translator.DataParsed@33a053d, translator.DataParsed@14a54ef6, translator.DataParsed@20921b9b, translator.DataParsed@867ba60, translator.DataParsed@5ba745bc, translator.DataParsed@654b72c0, translator.DataParsed@55b5e331, translator.DataParsed@6034e75d, translator.DataParsed@15fc442, translator.DataParsed@3f3c7bdb, translator.DataParsed@456abb66, translator.DataParsed@2a3a299, translator.DataParsed@7da10b5b, translator.DataParsed@219f4597, translator.DataParsed@31be6b49, translator.DataParsed@2e16b08d, translator.DataParsed@5b989dc7, translator.DataParsed@70d8de, translator.DataParsed@42561fba, translator.DataParsed@595f4da5, translator.DataParsed@46b695ec, translator.DataParsed@408613cc]
+INFO    2019-05-22 15:52:14,770 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_JEuz
+INFO    2019-05-22 15:52:14,779 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/firstName> : Jérome
+INFO    2019-05-22 15:52:14,779 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/familyName> : Euzenat
+INFO    2019-05-22 15:52:14,780 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_Iris Lohja
+INFO    2019-05-22 15:52:14,780 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/firstName> : Iris
+INFO    2019-05-22 15:52:14,787 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://xmlns.com/foaf/0.1/familyName> : Lohja
+INFO    2019-05-22 15:52:14,789 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate>
+INFO    2019-05-22 15:52:14,789 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate_20181112-NOOR
+INFO    2019-05-22 15:52:14,790 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ClassificationOfExperiment>
+INFO    2019-05-22 15:52:14,790 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ClassificationOfExperiment_20181112-NOOR
+INFO    2019-05-22 15:52:14,790 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Script>
+INFO    2019-05-22 15:52:14,790 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Script_20181112-NOOR
+INFO    2019-05-22 15:52:14,790 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment>
+INFO    2019-05-22 15:52:14,790 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment_20181112-NOOR
+INFO    2019-05-22 15:52:14,790 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Person>
+INFO    2019-05-22 15:52:14,791 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Person_20181112-NOOR
+INFO    2019-05-22 15:52:14,791 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ClassificationByDomain>
+INFO    2019-05-22 15:52:14,791 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ClassificationByDomain_20181112-NOOR
+INFO    2019-05-22 15:52:14,791 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis>
+INFO    2019-05-22 15:52:14,791 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis_20181112-NOOR
+INFO    2019-05-22 15:52:14,791 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasHypothesisLabel> : The random version of strengthening does not differ much from the most specific and most general ones
+INFO    2019-05-22 15:52:14,792 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity>
+INFO    2019-05-22 15:52:14,792 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity_20181112-NOOR
+INFO    2019-05-22 15:52:14,792 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentationDate> : 20181112
+INFO    2019-05-22 15:52:14,792 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment>
+INFO    2019-05-22 15:52:14,792 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR
+INFO    2019-05-22 15:52:14,792 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentLabel> : 20181112-NOOR
+INFO    2019-05-22 15:52:14,793 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentName> : 20181112-NOOR
+INFO    2019-05-22 15:52:14,793 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasExperimentTitle> : Revision of networks of ontologies with random strenghening
+INFO    2019-05-22 15:52:14,793 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasHash> : d230f8c69b7c97c4c570785e554aabcb2bbe09e1
+INFO    2019-05-22 15:52:14,793 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign>
+INFO    2019-05-22 15:52:14,793 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR
+INFO    2019-05-22 15:52:14,798 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_designer> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_Iris Lohja>)
+INFO    2019-05-22 15:52:14,799 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_designer> : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_Iris Lohja>
+INFO    2019-05-22 15:52:14,799 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasDesignDate> : 2018-06-01
+INFO    2019-05-22 15:52:14,800 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Procedure>
+INFO    2019-05-22 15:52:14,800 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR
+INFO    2019-05-22 15:52:14,800 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimenter> <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 15:52:14,801 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimenter> : <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 15:52:14,801 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_performer> <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 15:52:14,801 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_performer> : <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 15:52:14,801 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasNumberOfIterations> : 10000
+INFO    2019-05-22 15:52:14,801 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasNumberOfRuns> : 10
+INFO    2019-05-22 15:52:14,802 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasOperators> : delete replace refine add addjoin refadd
+INFO    2019-05-22 15:52:14,802 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/Software>
+INFO    2019-05-22 15:52:14,802 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/Software_20181112-NOOR
+INFO    2019-05-22 15:52:14,802 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasLogbackVersion> : 1.2.3
+INFO    2019-05-22 15:52:14,802 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasOSVersion> : stretch
+INFO    2019-05-22 15:52:14,803 [main] translator.MakerDatatype  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#hasJavaPath> : lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:.
+INFO    2019-05-22 15:52:14,803 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData>
+INFO    2019-05-22 15:52:14,803 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData_20181112-NOOR
+INFO    2019-05-22 15:52:14,803 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults>
+INFO    2019-05-22 15:52:14,803 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR
+INFO    2019-05-22 15:52:14,803 [main] translator.Translator  - CLASS : <http://www.w3.org/2000/10/swap/pim/contact#Person>
+INFO    2019-05-22 15:52:14,804 [main] translator.MakerIndividual  - ADD : Individual - http://www.w3.org/2000/10/swap/pim/contact#Person_20181112-NOOR
+INFO    2019-05-22 15:52:14,804 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Project>
+INFO    2019-05-22 15:52:14,804 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Project_20181112-NOOR
+INFO    2019-05-22 15:52:14,804 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentEntity>
+INFO    2019-05-22 15:52:14,804 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentEntity_20181112-NOOR
+INFO    2019-05-22 15:52:14,804 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Agent>
+INFO    2019-05-22 15:52:14,807 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Agent_20181112-NOOR
+INFO    2019-05-22 15:52:14,807 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#Entity>
+INFO    2019-05-22 15:52:14,808 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#Entity_20181112-NOOR
+INFO    2019-05-22 15:52:14,808 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion>
+INFO    2019-05-22 15:52:14,808 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR
+INFO    2019-05-22 15:52:14,808 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_analyst> <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR> <http://xmlns.com/foaf/0.1/Person_JEuz>)
+INFO    2019-05-22 15:52:14,809 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_analyst> : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR> --> <http://xmlns.com/foaf/0.1/Person_JEuz>
+INFO    2019-05-22 15:52:14,809 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesignEntity>
+INFO    2019-05-22 15:52:14,809 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesignEntity_20181112-NOOR
+INFO    2019-05-22 15:52:14,809 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/Hardware>
+INFO    2019-05-22 15:52:14,809 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/Hardware_20181112-NOOR
+INFO    2019-05-22 15:52:14,809 [main] translator.Translator  - CLASS : <http://xmlns.com/foaf/0.1/Organization>
+INFO    2019-05-22 15:52:14,809 [main] translator.MakerIndividual  - ADD : Individual - http://xmlns.com/foaf/0.1/Organization_20181112-NOOR
+INFO    2019-05-22 15:52:14,809 [main] translator.Translator  - CLASS : <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation>
+INFO    2019-05-22 15:52:14,809 [main] translator.MakerIndividual  - ADD : Individual - http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation_20181112-NOOR
+INFO    2019-05-22 15:52:14,810 [main] translator.Translator  - CLASS : <http://schema.org/Person>
+INFO    2019-05-22 15:52:14,811 [main] translator.MakerIndividual  - ADD : Individual - http://schema.org/Person_20181112-NOOR
+INFO    2019-05-22 15:52:14,811 [main] translator.Translator  - CLASS : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal>
+INFO    2019-05-22 15:52:14,812 [main] translator.MakerIndividual  - ADD : Individual - http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal_20181112-NOOR
+INFO    2019-05-22 15:52:14,812 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimentalGoal> <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal_20181112-NOOR>)
+INFO    2019-05-22 15:52:14,814 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimentalGoal> : <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> --> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal_20181112-NOOR>
+INFO    2019-05-22 15:52:14,815 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimentalHypothesis> <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis_20181112-NOOR>)
+INFO    2019-05-22 15:52:14,815 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimentalHypothesis> : <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> --> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis_20181112-NOOR>
+INFO    2019-05-22 15:52:14,815 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimentalDesign> <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR>)
+INFO    2019-05-22 15:52:14,815 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimentalDesign> : <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> --> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR>
+INFO    2019-05-22 15:52:14,815 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimentalResults> <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR>)
+INFO    2019-05-22 15:52:14,815 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimentalResults> : <http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20181112-NOOR> --> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR>
+INFO    2019-05-22 15:52:14,816 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_procedure> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR>)
+INFO    2019-05-22 15:52:14,816 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_procedure> : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> --> <http://www.inria.fr/moex/ExperimentOntology#Procedure_20181112-NOOR>
+INFO    2019-05-22 15:52:14,816 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_ExperimentalEquiment> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment_20181112-NOOR>)
+INFO    2019-05-22 15:52:14,816 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_ExperimentalEquiment> : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20181112-NOOR> --> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment_20181112-NOOR>
+INFO    2019-05-22 15:52:14,816 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimentalObservation> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR> <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation_20181112-NOOR>)
+INFO    2019-05-22 15:52:14,816 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimentalObservation> : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR> --> <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation_20181112-NOOR>
+INFO    2019-05-22 15:52:14,816 [main] translator.MakerProperty  - axiomObjectPropertyObjectPropertyAssertion(<http://www.inria.fr/moex/ExperimentOntology#has_experimentalConclusion> <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR> <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR>)
+INFO    2019-05-22 15:52:14,817 [main] translator.MakerProperty  - ADD : OWLDataProperty - <http://www.inria.fr/moex/ExperimentOntology#has_experimentalConclusion> : <http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20181112-NOOR> --> <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20181112-NOOR>
+DEBUG   2019-05-22 15:52:14,821 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.jsonld.JSONLDWriterFactory
+DEBUG   2019-05-22 15:52:14,828 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.binary.BinaryRDFWriterFactory
+DEBUG   2019-05-22 15:52:14,829 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.n3.N3WriterFactory
+DEBUG   2019-05-22 15:52:14,831 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.nquads.NQuadsWriterFactory
+DEBUG   2019-05-22 15:52:14,837 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.ntriples.NTriplesWriterFactory
+DEBUG   2019-05-22 15:52:14,838 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.rdfjson.RDFJSONWriterFactory
+DEBUG   2019-05-22 15:52:14,839 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.rdfxml.RDFXMLWriterFactory
+DEBUG   2019-05-22 15:52:14,840 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.trix.TriXWriterFactory
+DEBUG   2019-05-22 15:52:14,840 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.turtle.TurtleWriterFactory
+DEBUG   2019-05-22 15:52:14,841 [main] org.openrdf.rio.RDFWriterRegistry  - Registered service class org.openrdf.rio.trig.TriGWriterFactory
+INFO    2019-05-22 15:52:15,014 [main] translator.Translator  - Ontology Saved.
