@@ -1,0 +1,102 @@
+Sat Sep 15 01:13:20 CEST 2018
+
+Linux seals-4 4.15.17-1-pve #1 SMP PVE 4.15.17-9 (Wed, 9 May 2018 13:31:43 +0200) x86_64 GNU/Linux
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+model name	: Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+MemTotal:       20447232 kB
+
+java version "1.8.0_151"
+Java(TM) SE Runtime Environment (build 1.8.0_151-b12)
+Java HotSpot(TM) 64-Bit Server VM (build 25.151-b12, mixed mode)
+    Max. Heap Size (Estimated): 4.33G
+
+759ff097b96520c12aa84f3749927f9a22022e62
+Buildfile: /scratch/LazyLav/lazylav/build.xml
+
+compileall:
+     [echo] Erasing...
+
+cleanjar:
+     [echo] Erasing...
+   [delete] Deleting: /scratch/LazyLav/lazylav/lib/lazylav/lazylav.jar
+   [delete] Deleting: /scratch/LazyLav/lazylav/lib/lazylav/ll.jar
+
+bind:
+
+compile:
+     [echo] Compiling...
+    [javac] Compiling 19 source files to /scratch/LazyLav/lazylav/classes
+    [javac] Note: Some input files use unchecked or unsafe operations.
+    [javac] Note: Recompile with -Xlint:unchecked for details.
+
+git.revision:
+
+versionnumber:
+     [echo] 759ff097b96520c12aa84f3749927f9a22022e62
+
+jar:
+     [echo] Jarchiving...
+     [copy] Copying 1 file to /scratch/LazyLav/lazylav/lib/lazylav
+      [jar] Building jar: /scratch/LazyLav/lazylav/lib/lazylav/lazylav.jar
+     [copy] Copying 1 file to /scratch/LazyLav/lazylav/lib/lazylav
+      [jar] Building jar: /scratch/LazyLav/lazylav/lib/lazylav/ll.jar
+
+BUILD SUCCESSFUL
+Total time: 4 seconds
+
+java -Dlog.level=INFO -cp lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=4 -DnbIterations=20000 -DnbRuns=10 -DreportPrecRec -DloadDir=expeRun -DloadEnv -DloadAgents -DreplayGames -DrevisionModality=refadd -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 -Dgenerative -DstartEmpty -Dstrengthen=mostspecific
+
+2018-09-15 01:13:26,914 INFO  main f.i.e.l.env.NOOEnvironment           Reference Size = 86; Precision = 1.0; Recall = 1.0; incoherence = 0.0
+2018-09-15 01:13:27,131 INFO  main f.i.e.l.env.NOOEnvironment           Initial Size = 12; Precision = 1.0; Recall = 0.06976744186046512; incoherence = 0.0
+2018-09-15 01:21:02,488 INFO  main f.i.e.l.env.NOOEnvironment           Final Size = 86; Precision = 1.0; Recall = 0.9302325581395349; incoherence = 0.0
+2018-09-15 01:21:02,632 INFO  main f.i.e.l.env.NOOEnvironment           Reference Size = 86; Precision = 1.0; Recall = 1.0; incoherence = 0.0
+2018-09-15 01:21:02,711 INFO  main f.i.e.l.env.NOOEnvironment           Initial Size = 12; Precision = 1.0; Recall = 0.06976744186046512; incoherence = 0.0
+2018-09-15 01:28:31,904 INFO  main f.i.e.l.env.NOOEnvironment           Final Size = 85; Precision = 1.0; Recall = 0.9186046511627907; incoherence = 0.0
+2018-09-15 01:28:32,013 INFO  main f.i.e.l.env.NOOEnvironment           Reference Size = 86; Precision = 1.0; Recall = 1.0; incoherence = 0.0
+2018-09-15 01:28:32,224 INFO  main f.i.e.l.env.NOOEnvironment           Initial Size = 12; Precision = 1.0; Recall = 0.06976744186046512; incoherence = 0.0
+2018-09-15 01:36:01,707 INFO  main f.i.e.l.env.NOOEnvironment           Final Size = 88; Precision = 1.0; Recall = 0.9534883720930233; incoherence = 0.0
+2018-09-15 01:36:01,810 INFO  main f.i.e.l.env.NOOEnvironment           Reference Size = 86; Precision = 1.0; Recall = 1.0; incoherence = 0.0
+2018-09-15 01:36:02,008 INFO  main f.i.e.l.env.NOOEnvironment           Initial Size = 12; Precision = 1.0; Recall = 0.06976744186046512; incoherence = 0.0
+2018-09-15 01:43:35,493 INFO  main f.i.e.l.env.NOOEnvironment           Final Size = 89; Precision = 1.0; Recall = 0.9651162790697675; incoherence = 0.0
+2018-09-15 01:43:35,602 INFO  main f.i.e.l.env.NOOEnvironment           Reference Size = 86; Precision = 1.0; Recall = 1.0; incoherence = 0.0
+2018-09-15 01:43:35,808 INFO  main f.i.e.l.env.NOOEnvironment           Initial Size = 12; Precision = 1.0; Recall = 0.06976744186046512; incoherence = 0.0
+2018-09-15 01:50:55,900 INFO  main f.i.e.l.env.NOOEnvironment           Final Size = 87; Precision = 1.0; Recall = 0.9418604651162791; incoherence = 0.0
+2018-09-15 01:50:55,997 INFO  main f.i.e.l.env.NOOEnvironment           Reference Size = 86; Precision = 1.0; Recall = 1.0; incoherence = 0.0
+2018-09-15 01:50:56,064 INFO  main f.i.e.l.env.NOOEnvironment           Initial Size = 12; Precision = 1.0; Recall = 0.06976744186046512; incoherence = 0.0
+2018-09-15 01:58:14,502 INFO  main f.i.e.l.env.NOOEnvironment           Final Size = 89; Precision = 1.0; Recall = 0.9651162790697675; incoherence = 0.0
+2018-09-15 01:58:14,599 INFO  main f.i.e.l.env.NOOEnvironment           Reference Size = 86; Precision = 1.0; Recall = 1.0; incoherence = 0.0
+2018-09-15 01:58:14,671 INFO  main f.i.e.l.env.NOOEnvironment           Initial Size = 12; Precision = 1.0; Recall = 0.06976744186046512; incoherence = 0.0
+2018-09-15 02:05:31,347 INFO  main f.i.e.l.env.NOOEnvironment           Final Size = 89; Precision = 1.0; Recall = 0.9651162790697675; incoherence = 0.0
+2018-09-15 02:05:31,446 INFO  main f.i.e.l.env.NOOEnvironment           Reference Size = 86; Precision = 1.0; Recall = 1.0; incoherence = 0.0
+2018-09-15 02:05:31,515 INFO  main f.i.e.l.env.NOOEnvironment           Initial Size = 12; Precision = 1.0; Recall = 0.06976744186046512; incoherence = 0.0
+2018-09-15 02:12:46,906 INFO  main f.i.e.l.env.NOOEnvironment           Final Size = 89; Precision = 1.0; Recall = 0.9651162790697675; incoherence = 0.0
+2018-09-15 02:12:46,995 INFO  main f.i.e.l.env.NOOEnvironment           Reference Size = 86; Precision = 1.0; Recall = 1.0; incoherence = 0.0
+2018-09-15 02:12:47,175 INFO  main f.i.e.l.env.NOOEnvironment           Initial Size = 12; Precision = 1.0; Recall = 0.06976744186046512; incoherence = 0.0
+2018-09-15 02:20:03,245 INFO  main f.i.e.l.env.NOOEnvironment           Final Size = 87; Precision = 1.0; Recall = 0.9418604651162791; incoherence = 0.0
+2018-09-15 02:20:03,481 INFO  main f.i.e.l.env.NOOEnvironment           Reference Size = 86; Precision = 1.0; Recall = 1.0; incoherence = 0.0
+2018-09-15 02:20:03,550 INFO  main f.i.e.l.env.NOOEnvironment           Initial Size = 12; Precision = 1.0; Recall = 0.06976744186046512; incoherence = 0.0
+2018-09-15 02:27:15,302 INFO  main f.i.e.l.env.NOOEnvironment           Final Size = 85; Precision = 1.0; Recall = 0.9186046511627907; incoherence = 0.0
+
+Sat Sep 15 02:27:15 CEST 2018

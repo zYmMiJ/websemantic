@@ -1,0 +1,463 @@
+\documentclass[multi={tikzpicture},convert]{standalone}
+%\documentclass[convert={density=300,size=1080x800,outext=.png}]{standalone}
+
+\usepackage{comment}
+\usepackage{multirow}
+
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\begin{document}
+
+
+
+\begin{tikzpicture}
+\pgfplotsset{legend style={at={(0.42,-0.35)},draw=none,anchor=north,legend columns=-1}}
+
+\begin{axis}[ymin=0,ymax=150,xmax=1000,xlabel=$Games~(expansion+relaxation)$,ylabel=$Size$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed,dotted \nextlist
+[6 of]color list}]
+
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-delete-clever-nr-im80-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-replace-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-refine-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-add-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-addjoin-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-refadd-clever-nr-im80-strspc.tsv};
+
+\addplot plot table [x=rank,y=avg-size] {/scratch/NOOR/20180530-NOOR/str-4-10000-delete-clever-nr-im80.tsv}; 
+\addplot plot table [x=rank,y=avg-size] {/scratch/NOOR/20180530-NOOR/str-4-10000-replace-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-size] {/scratch/NOOR/20180530-NOOR/str-4-10000-refine-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-size] {/scratch/NOOR/20180530-NOOR/str-4-10000-add-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-size] {/scratch/NOOR/20180530-NOOR/str-4-10000-addjoin-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-size] {/scratch/NOOR/20180530-NOOR/str-4-10000-refadd-clever-nr-im80.tsv};
+
+\addplot plot table [x=rank,y=avg-size] {../20180828-NOOR/str-4-10000-delete-clever-nr-im80-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-size] {../20180828-NOOR/str-4-10000-replace-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-size] {../20180828-NOOR/str-4-10000-refine-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-size] {../20180828-NOOR/str-4-10000-add-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-size] {../20180828-NOOR/str-4-10000-addjoin-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-size] {../20180828-NOOR/str-4-10000-refadd-clever-nr-im80-strspc.tsv};
+
+\end{axis} 
+
+\begin{scope}[yshift=-4.5cm]
+\begin{axis}[ymin=0,ymax=150,xmax=1000,xlabel=$Games~(expansion+generation+relaxation)$,ylabel=$Size$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed,dotted \nextlist
+[6 of]color list}]
+
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-delete-clever-nr-im80-gen-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-replace-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-refine-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-add-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-addjoin-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-refadd-clever-nr-im80-gen-strspc.tsv};
+
+\addplot plot table [x=rank,y=avg-size] {/scratch/NOOR/20180601-NOOR/str-4-10000-delete-clever-nr-im80-gen.tsv}; 
+\addplot plot table [x=rank,y=avg-size] {/scratch/NOOR/20180601-NOOR/str-4-10000-replace-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-size] {/scratch/NOOR/20180601-NOOR/str-4-10000-refine-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-size] {/scratch/NOOR/20180601-NOOR/str-4-10000-add-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-size] {/scratch/NOOR/20180601-NOOR/str-4-10000-addjoin-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-size] {/scratch/NOOR/20180601-NOOR/str-4-10000-refadd-clever-nr-im80-gen.tsv};
+
+\addplot plot table [x=rank,y=avg-size] {../20180828-NOOR/str-4-10000-delete-clever-nr-im80-gen-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-size] {../20180828-NOOR/str-4-10000-replace-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-size] {../20180828-NOOR/str-4-10000-refine-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-size] {../20180828-NOOR/str-4-10000-add-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-size] {../20180828-NOOR/str-4-10000-addjoin-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-size] {../20180828-NOOR/str-4-10000-refadd-clever-nr-im80-gen-strspc.tsv};
+
+\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\pgfplotsset{legend style={at={(0.42,-0.35)},draw=none,anchor=north,legend columns=-1}}
+
+\begin{axis}[ymin=0,ymax=1,xlabel=$Games~(expansion+relaxation)$,ylabel=$Success\ rate$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed,dotted \nextlist
+[6 of]color list}]
+
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-delete-clever-nr-im80-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-replace-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-refine-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-add-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-addjoin-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-refadd-clever-nr-im80-strspc.tsv};
+
+\addplot plot table [x=rank,y=avg-srate] {/scratch/NOOR/20180530-NOOR/str-4-10000-delete-clever-nr-im80.tsv}; 
+\addplot plot table [x=rank,y=avg-srate] {/scratch/NOOR/20180530-NOOR/str-4-10000-replace-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-srate] {/scratch/NOOR/20180530-NOOR/str-4-10000-refine-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-srate] {/scratch/NOOR/20180530-NOOR/str-4-10000-add-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-srate] {/scratch/NOOR/20180530-NOOR/str-4-10000-addjoin-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-srate] {/scratch/NOOR/20180530-NOOR/str-4-10000-refadd-clever-nr-im80.tsv};
+
+\addplot plot table [x=rank,y=avg-srate] {../20180828-NOOR/str-4-10000-delete-clever-nr-im80-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-srate] {../20180828-NOOR/str-4-10000-replace-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-srate] {../20180828-NOOR/str-4-10000-refine-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-srate] {../20180828-NOOR/str-4-10000-add-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-srate] {../20180828-NOOR/str-4-10000-addjoin-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-srate] {../20180828-NOOR/str-4-10000-refadd-clever-nr-im80-strspc.tsv};
+
+\end{axis} 
+
+\begin{scope}[yshift=-4.5cm]
+\begin{axis}[ymin=0,ymax=1,xlabel=$Games~(expansion+generation+relaxation)$,ylabel=$Success\ rate$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed,dotted \nextlist
+[6 of]color list}]
+
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-delete-clever-nr-im80-gen-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-replace-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-refine-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-add-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-addjoin-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-refadd-clever-nr-im80-gen-strspc.tsv};
+
+\addplot plot table [x=rank,y=avg-srate] {/scratch/NOOR/20180601-NOOR/str-4-10000-delete-clever-nr-im80-gen.tsv}; 
+\addplot plot table [x=rank,y=avg-srate] {/scratch/NOOR/20180601-NOOR/str-4-10000-replace-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-srate] {/scratch/NOOR/20180601-NOOR/str-4-10000-refine-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-srate] {/scratch/NOOR/20180601-NOOR/str-4-10000-add-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-srate] {/scratch/NOOR/20180601-NOOR/str-4-10000-addjoin-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-srate] {/scratch/NOOR/20180601-NOOR/str-4-10000-refadd-clever-nr-im80-gen.tsv};
+
+\addplot plot table [x=rank,y=avg-srate] {../20180828-NOOR/str-4-10000-delete-clever-nr-im80-gen-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-srate] {../20180828-NOOR/str-4-10000-replace-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-srate] {../20180828-NOOR/str-4-10000-refine-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-srate] {../20180828-NOOR/str-4-10000-add-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-srate] {../20180828-NOOR/str-4-10000-addjoin-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-srate] {../20180828-NOOR/str-4-10000-refadd-clever-nr-im80-gen-strspc.tsv};
+
+\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\end{tikzpicture}
+
+
+\begin{tikzpicture}
+\pgfplotsset{legend style={at={(0.42,-0.35)},draw=none,anchor=north,legend columns=-1}}
+
+\begin{axis}[ymin=0,ymax=1,xlabel=$Games~(expansion+relaxation)$,ylabel=$F$-$measure$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed,dotted \nextlist
+[6 of]color list}]
+
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-delete-clever-nr-im80-strspc.tsv}; 
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-replace-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-refine-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-add-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-addjoin-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-refadd-clever-nr-im80-strspc.tsv};
+
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {/scratch/NOOR/20180530-NOOR/str-4-10000-delete-clever-nr-im80.tsv}; 
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {/scratch/NOOR/20180530-NOOR/str-4-10000-replace-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {/scratch/NOOR/20180530-NOOR/str-4-10000-refine-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {/scratch/NOOR/20180530-NOOR/str-4-10000-add-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {/scratch/NOOR/20180530-NOOR/str-4-10000-addjoin-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {/scratch/NOOR/20180530-NOOR/str-4-10000-refadd-clever-nr-im80.tsv};
+
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180828-NOOR/str-4-10000-delete-clever-nr-im80-strspc.tsv}; 
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180828-NOOR/str-4-10000-replace-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180828-NOOR/str-4-10000-refine-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180828-NOOR/str-4-10000-add-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180828-NOOR/str-4-10000-addjoin-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180828-NOOR/str-4-10000-refadd-clever-nr-im80-strspc.tsv};
+
+\end{axis} 
+
+\begin{scope}[yshift=-4.5cm]
+\begin{axis}[ymin=0,ymax=1,xlabel=$Games~(expansion+generation+relaxation)$,ylabel=$F$-$measure$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed,dotted \nextlist
+[6 of]color list}]
+
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-delete-clever-nr-im80-gen-strspc.tsv}; 
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-replace-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-refine-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-add-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-addjoin-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-refadd-clever-nr-im80-gen-strspc.tsv};
+
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {/scratch/NOOR/20180601-NOOR/str-4-10000-delete-clever-nr-im80-gen.tsv}; 
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {/scratch/NOOR/20180601-NOOR/str-4-10000-replace-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {/scratch/NOOR/20180601-NOOR/str-4-10000-refine-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {/scratch/NOOR/20180601-NOOR/str-4-10000-add-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {/scratch/NOOR/20180601-NOOR/str-4-10000-addjoin-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {/scratch/NOOR/20180601-NOOR/str-4-10000-refadd-clever-nr-im80-gen.tsv};
+
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180828-NOOR/str-4-10000-delete-clever-nr-im80-gen-strspc.tsv}; 
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180828-NOOR/str-4-10000-replace-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180828-NOOR/str-4-10000-refine-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180828-NOOR/str-4-10000-add-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180828-NOOR/str-4-10000-addjoin-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180828-NOOR/str-4-10000-refadd-clever-nr-im80-gen-strspc.tsv};
+
+\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\pgfplotsset{legend style={at={(0.42,-0.35)},draw=none,anchor=north,legend columns=-1}}
+
+\begin{axis}[ymin=0,ymax=1,xlabel=$Games~(expansion+relaxation)$,ylabel=$Prec$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed,dotted \nextlist
+[6 of]color list}]
+
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-delete-clever-nr-im80-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-replace-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-refine-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-add-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-addjoin-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-refadd-clever-nr-im80-strspc.tsv};
+
+\addplot plot table [x=rank,y=avg-prec] {/scratch/NOOR/20180530-NOOR/str-4-10000-delete-clever-nr-im80.tsv}; 
+\addplot plot table [x=rank,y=avg-prec] {/scratch/NOOR/20180530-NOOR/str-4-10000-replace-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-prec] {/scratch/NOOR/20180530-NOOR/str-4-10000-refine-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-prec] {/scratch/NOOR/20180530-NOOR/str-4-10000-add-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-prec] {/scratch/NOOR/20180530-NOOR/str-4-10000-addjoin-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-prec] {/scratch/NOOR/20180530-NOOR/str-4-10000-refadd-clever-nr-im80.tsv};
+
+\addplot plot table [x=rank,y=avg-prec] {../20180828-NOOR/str-4-10000-delete-clever-nr-im80-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-prec] {../20180828-NOOR/str-4-10000-replace-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-prec] {../20180828-NOOR/str-4-10000-refine-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-prec] {../20180828-NOOR/str-4-10000-add-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-prec] {../20180828-NOOR/str-4-10000-addjoin-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-prec] {../20180828-NOOR/str-4-10000-refadd-clever-nr-im80-strspc.tsv};
+
+\end{axis} 
+
+\begin{scope}[yshift=-4.5cm]
+\begin{axis}[ymin=0,ymax=1,xlabel=$Games~(expansion+generation+relaxation)$,ylabel=$Prec$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed,dotted \nextlist
+[6 of]color list}]
+
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-delete-clever-nr-im80-gen-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-replace-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-refine-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-add-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-addjoin-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-refadd-clever-nr-im80-gen-strspc.tsv};
+
+\addplot plot table [x=rank,y=avg-prec] {/scratch/NOOR/20180601-NOOR/str-4-10000-delete-clever-nr-im80-gen.tsv}; 
+\addplot plot table [x=rank,y=avg-prec] {/scratch/NOOR/20180601-NOOR/str-4-10000-replace-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-prec] {/scratch/NOOR/20180601-NOOR/str-4-10000-refine-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-prec] {/scratch/NOOR/20180601-NOOR/str-4-10000-add-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-prec] {/scratch/NOOR/20180601-NOOR/str-4-10000-addjoin-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-prec] {/scratch/NOOR/20180601-NOOR/str-4-10000-refadd-clever-nr-im80-gen.tsv};
+
+\addplot plot table [x=rank,y=avg-prec] {../20180828-NOOR/str-4-10000-delete-clever-nr-im80-gen-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-prec] {../20180828-NOOR/str-4-10000-replace-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-prec] {../20180828-NOOR/str-4-10000-refine-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-prec] {../20180828-NOOR/str-4-10000-add-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-prec] {../20180828-NOOR/str-4-10000-addjoin-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-prec] {../20180828-NOOR/str-4-10000-refadd-clever-nr-im80-gen-strspc.tsv};
+
+\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\pgfplotsset{legend style={at={(0.42,-0.35)},draw=none,anchor=north,legend columns=-1}}
+
+% E1=OK
+\begin{axis}[ymin=0,ymax=1,xlabel=$Games~(plain)$,ylabel=$Rec$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed,dotted \nextlist
+[6 of]color list}]
+
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-delete-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-replace-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-refine-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-add-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-addjoin-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-refadd-strspc.tsv};
+
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180308-NOOR/str-4-10000-delete.tsv}; 
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180308-NOOR/str-4-10000-replace.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180308-NOOR/str-4-10000-refine.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180308-NOOR/str-4-10000-add.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180308-NOOR/str-4-10000-addjoin.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180308-NOOR/str-4-10000-refadd.tsv};
+
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-delete-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-replace-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-refine-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-add-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-addjoin-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-refadd-strspc.tsv};
+
+\end{axis} 
+
+% E2=OK
+\begin{scope}[yshift=-4.5cm]
+\begin{axis}[ymin=0,ymax=1,xlabel=$Games~(expansion)$,ylabel=$Rec$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed,dotted \nextlist
+[6 of]color list}]
+
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-delete-clever-nr-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-replace-clever-nr-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-refine-clever-nr-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-add-clever-nr-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-addjoin-clever-nr-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-refadd-clever-nr-strspc.tsv};
+
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180529-NOOR/str-4-10000-delete-clever-nr.tsv}; 
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180529-NOOR/str-4-10000-replace-clever-nr.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180529-NOOR/str-4-10000-refine-clever-nr.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180529-NOOR/str-4-10000-add-clever-nr.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180529-NOOR/str-4-10000-addjoin-clever-nr.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180529-NOOR/str-4-10000-refadd-clever-nr.tsv};
+
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-delete-clever-nr-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-replace-clever-nr-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-refine-clever-nr-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-add-clever-nr-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-addjoin-clever-nr-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-refadd-clever-nr-strspc.tsv};
+
+\end{axis} 
+\end{scope}
+
+% E3=OK
+\begin{scope}[yshift=-9cm]
+\begin{axis}[ymin=0,ymax=1,xlabel=$Games~(relaxation)$,ylabel=$Rec$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed,dotted \nextlist
+[6 of]color list}]
+
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-delete-im80-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-replace-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-refine-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-add-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-addjoin-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-refadd-im80-strspc.tsv};
+
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180311-NOOR/str-4-10000-delete-im80.tsv}; 
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180311-NOOR/str-4-10000-replace-im80.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180311-NOOR/str-4-10000-refine-im80.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180311-NOOR/str-4-10000-add-im80.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180311-NOOR/str-4-10000-addjoin-im80.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180311-NOOR/str-4-10000-refadd-im80.tsv};
+
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-delete-im80-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-replace-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-refine-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-add-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-addjoin-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-refadd-im80-strspc.tsv};
+
+\end{axis} 
+\end{scope}
+
+% E4=OK
+\begin{scope}[yshift=-13.5cm]
+\begin{axis}[ymin=0,ymax=1,xlabel=$Games~(expansion+relaxation)$,ylabel=$Rec$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed,dotted \nextlist
+[6 of]color list}]
+
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-delete-clever-nr-im80-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-replace-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-refine-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-add-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-addjoin-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-refadd-clever-nr-im80-strspc.tsv};
+
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180530-NOOR/str-4-10000-delete-clever-nr-im80.tsv}; 
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180530-NOOR/str-4-10000-replace-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180530-NOOR/str-4-10000-refine-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180530-NOOR/str-4-10000-add-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180530-NOOR/str-4-10000-addjoin-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180530-NOOR/str-4-10000-refadd-clever-nr-im80.tsv};
+
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-delete-clever-nr-im80-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-replace-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-refine-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-add-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-addjoin-clever-nr-im80-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-refadd-clever-nr-im80-strspc.tsv};
+
+\end{axis} 
+\end{scope}
+
+% E5=OK
+\begin{scope}[yshift=-18cm]
+\begin{axis}[ymin=0,ymax=1,xlabel=$Games~(expansion+generation+relaxation)$,ylabel=$Rec$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed,dotted \nextlist
+[6 of]color list}]
+
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-delete-clever-nr-im80-gen-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-replace-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-refine-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-add-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-addjoin-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-refadd-clever-nr-im80-gen-strspc.tsv};
+
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180601-NOOR/str-4-10000-delete-clever-nr-im80-gen.tsv}; 
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180601-NOOR/str-4-10000-replace-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180601-NOOR/str-4-10000-refine-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180601-NOOR/str-4-10000-add-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180601-NOOR/str-4-10000-addjoin-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180601-NOOR/str-4-10000-refadd-clever-nr-im80-gen.tsv};
+
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-delete-clever-nr-im80-gen-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-replace-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-refine-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-add-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-addjoin-clever-nr-im80-gen-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-refadd-clever-nr-im80-gen-strspc.tsv};
+
+\end{axis} 
+\end{scope}
+
+% E6=OK
+\begin{scope}[yshift=-22.5cm]
+\begin{axis}[ymin=0,ymax=1,xlabel=$Games~(expansion+generation+relaxation+empty)$,ylabel=$Rec$,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed,dotted \nextlist
+[6 of]color list}]
+
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-delete-clever-nr-im80-gen-empty-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-replace-clever-nr-im80-gen-empty-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-refine-clever-nr-im80-gen-empty-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-add-clever-nr-im80-gen-empty-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-addjoin-clever-nr-im80-gen-empty-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-refadd-clever-nr-im80-gen-empty-strspc.tsv};
+
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180827-NOOR/str-4-10000-delete-clever-nr-im80-gen-empty.tsv}; 
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180827-NOOR/str-4-10000-replace-clever-nr-im80-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180827-NOOR/str-4-10000-refine-clever-nr-im80-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180827-NOOR/str-4-10000-add-clever-nr-im80-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180827-NOOR/str-4-10000-addjoin-clever-nr-im80-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-rec] {/scratch/NOOR/20180827-NOOR/str-4-10000-refadd-clever-nr-im80-gen-empty.tsv};
+
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-delete-clever-nr-im80-gen-empty-strspc.tsv}; 
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-replace-clever-nr-im80-gen-empty-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-refine-clever-nr-im80-gen-empty-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-add-clever-nr-im80-gen-empty-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-addjoin-clever-nr-im80-gen-empty-strspc.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180828-NOOR/str-4-10000-refadd-clever-nr-im80-gen-empty-strspc.tsv};
+
+\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\end{tikzpicture}
+
+
+\end{document}

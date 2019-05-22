@@ -1,0 +1,286 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://lazylav.exmo.inria.fr/ontology/0#"
+     xml:base="http://lazylav.exmo.inria.fr/ontology/0"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://lazylav.exmo.inria.fr/ontology/0"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#top -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#top"/>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#0 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#0">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#top"/>
+        <owl:disjointWith rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#1"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#00 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#00">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#0"/>
+        <owl:disjointWith rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#01"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#000 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#000">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#00"/>
+        <owl:disjointWith rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#001"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#0000 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#0000">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#000"/>
+        <owl:disjointWith rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#0001"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#0001 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#0001">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#001 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#001">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#00"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#0010 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#0010">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#001"/>
+        <owl:disjointWith rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#0011"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#0011 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#0011">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#001"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#01 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#01">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#0"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#010 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#010">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#01"/>
+        <owl:disjointWith rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#011"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#0100 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#0100">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#010"/>
+        <owl:disjointWith rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#0101"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#0101 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#0101">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#011 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#011">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#01"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#0110 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#0110">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#011"/>
+        <owl:disjointWith rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#0111"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#0111 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#0111">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#011"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#1 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#1">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#top"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#10 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#10">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#1"/>
+        <owl:disjointWith rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#11"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#100 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#100">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#10"/>
+        <owl:disjointWith rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#101"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#1000 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#1000">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#100"/>
+        <owl:disjointWith rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#1001"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#1001 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#1001">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#100"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#101 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#101">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#10"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#1010 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#1010">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#101"/>
+        <owl:disjointWith rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#1011"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#1011 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#1011">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#101"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#11 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#11">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#1"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#110 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#110">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#11"/>
+        <owl:disjointWith rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#111"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#1100 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#1100">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#110"/>
+        <owl:disjointWith rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#1101"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#1101 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#1101">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#110"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#111 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#111">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#11"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#1110 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#1110">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#111"/>
+        <owl:disjointWith rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#1111"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lazylav.exmo.inria.fr/ontology/0#1111 -->
+
+    <owl:Class rdf:about="http://lazylav.exmo.inria.fr/ontology/0#1111">
+        <rdfs:subClassOf rdf:resource="http://lazylav.exmo.inria.fr/ontology/0#111"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+

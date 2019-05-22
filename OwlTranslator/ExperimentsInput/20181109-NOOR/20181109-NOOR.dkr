@@ -1,0 +1,63 @@
+ARG version="stretch"
+FROM lazylav:${version}
+ARG version="stretch"
+
+ENV OSVERS=stretch
+ENV LOGBACK_VERSION=1.2.3
+ENV JPATH=lib/lazylav/ll.jar:lib/slf4j/logback-classic-${LOGBACK_VERSION}.jar:lib/slf4j/logback-core-${LOGBACK_VERSION}.jar:.
+ENV LLHASH=619edd1134aa281afa1a5dc101ac541be5f021f4
+ENV DESIGNDATE=2018-06-01
+ENV DATE=20181109
+ENV LABEL=${DATE}-NOOR
+ENV NAME=${LABEL}
+ENV PERFORMER=JEuz
+ENV NBAGENTS=4
+ENV NBITERATIONS=10000
+ENV NBRUNS=10
+ENV OPS="delete replace refine add addjoin refadd"
+ENV PARAMS="-Dstrengthen=mostspecific"
+ENV postfix=strspc
+ENV OPT="-DnbAgents=${NBAGENTS} -DnbIterations=${NBITERATIONS} -DnbRuns=${NBRUNS} -DreportPrecRec"
+ENV LOADOPT="-DloadDir=expeRun -DloadEnv -DloadAgents -DreplayGames"
+ENV DIRPREF=${NBAGENTS}-${NBITERATIONS}
+ENV TOCOPY="expeRun logback.xml"
+ENV VARIATIONOF=20180828-NOOR
+ENV EXPE="Revision of networks of ontologies with most specific strenghening (improved code)"
+ENV HYPOTHESIS="Strenghening improves recall over expansion"
+ENV SETTING="Repeating [[${VARIATIONOF}]] replaying the runs of [[20180308-NOOR]] with most specific strengthening on a reengineered strenghening code"
+ENV CLASSES="NOOEnvironment, AlignmentAdjustingAgent, AlignmentRevisionExperiment, ActionLogger, AverageLogger, Monitor"
+ENV DESIGNER="Iris Lohja"
+ENV EXPERIMENTER=${PERFORMER}
+ENV ANALYST=${PERFORMER}
+
+ENV OUTPUT=/results/
+
+RUN if ! [ "$version" = "stretch" ]; then \
+        git pull ; \
+    else \
+        git fetch ; \
+        git checkout $LLHASH \
+        && wget -qO- https://logback.qos.ch/dist/logback-${LOGBACK_VERSION}.tar.gz | tar xz \
+        && mv ./logback-${LOGBACK_VERSION}/logback-classic-${LOGBACK_VERSION}.jar /lazylav/lib/slf4j/  \
+        && mv ./logback-${LOGBACK_VERSION}/logback-core-${LOGBACK_VERSION}.jar /lazylav/lib/slf4j/ \
+        && rm -rf ./logback* ; \ 
+    fi
+
+RUN ant compileall
+
+COPY ./expeRun ./expeRun
+COPY ./logback.xml ./logback.xml
+
+ENTRYPOINT ["bash", \
+            "-c", \
+            "OUTPUT=${OUTPUT}${LABEL} ; \
+            for op in ${OPS} ; \
+            do \
+            bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} ${PARAMS} ; \
+            bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy ${PARAMS} ; \
+            bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-im80-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DimmediateRatio=80 ${PARAMS} ; \
+            bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 ${PARAMS} ; \
+            bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-gen-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 -Dgenerative ${PARAMS} ; \
+            bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-gen-empty-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 -Dgenerative -DstartEmpty ${PARAMS} ; \
+            done ; \
+            "]

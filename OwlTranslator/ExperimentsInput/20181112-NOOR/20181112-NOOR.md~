@@ -1,0 +1,393 @@
+[[Image:icon8-docker-50.png|right|50px|link=Media:stretch.dkr.txt]] [[Image:icon8-blue-docker-50.png|right|50px|link=Media:20181112-NOOR.dkr.txt]]
+'''Date''': 2018-11-12
+
+Revision of networks of ontologies with random strenghening (4 agents; 10 runs; 10000 games; delete/replace/refine/add/addjoin/refadd)
+
+'''Hash''': d230f8c69b7c97c4c570785e554aabcb2bbe09e1
+
+'''Hypotheses''':
+The random version of strengthening does not differ much from the most specific and most general ones
+
+'''Experimental setting''': 
+Repeating [[20180828-NOOR]] replaying the runs of [[20180308-NOOR]] with random strengthening
+
+'''Command line''':
+<pre  style="overflow: auto;">
+
+. params.sh
+
+OUTPUT=${OUTPUT}${LABEL}
+
+for op in ${OPS}
+do
+    bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} ${PARAMS}
+    bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy ${PARAMS}
+    bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-im80-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DimmediateRatio=80 ${PARAMS}
+    bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 ${PARAMS}
+    bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-gen-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 -Dgenerative ${PARAMS}
+    bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-gen-empty-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 -Dgenerative -DstartEmpty ${PARAMS}
+done
+
+</pre>
+
+'''Class used''': 
+NOOEnvironment, AlignmentAdjustingAgent, AlignmentRevisionExperiment, ActionLogger, AverageLogger, Monitor
+
+'''Results''':
+
+{| style="vertical-align:top; width: 100%; border-collapse: collapse; border-spacing: 0;"
+! style="border: 1px solid #CCC;" | test
+! style="border: 1px solid #CCC;" | success<br />rate
+! style="border: 1px solid #CCC;" | network<br />size
+! style="border: 1px solid #CCC;" | incoherence<br />degree
+! style="border: 1px solid #CCC;" | semantic<br />precision
+! style="border: 1px solid #CCC;" | semantic<br />F-measure
+! style="border: 1px solid #CCC;" | semantic<br />recall
+! style="border: 1px solid #CCC;" | maximum<br />convergence
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-add-clever-nr-im80-gen-empty-strrdm
+| style="border: 1px solid #CCC;" | 0.91
+| style="border: 1px solid #CCC;" | 74
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.88
+| style="border: 1px solid #CCC;" | 0.79
+| style="border: 1px solid #CCC;" | 8472
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-add-clever-nr-im80-gen-strrdm
+| style="border: 1px solid #CCC;" | 0.89
+| style="border: 1px solid #CCC;" | 63
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.85
+| style="border: 1px solid #CCC;" | 0.73
+| style="border: 1px solid #CCC;" | 9942
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-add-clever-nr-im80-strrdm
+| style="border: 1px solid #CCC;" | 0.92
+| style="border: 1px solid #CCC;" | 47
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.71
+| style="border: 1px solid #CCC;" | 0.55
+| style="border: 1px solid #CCC;" | 6307
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-add-clever-nr-strrdm
+| style="border: 1px solid #CCC;" | 0.93
+| style="border: 1px solid #CCC;" | 59
+| style="border: 1px solid #CCC;" | 0.31
+| style="border: 1px solid #CCC;" | 0.65
+| style="border: 1px solid #CCC;" | 0.70
+| style="border: 1px solid #CCC;" | 0.75
+| style="border: 1px solid #CCC;" | 3580
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-add-im80-strrdm
+| style="border: 1px solid #CCC;" | 0.97
+| style="border: 1px solid #CCC;" | 25
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.46
+| style="border: 1px solid #CCC;" | 0.30
+| style="border: 1px solid #CCC;" | 3831
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-add-strrdm
+| style="border: 1px solid #CCC;" | 0.97
+| style="border: 1px solid #CCC;" | 31
+| style="border: 1px solid #CCC;" | 0.19
+| style="border: 1px solid #CCC;" | 0.75
+| style="border: 1px solid #CCC;" | 0.54
+| style="border: 1px solid #CCC;" | 0.43
+| style="border: 1px solid #CCC;" | 3145
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-addjoin-clever-nr-im80-gen-empty-strrdm
+| style="border: 1px solid #CCC;" | 0.94
+| style="border: 1px solid #CCC;" | 77
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.90
+| style="border: 1px solid #CCC;" | 0.83
+| style="border: 1px solid #CCC;" | 8810
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-addjoin-clever-nr-im80-gen-strrdm
+| style="border: 1px solid #CCC;" | 0.93
+| style="border: 1px solid #CCC;" | 67
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.88
+| style="border: 1px solid #CCC;" | 0.78
+| style="border: 1px solid #CCC;" | 7481
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-addjoin-clever-nr-im80-strrdm
+| style="border: 1px solid #CCC;" | 0.96
+| style="border: 1px solid #CCC;" | 47
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.71
+| style="border: 1px solid #CCC;" | 0.56
+| style="border: 1px solid #CCC;" | 6168
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-addjoin-clever-nr-strrdm
+| style="border: 1px solid #CCC;" | 0.96
+| style="border: 1px solid #CCC;" | 60
+| style="border: 1px solid #CCC;" | 0.34
+| style="border: 1px solid #CCC;" | 0.63
+| style="border: 1px solid #CCC;" | 0.69
+| style="border: 1px solid #CCC;" | 0.75
+| style="border: 1px solid #CCC;" | 2789
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-addjoin-im80-strrdm
+| style="border: 1px solid #CCC;" | 0.98
+| style="border: 1px solid #CCC;" | 25
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.46
+| style="border: 1px solid #CCC;" | 0.30
+| style="border: 1px solid #CCC;" | 3248
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-addjoin-strrdm
+| style="border: 1px solid #CCC;" | 0.98
+| style="border: 1px solid #CCC;" | 31
+| style="border: 1px solid #CCC;" | 0.19
+| style="border: 1px solid #CCC;" | 0.75
+| style="border: 1px solid #CCC;" | 0.54
+| style="border: 1px solid #CCC;" | 0.43
+| style="border: 1px solid #CCC;" | 2153
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-delete-clever-nr-im80-gen-empty-strrdm
+| style="border: 1px solid #CCC;" | 0.91
+| style="border: 1px solid #CCC;" | 65
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.75
+| style="border: 1px solid #CCC;" | 0.60
+| style="border: 1px solid #CCC;" | 6082
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-delete-clever-nr-im80-gen-strrdm
+| style="border: 1px solid #CCC;" | 0.91
+| style="border: 1px solid #CCC;" | 54
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.71
+| style="border: 1px solid #CCC;" | 0.55
+| style="border: 1px solid #CCC;" | 6580
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-delete-clever-nr-im80-strrdm
+| style="border: 1px solid #CCC;" | 0.98
+| style="border: 1px solid #CCC;" | 6
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.13
+| style="border: 1px solid #CCC;" | 0.07
+| style="border: 1px solid #CCC;" | 2490
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-delete-clever-nr-strrdm
+| style="border: 1px solid #CCC;" | 0.98
+| style="border: 1px solid #CCC;" | 6
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.13
+| style="border: 1px solid #CCC;" | 0.07
+| style="border: 1px solid #CCC;" | 1764
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-delete-im80-strrdm
+| style="border: 1px solid #CCC;" | 0.99
+| style="border: 1px solid #CCC;" | 6
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.13
+| style="border: 1px solid #CCC;" | 0.07
+| style="border: 1px solid #CCC;" | 835
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-delete-strrdm
+| style="border: 1px solid #CCC;" | 0.99
+| style="border: 1px solid #CCC;" | 6
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.13
+| style="border: 1px solid #CCC;" | 0.07
+| style="border: 1px solid #CCC;" | 789
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-refadd-clever-nr-im80-gen-empty-strrdm
+| style="border: 1px solid #CCC;" | 0.93
+| style="border: 1px solid #CCC;" | 86
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.97
+| style="border: 1px solid #CCC;" | 0.94
+| style="border: 1px solid #CCC;" | 7648
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-refadd-clever-nr-im80-gen-strrdm
+| style="border: 1px solid #CCC;" | 0.93
+| style="border: 1px solid #CCC;" | 84
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.99
+| style="border: 1px solid #CCC;" | 0.98
+| style="border: 1px solid #CCC;" | 9138
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-refadd-clever-nr-im80-strrdm
+| style="border: 1px solid #CCC;" | 0.94
+| style="border: 1px solid #CCC;" | 79
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.96
+| style="border: 1px solid #CCC;" | 0.93
+| style="border: 1px solid #CCC;" | 8092
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-refadd-clever-nr-strrdm
+| style="border: 1px solid #CCC;" | 0.95
+| style="border: 1px solid #CCC;" | 74
+| style="border: 1px solid #CCC;" | 0.38
+| style="border: 1px solid #CCC;" | 0.59
+| style="border: 1px solid #CCC;" | 0.72
+| style="border: 1px solid #CCC;" | 0.93
+| style="border: 1px solid #CCC;" | 2985
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-refadd-im80-strrdm
+| style="border: 1px solid #CCC;" | 0.97
+| style="border: 1px solid #CCC;" | 57
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.80
+| style="border: 1px solid #CCC;" | 0.66
+| style="border: 1px solid #CCC;" | 7014
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-refadd-strrdm
+| style="border: 1px solid #CCC;" | 0.98
+| style="border: 1px solid #CCC;" | 52
+| style="border: 1px solid #CCC;" | 0.30
+| style="border: 1px solid #CCC;" | 0.67
+| style="border: 1px solid #CCC;" | 0.68
+| style="border: 1px solid #CCC;" | 0.70
+| style="border: 1px solid #CCC;" | 2766
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-refine-clever-nr-im80-gen-empty-strrdm
+| style="border: 1px solid #CCC;" | 0.90
+| style="border: 1px solid #CCC;" | 66
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.75
+| style="border: 1px solid #CCC;" | 0.60
+| style="border: 1px solid #CCC;" | 6295
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-refine-clever-nr-im80-gen-strrdm
+| style="border: 1px solid #CCC;" | 0.89
+| style="border: 1px solid #CCC;" | 56
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.70
+| style="border: 1px solid #CCC;" | 0.53
+| style="border: 1px solid #CCC;" | 6745
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-refine-clever-nr-im80-strrdm
+| style="border: 1px solid #CCC;" | 0.96
+| style="border: 1px solid #CCC;" | 6
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.14
+| style="border: 1px solid #CCC;" | 0.08
+| style="border: 1px solid #CCC;" | 2884
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-refine-clever-nr-strrdm
+| style="border: 1px solid #CCC;" | 0.95
+| style="border: 1px solid #CCC;" | 6
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.14
+| style="border: 1px solid #CCC;" | 0.07
+| style="border: 1px solid #CCC;" | 2876
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-refine-im80-strrdm
+| style="border: 1px solid #CCC;" | 0.99
+| style="border: 1px solid #CCC;" | 6
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.13
+| style="border: 1px solid #CCC;" | 0.07
+| style="border: 1px solid #CCC;" | 1324
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-refine-strrdm
+| style="border: 1px solid #CCC;" | 0.99
+| style="border: 1px solid #CCC;" | 6
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.13
+| style="border: 1px solid #CCC;" | 0.07
+| style="border: 1px solid #CCC;" | 1324
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-replace-clever-nr-im80-gen-empty-strrdm
+| style="border: 1px solid #CCC;" | 0.91
+| style="border: 1px solid #CCC;" | 66
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.75
+| style="border: 1px solid #CCC;" | 0.60
+| style="border: 1px solid #CCC;" | 7134
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-replace-clever-nr-im80-gen-strrdm
+| style="border: 1px solid #CCC;" | 0.91
+| style="border: 1px solid #CCC;" | 56
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.71
+| style="border: 1px solid #CCC;" | 0.56
+| style="border: 1px solid #CCC;" | 8247
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-replace-clever-nr-im80-strrdm
+| style="border: 1px solid #CCC;" | 0.97
+| style="border: 1px solid #CCC;" | 6
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.13
+| style="border: 1px solid #CCC;" | 0.07
+| style="border: 1px solid #CCC;" | 1887
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-replace-clever-nr-strrdm
+| style="border: 1px solid #CCC;" | 0.97
+| style="border: 1px solid #CCC;" | 6
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.13
+| style="border: 1px solid #CCC;" | 0.07
+| style="border: 1px solid #CCC;" | 2854
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-replace-im80-strrdm
+| style="border: 1px solid #CCC;" | 0.99
+| style="border: 1px solid #CCC;" | 6
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.13
+| style="border: 1px solid #CCC;" | 0.07
+| style="border: 1px solid #CCC;" | 1224
+|-
+| style="border: 1px solid #CCC; font-weight: bold;" | 4-10000-replace-strrdm
+| style="border: 1px solid #CCC;" | 0.99
+| style="border: 1px solid #CCC;" | 6
+| style="border: 1px solid #CCC;" | 0.00
+| style="border: 1px solid #CCC;" | 1.00
+| style="border: 1px solid #CCC;" | 0.13
+| style="border: 1px solid #CCC;" | 0.07
+| style="border: 1px solid #CCC;" | 1224
+|}
+
+'''Analysis''':
+* 
+
+'''Further experiments''':
+* 
+
+'''Full log''': [[file:20181112-NOOR.zip]]
+
+'''Execution environment''':
+24 * Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz with 20GB RAM
+/  Linux 4.15.17-1-pve
+/  Java(TM) SE Runtime Environment 1.8.0_151 with 4.33G max heap size
+
+'''Designer''': Iris Lohja (2018-06-01)
+
+'''Experimenter''': JEuz (2018-11-12)
+
+'''Analyst''': JEuz (2018-11-13)
+
+Back to [[Experiments]].
+

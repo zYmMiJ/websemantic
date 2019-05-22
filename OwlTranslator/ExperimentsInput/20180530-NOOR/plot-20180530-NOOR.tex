@@ -1,0 +1,196 @@
+\documentclass[multi={tikzpicture},convert]{standalone}
+%\documentclass[convert={density=300,size=1080x800,outext=.png}]{standalone}
+
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\begin{document}
+
+% Suscess rate
+
+\begin{tikzpicture}
+\pgfplotsset{legend style={at={(0.42,-0.15)},draw=none,anchor=north,legend columns=-1}}
+
+\begin{axis}[ymin=0,ymax=1,xmax=10000,xlabel=$Games$,ylabel={$Success$~$rate$},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false,, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed,dotted \nextlist
+[6 of]color list}]
+
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-delete-clever-nr-im80.tsv}; 
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-replace-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-refine-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-add-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-addjoin-clever-nr-im80.tsv}; 
+\addplot plot table [x=rank,y=avg-srate] {str-4-10000-refadd-clever-nr-im80.tsv};
+
+\addplot plot table [x=rank,y=avg-srate] {../20180311-NOOR/str-4-10000-delete-im80.tsv}; 
+\addplot plot table [x=rank,y=avg-srate] {../20180311-NOOR/str-4-10000-replace-im80.tsv};
+\addplot plot table [x=rank,y=avg-srate] {../20180311-NOOR/str-4-10000-refine-im80.tsv};
+\addplot plot table [x=rank,y=avg-srate] {../20180311-NOOR/str-4-10000-add-im80.tsv};
+\addplot plot table [x=rank,y=avg-srate] {../20180311-NOOR/str-4-10000-addjoin-im80.tsv}; 
+\addplot plot table [x=rank,y=avg-srate] {../20180311-NOOR/str-4-10000-refadd-im80.tsv};
+
+\addplot plot table [x=rank,y=avg-srate] {../20180529-NOOR/str-4-10000-delete-clever-nr.tsv}; 
+\addplot plot table [x=rank,y=avg-srate] {../20180529-NOOR/str-4-10000-replace-clever-nr.tsv};
+\addplot plot table [x=rank,y=avg-srate] {../20180529-NOOR/str-4-10000-refine-clever-nr.tsv};
+\addplot plot table [x=rank,y=avg-srate] {../20180529-NOOR/str-4-10000-add-clever-nr.tsv};
+\addplot plot table [x=rank,y=avg-srate] {../20180529-NOOR/str-4-10000-addjoin-clever-nr.tsv}; 
+\addplot plot table [x=rank,y=avg-srate] {../20180529-NOOR/str-4-10000-refadd-clever-nr.tsv};
+
+%x expr=\thisrow{maxlevel}+10, y=L2
+\legend{delete,replace,refine,add,addjoin,refadd}
+\end{axis} 
+
+\end{tikzpicture}
+
+% F-measure
+
+\begin{tikzpicture}
+\pgfplotsset{legend style={at={(0.42,-0.15)},draw=none,anchor=north,legend columns=-1}}
+
+\begin{axis}[ymin=0,ymax=1,xmax=10000,xlabel=$Games$,ylabel={$F$-$measure$},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false,, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed,dotted \nextlist
+[6 of]color list}]
+
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-delete-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-replace-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-refine-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-add-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-addjoin-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {str-4-10000-refadd-clever-nr-im80.tsv};
+
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180311-NOOR/str-4-10000-delete-im80.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180311-NOOR/str-4-10000-replace-im80.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180311-NOOR/str-4-10000-refine-im80.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180311-NOOR/str-4-10000-add-im80.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180311-NOOR/str-4-10000-addjoin-im80.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180311-NOOR/str-4-10000-refadd-im80.tsv};
+
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180529-NOOR/str-4-10000-delete-clever-nr.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180529-NOOR/str-4-10000-replace-clever-nr.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180529-NOOR/str-4-10000-refine-clever-nr.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180529-NOOR/str-4-10000-add-clever-nr.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180529-NOOR/str-4-10000-addjoin-clever-nr.tsv};
+\addplot plot table [x=rank,y expr=2*\thisrow{avg-prec}*\thisrow{avg-rec}/(\thisrow{avg-prec}+\thisrow{avg-rec})] {../20180529-NOOR/str-4-10000-refadd-clever-nr.tsv};
+
+%x expr=\thisrow{maxlevel}+10, y=L2
+\legend{delete,replace,refine,add,addjoin,refadd}
+\end{axis} 
+
+\end{tikzpicture}
+
+% Size
+
+\begin{tikzpicture}
+\pgfplotsset{legend style={at={(0.42,-0.15)},draw=none,anchor=north,legend columns=-1}}
+
+\begin{axis}[ymin=0,ymax=120,xmax=10000,xlabel=$Games$,ylabel={$Size$},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false,, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed,dotted \nextlist
+[6 of]color list}]
+
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-delete-clever-nr-im80.tsv}; 
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-replace-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-refine-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-add-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-addjoin-clever-nr-im80.tsv}; 
+\addplot plot table [x=rank,y=avg-size] {str-4-10000-refadd-clever-nr-im80.tsv};
+
+\addplot plot table [x=rank,y=avg-size] {../20180311-NOOR/str-4-10000-delete-im80.tsv}; 
+\addplot plot table [x=rank,y=avg-size] {../20180311-NOOR/str-4-10000-replace-im80.tsv};
+\addplot plot table [x=rank,y=avg-size] {../20180311-NOOR/str-4-10000-refine-im80.tsv};
+\addplot plot table [x=rank,y=avg-size] {../20180311-NOOR/str-4-10000-add-im80.tsv};
+\addplot plot table [x=rank,y=avg-size] {../20180311-NOOR/str-4-10000-addjoin-im80.tsv}; 
+\addplot plot table [x=rank,y=avg-size] {../20180311-NOOR/str-4-10000-refadd-im80.tsv};
+
+\addplot plot table [x=rank,y=avg-size] {../20180529-NOOR/str-4-10000-delete-clever-nr.tsv}; 
+\addplot plot table [x=rank,y=avg-size] {../20180529-NOOR/str-4-10000-replace-clever-nr.tsv};
+\addplot plot table [x=rank,y=avg-size] {../20180529-NOOR/str-4-10000-refine-clever-nr.tsv};
+\addplot plot table [x=rank,y=avg-size] {../20180529-NOOR/str-4-10000-add-clever-nr.tsv};
+\addplot plot table [x=rank,y=avg-size] {../20180529-NOOR/str-4-10000-addjoin-clever-nr.tsv}; 
+\addplot plot table [x=rank,y=avg-size] {../20180529-NOOR/str-4-10000-refadd-clever-nr.tsv};
+
+%x expr=\thisrow{maxlevel}+10, y=L2
+\legend{delete,replace,refine,add,addjoin,refadd}
+\end{axis} 
+
+\end{tikzpicture}
+
+% Precision
+
+\begin{tikzpicture}
+\pgfplotsset{legend style={at={(0.42,-0.15)},draw=none,anchor=north,legend columns=-1}}
+
+\begin{axis}[ymin=0,ymax=1,xmax=10000,xlabel=$Games$,ylabel={$Precision$},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false,, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed,dotted \nextlist
+[6 of]color list}]
+
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-delete-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-replace-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-refine-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-add-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-addjoin-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-4-10000-refadd-clever-nr-im80.tsv};
+
+\addplot plot table [x=rank,y=avg-prec] {../20180311-NOOR/str-4-10000-delete-im80.tsv};
+\addplot plot table [x=rank,y=avg-prec] {../20180311-NOOR/str-4-10000-replace-im80.tsv};
+\addplot plot table [x=rank,y=avg-prec] {../20180311-NOOR/str-4-10000-refine-im80.tsv};
+\addplot plot table [x=rank,y=avg-prec] {../20180311-NOOR/str-4-10000-add-im80.tsv};
+\addplot plot table [x=rank,y=avg-prec] {../20180311-NOOR/str-4-10000-addjoin-im80.tsv};
+\addplot plot table [x=rank,y=avg-prec] {../20180311-NOOR/str-4-10000-refadd-im80.tsv};
+
+\addplot plot table [x=rank,y=avg-prec] {../20180529-NOOR/str-4-10000-delete-clever-nr.tsv};
+\addplot plot table [x=rank,y=avg-prec] {../20180529-NOOR/str-4-10000-replace-clever-nr.tsv};
+\addplot plot table [x=rank,y=avg-prec] {../20180529-NOOR/str-4-10000-refine-clever-nr.tsv};
+\addplot plot table [x=rank,y=avg-prec] {../20180529-NOOR/str-4-10000-add-clever-nr.tsv};
+\addplot plot table [x=rank,y=avg-prec] {../20180529-NOOR/str-4-10000-addjoin-clever-nr.tsv};
+\addplot plot table [x=rank,y=avg-prec] {../20180529-NOOR/str-4-10000-refadd-clever-nr.tsv};
+
+%x expr=\thisrow{maxlevel}+10, y=L2
+\legend{delete,replace,refine,add,addjoin,refadd}
+\end{axis} 
+
+\end{tikzpicture}
+
+
+% Recall
+
+\begin{tikzpicture}
+\pgfplotsset{legend style={at={(0.42,-0.15)},draw=none,anchor=north,legend columns=-1}}
+
+\begin{axis}[ymin=0,ymax=1,xmax=10000,xlabel=$Games$,ylabel={$Recall$},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false,, axis y line=left,height=5cm,width=\linewidth,
+cycle multi list={
+solid,dashed,dotted \nextlist
+[6 of]color list}]
+
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-delete-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-replace-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-refine-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-add-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-addjoin-clever-nr-im80.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-4-10000-refadd-clever-nr-im80.tsv};
+
+\addplot plot table [x=rank,y=avg-rec] {../20180311-NOOR/str-4-10000-delete-im80.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180311-NOOR/str-4-10000-replace-im80.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180311-NOOR/str-4-10000-refine-im80.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180311-NOOR/str-4-10000-add-im80.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180311-NOOR/str-4-10000-addjoin-im80.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180311-NOOR/str-4-10000-refadd-im80.tsv};
+
+\addplot plot table [x=rank,y=avg-rec] {../20180529-NOOR/str-4-10000-delete-clever-nr.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180529-NOOR/str-4-10000-replace-clever-nr.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180529-NOOR/str-4-10000-refine-clever-nr.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180529-NOOR/str-4-10000-add-clever-nr.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180529-NOOR/str-4-10000-addjoin-clever-nr.tsv};
+\addplot plot table [x=rank,y=avg-rec] {../20180529-NOOR/str-4-10000-refadd-clever-nr.tsv};
+
+%x expr=\thisrow{maxlevel}+10, y=L2
+\legend{delete,replace,refine,add,addjoin,refadd}
+\end{axis} 
+
+\end{tikzpicture}
+
+\end{document}

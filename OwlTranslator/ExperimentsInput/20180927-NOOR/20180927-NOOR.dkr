@@ -1,0 +1,66 @@
+ARG version="stretch"
+FROM lazylav:${version}
+ARG version="stretch"
+
+ENV OSVERS=stretch
+ENV LOGBACK_VERSION=1.2.3
+ENV JPATH=lib/lazylav/ll.jar:lib/slf4j/logback-classic-${LOGBACK_VERSION}.jar:lib/slf4j/logback-core-${LOGBACK_VERSION}.jar:.
+ENV LLHASH=759ff097b96520c12aa84f3749927f9a22022e62
+ENV DESIGNDATE=2017-10-01
+ENV DATE=20180927
+ENV LABEL=${DATE}-NOOR
+ENV NAME=${LABEL}
+ENV PERFORMER=JEuz
+ENV NBAGENTS=5
+ENV NBITERATIONS=100000
+ENV NBRUNS=10
+ENV OUTPUT=${LABEL}
+ENV OPS="delete replace refine add addjoin refadd"
+ENV OPT="-DnbAgents=${NBAGENTS} -DnbIterations=${NBITERATIONS} -DnbRuns=${NBRUNS} -DreportPrecRec"
+ENV LOADOPT="-DloadDir=expeRun -DloadEnv -DloadAgents -DreplayGames"
+ENV TOCOPY="expeRun logback.xml"
+ENV DIRPREF=${NBAGENTS}-${NBITERATIONS}
+ENV VARIATIONOF=20171231-NOOR
+ENV EXPE="Revision of networks of ontologies with 5 agents relaxation, expansion and generation"
+ENV HYPOTHESIS="With 5 agents processes converge within 100000 games"
+ENV SETTING="Same as [[${VARIATIONOF}]] after correction of expansion and add behaviour"
+ENV CLASSES="NOOEnvironment, AlignmentAdjustingAgent, AlignmentRevisionExperiment, ActionLogger, AverageLogger, Monitor"
+ENV DESIGNER=${PERFORMER}
+ENV EXPERIMENTER=${PERFORMER}
+ENV ANALYST=${PERFORMER}
+
+ENV OUTPUT=/results/20180927-NOOR
+
+RUN if ! [ "$version" = "stretch" ]; then \
+        git pull ; \
+    else \
+        git fetch ; \
+        git checkout $LLHASH \
+        && wget -qO- https://logback.qos.ch/dist/logback-${LOGBACK_VERSION}.tar.gz | tar xz \
+        && mv ./logback-${LOGBACK_VERSION}/logback-classic-${LOGBACK_VERSION}.jar /lazylav/lib/slf4j/  \
+        && mv ./logback-${LOGBACK_VERSION}/logback-core-${LOGBACK_VERSION}.jar /lazylav/lib/slf4j/ \
+        && rm -rf ./logback* ; \ 
+    fi
+
+RUN ant compileall
+
+COPY ./expeRun ./expeRun
+COPY ./logback.xml ./logback.xml
+
+ENTRYPOINT ["bash", \
+            "-c", \
+            "bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-nothing java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=nothing -DsaveDir=expeRun -DsaveGames -DloadDir=expeRun -DloadEnv -DloadAgents ; \
+            for op in ${OPS} ; \
+            do \
+            bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-gen java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -Dgenerative ; \
+            bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-gen java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 -Dgenerative ; \
+            bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-gen-empty java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -Dgenerative -Dstartempty ; \
+            bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-gen-empty java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 -Dgenerative -Dstartempty ; \
+            done ; \
+            bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-nothing2 java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=nothing -DsaveDir=expeRun -DloadGames -DloadDir=expeRun -DsaveEnv -DloadAgents ; \
+            for op in ${OPS} ; \
+            do \
+            bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-gen-real java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -Dgenerative -Drealistic ; \
+            bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-gen-real java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 -Dgenerative -Drealistic ; \
+            done ; \
+            "]

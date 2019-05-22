@@ -1,0 +1,16 @@
+<configuration> 
+  <appender name="STDERR" class="ch.qos.logback.core.ConsoleAppender">
+    <target>System.err</target>
+    <encoder>
+      <pattern>%d %-5level %-4thread %-36logger{36} %msg%n%rEx</pattern>
+    </encoder>
+  </appender>
+  <logger name="br.uniriotec.ppgi" level="OFF" />
+  <logger name="de.unima.alcomox" level="OFF" />
+  <logger name="org.semanticweb.elk" level="OFF" />
+
+  <root level="${log.level:-OFF}">
+    <appender-ref ref="STDERR" />
+  </root>
+</configuration>
+

@@ -1,0 +1,594 @@
+\documentclass[multi={tikzpicture},convert]{standalone}
+%\documentclass[convert={density=300,size=1080x800,outext=.png}]{standalone}
+
+\usepackage{comment}
+\usepackage{multirow}
+
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepgfplotslibrary{external}
+
+\tikzsetexternalprefix{figures/}
+\tikzexternalize
+
+
+\begin{document}
+
+\begin{tikzpicture}[scale=.33]
+\pgfplotsset{legend style={font=\LARGE,at={(1,-0.25)},draw=none,anchor=north,legend columns=-1}}
+
+\draw(.5\linewidth,7.5cm) node {{\small Precision}};
+\begin{axis}[ymin=0,ymax=1,ylabel={\Large \textsf{delete}},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-delete-clever-nr-gen.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-delete-clever-nr-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-delete-clever-nr-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+
+\begin{scope}[xshift=12cm]
+\draw(.5\linewidth,7.5cm) node {{\footnotesize Size}};
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=400,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-delete-clever-nr-gen.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-delete-clever-nr-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-delete-clever-nr-gen-real.tsv};
+
+%\legend{exp+gen,exp+gen+real,exp+gen+empty}
+\end{axis} 
+\end{scope}
+
+\begin{scope}[xshift=24cm]
+\draw(.5\linewidth,7.5cm) node {{\footnotesize Recall}};
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=1,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-delete-clever-nr-gen.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-delete-clever-nr-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-delete-clever-nr-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\begin{scope}[yshift=-7.5cm]
+
+\begin{axis}[ymin=0,ymax=1,ylabel={\Large \textsf{replace}},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-replace-clever-nr-gen.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-replace-clever-nr-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-replace-clever-nr-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+
+\begin{scope}[xshift=12cm]
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=400,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-replace-clever-nr-gen.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-replace-clever-nr-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-replace-clever-nr-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\begin{scope}[xshift=24cm]
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=1,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-replace-clever-nr-gen.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-replace-clever-nr-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-replace-clever-nr-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\end{scope}
+
+
+\begin{scope}[yshift=-15cm]
+
+
+\begin{axis}[ymin=0,ymax=1,ylabel={\Large \textsf{refine}},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-refine-clever-nr-gen.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-refine-clever-nr-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-refine-clever-nr-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+
+\begin{scope}[xshift=12cm]
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=400,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-refine-clever-nr-gen.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-refine-clever-nr-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-refine-clever-nr-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\begin{scope}[xshift=24cm]
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=1,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-refine-clever-nr-gen.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-refine-clever-nr-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-refine-clever-nr-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\end{scope}
+
+
+\begin{scope}[yshift=-22.5cm]
+
+
+\begin{axis}[ymin=0,ymax=1,ylabel={\Large \textsf{add}},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-add-clever-nr-gen.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-add-clever-nr-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-add-clever-nr-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+
+\begin{scope}[xshift=12cm]
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=400,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-add-clever-nr-gen.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-add-clever-nr-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-add-clever-nr-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\begin{scope}[xshift=24cm]
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=1,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-add-clever-nr-gen.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-add-clever-nr-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-add-clever-nr-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\end{scope}
+
+
+\begin{scope}[yshift=-30cm]
+
+
+\begin{axis}[ymin=0,ymax=1,ylabel={\Large \textsf{addjoin}},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-addjoin-clever-nr-gen.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-addjoin-clever-nr-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-addjoin-clever-nr-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+
+\begin{scope}[xshift=12cm]
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=400,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-addjoin-clever-nr-gen.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-addjoin-clever-nr-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-addjoin-clever-nr-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\begin{scope}[xshift=24cm]
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=1,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-addjoin-clever-nr-gen.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-addjoin-clever-nr-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-addjoin-clever-nr-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\end{scope}
+
+
+\begin{scope}[yshift=-37.5cm]
+
+
+\begin{axis}[ymin=0,ymax=1,xlabel={\LARGE Games},ylabel={\Large \textsf{refadd}},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-refadd-clever-nr-gen.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-refadd-clever-nr-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-refadd-clever-nr-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+
+\begin{scope}[xshift=12cm]
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=400,xlabel={\LARGE Games},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-refadd-clever-nr-gen.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-refadd-clever-nr-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-refadd-clever-nr-gen-real.tsv};
+
+\legend{exp+gen,exp+gen+empty,exp+gen+real}
+\end{axis} 
+\end{scope}
+
+\begin{scope}[xshift=24cm]
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=1,xlabel={\LARGE Games},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-refadd-clever-nr-gen.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-refadd-clever-nr-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-refadd-clever-nr-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\end{scope}
+
+
+\end{tikzpicture}
+
+%clever-nr + generative (dashed=im80)
+%\caption{Superimposition of the precision (left), size (centre) and recall (right) curves for operators with standard random network (red) random network with realistic size (black) and and empty ones (blue) [expansion+generative; 5 agents; 10 runs; 100000 games].}\label{fig:superimp}
+
+
+\begin{tikzpicture}[scale=.33]
+\pgfplotsset{legend style={font=\LARGE,at={(1,-0.25)},draw=none,anchor=north,legend columns=-1}}
+
+\draw(.5\linewidth,7.5cm) node {{\small Precision}};
+\begin{axis}[ymin=0,ymax=1,ylabel={\Large \textsf{delete}},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-delete-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-delete-clever-nr-im80-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-delete-clever-nr-im80-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+
+\begin{scope}[xshift=12cm]
+\draw(.5\linewidth,7.5cm) node {{\footnotesize Size}};
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=400,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-delete-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-delete-clever-nr-im80-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-delete-clever-nr-im80-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\begin{scope}[xshift=24cm]
+\draw(.5\linewidth,7.5cm) node {{\footnotesize Recall}};
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=1,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-delete-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-delete-clever-nr-im80-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-delete-clever-nr-im80-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\begin{scope}[yshift=-7.5cm]
+
+\begin{axis}[ymin=0,ymax=1,ylabel={\Large \textsf{replace}},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-replace-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-replace-clever-nr-im80-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-replace-clever-nr-im80-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+
+\begin{scope}[xshift=12cm]
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=400,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-replace-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-replace-clever-nr-im80-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-replace-clever-nr-im80-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\begin{scope}[xshift=24cm]
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=1,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-replace-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-replace-clever-nr-im80-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-replace-clever-nr-im80-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\end{scope}
+
+
+\begin{scope}[yshift=-15cm]
+
+
+\begin{axis}[ymin=0,ymax=1,ylabel={\Large \textsf{refine}},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-refine-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-refine-clever-nr-im80-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-refine-clever-nr-im80-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+
+\begin{scope}[xshift=12cm]
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=400,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-refine-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-refine-clever-nr-im80-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-refine-clever-nr-im80-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\begin{scope}[xshift=24cm]
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=1,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-refine-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-refine-clever-nr-im80-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-refine-clever-nr-im80-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\end{scope}
+
+
+\begin{scope}[yshift=-22.5cm]
+
+
+\begin{axis}[ymin=0,ymax=1,ylabel={\Large \textsf{add}},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-add-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-add-clever-nr-im80-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-add-clever-nr-im80-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+
+\begin{scope}[xshift=12cm]
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=400,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-add-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-add-clever-nr-im80-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-add-clever-nr-im80-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\begin{scope}[xshift=24cm]
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=1,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-add-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-add-clever-nr-im80-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-add-clever-nr-im80-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\end{scope}
+
+
+\begin{scope}[yshift=-30cm]
+
+
+\begin{axis}[ymin=0,ymax=1,ylabel={\Large \textsf{addjoin}},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-addjoin-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-addjoin-clever-nr-im80-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-addjoin-clever-nr-im80-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+
+\begin{scope}[xshift=12cm]
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=400,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-addjoin-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-addjoin-clever-nr-im80-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-addjoin-clever-nr-im80-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\begin{scope}[xshift=24cm]
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=1,axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-addjoin-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-addjoin-clever-nr-im80-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-addjoin-clever-nr-im80-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\end{scope}
+
+
+\begin{scope}[yshift=-37.5cm]
+
+
+\begin{axis}[ymin=0,ymax=1,xlabel={\LARGE Games},ylabel={\Large \textsf{refadd}},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-refadd-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-refadd-clever-nr-im80-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-prec] {str-5-100000-refadd-clever-nr-im80-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+
+\begin{scope}[xshift=12cm]
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=400,xlabel={\LARGE Games},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-refadd-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-refadd-clever-nr-im80-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-size] {str-5-100000-refadd-clever-nr-im80-gen-real.tsv};
+
+\legend{exp+gen+im80,exp+gen+empty+im80,exp+gen+real+im80}
+\end{axis} 
+\end{scope}
+
+\begin{scope}[xshift=24cm]
+
+% ylabel=$Size$,
+\begin{axis}[ymin=0,ymax=1,xlabel={\LARGE Games},axis x line=bottom,x tick label style={/pgf/number format/.cd,set thousands separator={},/tikz/.cd},scaled x ticks=false, axis y line=left,height=8cm,width=\linewidth,
+cycle multi list={
+[3 of]color list}]
+
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-refadd-clever-nr-im80-gen.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-refadd-clever-nr-im80-gen-empty.tsv};
+\addplot plot table [x=rank,y=avg-rec] {str-5-100000-refadd-clever-nr-im80-gen-real.tsv};
+
+%\legend{delete, replace, refine, add, addjoin, refadd}
+\end{axis} 
+\end{scope}
+
+\end{scope}
+
+
+\end{tikzpicture}
+
+%clever-nr + generative (dashed=im80)
+%\caption{Superimposition of the precision (left), size (centre) and recall (right) curves for operators with standard random network (red) random network with realistic size (black) and and empty ones (blue) [expansion+generative; im=80\%; 5 agents; 10 runs; 100000 games].}\label{fig:superimp}
+
+\end{document}
+
