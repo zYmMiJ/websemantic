@@ -2,6 +2,7 @@ package translator;
  
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,6 +26,10 @@ public class Translator {
 		private OWLOntologyManager manager;
 		private OWLOntology ontology;
 		
+		private MakerDatatype makerData;
+		private MakerIndividual makerIndividual;
+		private MakerProperty makerProperty;
+		
 		private File fileOwl;
 		private File fileBash;
 		
@@ -37,6 +42,11 @@ public class Translator {
 			loadOntology(fileOwl);
 
 			this.fileBash = new File(fileBashName);
+			
+			//Initialize the makers
+			makerData = new MakerDatatype(manager, ontology);
+			makerIndividual = new MakerIndividual(manager, ontology);
+			makerProperty = new MakerProperty(manager, ontology);
 			
 		}
 		
@@ -106,8 +116,6 @@ public class Translator {
 			List<DataParsed> listObjectProperty_Parameter = parserFileAssociationObject.fileAssociationToList();
 			for(DataParsed data : listObjectProperty_Parameter) {
 				OWLDataFactory factory = manager.getOWLDataFactory();
-				System.out.println("BOX1 : "+data.getFirstBox());
-				System.out.println("BOX2 : "+data.getSecondBox());
 				mapObjectProperty_Parameter.put(factory.getOWLObjectProperty(data.getFirstBox()), data.getSecondBox());
 			}
 			
@@ -115,36 +123,61 @@ public class Translator {
 			Map<OWLObjectProperty, String> mapObjectProperty_Value = new HashMap<OWLObjectProperty, String>();
 			Set<OWLObjectProperty> setObjectProperty = mapObjectProperty_Parameter.keySet();
 			for(OWLObjectProperty elem : setObjectProperty) {
-				System.out.println("ELEM : "+elem);
-				System.out.println("Value : "+mapObjectProperty_Value.get(mapObjectProperty_Parameter.get(elem)));
 				mapObjectProperty_Value.put(elem, mapParameter_Value.get(mapObjectProperty_Parameter.get(elem)));
 			}
 			
-			for(OWLClass cls : listClass) {
-				System.out.println("CLASS : "+cls);
-				for(OWLObjectProperty ppt : mapClass_ObjectProperty.get(cls)) {
-					System.out.println("PROPERTY : "+ppt);
-					
-					String data=mapObjectProperty_Value.get(ppt);
-					if(data!=null)
-						System.out.println("DATA : "+data);
-				}		
+			
+			//Add in the listValueProperty the different and unique Value corresponding at the property
+			Set<OWLObjectProperty> setProperty =  mapObjectProperty_Parameter.keySet();
+			List<String> listValueProperty = new ArrayList<String>();
+			
+			for(OWLObjectProperty ppt: setProperty) {
+				String param = mapObjectProperty_Parameter.get(ppt);
+				
+				if(!param.isEmpty()) {
+					String value = mapParameter_Value.get(param);
+					//Test if the value is present in the list
+					if(!listValueProperty.stream().filter(it -> it.contains(value)).findFirst().isPresent()) 
+						listValueProperty.add(value);
+				}	
 			}
+
 			
-			//Recup différentes valeurs
-			//Instancier les personnages
-			//Param -- Property
-			//Associer property à personnage
-			//Make
-			
-			//-------------------------------------------------------------------------------------------
-			
-			//Initialize the makers
-			MakerDatatype makerData = new MakerDatatype(manager, ontology);
-			MakerIndividual makerIndividual = new MakerIndividual(manager, ontology);
 			
 			//Give a label at the NamedIndiviual
 			String label = "_"+mapParameter_Value.get("LABEL");
+			
+			//Instantiate Person
+			Map<String, OWLNamedIndividual> mapValue_Individual = new HashMap<String, OWLNamedIndividual>();
+			
+			for(String fullname : listValueProperty) {
+				String personIRI = "Person";
+
+				//TODO : gestion erreur
+				//Assign the Class person
+				OWLClass person = listClass.parallelStream().filter(p -> p.getIRI().getShortForm().equals(personIRI)).findFirst().get();
+				OWLNamedIndividual individualOWL = makerIndividual.makeIndividual(person, "_"+fullname);
+				mapValue_Individual.put(fullname, individualOWL);
+				
+				//Decompose fullname : firstname+familyname
+				String[] tmp= new String[2];
+				if(fullname.equals("JEuz")) {
+					tmp[0]="Jérome";
+					tmp[1]="Euzenat";
+				}
+				else	
+				tmp=fullname.split("\\s+",2);
+
+				for(OWLDataProperty ppt : mapClass_DataProperty.get(person)) {
+					
+					if(ppt.getIRI().getShortForm().equals("firstName")) 
+						makerData.makeDataType(ppt, tmp[0], individualOWL);
+					
+					if(ppt.getIRI().getShortForm().equals("familyName"))
+						makerData.makeDataType(ppt, tmp[1], individualOWL);
+				}
+			}
+			
 			
 			for(OWLClass cls : listClass) {
 				
@@ -153,6 +186,14 @@ public class Translator {
 				//Make a Instance with the class
 				OWLNamedIndividual individualOWL = makerIndividual.makeIndividual(cls, label);
 				
+				//Building of ObjectProperty associated at the current Individual
+				for(OWLObjectProperty ppt : mapClass_ObjectProperty.get(cls)) {
+					String value = mapParameter_Value.get(mapObjectProperty_Parameter.get(ppt));
+					if(value!=null)
+						makerProperty.makeProperty(ppt, individualOWL, mapValue_Individual.get(value));
+				}
+				
+				//Building of dataProperty associated at the current Individual
 				for(OWLDataProperty ppt : mapClass_DataProperty.get(cls)) {
 						String data=mapDataProperty_Value.get(ppt);
 						if(data!=null)
@@ -168,6 +209,10 @@ public class Translator {
 			IRI outIRI=IRI.create(outFile);
 			saveOntology(ontologyOutput, outIRI);
 
+			
+		}
+		
+		private void managePerson() {
 			
 		}
 		
