@@ -238,11 +238,11 @@ public class Translator {
 				tmp[1]="";
 				
 				if(fullname.equals("JEuz")) {
-					tmp[0]="Jérome";
+					tmp[0]="Jerome";
 					tmp[1]="Euzenat";
 				}
 				else if(fullname.equals("euzenat")) {
-					tmp[0]="Jérome";
+					tmp[0]="Jerome";
 					tmp[1]="Euzenat";
 				}
 				else
