@@ -88,7 +88,7 @@ public class Translator {
 			
 			//SAVE the new Ontology
 			OWLOntology ontologyOutput = ontology;
-			File outFile = new File("ExperimentOntologyTurtleData_"+label+".ttl");
+			File outFile = new File("DataTurtleOutput/ExperimentOntologyTurtleData_"+label+".ttl");
 			
 			IRI outIRI=IRI.create(outFile);
 			saveOntology(ontologyOutput, outIRI);
@@ -162,8 +162,10 @@ public class Translator {
 				//Building of ObjectProperty associated at the current Individual
 				for(OWLObjectProperty ppt : mapClass_ObjectProperty.get(cls)) {
 					String value = mapParameter_Value.get(mapObjectProperty_Parameter.get(ppt));
-					if(value!=null)
+					
+					if(mapValue_Individual.get(value)!=null) {
 						makerProperty.makeProperty(ppt, individualOWL, mapValue_Individual.get(value));
+					}
 				}
 				
 				//Building of dataProperty associated at the current Individual
@@ -198,15 +200,17 @@ public class Translator {
 			//Add in the listValueProperty the different and unique Value corresponding at the property
 			Set<OWLObjectProperty> setProperty =  mapObjectProperty_Parameter.keySet();
 			List<String> listValueProperty = new ArrayList<String>();
-			
 			for(OWLObjectProperty ppt: setProperty) {
 				String param = mapObjectProperty_Parameter.get(ppt);
 				
 				if(!param.isEmpty()) {
 					String value = mapParameter_Value.get(param);
+
 					//Test if the value is present in the list
-					if(!listValueProperty.stream().filter(it -> it.contains(value)).findFirst().isPresent()) 
+					if(value!=null && !listValueProperty.stream().filter(it -> it.contains(value)).findFirst().isPresent())
 						listValueProperty.add(value);
+					
+						
 				}	
 			}
 
@@ -223,12 +227,21 @@ public class Translator {
 				
 				//Decompose fullname : firstname+familyname
 				String[] tmp= new String[2];
+				tmp[0]="";
+				tmp[1]="";
 				if(fullname.equals("JEuz")) {
 					tmp[0]="Jérome";
 					tmp[1]="Euzenat";
 				}
-				else	
-				tmp=fullname.split("\\s+",2);
+				else if(fullname.equals("euzenat")) {
+					tmp[0]="Jérome";
+					tmp[1]="Euzenat";
+				}
+				else
+					tmp=fullname.split("\\s+",2);
+				
+				
+				
 
 				for(OWLDataProperty ppt : mapClass_DataProperty.get(person)) {
 					
