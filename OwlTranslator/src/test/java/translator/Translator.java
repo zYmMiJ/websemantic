@@ -14,6 +14,7 @@ import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLDataProperty;
+import org.semanticweb.owlapi.model.OWLDataRange;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLOntology;
@@ -48,8 +49,12 @@ public class Translator {
 		private Map<OWLObjectProperty, String> mapObjectProperty_Value;
 		//Map of a Value and a Instance of Class coressponding, used with person Class
 		private Map<String, OWLNamedIndividual> mapValue_Individual;
-		
-		
+		//Map of a ObjectProperty a list with two Class, Class 0 : Domain, Class 1 : Range 
+		private Map<OWLObjectProperty, List<OWLClass>> mapObjectPropertyDomain_Range;
+		//Map of Class associate at their NamedIndividual
+		private Map<OWLClass, OWLNamedIndividual> mapClass_Individual;
+		//Map of OWLDataProperty and OWLDataRange, used to set the type of data
+		private Map<OWLDataProperty, OWLDataRange> mapDataProperty_DataRange;
 		
 		private File fileOwl;
 		private File fileBash;
@@ -121,6 +126,12 @@ public class Translator {
 			initMapDataProperty_Parameter(parserFileAssociation);
 			initMapDataProperty_Value();
 			
+				//
+			Set<OWLDataProperty> setDataProperty = mapDataProperty_Parameter.keySet();
+			List<OWLDataProperty> listDataProperty = new ArrayList<OWLDataProperty>();
+			listDataProperty.addAll(setDataProperty);
+			mapDataProperty_DataRange = generator.toMapDataProperty_DataRange(listDataProperty);
+			
 			//OBJECT_PROPERTY initialization WITH VALUE
 			mapClass_ObjectProperty = generator.toMapClass_ObjectProperty(listClass);
 			
@@ -138,9 +149,8 @@ public class Translator {
 			initMapObjectProperty_Value();
 			
 			//OBJECT_PROPERTY initialization WITHOUT VALUE
-			//TODO : attribut
-			Map<OWLObjectProperty, List<OWLClass>> mapObjectPropertyDomain_Range = generator.toMapObjectPropertyDomain_Range(listClass);
-			Map<OWLClass, OWLNamedIndividual> mapClass_Individual = new HashMap<OWLClass, OWLNamedIndividual>();
+			mapObjectPropertyDomain_Range = generator.toMapObjectPropertyDomain_Range(listClass);
+			mapClass_Individual = new HashMap<OWLClass, OWLNamedIndividual>();
 			
 			//INSTANCIATED ontology
 			
@@ -170,10 +180,14 @@ public class Translator {
 				
 				//Building of dataProperty associated at the current Individual
 				for(OWLDataProperty ppt : mapClass_DataProperty.get(cls)) {
-						String data=mapDataProperty_Value.get(ppt);
+						String data = mapDataProperty_Value.get(ppt);
+						OWLDataRange dataRange = mapDataProperty_DataRange.get(ppt);
 						if(data!=null)
-							makerData.makeDataType(ppt, data, individualOWL);								
+							makerData.makeDataType(ppt, dataRange, data, individualOWL);								
 				}
+				
+				System.out.println(ontology.dataPropertyAssertionAxioms(individualOWL).findFirst().isPresent());
+
 			}
 			
 			//OBJECT_PROPERTY instanced WITHOUT VALUE
@@ -209,7 +223,6 @@ public class Translator {
 					//Test if the value is present in the list
 					if(value!=null && !listValueProperty.stream().filter(it -> it.contains(value)).findFirst().isPresent())
 						listValueProperty.add(value);
-					
 						
 				}	
 			}
@@ -218,17 +231,12 @@ public class Translator {
 			
 			for(String fullname : listValueProperty) {
 				String personIRI = "Person";
-
-				//TODO : gestion erreur
-				//Assign the Class person
-				OWLClass person = listClass.parallelStream().filter(p -> p.getIRI().getShortForm().equals(personIRI)).findFirst().get();
-				OWLNamedIndividual individualOWL = makerIndividual.makeIndividual(person, "_"+fullname);
-				mapValue_Individual.put(fullname, individualOWL);
 				
 				//Decompose fullname : firstname+familyname
 				String[] tmp= new String[2];
 				tmp[0]="";
 				tmp[1]="";
+				
 				if(fullname.equals("JEuz")) {
 					tmp[0]="Jérome";
 					tmp[1]="Euzenat";
@@ -240,18 +248,25 @@ public class Translator {
 				else
 					tmp=fullname.split("\\s+",2);
 				
-				
+				//TODO : gestion erreur
+				//Assign the Class person
+				OWLClass person = listClass.parallelStream().filter(p -> p.getIRI().getShortForm().equals(personIRI)).findFirst().get();
+				OWLNamedIndividual individualOWL = makerIndividual.makeIndividual(person, "_"+tmp[0]);
+				mapValue_Individual.put(fullname, individualOWL);
 				
 
 				for(OWLDataProperty ppt : mapClass_DataProperty.get(person)) {
+					OWLDataRange dataRange = mapDataProperty_DataRange.get(ppt); 
 					
 					if(ppt.getIRI().getShortForm().equals("firstName")) 
-						makerData.makeDataType(ppt, tmp[0], individualOWL);
+						makerData.makeDataType(ppt, dataRange, tmp[0], individualOWL);
 					
 					if(ppt.getIRI().getShortForm().equals("familyName"))
-						makerData.makeDataType(ppt, tmp[1], individualOWL);
+						makerData.makeDataType(ppt, dataRange, tmp[1], individualOWL);
 				}
 			}
+			
+			
 		}
 		
 		private void initMapParameter_Value(Parser parserBash) {
