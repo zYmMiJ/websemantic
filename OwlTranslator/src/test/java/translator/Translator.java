@@ -186,7 +186,7 @@ public class Translator {
 							makerData.makeDataType(ppt, dataRange, data, individualOWL);								
 				}
 				
-				System.out.println(ontology.dataPropertyAssertionAxioms(individualOWL).findFirst().isPresent());
+				//System.out.println(ontology.dataPropertyAssertionAxioms(individualOWL).findFirst().isPresent());
 
 			}
 			

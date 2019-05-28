@@ -5,7 +5,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid198374825 a owl:Ontology .
+_:genid1620643420 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -400,5 +400,134 @@ xp:Script a owl:Class ;
 # http://xmlns.com/foaf/0.1/Project
 
 <http://xmlns.com/foaf/0.1/Project> a owl:Class .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://schema.org/Person_null
+
+<http://schema.org/Person_null> a owl:NamedIndividual , <http://schema.org/Person> .
+# 
+# http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData_null
+
+<http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData_null> a owl:NamedIndividual , <http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData> .
+# 
+# http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_null
+
+<http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_null> a owl:NamedIndividual , <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion> ;
+	xp:has_analyst <http://www.w3.org/2000/10/swap/pim/contact#Person_null> .
+# 
+# http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation_null
+
+<http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation_null> a owl:NamedIndividual , <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation> .
+# 
+# http://www.hozo.jp/owl/EXPOApr19.xml/Hardware_null
+
+<http://www.hozo.jp/owl/EXPOApr19.xml/Hardware_null> a owl:NamedIndividual , <http://www.hozo.jp/owl/EXPOApr19.xml/Hardware> .
+# 
+# http://www.hozo.jp/owl/EXPOApr19.xml/Software_null
+
+<http://www.hozo.jp/owl/EXPOApr19.xml/Software_null> a owl:NamedIndividual , <http://www.hozo.jp/owl/EXPOApr19.xml/Software> ;
+	xp:hasJavaPath "lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:." .
+# 
+# http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate_null
+
+<http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate_null> a owl:NamedIndividual , <http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate> .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#ClassificationByDomain_null
+
+xp:ClassificationByDomain_null a owl:NamedIndividual , xp:ClassificationByDomain .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#ClassificationOfExperiment_null
+
+xp:ClassificationOfExperiment_null a owl:NamedIndividual , xp:ClassificationOfExperiment .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_null
+
+xp:ComputionalExperiment_null a owl:NamedIndividual , xp:ComputionalExperiment ;
+	xp:has_experimentalDesign xp:ExperimentalDesign_null ;
+	xp:has_experimentalGoal xp:ExperimentalGoal_null ;
+	xp:has_experimentalHypothesis xp:ExperimentalHypothesis_null ;
+	xp:has_experimentalResults xp:ExperimentalResults_null .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#Entity_null
+
+xp:Entity_null a owl:NamedIndividual , xp:Entity .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#ExperimentEntity_null
+
+xp:ExperimentEntity_null a owl:NamedIndividual , xp:ExperimentEntity .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesignEntity_null
+
+xp:ExperimentalDesignEntity_null a owl:NamedIndividual , xp:ExperimentalDesignEntity .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_null
+
+xp:ExperimentalDesign_null a owl:NamedIndividual , xp:ExperimentalDesign ;
+	xp:has_ExperimentalEquiment xp:ExperimentalEquipment_null ;
+	xp:has_designer <http://www.w3.org/2000/10/swap/pim/contact#Person_null> ;
+	xp:has_procedure xp:Procedure_null .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment_null
+
+xp:ExperimentalEquipment_null a owl:NamedIndividual , xp:ExperimentalEquipment .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal_null
+
+xp:ExperimentalGoal_null a owl:NamedIndividual , xp:ExperimentalGoal .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis_null
+
+xp:ExperimentalHypothesis_null a owl:NamedIndividual , xp:ExperimentalHypothesis .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity_null
+
+xp:ExperimentalResultsEntity_null a owl:NamedIndividual , xp:ExperimentalResultsEntity .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_null
+
+xp:ExperimentalResults_null a owl:NamedIndividual , xp:ExperimentalResults ;
+	xp:has_experimentalConclusion <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_null> ;
+	xp:has_experimentalObservation <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation_null> .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#Procedure_null
+
+xp:Procedure_null a owl:NamedIndividual , xp:Procedure ;
+	xp:has_experimenter <http://www.w3.org/2000/10/swap/pim/contact#Person_null> ;
+	xp:has_performer <http://www.w3.org/2000/10/swap/pim/contact#Person_null> ;
+	xp:hasNumberOfIterations "10000" ;
+	xp:hasNumberOfRuns "10" ;
+	xp:hasOperators "delete replace refine add addjoin refadd" .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#Script_null
+
+xp:Script_null a owl:NamedIndividual , xp:Script .
+# 
+# http://www.w3.org/2000/10/swap/pim/contact#Person_null
+
+<http://www.w3.org/2000/10/swap/pim/contact#Person_null> a owl:NamedIndividual , <http://www.w3.org/2000/10/swap/pim/contact#Person> .
+# 
+# http://xmlns.com/foaf/0.1/Agent_null
+
+<http://xmlns.com/foaf/0.1/Agent_null> a owl:NamedIndividual , <http://xmlns.com/foaf/0.1/Agent> .
+# 
+# http://xmlns.com/foaf/0.1/Organization_null
+
+<http://xmlns.com/foaf/0.1/Organization_null> a owl:NamedIndividual , <http://xmlns.com/foaf/0.1/Organization> .
+# 
+# http://xmlns.com/foaf/0.1/Person_null
+
+<http://xmlns.com/foaf/0.1/Person_null> a owl:NamedIndividual , <http://xmlns.com/foaf/0.1/Person> .
+# 
+# http://xmlns.com/foaf/0.1/Project_null
+
+<http://xmlns.com/foaf/0.1/Project_null> a owl:NamedIndividual , <http://xmlns.com/foaf/0.1/Project> .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

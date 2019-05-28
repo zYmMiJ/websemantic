@@ -5,7 +5,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid2031667192 a owl:Ontology .
+_:genid1242969461 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -400,5 +400,149 @@ xp:Script a owl:Class ;
 # http://xmlns.com/foaf/0.1/Project
 
 <http://xmlns.com/foaf/0.1/Project> a owl:Class .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://schema.org/Person_20180917-NOOR
+
+<http://schema.org/Person_20180917-NOOR> a owl:NamedIndividual , <http://schema.org/Person> .
+# 
+# http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData_20180917-NOOR
+
+<http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData_20180917-NOOR> a owl:NamedIndividual , <http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData> .
+# 
+# http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20180917-NOOR
+
+<http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20180917-NOOR> a owl:NamedIndividual , <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion> ;
+	xp:has_analyst <http://xmlns.com/foaf/0.1/Person_Jerome> .
+# 
+# http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation_20180917-NOOR
+
+<http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation_20180917-NOOR> a owl:NamedIndividual , <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation> .
+# 
+# http://www.hozo.jp/owl/EXPOApr19.xml/Hardware_20180917-NOOR
+
+<http://www.hozo.jp/owl/EXPOApr19.xml/Hardware_20180917-NOOR> a owl:NamedIndividual , <http://www.hozo.jp/owl/EXPOApr19.xml/Hardware> .
+# 
+# http://www.hozo.jp/owl/EXPOApr19.xml/Software_20180917-NOOR
+
+<http://www.hozo.jp/owl/EXPOApr19.xml/Software_20180917-NOOR> a owl:NamedIndividual , <http://www.hozo.jp/owl/EXPOApr19.xml/Software> ;
+	xp:hasJavaPath "lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:." ;
+	xp:hasLogbackVersion "1.2.3" ;
+	xp:hasOSVersion "stretch" .
+# 
+# http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate_20180917-NOOR
+
+<http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate_20180917-NOOR> a owl:NamedIndividual , <http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate> .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#ClassificationByDomain_20180917-NOOR
+
+xp:ClassificationByDomain_20180917-NOOR a owl:NamedIndividual , xp:ClassificationByDomain .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#ClassificationOfExperiment_20180917-NOOR
+
+xp:ClassificationOfExperiment_20180917-NOOR a owl:NamedIndividual , xp:ClassificationOfExperiment .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_20180917-NOOR
+
+xp:ComputionalExperiment_20180917-NOOR a owl:NamedIndividual , xp:ComputionalExperiment ;
+	xp:has_experimentalDesign xp:ExperimentalDesign_20180917-NOOR ;
+	xp:has_experimentalGoal xp:ExperimentalGoal_20180917-NOOR ;
+	xp:has_experimentalHypothesis xp:ExperimentalHypothesis_20180917-NOOR ;
+	xp:has_experimentalResults xp:ExperimentalResults_20180917-NOOR ;
+	xp:hasExperimentLabel "20180917-NOOR" ;
+	xp:hasExperimentName "20180917-NOOR" ;
+	xp:hasExperimentTitle "Revision of networks of ontologies with 5 agents relaxation, expansion and generation" ;
+	xp:hasHash "759ff097b96520c12aa84f3749927f9a22022e62" .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#Entity_20180917-NOOR
+
+xp:Entity_20180917-NOOR a owl:NamedIndividual , xp:Entity .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#ExperimentEntity_20180917-NOOR
+
+xp:ExperimentEntity_20180917-NOOR a owl:NamedIndividual , xp:ExperimentEntity .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesignEntity_20180917-NOOR
+
+xp:ExperimentalDesignEntity_20180917-NOOR a owl:NamedIndividual , xp:ExperimentalDesignEntity .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_20180917-NOOR
+
+xp:ExperimentalDesign_20180917-NOOR a owl:NamedIndividual , xp:ExperimentalDesign ;
+	xp:has_ExperimentalEquiment xp:ExperimentalEquipment_20180917-NOOR ;
+	xp:has_designer <http://xmlns.com/foaf/0.1/Person_Jerome> ;
+	xp:has_procedure xp:Procedure_20180917-NOOR ;
+	xp:hasDesignDate "2017-10-01" .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment_20180917-NOOR
+
+xp:ExperimentalEquipment_20180917-NOOR a owl:NamedIndividual , xp:ExperimentalEquipment .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal_20180917-NOOR
+
+xp:ExperimentalGoal_20180917-NOOR a owl:NamedIndividual , xp:ExperimentalGoal .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis_20180917-NOOR
+
+xp:ExperimentalHypothesis_20180917-NOOR a owl:NamedIndividual , xp:ExperimentalHypothesis ;
+	xp:hasHypothesisLabel "Threads observed with four agents are the same after fixing expansion and add behaviour" .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity_20180917-NOOR
+
+xp:ExperimentalResultsEntity_20180917-NOOR a owl:NamedIndividual , xp:ExperimentalResultsEntity ;
+	xp:hasExperimentationDate "20180917" .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_20180917-NOOR
+
+xp:ExperimentalResults_20180917-NOOR a owl:NamedIndividual , xp:ExperimentalResults ;
+	xp:has_experimentalConclusion <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_20180917-NOOR> ;
+	xp:has_experimentalObservation <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation_20180917-NOOR> .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#Procedure_20180917-NOOR
+
+xp:Procedure_20180917-NOOR a owl:NamedIndividual , xp:Procedure ;
+	xp:has_experimenter <http://xmlns.com/foaf/0.1/Person_Jerome> ;
+	xp:has_performer <http://xmlns.com/foaf/0.1/Person_Jerome> ;
+	xp:hasNumberOfIterations "50000" ;
+	xp:hasNumberOfRuns "10" ;
+	xp:hasOperators "delete replace refine add addjoin refadd" .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#Script_20180917-NOOR
+
+xp:Script_20180917-NOOR a owl:NamedIndividual , xp:Script .
+# 
+# http://www.w3.org/2000/10/swap/pim/contact#Person_20180917-NOOR
+
+<http://www.w3.org/2000/10/swap/pim/contact#Person_20180917-NOOR> a owl:NamedIndividual , <http://www.w3.org/2000/10/swap/pim/contact#Person> .
+# 
+# http://xmlns.com/foaf/0.1/Agent_20180917-NOOR
+
+<http://xmlns.com/foaf/0.1/Agent_20180917-NOOR> a owl:NamedIndividual , <http://xmlns.com/foaf/0.1/Agent> .
+# 
+# http://xmlns.com/foaf/0.1/Organization_20180917-NOOR
+
+<http://xmlns.com/foaf/0.1/Organization_20180917-NOOR> a owl:NamedIndividual , <http://xmlns.com/foaf/0.1/Organization> .
+# 
+# http://xmlns.com/foaf/0.1/Person_20180917-NOOR
+
+<http://xmlns.com/foaf/0.1/Person_20180917-NOOR> a owl:NamedIndividual , <http://xmlns.com/foaf/0.1/Person> .
+# 
+# http://xmlns.com/foaf/0.1/Person_Jerome
+
+<http://xmlns.com/foaf/0.1/Person_Jerome> a owl:NamedIndividual , <http://xmlns.com/foaf/0.1/Person> ;
+	<http://xmlns.com/foaf/0.1/familyName> "Euzenat" ;
+	<http://xmlns.com/foaf/0.1/firstName> "Jerome" .
+# 
+# http://xmlns.com/foaf/0.1/Project_20180917-NOOR
+
+<http://xmlns.com/foaf/0.1/Project_20180917-NOOR> a owl:NamedIndividual , <http://xmlns.com/foaf/0.1/Project> .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

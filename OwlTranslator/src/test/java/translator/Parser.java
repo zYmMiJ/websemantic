@@ -87,6 +87,9 @@ public class Parser{
 		return list;
 	}
 
+	public List<DataParsed> htmlToList(){
+		return null;
+	}
 	public List<DataParsed> fileAssociationToList(){
 		
 		String line;// Ligne du buffer

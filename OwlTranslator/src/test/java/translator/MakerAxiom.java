@@ -21,6 +21,7 @@ public abstract class MakerAxiom {
 	//TODO : Gestion des erreurs
 	protected void addAxiom(OWLAxiom axiom) {
 		AddAxiom addAxiom = new AddAxiom(ontology, axiom);
+		manager.applyChange(addAxiom);
 		//System.out.println(axiom+" : "+manager.applyChange(addAxiom));
 	}
 
