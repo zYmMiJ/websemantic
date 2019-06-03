@@ -5,7 +5,11 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
+<<<<<<< HEAD
 _:genid1398428044 a owl:Ontology .
+=======
+_:genid888378046 a owl:Ontology .
+>>>>>>> 43afaacd0249b4e3b28f7a99717f9f9219ddd3bf
 # 
 # 
 # #################################################################
@@ -510,8 +514,13 @@ xp:ExperimentalResults_20180531-NOOR a owl:NamedIndividual , xp:ExperimentalResu
 xp:Procedure_20180531-NOOR a owl:NamedIndividual , xp:Procedure ;
 	xp:has_experimenter <http://xmlns.com/foaf/0.1/Person_Jerome> ;
 	xp:has_performer <http://xmlns.com/foaf/0.1/Person_Jerome> ;
+<<<<<<< HEAD
 	xp:hasNumberOfIterations "10000" ;
 	xp:hasNumberOfRuns "10" ;
+=======
+	xp:hasNumberOfIterations 10000 ;
+	xp:hasNumberOfRuns 10 ;
+>>>>>>> 43afaacd0249b4e3b28f7a99717f9f9219ddd3bf
 	xp:hasOperators "delete replace refine add addjoin refadd" .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#Script_20180531-NOOR

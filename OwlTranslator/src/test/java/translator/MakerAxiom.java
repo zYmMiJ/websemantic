@@ -6,11 +6,20 @@ import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 
+/**
+ * Represent the Axiom makers.
+ * Make a axiom means to add a Axiom in a ontology instance. 
+ * More information about OWL axiom : {@link https://www.w3.org/TR/owl2-syntax/#Axioms}.
+ * @author Robin Couret
+ */
+
 public abstract class MakerAxiom {
 	
 	protected OWLOntology ontology;
 	protected OWLDataFactory factory;
 	protected OWLOntologyManager manager;
+	
+
 	
 	public MakerAxiom(OWLOntologyManager manager, OWLOntology ontology) {
 		this.ontology = ontology;
@@ -19,10 +28,17 @@ public abstract class MakerAxiom {
 	}
 	
 	//TODO : Gestion des erreurs
+	/**
+	 * Add a axiom in a ontology instance.
+	 * @param {@link OWLAxiom}
+	 */
 	protected void addAxiom(OWLAxiom axiom) {
 		AddAxiom addAxiom = new AddAxiom(ontology, axiom);
 		manager.applyChange(addAxiom);
+<<<<<<< HEAD
 		//System.out.println(axiom+" : "+manager.applyChange(addAxiom));
+=======
+>>>>>>> 43afaacd0249b4e3b28f7a99717f9f9219ddd3bf
 	}
 
 }

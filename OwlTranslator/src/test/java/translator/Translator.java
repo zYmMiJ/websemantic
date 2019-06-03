@@ -57,17 +57,23 @@ public class Translator {
 		private Map<OWLDataProperty, OWLDataRange> mapDataProperty_DataRange;
 		
 		private File fileOwl;
-		private File fileBash;
+		private File fileHTML;
 		
 		private static final Logger LOG = Logger.getLogger(Translator.class);
 		
-		public Translator(String fileOwlName, String fileBashName) {
+		/**
+		 * Transform OWL file and HTML data to RDF dataset.
+		 * @param {{@link String} represents OWL file pointing path.
+		 * @param {{@link String} represents HTML file pointing path.
+		 */
+		
+		public Translator(String fileOwlName, String fileHTMLName) {
 			
 			manager = OWLManager.createOWLOntologyManager();
 			this.fileOwl = new File(fileOwlName);
 			loadOntology(fileOwl);
 
-			this.fileBash = new File(fileBashName);
+			this.fileHTML = new File(fileHTMLName);
 			
 			//Initialize the makers
 			makerData = new MakerDatatype(manager, ontology);
@@ -101,7 +107,7 @@ public class Translator {
 		
 		private String translate(boolean parameterCompleted, String label) throws IOException {
 			
-			Parser parserBash = new Parser(fileBash);
+			Parser parserHTML = new Parser(fileHTML);
 			Generator generator = new Generator(ontology);
 	
 			//CLASS initialization
@@ -111,7 +117,7 @@ public class Translator {
 			
 			//DATA_PROPERTY initialization
 			mapClass_DataProperty = generator.toMapClass_DataProperty(listClass);
-			initMapParameter_Value(parserBash);
+			initMapParameter_Value(parserHTML);
 			
 				//File of OWLDataProperty with the corresponding parameter, need to complete manually or not
 			File fileDataProperty_Parameter;
@@ -132,7 +138,7 @@ public class Translator {
 			listDataProperty.addAll(setDataProperty);
 			mapDataProperty_DataRange = generator.toMapDataProperty_DataRange(listDataProperty);
 			
-			//OBJECT_PROPERTY initialization WITH VALUE
+			//OBJECT_PROPERTY initialization WITH VALUE in fileAssociation
 			mapClass_ObjectProperty = generator.toMapClass_ObjectProperty(listClass);
 			
 				//File of OWLObjectProperty with the corresponding parameter, need to complete manually or not
@@ -148,7 +154,7 @@ public class Translator {
 			initMapObjectProperty_Parameter(parserFileAssociationObject);
 			initMapObjectProperty_Value();
 			
-			//OBJECT_PROPERTY initialization WITHOUT VALUE
+			//OBJECT_PROPERTY initialization WITHOUT VALUE in fileAssociation
 			mapObjectPropertyDomain_Range = generator.toMapObjectPropertyDomain_Range(listClass);
 			mapClass_Individual = new HashMap<OWLClass, OWLNamedIndividual>();
 			
@@ -185,8 +191,11 @@ public class Translator {
 						if(data!=null)
 							makerData.makeDataType(ppt, dataRange, data, individualOWL);								
 				}
+<<<<<<< HEAD
 				
 				//System.out.println(ontology.dataPropertyAssertionAxioms(individualOWL).findFirst().isPresent());
+=======
+>>>>>>> 43afaacd0249b4e3b28f7a99717f9f9219ddd3bf
 
 			}
 			
@@ -253,7 +262,6 @@ public class Translator {
 				OWLClass person = listClass.parallelStream().filter(p -> p.getIRI().getShortForm().equals(personIRI)).findFirst().get();
 				OWLNamedIndividual individualOWL = makerIndividual.makeIndividual(person, "_"+tmp[0]);
 				mapValue_Individual.put(fullname, individualOWL);
-				
 
 				for(OWLDataProperty ppt : mapClass_DataProperty.get(person)) {
 					OWLDataRange dataRange = mapDataProperty_DataRange.get(ppt); 
@@ -269,15 +277,25 @@ public class Translator {
 			
 		}
 		
-		private void initMapParameter_Value(Parser parserBash) {
+		/**
+		 * Initialize {@link Map} that contains {@link String} that represent a parameter from {@link File} as
+		 * key and {@link String} that represent a value from {@link File} as value. 
+		 * @param parserHTML, the parser corresponding at the HTML file input.
+		 */
+		private void initMapParameter_Value(Parser parserHTML) {
 			mapParameter_Value = new HashMap<String, String>();
 			
-			List<DataParsed> listParameter_Value = parserBash.fileToList();
+			List<DataParsed> listParameter_Value = parserHTML.fileToList();
 			for(DataParsed data:listParameter_Value) {
 				mapParameter_Value.put(data.getFirstBox(), data.getSecondBox());
 			}
 		}
 		
+		/**
+		 * Transform a {@link File} in a {@link Map} that contains {@link OWLDataProperty} as
+		 * key and {@link String} as value. 
+		 * @param a {@link Parser} that contains a {@link File} with {@link OWLDataProperty} and the {@link String} parameter associated.
+		 */
 		private void initMapDataProperty_Parameter(Parser parserFileAssociation) {
 			mapDataProperty_Parameter = new HashMap<OWLDataProperty, String>();
 			List<DataParsed> listDataProperty_Parameter = parserFileAssociation.fileAssociationToList();
@@ -287,6 +305,10 @@ public class Translator {
 			}
 		}
 		
+		/**
+		 * Link in {@link Map} the {@link OWLDataProperty} contained in mapDataProperty_Parameter
+		 * as key and the {@link String} value contained in mapParameter_Value.
+		 */
 		private void initMapDataProperty_Value() {
 			mapDataProperty_Value = new HashMap<OWLDataProperty, String>();
 			Set<OWLDataProperty> setDataProperty = mapDataProperty_Parameter.keySet();
@@ -295,6 +317,11 @@ public class Translator {
 			}
 		}
 		
+		/**
+		 * Transform a {@link File} in a {@link Map} that contains {@link OWLObjectProperty} as
+		 * key and {@link String} as value. 
+		 * @param a {@link Parser} that contains a {@link File} with {@link OWLObjectProperty} and the {@link String} parameter associated.
+		 */
 		private void initMapObjectProperty_Parameter(Parser parserFileAssociationObject) {
 			mapObjectProperty_Parameter = new HashMap<OWLObjectProperty, String>();
 			List<DataParsed> listObjectProperty_Parameter = parserFileAssociationObject.fileAssociationToList();
@@ -304,6 +331,10 @@ public class Translator {
 			}
 		}
 		
+		/**
+		 * Link in {@link Map} the {@link OWLObjectProperty} contained in mapObjectProperty_Parameter
+		 * as key and the {@link String} value contained in mapParameter_Value.
+		 */
 		private void initMapObjectProperty_Value() {
 			mapObjectProperty_Value = new HashMap<OWLObjectProperty, String>();
 			Set<OWLObjectProperty> setObjectProperty = mapObjectProperty_Parameter.keySet();
@@ -313,6 +344,10 @@ public class Translator {
 			
 		}
 		
+		/**
+		 * Load a ontology described in a OWL file with the OWL API manager 
+		 * @param {@link File} that contains a ontology
+		 */
 		private void loadOntology (File file) {
 			
 			try {
@@ -324,6 +359,11 @@ public class Translator {
 			
 		}
 		
+		/**
+		 * Save the ontology in a out file.
+		 * @param a {@link OWLOntology} to save  
+		 * @param a {@link IRI} about the ontology saved
+		 */
 		private void saveOntology(OWLOntology ontologyOutput, IRI outIRI) {
 			try {
 				manager.saveOntology(ontologyOutput,outIRI);

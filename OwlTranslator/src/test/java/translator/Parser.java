@@ -86,10 +86,21 @@ public class Parser{
 		
 		return list;
 	}
+<<<<<<< HEAD
 
 	public List<DataParsed> htmlToList(){
 		return null;
 	}
+=======
+	
+	/**
+	 * Transform a the file contained in the {@link Parser} 
+	 * at {@link List} that contains {@link DataParsed} 
+	 * @return a {@link List} that contains {@link DataParsed}, 
+	 * in the first box of {@link DataParsed} there is a DataProperty,
+	 * in the second box there is a Parameter
+	 */
+>>>>>>> 43afaacd0249b4e3b28f7a99717f9f9219ddd3bf
 	public List<DataParsed> fileAssociationToList(){
 		
 		String line;// Ligne du buffer

@@ -21,7 +21,6 @@ public class MakerProperty extends MakerAxiom{
 		
 		
 		OWLAxiom axiomObjectProperty = factory.getOWLObjectPropertyAssertionAxiom(property, individualOWL, object);
-		LOG.info("axiomObjectProperty"+axiomObjectProperty);
 		OWLAxiom axiomDeclaration = factory.getOWLDeclarationAxiom(individualOWL);
 				
 		addAxiom(axiomObjectProperty);
