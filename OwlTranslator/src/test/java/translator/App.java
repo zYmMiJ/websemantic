@@ -17,14 +17,21 @@ public class App {
   		System.out.println(	"Repertoire ? "+repertoire.isDirectory());
   		File[] files=repertoire.listFiles();
   		
-  		for(int i = 0; i < files.length ; i++){
+  		/*for(int i = 0; i < files.length ; i++){
   			
   			String paramFileName = repertoire.getCanonicalPath()+"/"+files[i].getName()+"/params.sh";
   			System.out.println(	paramFileName );
   			Translator translate = new Translator("ExperimentOntology3.owl", paramFileName);
   			translate.run();
   			
-  		}
+  		}*/
+		
+		htmlParser h = new htmlParser();
+		h.printStringList(h.getabsUrlOfExperiments());
+		for(String link: h.getabsUrlOfExperiments() ) {	
+			h.parser(link);
+		}
+		
 		
 	}
 	

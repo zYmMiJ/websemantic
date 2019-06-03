@@ -1,2 +1,0 @@
-# Représentation Sémantique d'expériences
-
