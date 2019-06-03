@@ -1,0 +1,2245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.diagrams="http://ns.yatta-solutions.com/umllab/diagrams/1.1.0" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_3m4s4H32EemTEuiCoHy1qA">
+  <modelElement href="OwlTranslator.uml#_5SGRgH32EemTEuiCoHy1qA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6W-18H32EemTEuiCoHy1qA" source="_6XH_4H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5pyYwX32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6W-18X32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5pzm4H32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6W_dAH32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6W_dAX32EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5pyYwn32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6W_dAn32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6W_dA332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6W_dBH32EemTEuiCoHy1qA" aggregationKind="NONE" name="ontology" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5n-a4H32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6W_dBX32EemTEuiCoHy1qA" label="#"/>
+      <cardinality xmi:id="_6W_dBn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6XCgUH32EemTEuiCoHy1qA" source="_6XH_4H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5pzm4X32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6XCgUX32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5p0N8H32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6XCgUn32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6XCgU332EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5pzm4n32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6XCgVH32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6XCgVX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6XCgVn32EemTEuiCoHy1qA" aggregationKind="NONE" name="factory" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5n_pAH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6XCgV332EemTEuiCoHy1qA" label="#"/>
+      <cardinality xmi:id="_6XCgWH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6XGKsH32EemTEuiCoHy1qA" source="_6XH_4H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5p0N8X32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6XGKsX32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5p1cEH32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6XGKsn32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6XGKs332EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5p0N8n32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6XGKtH32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6XGKtX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6XGKtn32EemTEuiCoHy1qA" aggregationKind="NONE" name="manager" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5oA3IH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6XGKt332EemTEuiCoHy1qA" label="#"/>
+      <cardinality xmi:id="_6XGKuH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_6ZNDgH32EemTEuiCoHy1qA" sourceAnchor="287.0,0.0" targetAnchor="278.0,144.0" superClass="_6XH_4H32EemTEuiCoHy1qA" subClass="_6ZWNcH32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5lS6UH32EemTEuiCoHy1qA"/>
+    <bendpoints xmi:id="_QSXIIH33EemTEuiCoHy1qA" sourceY="-28" targetX="-32" targetY="26"/>
+    <bendpoints xmi:id="_QSXIIX33EemTEuiCoHy1qA" sourceX="32" sourceY="-31" targetY="23"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_6ZQt4H32EemTEuiCoHy1qA" targetItem="_6ZWNiH32EemTEuiCoHy1qA" sourceItem="_6ZQG0H32EemTEuiCoHy1qA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6ZUYQH32EemTEuiCoHy1qA" source="_6ZWNcH32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5p2qMH32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6ZUYQX32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5p3RQH32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6ZUYQn32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6ZUYQ332EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5p2qMX32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6ZUYRH32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6ZUYRX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6ZUYRn32EemTEuiCoHy1qA" aggregationKind="NONE" name="classOWL" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5oD6cH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6ZUYR332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6ZUYSH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6ZVmYH32EemTEuiCoHy1qA" source="_6ZWNcH32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5p3RQX32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6ZVmYX32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5p34UH32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6ZVmYn32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6ZVmY332EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5p3RQn32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6ZVmZH32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6ZVmZX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6ZVmZn32EemTEuiCoHy1qA" aggregationKind="NONE" name="LOG" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5oEhgH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6ZVmZ332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6ZVmaH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_6Z0HgH32EemTEuiCoHy1qA" sourceAnchor="366.0,0.0" targetAnchor="278.0,144.0" superClass="_6XH_4H32EemTEuiCoHy1qA" subClass="_6Z5nEH32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5lZA8H32EemTEuiCoHy1qA"/>
+    <bendpoints xmi:id="_QSXIIn33EemTEuiCoHy1qA" sourceY="-48" targetX="-784" targetY="26"/>
+    <bendpoints xmi:id="_QSXvMH33EemTEuiCoHy1qA" sourceX="784" sourceY="-51" targetY="23"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6Z0ukH32EemTEuiCoHy1qA" source="_6Z5nEH32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5p4fYH32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6Z3x4n32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5p5GcH32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6Z3K0H32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6Z3x4H32EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5p4fYX32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6Z5AAH32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6Z4Y8H32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6Z3x4X32EemTEuiCoHy1qA" aggregationKind="NONE" name="LOG" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5oFIkH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6Z5AAn32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6Z5AAX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6aAUwH32EemTEuiCoHy1qA" source="_6aVr8H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5p5GcX32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6aMiAX32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5p7isH32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6aL68H32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6aL68X32EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5p5Gcn32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6aOXMX32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6aOXMH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6aMiAH32EemTEuiCoHy1qA" aggregationKind="NONE" name="LOG" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5oJaAH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6aOXM332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6aOXMn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_6aGbYX32EemTEuiCoHy1qA" targetItem="_6aVsH332EemTEuiCoHy1qA" sourceItem="_6aGbYH32EemTEuiCoHy1qA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_6aHpgX32EemTEuiCoHy1qA" targetItem="_6aVsMX32EemTEuiCoHy1qA" sourceItem="_6aHpgH32EemTEuiCoHy1qA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_6aI3oH32EemTEuiCoHy1qA" targetItem="_6aVsN332EemTEuiCoHy1qA" sourceItem="_6aIQkH32EemTEuiCoHy1qA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_6aJesX32EemTEuiCoHy1qA" targetItem="_6aVsRn32EemTEuiCoHy1qA" sourceItem="_6aJesH32EemTEuiCoHy1qA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6aQMYH32EemTEuiCoHy1qA" source="_6aVr8H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5p8JwH32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6aQMYX32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5p8w0H32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6aQMYn32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6aQMY332EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5p8JwX32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6aQMZH32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6aQMZX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6aQMZn32EemTEuiCoHy1qA" aggregationKind="NONE" name="file" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5oKBEX32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6aQMZ332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6aQMaH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6aSBkH32EemTEuiCoHy1qA" source="_6aVr8H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5p8w0X32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6aSBkX32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5p9-8H32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6aSBkn32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6aSBk332EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5p8w0n32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6aSBlH32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6aSBlX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6aSBln32EemTEuiCoHy1qA" aggregationKind="NONE" name="pattern" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5oLPMX32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6aSBl332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6aSBmH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6aTPsH32EemTEuiCoHy1qA" source="_6aVr8H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5p9-8X32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6aTPsX32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5p-mAH32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6aTPsn32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6aTPs332EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5p9-8n32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6aTPtH32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6aTPtX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6aTPtn32EemTEuiCoHy1qA" aggregationKind="NONE" name="matcher" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5oMdUH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6aTPt332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6aTPuH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6aT2wH32EemTEuiCoHy1qA" sourceAnchor="196.0,0.0" targetAnchor="0.0,241.0" target="_6a5FkH32EemTEuiCoHy1qA" source="_6aVr8H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5p-mAX32EemTEuiCoHy1qA"/>
+    <bendpoints xmi:id="_QSXvMX33EemTEuiCoHy1qA" sourceY="-57" targetX="-278"/>
+    <stereotypes xmi:id="_6aT2wX32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5p_NEH32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6aT2wn32EemTEuiCoHy1qA" text="">
+      <visualProperties xmi:id="_69LTQH32EemTEuiCoHy1qA" position="-13.0,-11.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_6aT2w332EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5p-mAn32EemTEuiCoHy1qA"/>
+      <visualProperties xmi:id="_69KFIH32EemTEuiCoHy1qA" position="3.0,-70.0"/>
+      <visibility xmi:id="_6aT2xH32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6aT2xX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6aT2xn32EemTEuiCoHy1qA" aggregationKind="NONE" name="listVarEnv" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5oO5kH32EemTEuiCoHy1qA"/>
+      <visualProperties xmi:id="_69L6UH32EemTEuiCoHy1qA" position="-302.0,-44.999999999999986"/>
+      <visibility xmi:id="_6aT2x332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6aT2yH32EemTEuiCoHy1qA" label="1..*" max="-1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6aVE4H32EemTEuiCoHy1qA" source="_6aVr8H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5p_0IH32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6aVE4X32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5qBCQH32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6aVE4n32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6aVE4332EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5p_0IX32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6aVE5H32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6aVE5X32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6aVE5n32EemTEuiCoHy1qA" aggregationKind="NONE" name="ENV_VAR_PATTERN" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5oQHsX32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6aVE5332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6aVE6H32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_6bN1sH32EemTEuiCoHy1qA" sourceAnchor="400.0,0.0" targetAnchor="278.0,144.0" superClass="_6XH_4H32EemTEuiCoHy1qA" subClass="_6bVxgX32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5lOo4H32EemTEuiCoHy1qA"/>
+    <bendpoints xmi:id="_QSXvMn33EemTEuiCoHy1qA" sourceY="-417" targetX="1992" targetY="-363"/>
+    <bendpoints xmi:id="_QSYWQH33EemTEuiCoHy1qA" sourceX="-2426" sourceY="-420" targetX="-434" targetY="-366"/>
+    <bendpoints xmi:id="_QSYWQX33EemTEuiCoHy1qA" sourceX="-2426" sourceY="-31" targetX="-434" targetY="23"/>
+    <bendpoints xmi:id="_QSYWQn33EemTEuiCoHy1qA" sourceX="-1992" sourceY="-31" targetY="23"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6bOcwH32EemTEuiCoHy1qA" source="_6bVxgX32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5p1cEX32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6bTVQH32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5p2DIH32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6bRgEH32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6bRgEX32EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5p1cEn32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6bT8UX32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6bT8UH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6bRgEn32EemTEuiCoHy1qA" aggregationKind="NONE" name="LOG" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5oCsUH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6bVxgH32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6bVKcH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_6be7cX32EemTEuiCoHy1qA" targetItem="_6bimBH32EemTEuiCoHy1qA" sourceItem="_6be7cH32EemTEuiCoHy1qA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6buzEH32EemTEuiCoHy1qA" source="_6cwt0H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5pwjkH32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6b0SoX32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5pxKoH32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6bzrkH32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6bzrkX32EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5pwjkX32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6coK8H32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6cnj4H32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6b0SoH32EemTEuiCoHy1qA" aggregationKind="NONE" name="ontology" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5n7XkH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6coK8n32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6coK8X32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6buzEX32EemTEuiCoHy1qA" source="_6cwt0H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5pxxsH32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6b05sH32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5pyYwH32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6b0Son32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6b0So332EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5pxxsX32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6coK9X32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6coK9H32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6b0SpH32EemTEuiCoHy1qA" aggregationKind="NONE" name="LOG" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5n8lsH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6coyAX32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6coyAH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6dV8oH32EemTEuiCoHy1qA" sourceAnchor="469.0,389.0" targetAnchor="402.0,124.0" target="_6bVxgX32EemTEuiCoHy1qA" source="_6e6p8H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5qF6wX32EemTEuiCoHy1qA"/>
+    <bendpoints xmi:id="_QSaLcH33EemTEuiCoHy1qA" sourceX="1310" targetY="504"/>
+    <stereotypes xmi:id="_6dg7wH32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5qHv8H32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6dgUsX32EemTEuiCoHy1qA" text="">
+      <visualProperties xmi:id="_69OWkH32EemTEuiCoHy1qA" position="-43.0,-60.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_6dgUsn32EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5qF6wn32EemTEuiCoHy1qA"/>
+      <visualProperties xmi:id="_69NvgH32EemTEuiCoHy1qA" position="81.875,2.0"/>
+      <visibility xmi:id="_6d4IIX32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6d4IIH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6dgUs332EemTEuiCoHy1qA" aggregationKind="NONE" name="makerData" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5oVnQH32EemTEuiCoHy1qA"/>
+      <visualProperties xmi:id="_69O9oH32EemTEuiCoHy1qA" position="-79.0,42.18181818181819"/>
+      <visibility xmi:id="_6d7ygH32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6d4IIn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6dXKwH32EemTEuiCoHy1qA" sourceAnchor="45.0,0.0" targetAnchor="579.0,124.0" target="_6ZWNcH32EemTEuiCoHy1qA" source="_6e6p8H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5qHv8X32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6dg7xH32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5qI-EH32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6dg7wX32EemTEuiCoHy1qA" text="">
+      <visualProperties xmi:id="_69QLwH32EemTEuiCoHy1qA" position="2.0,-42.571428571428555"/>
+    </nameVisual>
+    <sourceRole xmi:id="_6dg7wn32EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5qHv8n32EemTEuiCoHy1qA"/>
+      <visualProperties xmi:id="_69PksH32EemTEuiCoHy1qA" position="2.0,-71.33333333333331"/>
+      <visibility xmi:id="_6d8ZkX32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6d8ZkH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6dg7w332EemTEuiCoHy1qA" aggregationKind="NONE" name="makerIndividual" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5oXccH32EemTEuiCoHy1qA"/>
+      <visualProperties xmi:id="_69TPEH32EemTEuiCoHy1qA" position="-106.0,22.33333333333337"/>
+      <visibility xmi:id="_6d8Zk332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6d8Zkn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6dbcMH32EemTEuiCoHy1qA" sourceAnchor="0.0,302.0" targetAnchor="367.0,104.0" target="_6Z5nEH32EemTEuiCoHy1qA" source="_6e6p8H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5qJlIH32EemTEuiCoHy1qA"/>
+    <bendpoints xmi:id="_QScnsH33EemTEuiCoHy1qA" sourceX="-998" targetY="417"/>
+    <stereotypes xmi:id="_6dlNMH32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5qLaUH32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6dg7xX32EemTEuiCoHy1qA" text="">
+      <visualProperties xmi:id="_69XggH32EemTEuiCoHy1qA" position="40.499999999999886,-19.999999999999545"/>
+    </nameVisual>
+    <sourceRole xmi:id="_6dhi0H32EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5qJlIX32EemTEuiCoHy1qA"/>
+      <visualProperties xmi:id="_69VEQH32EemTEuiCoHy1qA" position="-76.40625,-51.0"/>
+      <visibility xmi:id="_6d9AoX32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6d9AoH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6dhi0X32EemTEuiCoHy1qA" aggregationKind="NONE" name="makerProperty" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5oYDgX32EemTEuiCoHy1qA"/>
+      <visualProperties xmi:id="_69YHkH32EemTEuiCoHy1qA" position="-100.49999999999977,41.66666666666612"/>
+      <visibility xmi:id="_6d9Ao332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6d9Aon32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6dftoH32EemTEuiCoHy1qA" source="_6e6p8H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5qBCQX32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6d3hEH32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5qCQYH32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6d26AH32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6d26AX32EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5qBCQn32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6eM4QH32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6eMRMH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6d26An32EemTEuiCoHy1qA" aggregationKind="NONE" name="manager" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5oR84H32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6eM4Qn32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6eM4QX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6dgUsH32EemTEuiCoHy1qA" source="_6e6p8H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5qEsoH32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6d3hFH32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5qF6wH32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6d3hEX32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6d3hEn32EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5qEsoX32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6eNfUX32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6eNfUH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6d3hE332EemTEuiCoHy1qA" aggregationKind="NONE" name="ontology" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5oTyEX32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6eNfU332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6eNfUn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6dlNMX32EemTEuiCoHy1qA" source="_6e6p8H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5qLaUX32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6eArAn32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5qMocH32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6eAD8H32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6eArAH32EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5qMBYH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6eU0EH32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6eUNAH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6eArAX32EemTEuiCoHy1qA" aggregationKind="NONE" name="listClass" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5oZRoH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6eU0En32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6eU0EX32EemTEuiCoHy1qA" label="1..*" max="-1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6dlNMn32EemTEuiCoHy1qA" source="_6e6p8H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5qN2kH32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6eBSEX32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5qPEsH32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6eArA332EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6eArBH32EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5qN2kX32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6eVbIn32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6eVbIX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6eBSEH32EemTEuiCoHy1qA" aggregationKind="NONE" name="mapClass_DataProperty" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5oZ4sX32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6eWpQ332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6eWpQn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <qualifierHelper xmi:id="_6eWpQH32EemTEuiCoHy1qA">
+        <qualifiers xmi:id="_6eWpQX32EemTEuiCoHy1qA">
+          <modelElement href="OwlTranslator.uml#_5of_UH32EemTEuiCoHy1qA"/>
+          <visibility xmi:id="_6emg4X32EemTEuiCoHy1qA" label="+"/>
+          <cardinality xmi:id="_6emg4n32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+          <type xmi:id="_6emg4H32EemTEuiCoHy1qA" name="OWLClass">
+            <modelElement href="OwlTranslator.uml#_5oc8AH32EemTEuiCoHy1qA"/>
+          </type>
+        </qualifiers>
+      </qualifierHelper>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6dl0QH32EemTEuiCoHy1qA" source="_6e6p8H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5qUkQH32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6eBSFX32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5qVLUH32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6eBSEn32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6eBSE332EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5qUkQX32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6eXQU332EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6eXQUn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6eBSFH32EemTEuiCoHy1qA" aggregationKind="NONE" name="mapClass_ObjectProperty" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5omF8X32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6eX3Y332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6eX3Yn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <qualifierHelper xmi:id="_6eX3YH32EemTEuiCoHy1qA">
+        <qualifiers xmi:id="_6eX3YX32EemTEuiCoHy1qA">
+          <modelElement href="OwlTranslator.uml#_5onUEX32EemTEuiCoHy1qA"/>
+          <visibility xmi:id="_6envAX32EemTEuiCoHy1qA" label="+"/>
+          <cardinality xmi:id="_6envAn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+          <type xmi:id="_6envAH32EemTEuiCoHy1qA" name="OWLClass">
+            <modelElement href="OwlTranslator.uml#_5oc8AH32EemTEuiCoHy1qA"/>
+          </type>
+        </qualifiers>
+      </qualifierHelper>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6dl0QX32EemTEuiCoHy1qA" source="_6e6p8H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5qVyYH32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6eCgMH32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5qWZcH32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6eB5IH32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6eB5IX32EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5qVyYX32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6eYecX32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6eYecH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6eB5In32EemTEuiCoHy1qA" aggregationKind="NONE" name="mapValue_Individual" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5oq-cX32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6eYedX32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6eYedH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <qualifierHelper xmi:id="_6eYecn32EemTEuiCoHy1qA">
+        <qualifiers xmi:id="_6eYec332EemTEuiCoHy1qA">
+          <modelElement href="OwlTranslator.uml#_5osMkX32EemTEuiCoHy1qA"/>
+          <visibility xmi:id="_6eqLQX32EemTEuiCoHy1qA" label="+"/>
+          <cardinality xmi:id="_6eqLQn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+          <type xmi:id="_6eqLQH32EemTEuiCoHy1qA" name="String">
+            <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </type>
+        </qualifiers>
+      </qualifierHelper>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6dl0Qn32EemTEuiCoHy1qA" source="_6e6p8H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5qWZcX32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6eCgNH32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5qXAgH32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6eCgMX32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6eCgMn32EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5qWZcn32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6eZFgn32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6eZFgX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6eCgM332EemTEuiCoHy1qA" aggregationKind="NONE" name="mapObjectPropertyDomain_Range" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5osMkn32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6eZskX32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6eZskH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <qualifierHelper xmi:id="_6eZFg332EemTEuiCoHy1qA">
+        <qualifiers xmi:id="_6eZFhH32EemTEuiCoHy1qA">
+          <modelElement href="OwlTranslator.uml#_5ov28H32EemTEuiCoHy1qA"/>
+          <visibility xmi:id="_6ewR4X32EemTEuiCoHy1qA" label="+"/>
+          <cardinality xmi:id="_6ewR4n32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+          <type xmi:id="_6ewR4H32EemTEuiCoHy1qA" name="OWLObjectProperty">
+            <modelElement href="OwlTranslator.uml#_5ooiMX32EemTEuiCoHy1qA"/>
+          </type>
+        </qualifiers>
+      </qualifierHelper>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6dmbUH32EemTEuiCoHy1qA" source="_6e6p8H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5qXAgX32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6eDHQ332EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5qYOoH32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6eDHQH32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6eDHQX32EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5qXnkH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6eZslX32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6eZslH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6eDHQn32EemTEuiCoHy1qA" aggregationKind="NONE" name="mapClass_Individual" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5oweAH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6ed-An32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6ed-AX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <qualifierHelper xmi:id="_6eaToH32EemTEuiCoHy1qA">
+        <qualifiers xmi:id="_6ed-AH32EemTEuiCoHy1qA">
+          <modelElement href="OwlTranslator.uml#_5oxsIH32EemTEuiCoHy1qA"/>
+          <visibility xmi:id="_6ew48X32EemTEuiCoHy1qA" label="+"/>
+          <cardinality xmi:id="_6ew48n32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+          <type xmi:id="_6ew48H32EemTEuiCoHy1qA" name="OWLClass">
+            <modelElement href="OwlTranslator.uml#_5oc8AH32EemTEuiCoHy1qA"/>
+          </type>
+        </qualifiers>
+      </qualifierHelper>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6dmbUX32EemTEuiCoHy1qA" source="_6e6p8H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5qYOoX32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6eDuUX32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5qY1sH32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6eDHRH32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6eDHRX32EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5qYOon32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6eelEn32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6eelEX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6eDuUH32EemTEuiCoHy1qA" aggregationKind="NONE" name="mapDataProperty_DataRange" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5oxsIX32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6efMIn32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6efMIX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <qualifierHelper xmi:id="_6eelE332EemTEuiCoHy1qA">
+        <qualifiers xmi:id="_6efMIH32EemTEuiCoHy1qA">
+          <modelElement href="OwlTranslator.uml#_5oy6QH32EemTEuiCoHy1qA"/>
+          <visibility xmi:id="_6eyHEX32EemTEuiCoHy1qA" label="+"/>
+          <cardinality xmi:id="_6e2_kH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+          <type xmi:id="_6eyHEH32EemTEuiCoHy1qA" name="OWLDataProperty">
+            <modelElement href="OwlTranslator.uml#_5ojpsX32EemTEuiCoHy1qA"/>
+          </type>
+        </qualifiers>
+      </qualifierHelper>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6dmbUn32EemTEuiCoHy1qA" source="_6e6p8H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5qZcwH32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6eDuVX32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5qaD0H32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6eDuUn32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6eDuU332EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5qZcwX32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6ejdkX32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6ejdkH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6eDuVH32EemTEuiCoHy1qA" aggregationKind="NONE" name="fileOwl" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5oy6QX32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6ekEoX32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6ekEoH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6dnCYH32EemTEuiCoHy1qA" source="_6e6p8H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5qaD0X32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6eEVYn32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5qaq4H32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6eDuVn32EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6eEVYH32EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5qaD0n32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6ekrsH32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6ekEo332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6eEVYX32EemTEuiCoHy1qA" aggregationKind="NONE" name="fileBash" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5o0IYH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6ekrsn32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6ekrsX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_6dnCYX32EemTEuiCoHy1qA" source="_6e6p8H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5qaq4X32EemTEuiCoHy1qA"/>
+    <stereotypes xmi:id="_6eH_wH32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5qb5AH32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_6eEVY332EemTEuiCoHy1qA" text=""/>
+    <sourceRole xmi:id="_6eHYsH32EemTEuiCoHy1qA" aggregationKind="NONE" name="">
+      <modelElement href="OwlTranslator.uml#_5qaq4n32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6elSwX32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6elSwH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_6eHYsX32EemTEuiCoHy1qA" aggregationKind="NONE" name="LOG" navigable="true">
+      <modelElement href="OwlTranslator.uml#_5o0vcH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6elSw332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6elSwn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_6ZQG0H32EemTEuiCoHy1qA" sourceConnectionVisual="_6ZQt4H32EemTEuiCoHy1qA" text="Make a NamedIndividual, individual of Class name, with a specific name.&#xA;&#x9; * @param ClassOWL&#xA;&#x9; * @param nameIndividual" item="_6ZWNiH32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5ph6EH32EemTEuiCoHy1qA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_6aGbYH32EemTEuiCoHy1qA" sourceConnectionVisual="_6aGbYX32EemTEuiCoHy1qA" text="Creation des parametres d'environnements" item="_6aVsH332EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5pjvQH32EemTEuiCoHy1qA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_6aHpgH32EemTEuiCoHy1qA" sourceConnectionVisual="_6aHpgX32EemTEuiCoHy1qA" text="Set les variables d'envs" item="_6aVsMX32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5pkWUH32EemTEuiCoHy1qA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_6aIQkH32EemTEuiCoHy1qA" sourceConnectionVisual="_6aI3oH32EemTEuiCoHy1qA" text="Remplace les variables d'env par leurs valeurs" item="_6aVsN332EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5pkWUX32EemTEuiCoHy1qA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_6aJesH32EemTEuiCoHy1qA" sourceConnectionVisual="_6aJesX32EemTEuiCoHy1qA" text="Remplace dans nos données les valeurs d'env par leurs valeurs" item="_6aVsRn32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5pkWUn32EemTEuiCoHy1qA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_6be7cH32EemTEuiCoHy1qA" sourceConnectionVisual="_6be7cX32EemTEuiCoHy1qA" text="Method qui set les parametres d'environnement du script&#xA;&#x9; * Entrée le paramètred'env ${nom} et nom&#xA;&#x9; * Le nom nous permet d'aller chercher la valeur" item="_6bimBH32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5pihIH32EemTEuiCoHy1qA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_6XH_4H32EemTEuiCoHy1qA" name="MakerAxiom" abstractClass="true" associationsOut="_6W-18H32EemTEuiCoHy1qA _6XCgUH32EemTEuiCoHy1qA _6XGKsH32EemTEuiCoHy1qA" subclassedBy="_6ZNDgH32EemTEuiCoHy1qA _6Z0HgH32EemTEuiCoHy1qA _6bN1sH32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5Xd5sH32EemTEuiCoHy1qA"/>
+    <visualProperties xmi:id="_6XH_4X32EemTEuiCoHy1qA" position="30.0,30.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_6XH_4n32EemTEuiCoHy1qA" label="+"/>
+    <attributes xmi:id="_6XH_4332EemTEuiCoHy1qA" name="ontology">
+      <modelElement href="OwlTranslator.uml#_5n-a4H32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6XH_5H32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5n_B8H32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6XH_5X32EemTEuiCoHy1qA" label="#"/>
+      <cardinality xmi:id="_6XH_5n32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6XH_5332EemTEuiCoHy1qA" name="OWLOntology">
+        <modelElement href="OwlTranslator.uml#_5k21cX32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6XH_6H32EemTEuiCoHy1qA" name="factory">
+      <modelElement href="OwlTranslator.uml#_5n_pAH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6XH_6X32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5oAQEH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6XH_6n32EemTEuiCoHy1qA" label="#"/>
+      <cardinality xmi:id="_6XH_6332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6XH_7H32EemTEuiCoHy1qA" name="OWLDataFactory">
+        <modelElement href="OwlTranslator.uml#_5lEQ0H32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6XH_7X32EemTEuiCoHy1qA" name="manager">
+      <modelElement href="OwlTranslator.uml#_5oA3IH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6XH_7n32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5oCFQH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6XH_7332EemTEuiCoHy1qA" label="#"/>
+      <cardinality xmi:id="_6XH_8H32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6XH_8X32EemTEuiCoHy1qA" name="OWLOntologyManager">
+        <modelElement href="OwlTranslator.uml#_5lE34X32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_6XH_8n32EemTEuiCoHy1qA" name="MakerAxiom">
+      <modelElement href="OwlTranslator.uml#_5nG4MH32EemTEuiCoHy1qA"/>
+      <keywords xmi:id="_6XJ1EH32EemTEuiCoHy1qA" keyword="create"/>
+      <visibility xmi:id="_6XJ1EX32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6XJ1En32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6XJ1E332EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5nIGUn32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6XJ1FH32EemTEuiCoHy1qA" name="MakerAxiom">
+          <modelElement href="OwlTranslator.uml#_5Xd5sH32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6XJ1FX32EemTEuiCoHy1qA" name="manager">
+        <modelElement href="OwlTranslator.uml#_5nG4MX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6XJ1Fn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6XJ1F332EemTEuiCoHy1qA" name="OWLOntologyManager">
+          <modelElement href="OwlTranslator.uml#_5lE34X32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6XJ1GH32EemTEuiCoHy1qA" name="ontology">
+        <modelElement href="OwlTranslator.uml#_5nHfQH32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6XJ1GX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6XJ1Gn32EemTEuiCoHy1qA" name="OWLOntology">
+          <modelElement href="OwlTranslator.uml#_5k21cX32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6XJ1G332EemTEuiCoHy1qA" name="addAxiom">
+      <modelElement href="OwlTranslator.uml#_5nItYH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6XJ1HH32EemTEuiCoHy1qA" label="#"/>
+      <cardinality xmi:id="_6XJ1HX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_6XJ1Hn32EemTEuiCoHy1qA" name="axiom">
+        <modelElement href="OwlTranslator.uml#_5nItYX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6XJ1H332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6XJ1IH32EemTEuiCoHy1qA" name="OWLAxiom">
+          <modelElement href="OwlTranslator.uml#_5ku5oX32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_6ZWNcH32EemTEuiCoHy1qA" name="MakerIndividual" associationsIn="_6dXKwH32EemTEuiCoHy1qA" associationsOut="_6ZUYQH32EemTEuiCoHy1qA _6ZVmYH32EemTEuiCoHy1qA" generalizations="_6ZNDgH32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5X5XgH32EemTEuiCoHy1qA"/>
+    <visualProperties xmi:id="_6ZWNcX32EemTEuiCoHy1qA" position="-11.0,229.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_6ZWNcn32EemTEuiCoHy1qA" label="+"/>
+    <attributes xmi:id="_6ZWNc332EemTEuiCoHy1qA" name="classOWL">
+      <modelElement href="OwlTranslator.uml#_5oD6cH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6ZWNdH32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5oD6cX32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6ZWNdX32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6ZWNdn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6ZWNd332EemTEuiCoHy1qA" name="OWLClass">
+        <modelElement href="OwlTranslator.uml#_5kwHwH32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6ZWNeH32EemTEuiCoHy1qA" defaultValue="Logger.getLogger(MakerIndividual.class)" name="LOG" staticAttribute="true">
+      <modelElement href="OwlTranslator.uml#_5oEhgH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6ZWNeX32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6ZWNen32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6ZWNe332EemTEuiCoHy1qA" name="Logger">
+        <modelElement href="OwlTranslator.uml#_5j82gH32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_6ZWNfH32EemTEuiCoHy1qA" name="MakerIndividual">
+      <modelElement href="OwlTranslator.uml#_5nQCIH32EemTEuiCoHy1qA"/>
+      <keywords xmi:id="_6ZWNfX32EemTEuiCoHy1qA" keyword="create"/>
+      <visibility xmi:id="_6ZWNfn32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6ZWNf332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6ZWNgH32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5nQpNH32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6ZWNgX32EemTEuiCoHy1qA" name="MakerIndividual">
+          <modelElement href="OwlTranslator.uml#_5X5XgH32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6ZWNgn32EemTEuiCoHy1qA" name="manager">
+        <modelElement href="OwlTranslator.uml#_5nQpMH32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6ZWNg332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6ZWNhH32EemTEuiCoHy1qA" name="OWLOntologyManager">
+          <modelElement href="OwlTranslator.uml#_5lE34X32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6ZWNhX32EemTEuiCoHy1qA" name="ontology">
+        <modelElement href="OwlTranslator.uml#_5nQpMX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6ZWNhn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6ZWNh332EemTEuiCoHy1qA" name="OWLOntology">
+          <modelElement href="OwlTranslator.uml#_5k21cX32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6ZWNiH32EemTEuiCoHy1qA" comments="_6ZQG0H32EemTEuiCoHy1qA" targetConnectionVisual="_6ZQt4H32EemTEuiCoHy1qA" name="makeIndividual">
+      <modelElement href="OwlTranslator.uml#_5nRQQH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6ZWNiX32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6ZWNin32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6ZWNi332EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5nR3UX32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6ZWNjH32EemTEuiCoHy1qA" name="OWLNamedIndividual">
+          <modelElement href="OwlTranslator.uml#_5lMzsX32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6ZWNjX32EemTEuiCoHy1qA" name="cls">
+        <modelElement href="OwlTranslator.uml#_5nRQQX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6ZWNjn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6ZWNj332EemTEuiCoHy1qA" name="OWLClass">
+          <modelElement href="OwlTranslator.uml#_5kwHwH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6ZWNkH32EemTEuiCoHy1qA" name="label">
+        <modelElement href="OwlTranslator.uml#_5nR3UH32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6ZWNkX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6ZWNkn32EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_6ZxrQH32EemTEuiCoHy1qA" name="View">
+    <modelElement href="OwlTranslator.uml#_5ZLw8H32EemTEuiCoHy1qA"/>
+    <visualProperties xmi:id="_6ZxrQX32EemTEuiCoHy1qA" position="1289.0,-2.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_6ZxrQn32EemTEuiCoHy1qA" label="+"/>
+    <operations xmi:id="_6ZxrQ332EemTEuiCoHy1qA" name="printList" staticOperation="true">
+      <modelElement href="OwlTranslator.uml#_5nsuEH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6ZxrRH32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6ZxrRX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_6ZxrRn32EemTEuiCoHy1qA" name="list">
+        <modelElement href="OwlTranslator.uml#_5nsuEX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6ZxrR332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6ZxrSH32EemTEuiCoHy1qA" name="List">
+          <modelElement href="OwlTranslator.uml#_5kXtQH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_6Z5nEH32EemTEuiCoHy1qA" name="MakerProperty" associationsIn="_6dbcMH32EemTEuiCoHy1qA" associationsOut="_6Z0ukH32EemTEuiCoHy1qA" generalizations="_6Z0HgH32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5YGL0H32EemTEuiCoHy1qA"/>
+    <visualProperties xmi:id="_6Z5nEX32EemTEuiCoHy1qA" position="-842.0,249.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_6Z5nEn32EemTEuiCoHy1qA" label="+"/>
+    <attributes xmi:id="_6Z5nE332EemTEuiCoHy1qA" defaultValue="Logger.getLogger(MakerProperty.class)" name="LOG" staticAttribute="true">
+      <modelElement href="OwlTranslator.uml#_5oFIkH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6Z5nFH32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6Z5nFX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6Z5nFn32EemTEuiCoHy1qA" name="Logger">
+        <modelElement href="OwlTranslator.uml#_5j82gH32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_6Z5nF332EemTEuiCoHy1qA" name="MakerProperty">
+      <modelElement href="OwlTranslator.uml#_5nTFcH32EemTEuiCoHy1qA"/>
+      <keywords xmi:id="_6Z5nGH32EemTEuiCoHy1qA" keyword="create"/>
+      <visibility xmi:id="_6Z5nGX32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6Z5nGn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6Z5nG332EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5nTFdX32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6Z5nHH32EemTEuiCoHy1qA" name="MakerProperty">
+          <modelElement href="OwlTranslator.uml#_5YGL0H32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6Z5nHX32EemTEuiCoHy1qA" name="manager">
+        <modelElement href="OwlTranslator.uml#_5nTFcX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6Z5nHn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6Z5nH332EemTEuiCoHy1qA" name="OWLOntologyManager">
+          <modelElement href="OwlTranslator.uml#_5lE34X32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6Z5nIH32EemTEuiCoHy1qA" name="ontology">
+        <modelElement href="OwlTranslator.uml#_5nTFcn32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6Z5nIX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6Z5nIn32EemTEuiCoHy1qA" name="OWLOntology">
+          <modelElement href="OwlTranslator.uml#_5k21cX32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6Z5nI332EemTEuiCoHy1qA" name="makeProperty">
+      <modelElement href="OwlTranslator.uml#_5nUTkH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6Z5nJH32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6Z5nJX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_6Z5nJn32EemTEuiCoHy1qA" name="property">
+        <modelElement href="OwlTranslator.uml#_5nUTkX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6Z5nJ332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6Z5nKH32EemTEuiCoHy1qA" name="OWLObjectPropertyExpression">
+          <modelElement href="OwlTranslator.uml#_5lXLwH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6Z5nKX32EemTEuiCoHy1qA" name="individualOWL">
+        <modelElement href="OwlTranslator.uml#_5nU6oH32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6Z5nKn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6Z5nK332EemTEuiCoHy1qA" name="OWLNamedIndividual">
+          <modelElement href="OwlTranslator.uml#_5lMzsX32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6Z5nLH32EemTEuiCoHy1qA" name="object">
+        <modelElement href="OwlTranslator.uml#_5nU6oX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6Z5nLX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6Z5nLn32EemTEuiCoHy1qA" name="OWLIndividual">
+          <modelElement href="OwlTranslator.uml#_5lUvgH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_6aVr8H32EemTEuiCoHy1qA" name="Parser" associationsOut="_6aAUwH32EemTEuiCoHy1qA _6aQMYH32EemTEuiCoHy1qA _6aSBkH32EemTEuiCoHy1qA _6aTPsH32EemTEuiCoHy1qA _6aT2wH32EemTEuiCoHy1qA _6aVE4H32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5Yd_QH32EemTEuiCoHy1qA"/>
+    <visualProperties xmi:id="_6aVr8X32EemTEuiCoHy1qA" position="1136.0,126.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_6aVr8n32EemTEuiCoHy1qA" label="+"/>
+    <attributes xmi:id="_6aVr8332EemTEuiCoHy1qA" defaultValue="Logger.getLogger(Parser.class)" name="LOG" staticAttribute="true">
+      <modelElement href="OwlTranslator.uml#_5oJaAH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6aVr9H32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6aVr9X32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6aVr9n32EemTEuiCoHy1qA" name="Logger">
+        <modelElement href="OwlTranslator.uml#_5j82gH32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6aVr9332EemTEuiCoHy1qA" name="file">
+      <modelElement href="OwlTranslator.uml#_5oKBEX32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6aVr-H32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5oLPMH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6aVr-X32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6aVr-n32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6aVr-332EemTEuiCoHy1qA" name="File">
+        <modelElement href="OwlTranslator.uml#_5jwCMH32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6aVr_H32EemTEuiCoHy1qA" name="pattern" staticAttribute="true">
+      <modelElement href="OwlTranslator.uml#_5oLPMX32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6aVr_X32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5oL2QH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6aVr_n32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6aVr_332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6aVsAH32EemTEuiCoHy1qA" name="Pattern">
+        <modelElement href="OwlTranslator.uml#_5lnDYH32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6aVsAX32EemTEuiCoHy1qA" name="matcher" staticAttribute="true">
+      <modelElement href="OwlTranslator.uml#_5oMdUH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6aVsAn32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5oNEYH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6aVsA332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6aVsBH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6aVsBX32EemTEuiCoHy1qA" name="Matcher">
+        <modelElement href="OwlTranslator.uml#_5llOMH32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6aVsBn32EemTEuiCoHy1qA" name="numberOfEnvVar" staticAttribute="true">
+      <modelElement href="OwlTranslator.uml#_5oNEYX32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6aVsB332EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5oOSgH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6aVsCH32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6aVsCX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6aVsCn32EemTEuiCoHy1qA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6aVsC332EemTEuiCoHy1qA" defaultValue="new ArrayList&lt;DataParsed>()" name="listVarEnv">
+      <modelElement href="OwlTranslator.uml#_5oO5kH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6aVsDH32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5oQHsH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6aVsDX32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6aVsDn32EemTEuiCoHy1qA" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_6aVsD332EemTEuiCoHy1qA" name="DataParsed">
+        <modelElement href="OwlTranslator.uml#_5V4lUH32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6aVsEH32EemTEuiCoHy1qA" defaultValue="Pattern.compile(&quot;\\$\\{([A-Za-z0-9_.-]+)(?::([^\\}]*))?\\}&quot;)" name="ENV_VAR_PATTERN" staticAttribute="true">
+      <modelElement href="OwlTranslator.uml#_5oQHsX32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6aVsEX32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5oQuwX32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6aVsEn32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6aVsE332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6aVsFH32EemTEuiCoHy1qA" name="Pattern">
+        <modelElement href="OwlTranslator.uml#_5lnDYH32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_6aVsFX32EemTEuiCoHy1qA" name="fileToList">
+      <modelElement href="OwlTranslator.uml#_5YhpoH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6aVsFn32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6aVsF332EemTEuiCoHy1qA" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_6aVsGH32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5YhpoX32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6aVsGX32EemTEuiCoHy1qA" name="DataParsed">
+          <modelElement href="OwlTranslator.uml#_5V4lUH32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_6aVsGn32EemTEuiCoHy1qA" name="fileAssociationToList">
+      <modelElement href="OwlTranslator.uml#_5YnJMH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6aVsG332EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6aVsHH32EemTEuiCoHy1qA" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_6aVsHX32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5YnwQH32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6aVsHn32EemTEuiCoHy1qA" name="DataParsed">
+          <modelElement href="OwlTranslator.uml#_5V4lUH32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_6aVsH332EemTEuiCoHy1qA" comments="_6aGbYH32EemTEuiCoHy1qA" targetConnectionVisual="_6aGbYX32EemTEuiCoHy1qA" name="createEnvParameters">
+      <modelElement href="OwlTranslator.uml#_5YsowH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6aVsIH32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6aVsIX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_6aVsIn32EemTEuiCoHy1qA" name="Parser">
+      <modelElement href="OwlTranslator.uml#_5nfSsH32EemTEuiCoHy1qA"/>
+      <keywords xmi:id="_6aVsI332EemTEuiCoHy1qA" keyword="create"/>
+      <visibility xmi:id="_6aVsJH32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6aVsJX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6aVsJn32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5nfStH32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6aVsJ332EemTEuiCoHy1qA" name="Parser">
+          <modelElement href="OwlTranslator.uml#_5Yd_QH32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6aVsKH32EemTEuiCoHy1qA" name="file">
+        <modelElement href="OwlTranslator.uml#_5nfSsX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6aVsKX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6aVsKn32EemTEuiCoHy1qA" name="File">
+          <modelElement href="OwlTranslator.uml#_5jwCMH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6aVsK332EemTEuiCoHy1qA" name="printDataParsed">
+      <modelElement href="OwlTranslator.uml#_5nf5wH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6aVsLH32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6aVsLX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_6aVsLn32EemTEuiCoHy1qA" name="list">
+        <modelElement href="OwlTranslator.uml#_5nf5wX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6aVsL332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6aVsMH32EemTEuiCoHy1qA" name="List">
+          <modelElement href="OwlTranslator.uml#_5kXtQH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6aVsMX32EemTEuiCoHy1qA" comments="_6aHpgH32EemTEuiCoHy1qA" targetConnectionVisual="_6aHpgX32EemTEuiCoHy1qA" name="setAllEnvParameters">
+      <modelElement href="OwlTranslator.uml#_5nhu8H32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6aVsMn32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6aVsM332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_6aVsNH32EemTEuiCoHy1qA" name="list">
+        <modelElement href="OwlTranslator.uml#_5niWAH32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6aVsNX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6aVsNn32EemTEuiCoHy1qA" name="List">
+          <modelElement href="OwlTranslator.uml#_5kXtQH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6aVsN332EemTEuiCoHy1qA" comments="_6aIQkH32EemTEuiCoHy1qA" targetConnectionVisual="_6aI3oH32EemTEuiCoHy1qA" name="setEnvParameters">
+      <modelElement href="OwlTranslator.uml#_5nkLMH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6aVsOH32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6aVsOX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_6aVsOn32EemTEuiCoHy1qA" name="s">
+        <modelElement href="OwlTranslator.uml#_5nkLMX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6aVsO332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6aVsPH32EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6aVsPX32EemTEuiCoHy1qA" name="res">
+        <modelElement href="OwlTranslator.uml#_5nkLMn32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6aVsPn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6aVsP332EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6aVsQH32EemTEuiCoHy1qA" name="i">
+        <modelElement href="OwlTranslator.uml#_5nkyQH32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6aVsQX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6aVsQn32EemTEuiCoHy1qA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6aVsQ332EemTEuiCoHy1qA" name="list">
+        <modelElement href="OwlTranslator.uml#_5nkyQX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6aVsRH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6aVsRX32EemTEuiCoHy1qA" name="List">
+          <modelElement href="OwlTranslator.uml#_5kXtQH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6aVsRn32EemTEuiCoHy1qA" comments="_6aJesH32EemTEuiCoHy1qA" targetConnectionVisual="_6aJesX32EemTEuiCoHy1qA" name="replaceVarEnv">
+      <modelElement href="OwlTranslator.uml#_5npDsH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6aVsR332EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6aVsSH32EemTEuiCoHy1qA" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_6aVsSX32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5npqwH32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6aVsSn32EemTEuiCoHy1qA" name="DataParsed">
+          <modelElement href="OwlTranslator.uml#_5V4lUH32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6aVsS332EemTEuiCoHy1qA" name="list">
+        <modelElement href="OwlTranslator.uml#_5npDsX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6aVsTH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6aVsTX32EemTEuiCoHy1qA" name="List">
+          <modelElement href="OwlTranslator.uml#_5kXtQH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_6an_0H32EemTEuiCoHy1qA" name="IOException">
+    <modelElement href="OwlTranslator.uml#_5jzFgH32EemTEuiCoHy1qA"/>
+    <visualProperties xmi:id="_6an_0X32EemTEuiCoHy1qA" position="1329.0,526.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_6an_0n32EemTEuiCoHy1qA" name="Reference">
+      <modelElement href="OwlTranslator.uml#_5j2v4H32EemTEuiCoHy1qA"/>
+    </stereotypes>
+    <visibility xmi:id="_6an_0332EemTEuiCoHy1qA" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_6as4UH32EemTEuiCoHy1qA" name="App">
+    <modelElement href="OwlTranslator.uml#_5VpUwH32EemTEuiCoHy1qA"/>
+    <visualProperties xmi:id="_6atfYH32EemTEuiCoHy1qA" position="1614.0,259.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_6atfYX32EemTEuiCoHy1qA" label="+"/>
+    <operations xmi:id="_6atfYn32EemTEuiCoHy1qA" name="main" staticOperation="true">
+      <modelElement href="OwlTranslator.uml#_5VxQkH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6atfY332EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6atfZH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_6atfZX32EemTEuiCoHy1qA" name="args">
+        <modelElement href="OwlTranslator.uml#_5Vx3oH32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6atfZn32EemTEuiCoHy1qA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_6atfZ332EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6atfaH32EemTEuiCoHy1qA" name="configLOG" staticOperation="true">
+      <modelElement href="OwlTranslator.uml#_5V1iAH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6atfaX32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6atfan32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_6a5FkH32EemTEuiCoHy1qA" name="DataParsed" associationsIn="_6aT2wH32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5V4lUH32EemTEuiCoHy1qA"/>
+    <visualProperties xmi:id="_6a5FkX32EemTEuiCoHy1qA" position="1611.0,-173.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_6a5Fkn32EemTEuiCoHy1qA" label="+"/>
+    <attributes xmi:id="_6a5Fk332EemTEuiCoHy1qA" name="box1">
+      <modelElement href="OwlTranslator.uml#_5n47UH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6a5FlH32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5n6JcH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6a5FlX32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6a5Fln32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6a5Fl332EemTEuiCoHy1qA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6a5FmH32EemTEuiCoHy1qA" name="box2">
+      <modelElement href="OwlTranslator.uml#_5n6JcX32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6a5FmX32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5n6wgH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6a5Fmn32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6a5Fm332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6a5FnH32EemTEuiCoHy1qA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_6a5FnX32EemTEuiCoHy1qA" name="DataParsed">
+      <modelElement href="OwlTranslator.uml#_5V-E4H32EemTEuiCoHy1qA"/>
+      <keywords xmi:id="_6a5Fnn32EemTEuiCoHy1qA" keyword="create"/>
+      <visibility xmi:id="_6a5Fn332EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6a5FoH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6a5FoX32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5V_6EX32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6a5Fon32EemTEuiCoHy1qA" name="DataParsed">
+          <modelElement href="OwlTranslator.uml#_5V4lUH32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6a5Fo332EemTEuiCoHy1qA" name="a">
+        <modelElement href="OwlTranslator.uml#_5V-r8H32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6a5FpH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6a5FpX32EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6a5Fpn32EemTEuiCoHy1qA" name="b">
+        <modelElement href="OwlTranslator.uml#_5V_TAH32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6a5Fp332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6a5FqH32EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6a5FqX32EemTEuiCoHy1qA" name="getFirstBox">
+      <modelElement href="OwlTranslator.uml#_5WAhIH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6a5Fqn32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6a5Fq332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6a5FrH32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5WBIMH32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6a5FrX32EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_6a5Frn32EemTEuiCoHy1qA" name="getSecondBox">
+      <modelElement href="OwlTranslator.uml#_5WC9YH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6a5Fr332EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6a5FsH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6a5FsX32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5WDkcH32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6a5Fsn32EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_6a5Fs332EemTEuiCoHy1qA" name="setFirstBox">
+      <modelElement href="OwlTranslator.uml#_5WELgH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6a5FtH32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6a5FtX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_6a5Ftn32EemTEuiCoHy1qA" name="s">
+        <modelElement href="OwlTranslator.uml#_5WELgX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6a5Ft332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6a5FuH32EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6a5FuX32EemTEuiCoHy1qA" name="setSecondBox">
+      <modelElement href="OwlTranslator.uml#_5WFZoH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6a5Fun32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6a5Fu332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_6a5FvH32EemTEuiCoHy1qA" name="s">
+        <modelElement href="OwlTranslator.uml#_5WGAsH32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6a5FvX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6a5Fvn32EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6a5Fv332EemTEuiCoHy1qA" name="getSecondWithFirstBox">
+      <modelElement href="OwlTranslator.uml#_5WK5MH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6a5FwH32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6a5soH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6a5soX32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5WMHUH32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6a5son32EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6a5so332EemTEuiCoHy1qA" name="s">
+        <modelElement href="OwlTranslator.uml#_5WLgQH32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6a5spH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6a5spX32EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6a5spn32EemTEuiCoHy1qA" name="getFirstWithSecondBox">
+      <modelElement href="OwlTranslator.uml#_5WRm4H32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6a5sp332EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6a5sqH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6a5sqX32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5WUDIH32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6a5sqn32EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6a5sq332EemTEuiCoHy1qA" name="s">
+        <modelElement href="OwlTranslator.uml#_5WRm4X32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6a5srH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6a5srX32EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6a5srn32EemTEuiCoHy1qA" name="equals">
+      <modelElement href="OwlTranslator.uml#_5kGngH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6a5sr332EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6a5ssH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6a5ssX32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5kJDwH32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6a5ssn32EemTEuiCoHy1qA" name="Boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6a5ss332EemTEuiCoHy1qA" name="a">
+        <modelElement href="OwlTranslator.uml#_5kGngX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6a5stH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6a5stX32EemTEuiCoHy1qA" name="DataParsed">
+          <modelElement href="OwlTranslator.uml#_5V4lUH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6a5stn32EemTEuiCoHy1qA" name="b">
+        <modelElement href="OwlTranslator.uml#_5kGngn32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6a5st332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6a5suH32EemTEuiCoHy1qA" name="DataParsed">
+          <modelElement href="OwlTranslator.uml#_5V4lUH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_6bVxgX32EemTEuiCoHy1qA" name="MakerDatatype" associationsIn="_6dV8oH32EemTEuiCoHy1qA" associationsOut="_6bOcwH32EemTEuiCoHy1qA" generalizations="_6bN1sH32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5XqG8H32EemTEuiCoHy1qA"/>
+    <visualProperties xmi:id="_6bVxgn32EemTEuiCoHy1qA" position="1900.0,229.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_6bVxg332EemTEuiCoHy1qA" label="+"/>
+    <attributes xmi:id="_6bVxhH32EemTEuiCoHy1qA" defaultValue="Logger.getLogger(MakerDatatype.class)" name="LOG" staticAttribute="true">
+      <modelElement href="OwlTranslator.uml#_5oCsUH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6bVxhX32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6bVxhn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6bVxh332EemTEuiCoHy1qA" name="Logger">
+        <modelElement href="OwlTranslator.uml#_5j82gH32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_6bWYkH32EemTEuiCoHy1qA" name="MakerDatatype">
+      <modelElement href="OwlTranslator.uml#_5nJ7gH32EemTEuiCoHy1qA"/>
+      <keywords xmi:id="_6bWYkX32EemTEuiCoHy1qA" keyword="create"/>
+      <visibility xmi:id="_6bWYkn32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6bWYk332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6bWYlH32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5nKikn32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6bWYlX32EemTEuiCoHy1qA" name="MakerDatatype">
+          <modelElement href="OwlTranslator.uml#_5XqG8H32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6bWYln32EemTEuiCoHy1qA" name="manager">
+        <modelElement href="OwlTranslator.uml#_5nJ7gX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6bWYl332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6bWYmH32EemTEuiCoHy1qA" name="OWLOntologyManager">
+          <modelElement href="OwlTranslator.uml#_5lE34X32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6bWYmX32EemTEuiCoHy1qA" name="ontology">
+        <modelElement href="OwlTranslator.uml#_5nJ7gn32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6bWYmn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6bWYm332EemTEuiCoHy1qA" name="OWLOntology">
+          <modelElement href="OwlTranslator.uml#_5k21cX32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6bWYnH32EemTEuiCoHy1qA" name="makeDataType">
+      <modelElement href="OwlTranslator.uml#_5nLJoH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6bWYnX32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6bWYnn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_6bWYn332EemTEuiCoHy1qA" name="dataProperty">
+        <modelElement href="OwlTranslator.uml#_5nLJoX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6bWYoH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6bWYoX32EemTEuiCoHy1qA" name="OWLDataProperty">
+          <modelElement href="OwlTranslator.uml#_5kykAX32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6bWYon32EemTEuiCoHy1qA" name="dataRange">
+        <modelElement href="OwlTranslator.uml#_5nLJon32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6bWYo332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6bWYpH32EemTEuiCoHy1qA" name="OWLDataRange">
+          <modelElement href="OwlTranslator.uml#_5k0ZMH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6bWYpX32EemTEuiCoHy1qA" name="data">
+        <modelElement href="OwlTranslator.uml#_5nLJo332EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6bWYpn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6bWYp332EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6bWYqH32EemTEuiCoHy1qA" name="individualOWL">
+        <modelElement href="OwlTranslator.uml#_5nLJpH32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6bWYqX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6bWYqn32EemTEuiCoHy1qA" name="OWLNamedIndividual">
+          <modelElement href="OwlTranslator.uml#_5lMzsX32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6bWYq332EemTEuiCoHy1qA" name="dataPropertyEquals">
+      <modelElement href="OwlTranslator.uml#_5nMXwH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6bWYrH32EemTEuiCoHy1qA" name="Generics">
+        <modelElement href="OwlTranslator.uml#_5nM-0H32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6bWYrX32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6bWYrn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6bWYr332EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5nM-0X32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6bWYsH32EemTEuiCoHy1qA" name="Predicate">
+          <modelElement href="OwlTranslator.uml#_5kj6gX32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6bWYsX32EemTEuiCoHy1qA" name="ppt">
+        <modelElement href="OwlTranslator.uml#_5nMXwX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6bWYsn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6bWYs332EemTEuiCoHy1qA" name="OWLDataProperty">
+          <modelElement href="OwlTranslator.uml#_5kykAX32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_6bil0H32EemTEuiCoHy1qA" name="Parameter">
+    <modelElement href="OwlTranslator.uml#_5YJ2MH32EemTEuiCoHy1qA"/>
+    <visualProperties xmi:id="_6bil0X32EemTEuiCoHy1qA" position="673.0,32.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_6bil0n32EemTEuiCoHy1qA" label="+"/>
+    <attributes xmi:id="_6bil0332EemTEuiCoHy1qA" name="nom">
+      <modelElement href="OwlTranslator.uml#_5oFvoH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6bil1H32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6bil1X32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6bil1n32EemTEuiCoHy1qA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6bil1332EemTEuiCoHy1qA" defaultValue="new ArrayList&lt;String>()" name="valeur">
+      <modelElement href="OwlTranslator.uml#_5oG9wH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6bil2H32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6bil2X32EemTEuiCoHy1qA" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_6bil2n32EemTEuiCoHy1qA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6bil2332EemTEuiCoHy1qA" defaultValue="new ArrayList&lt;String>()" name="nomparam">
+      <modelElement href="OwlTranslator.uml#_5oIL4X32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6bil3H32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5oIy8X32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6bil3X32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6bil3n32EemTEuiCoHy1qA" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_6bil3332EemTEuiCoHy1qA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_6bil4H32EemTEuiCoHy1qA" name="getNomParam">
+      <modelElement href="OwlTranslator.uml#_5YMScH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6bil4X32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6bil4n32EemTEuiCoHy1qA" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_6bil4332EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5YM5gH32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6bil5H32EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_6bil5X32EemTEuiCoHy1qA" name="Parameter">
+      <modelElement href="OwlTranslator.uml#_5YPVwH32EemTEuiCoHy1qA"/>
+      <keywords xmi:id="_6bil5n32EemTEuiCoHy1qA" keyword="create"/>
+      <visibility xmi:id="_6bil5332EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6bil6H32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6bil6X32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5YP80n32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6bil6n32EemTEuiCoHy1qA" name="Parameter">
+          <modelElement href="OwlTranslator.uml#_5YJ2MH32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_6bil6332EemTEuiCoHy1qA" name="setValeur">
+      <modelElement href="OwlTranslator.uml#_5YQj4H32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6bil7H32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6bil7X32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_6bil7n32EemTEuiCoHy1qA" name="i">
+        <modelElement href="OwlTranslator.uml#_5YQj4X32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6bil7332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6bil8H32EemTEuiCoHy1qA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6bil8X32EemTEuiCoHy1qA" name="res">
+        <modelElement href="OwlTranslator.uml#_5YQj4n32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6bil8n32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6bil8332EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6bil9H32EemTEuiCoHy1qA" name="isValeurEmpty">
+      <modelElement href="OwlTranslator.uml#_5YSZEH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6bil9X32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6bil9n32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6bil9332EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5YTAIH32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6bil-H32EemTEuiCoHy1qA" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_6bil-X32EemTEuiCoHy1qA" name="afficher">
+      <modelElement href="OwlTranslator.uml#_5YTnMH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6bil-n32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6bil-332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_6bil_H32EemTEuiCoHy1qA" name="getOneParam">
+      <modelElement href="OwlTranslator.uml#_5YUOQH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6bil_X32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6bil_n32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6bil_332EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5YUOQn32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6bimAH32EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6bimAX32EemTEuiCoHy1qA" name="p">
+        <modelElement href="OwlTranslator.uml#_5YUOQX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6bimAn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6bimA332EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6bimBH32EemTEuiCoHy1qA" comments="_6be7cH32EemTEuiCoHy1qA" targetConnectionVisual="_6be7cX32EemTEuiCoHy1qA" name="setEnvParameter">
+      <modelElement href="OwlTranslator.uml#_5YVcYH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6bimBX32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6bimBn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_6bimB332EemTEuiCoHy1qA" name="env">
+        <modelElement href="OwlTranslator.uml#_5YWDcH32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6bimCH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6bimCX32EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6bimCn32EemTEuiCoHy1qA" name="nom">
+        <modelElement href="OwlTranslator.uml#_5YWDcX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6bimC332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6bimDH32EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6bimDX32EemTEuiCoHy1qA" name="replaceEnvParam">
+      <modelElement href="OwlTranslator.uml#_5YWqgH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6bimDn32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5YZt0H32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6bimD332EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6bimEH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_6bimEX32EemTEuiCoHy1qA" name="replace">
+        <modelElement href="OwlTranslator.uml#_5YWqgX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6bimEn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6bimE332EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6bimFH32EemTEuiCoHy1qA" name="Parameter">
+      <modelElement href="OwlTranslator.uml#_5nWIwH32EemTEuiCoHy1qA"/>
+      <keywords xmi:id="_6bimFX32EemTEuiCoHy1qA" keyword="create"/>
+      <visibility xmi:id="_6bimFn32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6bimF332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6bimGH32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5nX98n32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6bimGX32EemTEuiCoHy1qA" name="Parameter">
+          <modelElement href="OwlTranslator.uml#_5YJ2MH32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6bimGn32EemTEuiCoHy1qA" name="n">
+        <modelElement href="OwlTranslator.uml#_5nWIwX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6bimG332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6bimHH32EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6bimHX32EemTEuiCoHy1qA" name="v">
+        <modelElement href="OwlTranslator.uml#_5nWIwn32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6bimHn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6bimH332EemTEuiCoHy1qA" name="List">
+          <modelElement href="OwlTranslator.uml#_5kXtQH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6bimIH32EemTEuiCoHy1qA" name="np">
+        <modelElement href="OwlTranslator.uml#_5nWIw332EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6bimIX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6bimIn32EemTEuiCoHy1qA" name="List">
+          <modelElement href="OwlTranslator.uml#_5kXtQH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6bimI332EemTEuiCoHy1qA" name="setData">
+      <modelElement href="OwlTranslator.uml#_5nboUH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6bimJH32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6bimJX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_6bjM4H32EemTEuiCoHy1qA" name="d">
+        <modelElement href="OwlTranslator.uml#_5nboUX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6bjM4X32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6bjM4n32EemTEuiCoHy1qA" name="List">
+          <modelElement href="OwlTranslator.uml#_5kXtQH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_6cwt0H32EemTEuiCoHy1qA" name="Generator" associationsOut="_6buzEH32EemTEuiCoHy1qA _6buzEX32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5WXGcH32EemTEuiCoHy1qA"/>
+    <visualProperties xmi:id="_6cwt0X32EemTEuiCoHy1qA" position="1620.0,438.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_6cwt0n32EemTEuiCoHy1qA" label="+"/>
+    <attributes xmi:id="_6cwt0332EemTEuiCoHy1qA" name="ontology">
+      <modelElement href="OwlTranslator.uml#_5n7XkH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6cwt1H32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5n7-oH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6cwt1X32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6cwt1n32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6cwt1332EemTEuiCoHy1qA" name="OWLOntology">
+        <modelElement href="OwlTranslator.uml#_5k21cX32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6cwt2H32EemTEuiCoHy1qA" defaultValue="Logger.getLogger(Generator.class)" name="LOG" staticAttribute="true">
+      <modelElement href="OwlTranslator.uml#_5n8lsH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6cwt2X32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6cwt2n32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6cwt2332EemTEuiCoHy1qA" name="Logger">
+        <modelElement href="OwlTranslator.uml#_5j82gH32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_6cwt3H32EemTEuiCoHy1qA" name="toListClass">
+      <modelElement href="OwlTranslator.uml#_5WebMH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6cwt3X32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6cwt3n32EemTEuiCoHy1qA" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_6cwt3332EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5Wg3cH32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6cwt4H32EemTEuiCoHy1qA" name="OWLClass">
+          <modelElement href="OwlTranslator.uml#_5kwHwH32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_6cwt4X32EemTEuiCoHy1qA" name="isDataPropertyDomain">
+      <modelElement href="OwlTranslator.uml#_5WmXAH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6cwt4n32EemTEuiCoHy1qA" name="Generics">
+        <modelElement href="OwlTranslator.uml#_5WuS0H32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6cwt4332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6cwt5H32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6cwt5X32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5m75EH32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6cwt5n32EemTEuiCoHy1qA" name="Predicate">
+          <modelElement href="OwlTranslator.uml#_5kj6gX32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_6cwt5332EemTEuiCoHy1qA" name="isDataObjectDomain">
+      <modelElement href="OwlTranslator.uml#_5Wvg8H32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6cwt6H32EemTEuiCoHy1qA" name="Generics">
+        <modelElement href="OwlTranslator.uml#_5W1nkH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6cwt6X32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6cwt6n32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6cwt6332EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5nD04H32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6cwt7H32EemTEuiCoHy1qA" name="Predicate">
+          <modelElement href="OwlTranslator.uml#_5kj6gX32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_6cwt7X32EemTEuiCoHy1qA" name="isDataObjectRange">
+      <modelElement href="OwlTranslator.uml#_5W21sH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6cwt7n32EemTEuiCoHy1qA" name="Generics">
+        <modelElement href="OwlTranslator.uml#_5W6gEH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6cwt7332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6cwt8H32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6cwt8X32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5nEb8H32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6cwt8n32EemTEuiCoHy1qA" name="Predicate">
+          <modelElement href="OwlTranslator.uml#_5kj6gX32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_6cwt8332EemTEuiCoHy1qA" name="isDataPropertyRange">
+      <modelElement href="OwlTranslator.uml#_5W7HIH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6cwt9H32EemTEuiCoHy1qA" name="Generics">
+        <modelElement href="OwlTranslator.uml#_5W_YkH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6cwt9X32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6cwt9n32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6cwt9332EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5nEb8X32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6cwt-H32EemTEuiCoHy1qA" name="Predicate">
+          <modelElement href="OwlTranslator.uml#_5kj6gX32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_6cwt-X32EemTEuiCoHy1qA" name="Generator">
+      <modelElement href="OwlTranslator.uml#_5mYfcH32EemTEuiCoHy1qA"/>
+      <keywords xmi:id="_6cwt-n32EemTEuiCoHy1qA" keyword="create"/>
+      <visibility xmi:id="_6cwt-332EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6cwt_H32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6cwt_X32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5mZGg332EemTEuiCoHy1qA"/>
+        <type xmi:id="_6cwt_n32EemTEuiCoHy1qA" name="Generator">
+          <modelElement href="OwlTranslator.uml#_5WXGcH32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6cwt_332EemTEuiCoHy1qA" name="ontology">
+        <modelElement href="OwlTranslator.uml#_5mZGgH32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6cwuAH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6cwuAX32EemTEuiCoHy1qA" name="OWLOntology">
+          <modelElement href="OwlTranslator.uml#_5k21cX32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6cwuAn32EemTEuiCoHy1qA" name="toMapClass_DataProperty">
+      <modelElement href="OwlTranslator.uml#_5ma7sH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6cwuA332EemTEuiCoHy1qA" name="Generics">
+        <modelElement href="OwlTranslator.uml#_5mbiwH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6cwuBH32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6cwuBX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6cwuBn32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5mcJ0H32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6cwuB332EemTEuiCoHy1qA" name="Map">
+          <modelElement href="OwlTranslator.uml#_5kb-sH32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6cwuCH32EemTEuiCoHy1qA" name="listClass">
+        <modelElement href="OwlTranslator.uml#_5ma7sX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6cwuCX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6cwuCn32EemTEuiCoHy1qA" name="List">
+          <modelElement href="OwlTranslator.uml#_5kXtQH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6cwuC332EemTEuiCoHy1qA" name="toListDataProperty">
+      <modelElement href="OwlTranslator.uml#_5md_AH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6cwuDH32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6cwuDX32EemTEuiCoHy1qA" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_6cwuDn32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5mfNIH32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6cwuD332EemTEuiCoHy1qA" name="OWLDataProperty">
+          <modelElement href="OwlTranslator.uml#_5kykAX32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6cwuEH32EemTEuiCoHy1qA" name="cls">
+        <modelElement href="OwlTranslator.uml#_5memEH32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6cwuEX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6cwuEn32EemTEuiCoHy1qA" name="OWLClass">
+          <modelElement href="OwlTranslator.uml#_5kwHwH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6cwuE332EemTEuiCoHy1qA" name="toFileOWLDataProperty">
+      <modelElement href="OwlTranslator.uml#_5mhpYH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6cwuFH32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6cwuFX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6cwuFn32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5miQcX32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6cwuF332EemTEuiCoHy1qA" name="File">
+          <modelElement href="OwlTranslator.uml#_5jwCMH32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6cwuGH32EemTEuiCoHy1qA" name="filePath">
+        <modelElement href="OwlTranslator.uml#_5mhpYX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6cwuGX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6cwuGn32EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6cwuG332EemTEuiCoHy1qA" name="mapClass_DataProperty">
+        <modelElement href="OwlTranslator.uml#_5miQcH32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6cxU4H32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6cxU4X32EemTEuiCoHy1qA" name="Map">
+          <modelElement href="OwlTranslator.uml#_5kb-sH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6cxU4n32EemTEuiCoHy1qA" name="toMapClass_ObjectProperty">
+      <modelElement href="OwlTranslator.uml#_5mkFoH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6cxU4332EemTEuiCoHy1qA" name="Generics">
+        <modelElement href="OwlTranslator.uml#_5mqMQH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6cxU5H32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6cxU5X32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6cxU5n32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5mqMQX32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6cxU5332EemTEuiCoHy1qA" name="Map">
+          <modelElement href="OwlTranslator.uml#_5kb-sH32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6cxU6H32EemTEuiCoHy1qA" name="listClass">
+        <modelElement href="OwlTranslator.uml#_5mkFoX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6cxU6X32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6cxU6n32EemTEuiCoHy1qA" name="List">
+          <modelElement href="OwlTranslator.uml#_5kXtQH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6cxU6332EemTEuiCoHy1qA" name="toMapObjectPropertyDomain_Range">
+      <modelElement href="OwlTranslator.uml#_5mraYX32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6cxU7H32EemTEuiCoHy1qA" name="Generics">
+        <modelElement href="OwlTranslator.uml#_5msogH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6cxU7X32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6cxU7n32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6cxU7332EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5msogX32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6cxU8H32EemTEuiCoHy1qA" name="Map">
+          <modelElement href="OwlTranslator.uml#_5kb-sH32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6cxU8X32EemTEuiCoHy1qA" name="listClass">
+        <modelElement href="OwlTranslator.uml#_5msBcH32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6cxU8n32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6cxU8332EemTEuiCoHy1qA" name="List">
+          <modelElement href="OwlTranslator.uml#_5kXtQH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6cxU9H32EemTEuiCoHy1qA" name="toFileOWLObjectProperty">
+      <modelElement href="OwlTranslator.uml#_5mzWMH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6cxU9X32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6cxU9n32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6cxU9332EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5mz9QH32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6cxU-H32EemTEuiCoHy1qA" name="File">
+          <modelElement href="OwlTranslator.uml#_5jwCMH32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6cxU-X32EemTEuiCoHy1qA" name="filePath">
+        <modelElement href="OwlTranslator.uml#_5mzWMX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6cxU-n32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6cxU-332EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6cxU_H32EemTEuiCoHy1qA" name="mapClass_ObjectProperty">
+        <modelElement href="OwlTranslator.uml#_5mzWMn32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6cxU_X32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6cxU_n32EemTEuiCoHy1qA" name="Map">
+          <modelElement href="OwlTranslator.uml#_5kb-sH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6cxU_332EemTEuiCoHy1qA" name="toMapDataProperty_DataRange">
+      <modelElement href="OwlTranslator.uml#_5m1ycH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6cxVAH32EemTEuiCoHy1qA" name="Generics">
+        <modelElement href="OwlTranslator.uml#_5m3AkH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6cxVAX32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6cxVAn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6cxVA332EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5m3AkX32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6cxVBH32EemTEuiCoHy1qA" name="Map">
+          <modelElement href="OwlTranslator.uml#_5kb-sH32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6cxVBX32EemTEuiCoHy1qA" name="listDataProperty">
+        <modelElement href="OwlTranslator.uml#_5m2ZgH32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6cxVBn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6cxVB332EemTEuiCoHy1qA" name="List">
+          <modelElement href="OwlTranslator.uml#_5kXtQH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6cxVCH32EemTEuiCoHy1qA" name="toListObjectProperty">
+      <modelElement href="OwlTranslator.uml#_5m41wH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6cxVCX32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6cxVCn32EemTEuiCoHy1qA" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_6cxVC332EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5m6D4X32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6cxVDH32EemTEuiCoHy1qA" name="OWLObjectProperty">
+          <modelElement href="OwlTranslator.uml#_5k1nUH32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6cxVDX32EemTEuiCoHy1qA" name="cls">
+        <modelElement href="OwlTranslator.uml#_5m6D4H32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6cxVDn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6cxVD332EemTEuiCoHy1qA" name="OWLClass">
+          <modelElement href="OwlTranslator.uml#_5kwHwH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6cxVEH32EemTEuiCoHy1qA" name="classEquals">
+      <modelElement href="OwlTranslator.uml#_5m-8YH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6cxVEX32EemTEuiCoHy1qA" name="Generics">
+        <modelElement href="OwlTranslator.uml#_5nAKgH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6cxVEn32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6cxVE332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6cxVFH32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5nAKgX32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6cxVFX32EemTEuiCoHy1qA" name="Predicate">
+          <modelElement href="OwlTranslator.uml#_5kj6gX32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6cxVFn32EemTEuiCoHy1qA" name="cls">
+        <modelElement href="OwlTranslator.uml#_5m-8YX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6cxVF332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6cxVGH32EemTEuiCoHy1qA" name="OWLClass">
+          <modelElement href="OwlTranslator.uml#_5kwHwH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6cxVGX32EemTEuiCoHy1qA" name="dataPropertyEquals">
+      <modelElement href="OwlTranslator.uml#_5nAxkH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6cxVGn32EemTEuiCoHy1qA" name="Generics">
+        <modelElement href="OwlTranslator.uml#_5nB_sH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6cxVG332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6cxVHH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6cxVHX32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5nB_sX32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6cxVHn32EemTEuiCoHy1qA" name="Predicate">
+          <modelElement href="OwlTranslator.uml#_5kj6gX32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6cxVH332EemTEuiCoHy1qA" name="ppt">
+        <modelElement href="OwlTranslator.uml#_5nAxkX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6cxVIH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6cxVIX32EemTEuiCoHy1qA" name="OWLDataProperty">
+          <modelElement href="OwlTranslator.uml#_5kykAX32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_6e6p8H32EemTEuiCoHy1qA" name="Translator" associationsOut="_6dV8oH32EemTEuiCoHy1qA _6dXKwH32EemTEuiCoHy1qA _6dbcMH32EemTEuiCoHy1qA _6dftoH32EemTEuiCoHy1qA _6dgUsH32EemTEuiCoHy1qA _6dlNMX32EemTEuiCoHy1qA _6dlNMn32EemTEuiCoHy1qA _6dl0QH32EemTEuiCoHy1qA _6dl0QX32EemTEuiCoHy1qA _6dl0Qn32EemTEuiCoHy1qA _6dmbUH32EemTEuiCoHy1qA _6dmbUX32EemTEuiCoHy1qA _6dmbUn32EemTEuiCoHy1qA _6dnCYH32EemTEuiCoHy1qA _6dnCYX32EemTEuiCoHy1qA">
+    <modelElement href="OwlTranslator.uml#_5ZO0QH32EemTEuiCoHy1qA"/>
+    <visualProperties xmi:id="_6e6p8X32EemTEuiCoHy1qA" position="523.0,468.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_6e6p8n32EemTEuiCoHy1qA" label="+"/>
+    <attributes xmi:id="_6e6p8332EemTEuiCoHy1qA" name="manager">
+      <modelElement href="OwlTranslator.uml#_5oR84H32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6e6p9H32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5oTyEH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6e6p9X32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e6p9n32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6e6p9332EemTEuiCoHy1qA" name="OWLOntologyManager">
+        <modelElement href="OwlTranslator.uml#_5lE34X32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6e6p-H32EemTEuiCoHy1qA" name="ontology">
+      <modelElement href="OwlTranslator.uml#_5oTyEX32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6e6p-X32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5oUZIH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6e6p-n32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e6p-332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6e6p_H32EemTEuiCoHy1qA" name="OWLOntology">
+        <modelElement href="OwlTranslator.uml#_5k21cX32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6e6p_X32EemTEuiCoHy1qA" name="makerData">
+      <modelElement href="OwlTranslator.uml#_5oVnQH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6e6p_n32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5oWOUH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6e6p_332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e6qAH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6e6qAX32EemTEuiCoHy1qA" name="MakerDatatype">
+        <modelElement href="OwlTranslator.uml#_5XqG8H32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6e6qAn32EemTEuiCoHy1qA" name="makerIndividual">
+      <modelElement href="OwlTranslator.uml#_5oXccH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6e6qA332EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5oYDgH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6e6qBH32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e6qBX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6e6qBn32EemTEuiCoHy1qA" name="MakerIndividual">
+        <modelElement href="OwlTranslator.uml#_5X5XgH32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6e6qB332EemTEuiCoHy1qA" name="makerProperty">
+      <modelElement href="OwlTranslator.uml#_5oYDgX32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6e6qCH32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5oYqkH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6e6qCX32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e6qCn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6e6qC332EemTEuiCoHy1qA" name="MakerProperty">
+        <modelElement href="OwlTranslator.uml#_5YGL0H32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6e6qDH32EemTEuiCoHy1qA" name="listClass">
+      <modelElement href="OwlTranslator.uml#_5oZRoH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6e6qDX32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5oZ4sH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6e6qDn32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e6qD332EemTEuiCoHy1qA" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_6e6qEH32EemTEuiCoHy1qA" name="OWLClass">
+        <modelElement href="OwlTranslator.uml#_5kwHwH32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6e6qEX32EemTEuiCoHy1qA" name="mapClass_DataProperty">
+      <modelElement href="OwlTranslator.uml#_5oZ4sX32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6e6qEn32EemTEuiCoHy1qA" name="Generics">
+        <modelElement href="OwlTranslator.uml#_5obG0H32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6e6qE332EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5ocU8H32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6e6qFH32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e6qFX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6e6qFn32EemTEuiCoHy1qA" name="List">
+        <modelElement href="OwlTranslator.uml#_5kXtQH32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6e6qF332EemTEuiCoHy1qA" name="mapParameter_Value">
+      <modelElement href="OwlTranslator.uml#_5ogmYH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6e6qGH32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5ogmYX32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6e6qGX32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e6qGn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6e6qG332EemTEuiCoHy1qA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6e6qHH32EemTEuiCoHy1qA" name="mapDataProperty_Parameter">
+      <modelElement href="OwlTranslator.uml#_5oibkH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6e6qHX32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5ojpsH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6e6qHn32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e6qH332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6e6qIH32EemTEuiCoHy1qA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6e6qIX32EemTEuiCoHy1qA" name="mapDataProperty_Value">
+      <modelElement href="OwlTranslator.uml#_5ok30n32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6e6qIn32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5ole4H32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6e6qI332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e6qJH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6e6qJX32EemTEuiCoHy1qA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6e6qJn32EemTEuiCoHy1qA" name="mapClass_ObjectProperty">
+      <modelElement href="OwlTranslator.uml#_5omF8X32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6e6qJ332EemTEuiCoHy1qA" name="Generics">
+        <modelElement href="OwlTranslator.uml#_5omtAH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6e6qKH32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5onUEH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6e6qKX32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e6qKn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6e6qK332EemTEuiCoHy1qA" name="List">
+        <modelElement href="OwlTranslator.uml#_5kXtQH32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6e6qLH32EemTEuiCoHy1qA" name="mapObjectProperty_Parameter">
+      <modelElement href="OwlTranslator.uml#_5on7IH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6e6qLX32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5ooiMH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6e6qLn32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e6qL332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6e6qMH32EemTEuiCoHy1qA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6e6qMX32EemTEuiCoHy1qA" name="mapObjectProperty_Value">
+      <modelElement href="OwlTranslator.uml#_5opwUX32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6e6qMn32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5oqXYH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6e6qM332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e6qNH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6e6qNX32EemTEuiCoHy1qA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6e6qNn32EemTEuiCoHy1qA" name="mapValue_Individual">
+      <modelElement href="OwlTranslator.uml#_5oq-cX32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6e6qN332EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5osMkH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6e6qOH32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e6qOX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6e6qOn32EemTEuiCoHy1qA" name="OWLNamedIndividual">
+        <modelElement href="OwlTranslator.uml#_5lMzsX32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6e6qO332EemTEuiCoHy1qA" name="mapObjectPropertyDomain_Range">
+      <modelElement href="OwlTranslator.uml#_5osMkn32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6e6qPH32EemTEuiCoHy1qA" name="Generics">
+        <modelElement href="OwlTranslator.uml#_5otasH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6e6qPX32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5ovP4H32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6e6qPn32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e6qP332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6e6qQH32EemTEuiCoHy1qA" name="List">
+        <modelElement href="OwlTranslator.uml#_5kXtQH32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6e6qQX32EemTEuiCoHy1qA" name="mapClass_Individual">
+      <modelElement href="OwlTranslator.uml#_5oweAH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6e6qQn32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5oxFEH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6e6qQ332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e6qRH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6e6qRX32EemTEuiCoHy1qA" name="OWLNamedIndividual">
+        <modelElement href="OwlTranslator.uml#_5lMzsX32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6e6qRn32EemTEuiCoHy1qA" name="mapDataProperty_DataRange">
+      <modelElement href="OwlTranslator.uml#_5oxsIX32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6e6qR332EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5oyTMH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6e6qSH32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e6qSX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6e6qSn32EemTEuiCoHy1qA" name="OWLDataRange">
+        <modelElement href="OwlTranslator.uml#_5k0ZMH32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6e6qS332EemTEuiCoHy1qA" name="fileOwl">
+      <modelElement href="OwlTranslator.uml#_5oy6QX32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6e6qTH32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5ozhUH32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6e6qTX32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e6qTn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6e6qT332EemTEuiCoHy1qA" name="File">
+        <modelElement href="OwlTranslator.uml#_5jwCMH32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6e6qUH32EemTEuiCoHy1qA" name="fileBash">
+      <modelElement href="OwlTranslator.uml#_5o0IYH32EemTEuiCoHy1qA"/>
+      <stereotypes xmi:id="_6e6qUX32EemTEuiCoHy1qA" name="LegacyStyledElement">
+        <modelElement href="OwlTranslator.uml#_5o0IYX32EemTEuiCoHy1qA"/>
+      </stereotypes>
+      <visibility xmi:id="_6e6qUn32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e6qU332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6e6qVH32EemTEuiCoHy1qA" name="File">
+        <modelElement href="OwlTranslator.uml#_5jwCMH32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_6e6qVX32EemTEuiCoHy1qA" defaultValue="Logger.getLogger(Translator.class)" name="LOG" staticAttribute="true">
+      <modelElement href="OwlTranslator.uml#_5o0vcH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6e6qVn32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e6qV332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <type xmi:id="_6e6qWH32EemTEuiCoHy1qA" name="Logger">
+        <modelElement href="OwlTranslator.uml#_5j82gH32EemTEuiCoHy1qA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_6e6qWX32EemTEuiCoHy1qA" name="Translator">
+      <modelElement href="OwlTranslator.uml#_5ZU64H32EemTEuiCoHy1qA"/>
+      <keywords xmi:id="_6e6qWn32EemTEuiCoHy1qA" keyword="create"/>
+      <visibility xmi:id="_6e6qW332EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6e7RAH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6e7RAX32EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5ZVh8n32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6e7RAn32EemTEuiCoHy1qA" name="Translator">
+          <modelElement href="OwlTranslator.uml#_5ZO0QH32EemTEuiCoHy1qA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6e7RA332EemTEuiCoHy1qA" name="fileOwlName">
+        <modelElement href="OwlTranslator.uml#_5ZU64X32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6e7RBH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6e7RBX32EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6e7RBn32EemTEuiCoHy1qA" name="fileBashName">
+        <modelElement href="OwlTranslator.uml#_5ZU64n32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6e7RB332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6e7RCH32EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6e7RCX32EemTEuiCoHy1qA" name="run">
+      <modelElement href="OwlTranslator.uml#_5ZVh8332EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6e7RCn32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6e7RC332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_6e7RDH32EemTEuiCoHy1qA" name="translate">
+      <modelElement href="OwlTranslator.uml#_5ZWJAH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6e7RDX32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e7RDn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_6e7RD332EemTEuiCoHy1qA">
+        <modelElement href="OwlTranslator.uml#_5ZWwEH32EemTEuiCoHy1qA"/>
+        <type xmi:id="_6e7REH32EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_6e7REX32EemTEuiCoHy1qA" name="parameterCompleted">
+        <modelElement href="OwlTranslator.uml#_5ZWJAX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6e7REn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6e7RE332EemTEuiCoHy1qA" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6e7RFH32EemTEuiCoHy1qA" name="label">
+        <modelElement href="OwlTranslator.uml#_5ZWJAn32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6e7RFX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6e7RFn32EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6e7RF332EemTEuiCoHy1qA" name="managePerson">
+      <modelElement href="OwlTranslator.uml#_5ZaacH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6e7RGH32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e7RGX32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_6e7RGn32EemTEuiCoHy1qA" name="initMapDataProperty_Value">
+      <modelElement href="OwlTranslator.uml#_5ZbokH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6e7RG332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e7RHH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_6e7RHX32EemTEuiCoHy1qA" name="initMapObjectProperty_Value">
+      <modelElement href="OwlTranslator.uml#_5Zc2sH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6e7RHn32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e7RH332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_6e7RIH32EemTEuiCoHy1qA" name="initMapParameter_Value">
+      <modelElement href="OwlTranslator.uml#_5l-PwH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6e7RIX32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e7RIn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_6e7RI332EemTEuiCoHy1qA" name="parserBash">
+        <modelElement href="OwlTranslator.uml#_5l-20H32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6e7RJH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6e7RJX32EemTEuiCoHy1qA" name="Parser">
+          <modelElement href="OwlTranslator.uml#_5Yd_QH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6e7RJn32EemTEuiCoHy1qA" name="initMapDataProperty_Parameter">
+      <modelElement href="OwlTranslator.uml#_5l_d4H32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6e7RJ332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e7RKH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_6e7RKX32EemTEuiCoHy1qA" name="parserFileAssociation">
+        <modelElement href="OwlTranslator.uml#_5mAE8H32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6e7RKn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6e7RK332EemTEuiCoHy1qA" name="Parser">
+          <modelElement href="OwlTranslator.uml#_5Yd_QH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6e7RLH32EemTEuiCoHy1qA" name="initMapObjectProperty_Parameter">
+      <modelElement href="OwlTranslator.uml#_5mBTEH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6e7RLX32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e7RLn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_6e7RL332EemTEuiCoHy1qA" name="parserFileAssociationObject">
+        <modelElement href="OwlTranslator.uml#_5mBTEX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6e7RMH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6e7RMX32EemTEuiCoHy1qA" name="Parser">
+          <modelElement href="OwlTranslator.uml#_5Yd_QH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6e7RMn32EemTEuiCoHy1qA" name="loadOntology">
+      <modelElement href="OwlTranslator.uml#_5nxmkH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6e7RM332EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e7RNH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_6e7RNX32EemTEuiCoHy1qA" name="file">
+        <modelElement href="OwlTranslator.uml#_5nxmkX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6e7RNn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6e7RN332EemTEuiCoHy1qA" name="File">
+          <modelElement href="OwlTranslator.uml#_5jwCMH32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_6e7ROH32EemTEuiCoHy1qA" name="saveOntology">
+      <modelElement href="OwlTranslator.uml#_5nyNoH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6e7ROX32EemTEuiCoHy1qA" label="-"/>
+      <cardinality xmi:id="_6e7ROn32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_6e7RO332EemTEuiCoHy1qA" name="ontologyOutput">
+        <modelElement href="OwlTranslator.uml#_5nyNoX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6e7RPH32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6e7RPX32EemTEuiCoHy1qA" name="OWLOntology">
+          <modelElement href="OwlTranslator.uml#_5k21cX32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_6e7RPn32EemTEuiCoHy1qA" name="outIRI">
+        <modelElement href="OwlTranslator.uml#_5ny0sH32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6e7RP332EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+        <type xmi:id="_6e7RQH32EemTEuiCoHy1qA" name="IRI">
+          <modelElement href="OwlTranslator.uml#_5l0ewX32EemTEuiCoHy1qA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_6ayX4H32EemTEuiCoHy1qA" name="test">
+    <modelElement href="OwlTranslator.uml#_5ZFqUH32EemTEuiCoHy1qA"/>
+    <visualProperties xmi:id="_6ayX4X32EemTEuiCoHy1qA" position="1074.0,531.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_6ayX4n32EemTEuiCoHy1qA" label="+"/>
+    <operations xmi:id="_6ayX4332EemTEuiCoHy1qA" name="main" staticOperation="true">
+      <modelElement href="OwlTranslator.uml#_5ZIGkH32EemTEuiCoHy1qA"/>
+      <visibility xmi:id="_6ayX5H32EemTEuiCoHy1qA" label="+"/>
+      <cardinality xmi:id="_6ayX5X32EemTEuiCoHy1qA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_6ayX5n32EemTEuiCoHy1qA" name="args">
+        <modelElement href="OwlTranslator.uml#_5ZIGkX32EemTEuiCoHy1qA"/>
+        <cardinality xmi:id="_6ayX5332EemTEuiCoHy1qA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_6ayX6H32EemTEuiCoHy1qA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>

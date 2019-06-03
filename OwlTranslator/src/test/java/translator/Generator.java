@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Predicate;
-import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -24,6 +23,12 @@ import org.semanticweb.owlapi.model.OWLDataRange;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLOntology;
 
+/**
+ * Transform OWL knowledge and raw data that can be manipulated by {@link Translator}.
+ * Generate different Map, List and File.
+ * @author Robin Couret
+*/
+
 public class Generator {
 	
 	private OWLOntology ontology;
@@ -34,12 +39,22 @@ public class Generator {
 		this.ontology=ontology;
 	}
 	
+	/** 
+	 * List the classes contained in the Ontology loaded.
+	 * @return a {@link List} that contains {@link OWLClass}.
+	 */
 	public List<OWLClass> toListClass(){
 		
 		Stream<OWLClass> streamClass = ontology.classesInSignature();
 		return streamClass.collect(Collectors.toList());	
 	}
 	
+	/**
+	 * Associate in a map the OWL classes and their OWLDataProperty.
+	 * @param the {@link List} that contains {@link OWLClass} about the Ontology.
+	 * @return a {@link Map} collection that contains {@link OWLClass} as
+	 * key and {@link OWLDataProperty} as value.
+	 */
 	public Map<OWLClass, List<OWLDataProperty>> toMapClass_DataProperty(List<OWLClass> listClass){
 		
 		Map<OWLClass, List<OWLDataProperty>> mapClass_DataProperty = new HashMap<OWLClass, List<OWLDataProperty>>();
@@ -50,6 +65,11 @@ public class Generator {
 		return mapClass_DataProperty;
 	}
 	
+	/**
+	 * List the DataProperty at a specific Class.
+	 * @param a {@link OWLClass}
+	 * @return a {@link List} that contains the {@link DataProperty} about a {@link OWLClass}
+	 */
 	private List<OWLDataProperty> toListDataProperty(OWLClass cls){
 		
 		//Step1 : declare a OWLAxiom stream
@@ -68,6 +88,17 @@ public class Generator {
 		return listOWLDataProperty;
 	}
 	
+	/**
+	 * Write in a File the {@link OWLDataProperty}, 
+	 * the File have to completed by the user with 
+	 * the association between real data and {@link OWLDataProperty}.
+	 * @param filePath {@link String}
+	 * @param a {@link Map} that contains {@link OWLClass} as
+	 * key and a list of {@link OWLDataProperty} as value.
+	 * @return a File with the list of DataProperty, 
+	 * the File need to be completed manually.
+	 * @throws IOException
+	 */
 	public File toFileOWLDataProperty(String filePath, Map<OWLClass, List<OWLDataProperty>> mapClass_DataProperty) throws IOException {
 		
 		FileOutputStream outputStream;
@@ -90,6 +121,12 @@ public class Generator {
 		return new File(filePath);
 	}
 	
+	/**
+	 * Associate in a map the OWL classes and their OWLObjectProperty.
+	 * @param the {@link List} that contains {@link OWLClass} about the Ontology.
+	 * @return a {@link Map} collection that contains {@link OWLClass} as
+	 * key and {@link OWLObjectProperty} as value.
+	 */
 	public Map<OWLClass, List<OWLObjectProperty>> toMapClass_ObjectProperty(List<OWLClass> listClass){
 		
 		Map<OWLClass, List<OWLObjectProperty>> mapClass_ObjectProperty = new HashMap<OWLClass, List<OWLObjectProperty>>();
@@ -100,6 +137,11 @@ public class Generator {
 		return mapClass_ObjectProperty;
 	}
 	
+	/**
+	 * List the ObjectProperty at a specific Class.
+	 * @param a {@link OWLClass}
+	 * @return a {@link List} that contains the {@link objectProperty} about a {@link OWLClass}
+	 */
 	public Map<OWLObjectProperty, List<OWLClass>> toMapObjectPropertyDomain_Range(List<OWLClass> listClass){
 		
 		Map<OWLObjectProperty, List<OWLClass>> mapObjectPropertyDomain_Range = new HashMap<OWLObjectProperty, List<OWLClass>>();
@@ -148,8 +190,17 @@ public class Generator {
 		return mapObjectPropertyDomain_Range;
 	}
 	
-	
-	
+	/**
+	 * Write in a File the {@link OWLObjectProperty}, 
+	 * the File have to completed by the user with 
+	 * the association between real data and {@link OWLObjectProperty}.
+	 * @param filePath {@link String}
+	 * @param a {@link Map} that contains {@link OWLClass} as
+	 * key and a list of {@link OWLObjectProperty} as value.
+	 * @return a File with the list of DataProperty, 
+	 * the File need to be completed manually.
+	 * @throws IOException
+	 */
 	public File toFileOWLObjectProperty(String filePath, Map<OWLClass, List<OWLObjectProperty>> mapClass_ObjectProperty) throws IOException {
 		
 		FileOutputStream outputStream;

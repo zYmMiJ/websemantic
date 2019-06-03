@@ -12,10 +12,16 @@ import java.util.function.Predicate;
 
 import org.apache.log4j.Logger;
 
+/**
+ * Specific {@link MakerAxiom} for dataProperty.
+ * @param manager
+ * @param ontology
+ */
+
 public class MakerDatatype extends MakerAxiom{
 	
 	private static final Logger LOG = Logger.getLogger(MakerDatatype.class);
-
+		
 	public MakerDatatype(OWLOntologyManager manager, OWLOntology ontology) {
 		super(manager, ontology);
 	}
@@ -27,16 +33,21 @@ public class MakerDatatype extends MakerAxiom{
 	 */
 	public void makeDataType(OWLDataProperty dataProperty, OWLDataRange dataRange, String data, OWLNamedIndividual individualOWL) {
 		
+		OWLAxiom axiomDataAssertion = null;
+		if(dataRange.toString().contains("int"))
+			axiomDataAssertion = factory.getOWLDataPropertyAssertionAxiom(dataProperty, individualOWL, Integer.parseInt(data));
+		else
+			axiomDataAssertion = factory.getOWLDataPropertyAssertionAxiom(dataProperty, individualOWL, data);
+			
 		//Make the axiom related to the DataType
-		OWLAxiom axiomDataAssertion = factory.getOWLDataPropertyAssertionAxiom(dataProperty, individualOWL, data);
-		OWLAxiom axiomDeclaration = factory.getOWLDeclarationAxiom(individualOWL);
 		OWLDataPropertyRangeAxiom axiomRange = factory.getOWLDataPropertyRangeAxiom(dataProperty, dataRange);
+		OWLAxiom axiomDeclaration = factory.getOWLDeclarationAxiom(individualOWL);
 		
 		addAxiom(axiomRange);
 		addAxiom(axiomDataAssertion);
 		addAxiom(axiomDeclaration);
 		
-		//ontology.dataPropertyAssertionAxioms(individualOWL).forEach(System.out::println);
+		
 		
 		
 		LOG.info("ADD : OWLDataProperty - "+dataProperty.toString()+" : "+data);

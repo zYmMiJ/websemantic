@@ -86,7 +86,14 @@ public class Parser{
 		
 		return list;
 	}
-
+	
+	/**
+	 * Transform a the file contained in the {@link Parser} 
+	 * at {@link List} that contains {@link DataParsed} 
+	 * @return a {@link List} that contains {@link DataParsed}, 
+	 * in the first box of {@link DataParsed} there is a DataProperty,
+	 * in the second box there is a Parameter
+	 */
 	public List<DataParsed> fileAssociationToList(){
 		
 		String line;// Ligne du buffer
