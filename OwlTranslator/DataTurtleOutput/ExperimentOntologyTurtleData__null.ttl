@@ -6,7 +6,11 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 _:genid1620643420 a owl:Ontology .
+=======
+_:genid173440626 a owl:Ontology .
+>>>>>>> 43afaacd0249b4e3b28f7a99717f9f9219ddd3bf
 =======
 _:genid173440626 a owl:Ontology .
 >>>>>>> 43afaacd0249b4e3b28f7a99717f9f9219ddd3bf
@@ -507,8 +511,13 @@ xp:Procedure_null a owl:NamedIndividual , xp:Procedure ;
 	xp:has_experimenter <http://www.w3.org/2000/10/swap/pim/contact#Person_null> ;
 	xp:has_performer <http://www.w3.org/2000/10/swap/pim/contact#Person_null> ;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	xp:hasNumberOfIterations "10000" ;
 	xp:hasNumberOfRuns "10" ;
+=======
+	xp:hasNumberOfIterations 10000 ;
+	xp:hasNumberOfRuns 10 ;
+>>>>>>> 43afaacd0249b4e3b28f7a99717f9f9219ddd3bf
 =======
 	xp:hasNumberOfIterations 10000 ;
 	xp:hasNumberOfRuns 10 ;

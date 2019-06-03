@@ -87,11 +87,14 @@ public class Parser{
 		return list;
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	public List<DataParsed> htmlToList(){
 		return null;
 	}
 =======
+=======
+>>>>>>> 43afaacd0249b4e3b28f7a99717f9f9219ddd3bf
 	
 	/**
 	 * Transform a the file contained in the {@link Parser} 
@@ -100,6 +103,9 @@ public class Parser{
 	 * in the first box of {@link DataParsed} there is a DataProperty,
 	 * in the second box there is a Parameter
 	 */
+<<<<<<< HEAD
+>>>>>>> 43afaacd0249b4e3b28f7a99717f9f9219ddd3bf
+=======
 >>>>>>> 43afaacd0249b4e3b28f7a99717f9f9219ddd3bf
 	public List<DataParsed> fileAssociationToList(){
 		
