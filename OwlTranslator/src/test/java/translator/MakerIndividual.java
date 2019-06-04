@@ -7,6 +7,12 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.apache.log4j.Logger;
 
+/**
+ * is a specific {@link MakerAxiom}, 
+ * for OWLIndividual {@link https://www.w3.org/TR/owl-ref/#Individual}
+ * @author Robin Couret
+ */
+
 public class MakerIndividual extends MakerAxiom{
 		
 	private OWLClass classOWL;
@@ -18,8 +24,8 @@ public class MakerIndividual extends MakerAxiom{
 	
 	/**
 	 * Make a NamedIndividual, individual of Class name, with a specific name.
-	 * @param ClassOWL
-	 * @param nameIndividual
+	 * @param {@link ClassOWL}
+	 * @param {@link String} the name of NamedIndividual
 	 */
 	public OWLNamedIndividual makeIndividual(OWLClass cls, String label) {
 		

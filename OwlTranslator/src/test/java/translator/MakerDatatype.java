@@ -13,9 +13,9 @@ import java.util.function.Predicate;
 import org.apache.log4j.Logger;
 
 /**
- * Specific {@link MakerAxiom} for dataProperty.
- * @param manager
- * @param ontology
+ * is a specific {@link MakerAxiom}, 
+ * for OWL DataType {@link https://www.w3.org/TR/owl-ref/#Datatype}
+ * @author Robin Couret
  */
 
 public class MakerDatatype extends MakerAxiom{
@@ -27,9 +27,11 @@ public class MakerDatatype extends MakerAxiom{
 	}
 	
 	/**
-	 * Complete a dataType with the data
-	 * @param dataProperty
-	 * @param data
+	 * Add a data property at a Individual. 
+	 * @param {@link OWLDataProperty} is the data property. 
+	 * @param {@link OWLDataRange}, OWL specification about data type. 
+	 * @param {@link String} value. 
+	 * @param {@link OWLNamedIndividual} individual where the data is linked.
 	 */
 	public void makeDataType(OWLDataProperty dataProperty, OWLDataRange dataRange, String data, OWLNamedIndividual individualOWL) {
 		

@@ -29,7 +29,9 @@ public class App {
 		htmlParser h = new htmlParser();
 		h.printStringList(h.getabsUrlOfExperiments());
 		for(String link: h.getabsUrlOfExperiments() ) {	
-			h.parser(link);
+			
+			Translator translate = new Translator("ExperimentOntology3.owl", link);
+  			translate.run();
 		}
 		
 		

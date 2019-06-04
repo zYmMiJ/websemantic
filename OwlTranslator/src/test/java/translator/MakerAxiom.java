@@ -35,13 +35,6 @@ public abstract class MakerAxiom {
 	protected void addAxiom(OWLAxiom axiom) {
 		AddAxiom addAxiom = new AddAxiom(ontology, axiom);
 		manager.applyChange(addAxiom);
-<<<<<<< HEAD
-<<<<<<< HEAD
-		//System.out.println(axiom+" : "+manager.applyChange(addAxiom));
-=======
->>>>>>> 43afaacd0249b4e3b28f7a99717f9f9219ddd3bf
-=======
->>>>>>> 43afaacd0249b4e3b28f7a99717f9f9219ddd3bf
 	}
 
 }

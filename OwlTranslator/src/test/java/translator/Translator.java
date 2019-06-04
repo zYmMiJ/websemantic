@@ -57,7 +57,7 @@ public class Translator {
 		private Map<OWLDataProperty, OWLDataRange> mapDataProperty_DataRange;
 		
 		private File fileOwl;
-		private File fileHTML;
+		private String fileHTML;
 		
 		private static final Logger LOG = Logger.getLogger(Translator.class);
 		
@@ -73,7 +73,7 @@ public class Translator {
 			this.fileOwl = new File(fileOwlName);
 			loadOntology(fileOwl);
 
-			this.fileHTML = new File(fileHTMLName);
+			//this.fileHTML = new File(fileHTMLName);
 			
 			//Initialize the makers
 			makerData = new MakerDatatype(manager, ontology);
@@ -107,7 +107,7 @@ public class Translator {
 		
 		private String translate(boolean parameterCompleted, String label) throws IOException {
 			
-			Parser parserHTML = new Parser(fileHTML);
+			htmlParser parserHTML = new htmlParser(fileHTML);
 			Generator generator = new Generator(ontology);
 	
 			//CLASS initialization
@@ -191,14 +191,7 @@ public class Translator {
 						if(data!=null)
 							makerData.makeDataType(ppt, dataRange, data, individualOWL);								
 				}
-<<<<<<< HEAD
-<<<<<<< HEAD
-				
-				//System.out.println(ontology.dataPropertyAssertionAxioms(individualOWL).findFirst().isPresent());
-=======
->>>>>>> 43afaacd0249b4e3b28f7a99717f9f9219ddd3bf
-=======
->>>>>>> 43afaacd0249b4e3b28f7a99717f9f9219ddd3bf
+
 
 			}
 			
@@ -285,10 +278,10 @@ public class Translator {
 		 * key and {@link String} that represent a value from {@link File} as value. 
 		 * @param parserHTML, the parser corresponding at the HTML file input.
 		 */
-		private void initMapParameter_Value(Parser parserHTML) {
+		private void initMapParameter_Value(htmlParser parserHTML) {
 			mapParameter_Value = new HashMap<String, String>();
 			
-			List<DataParsed> listParameter_Value = parserHTML.fileToList();
+			List<DataParsed> listParameter_Value = parserHTML.parser();
 			for(DataParsed data:listParameter_Value) {
 				mapParameter_Value.put(data.getFirstBox(), data.getSecondBox());
 			}

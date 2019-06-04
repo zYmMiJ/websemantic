@@ -8,6 +8,12 @@ import org.semanticweb.owlapi.model.OWLObjectPropertyExpression;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 
+/**
+ * is a specific {@link MakerAxiom}, 
+ * for OWL Property {@link https://www.w3.org/TR/owl-ref/#Property}
+ * @author Robin Couret
+ */
+
 public class MakerProperty extends MakerAxiom{
 	
 	private static final Logger LOG = Logger.getLogger(MakerProperty.class);
@@ -17,6 +23,12 @@ public class MakerProperty extends MakerAxiom{
 		
 	}
 	
+	/**
+	 * Add a property between two Individuals. 
+	 * @param {@link OWLObjectPropertyExpression} is the property.
+	 * @param {@link OWLNamedIndividual} is the subject.
+	 * @param {@link OWLIndividual} is the object.
+	 */
 	public void makeProperty(OWLObjectPropertyExpression property, OWLNamedIndividual individualOWL, OWLIndividual object) {
 		
 		

@@ -34,30 +34,26 @@ public class htmlParser {
 			};
 	
 	private List<String> absUrlOfExperiments = new ArrayList<String>();
-	 
+	private String link;
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		htmlParser h = new htmlParser();
-	}
-	
-	public htmlParser() {
+	public htmlParser(String link) {
 		absUrlOfExperiments = this.getAllXPLink("https://gforge.inria.fr/plugins/mediawiki/wiki/lazylav/index.php/Experiments");
+		this.link=link;
 	}
 	
 	
 	/*
-	 * Return tous les href (Experiments) d'une page donnée. Pattern "-NOOR"
+	 * Return tous les href (Experiments) d'une page donnï¿½e. Pattern "-NOOR"
 	 */
 	public List<String> getAllXPLink(String s) {
 		List<String> l  = new ArrayList<String>();
 		Document doc; // HTML document
 		try {
 			doc = Jsoup.connect(s).get();// On recup la page html
-			Elements newsHeadlines = doc.select("a");// On veut recupérer toutes les balises A
+			Elements newsHeadlines = doc.select("a");// On veut recupï¿½rer toutes les balises A
 			for (Element headline : newsHeadlines ) {// Parcours les lignes
 				if( headline.attr("title").contains("-NOOR") ) {// On recup Les liens contenants -NOOR soit les experiments
-					l.add(headline.absUrl("href"));// On les ajoutes à une liste pour les garder en mémoires
+					l.add(headline.absUrl("href"));// On les ajoutes ï¿½ une liste pour les garder en mï¿½moires
 				}
 			}
 		} catch (IOException e) {
@@ -78,25 +74,25 @@ public class htmlParser {
 		return absUrlOfExperiments;
 	}
 	/*
-	 * Method qui parse les données et qui rends
+	 * Method qui parse les donnï¿½es et qui rends
 	 */
-	public void parser(String s) {
+	public List<DataParsed> parser(String s) {
 		List<DataParsed> dataparsedHTML = new ArrayList<DataParsed>();
 		Document doc; // HTML document
 		try {
 			doc = Jsoup.connect(s).get();// On recur la page html
-			Element el = doc.getElementById("mw-content-text");// On veut recupérer toutes les balises A
+			Element el = doc.getElementById("mw-content-text");// On veut recupï¿½rer toutes les balises A
 			String str = el.toString();
 			str = str.replaceAll("<[^>]*>", "");
 			String[] parts = str.split("[\\r\\n]+");
-			int memo_i = 0;// Pour garder en mémoire si on ne trouve pas le param suivant
+			int memo_i = 0;// Pour garder en mï¿½moire si on ne trouve pas le param suivant
 			int j = 0;// parcours Datas
 			for( int i = 0; i < parts.length; i ++) {
 				if( parts[i].length() > 2 ) {
 					parts[i] = parts[i].replaceAll("Back to Experiments.", "");
 					if( parts[i].contains(datas[j]) ) {
-						int tmpi = i;// Permet de parcourir jusqu'à la prochaine occurence ddes datas qu'on veut recupérer
-						String[] partitions;// On split les paramètres de la valeurs
+						int tmpi = i;// Permet de parcourir jusqu'ï¿½ la prochaine occurence ddes datas qu'on veut recupï¿½rer
+						String[] partitions;// On split les paramï¿½tres de la valeurs
 						String params;
 						String value;
 						parts[i] = parts[i].replaceFirst(" ", "");// On enleve un " ";
@@ -110,7 +106,7 @@ public class htmlParser {
 							params = datas[j];
 							value = "";
 						}
-						Boolean stopWhile = true;// Pour stoper le parsing à la prochaine occcurences d'un params (datas)
+						Boolean stopWhile = true;// Pour stoper le parsing ï¿½ la prochaine occcurences d'un params (datas)
 						while( tmpi<parts.length && !parts[tmpi].contains(datas[j+1]) && stopWhile) {// || lenght parts[]
 							for( int _j = 0; _j < datas.length; _j ++) {
 								if( parts[tmpi].contains(datas[_j]) && _j != j  ) {
@@ -133,7 +129,7 @@ public class htmlParser {
 							String titleValue = value;
 							value = value.replaceAll(" ", "");
 							value = value.replaceAll("[^\\d-]", "");
-							if( value.length() > 10) {// ajout du titre à partir de l'index TODO incohérence 
+							if( value.length() > 10) {// ajout du titre ï¿½ partir de l'index TODO incohï¿½rence 
 								titleValue = titleValue.substring(11,titleValue.length());
 								titleValue = titleValue.replaceAll(value,"");
 								DataParsed d = new DataParsed("Title", titleValue);
@@ -166,5 +162,6 @@ public class htmlParser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return dataparsedHTML;
 	}
 }
