@@ -56,8 +56,11 @@ public class Translator {
 		//Map of OWLDataProperty and OWLDataRange, used to set the type of data
 		private Map<OWLDataProperty, OWLDataRange> mapDataProperty_DataRange;
 		
+		//The state of association file, true : the file is completed, false the file will be created
+		private static final String nameFileAssociation = "Association";
+		
 		private File fileOwl;
-		private File fileHTML;
+		private File file;
 		private String urlHTML;
 		private String Input_Type;
 		
@@ -70,17 +73,18 @@ public class Translator {
 		 * @param {{@link String} define if the input is HTML or a File
 		 */
 		
-		public Translator(String fileOwlName, String name,String type) {
+		public Translator(String fileOwlName, String targetFile, String type) {
 			
-			manager = OWLManager.createOWLOntologyManager();
+			this.manager = OWLManager.createOWLOntologyManager();
 			this.fileOwl = new File(fileOwlName);
 			loadOntology(fileOwl);
 
 			if( type == "HTML" ) {
-				this.urlHTML = name;
+				this.urlHTML = targetFile;
 			}else if( type == "FILE" ) {
-				this.fileHTML = new File(name);
+				this.file = new File(targetFile);
 			}
+			
 			this.Input_Type = type; // Initialize type of input parsing
 			//Initialize the makers
 			makerData = new MakerDatatype(manager, ontology);
@@ -91,14 +95,11 @@ public class Translator {
 		
 		public void run() {
 			
-			
-			//The state of association file, true : the file is completed, false the file will be created 
-			boolean parameterCompleted = true;
 			//The label of the instances in the parameter
 			String label = "LABEL";
 			
 			try {
-				label = translate(parameterCompleted, label);
+				label = translate(label);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -112,7 +113,7 @@ public class Translator {
 			saveOntology(ontologyOutput, outIRI);
 		}
 		
-		private String translate(boolean parameterCompleted, String label) throws IOException {
+		private String translate(String label) throws IOException {
 			HtmlParser parserHTML = null;
 			FileParser parserFILE;
 			if( this.Input_Type == "FILE") {
@@ -134,11 +135,7 @@ public class Translator {
 			initMapParameter_Value(parserHTML);
 			
 				//File of OWLDataProperty with the corresponding parameter, need to complete manually or not
-			File fileDataProperty_Parameter;
-			if(parameterCompleted) 
-				fileDataProperty_Parameter = new File("DataProperty_ParameterCompleted.txt");
-			else 
-				fileDataProperty_Parameter = generator.toFileOWLDataProperty("DataProperty_Parameter.txt", mapClass_DataProperty);
+			File fileDataProperty_Parameter = new File(nameFileAssociation+"DataProperty.txt");
 			
 				//Parse of the File DataProperty_ParameterCompleted
 			FileParser parserFileAssociation = new FileParser(fileDataProperty_Parameter);
@@ -156,11 +153,7 @@ public class Translator {
 			mapClass_ObjectProperty = generator.toMapClass_ObjectProperty(listClass);
 			
 				//File of OWLObjectProperty with the corresponding parameter, need to complete manually or not
-			File fileObjectProperty_Parameter;
-			if(parameterCompleted) 
-				fileObjectProperty_Parameter = new File("ObjectProperty_ParameterCompleted.txt");
-			else 
-				fileObjectProperty_Parameter = generator.toFileOWLObjectProperty("ObjectProperty_Parameter.txt", mapClass_ObjectProperty);
+			File fileObjectProperty_Parameter = new File(nameFileAssociation+"ObjectProperty.txt");
 			
 				//Parse of the File ObjectProperty_ParameterCompleted
 			FileParser parserFileAssociationObject = new FileParser(fileObjectProperty_Parameter);
@@ -231,6 +224,25 @@ public class Translator {
 			}
 			
 			return label;
+		}
+		
+		public void associationFile() throws IOException {
+			
+			@SuppressWarnings("unused")
+			File fileDataProperty_Parameter;
+			Generator generator = new Generator(ontology);
+			
+			listClass = generator.toListClass();
+			mapClass_DataProperty = generator.toMapClass_DataProperty(listClass);
+			mapClass_ObjectProperty = generator.toMapClass_ObjectProperty(listClass);
+			
+			String[] ppt = {"DataProperty.txt", "ObjectProperty.txt"};	
+			
+			if(View.fileAssociation(nameFileAssociation+ppt[0])) 
+				fileDataProperty_Parameter = generator.toFileOWLDataProperty(nameFileAssociation+ppt[0], mapClass_DataProperty);
+			if(View.fileAssociation(nameFileAssociation+ppt[1])) 
+				fileDataProperty_Parameter = generator.toFileOWLObjectProperty(nameFileAssociation+ppt[1], mapClass_ObjectProperty);
+					
 		}
 		
 		private void managePerson() {

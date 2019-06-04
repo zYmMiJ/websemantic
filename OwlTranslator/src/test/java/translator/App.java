@@ -19,28 +19,52 @@ public class App {
 	public static void main(String[] args) throws IOException {
 		configLOG();
 		
-		File repertoire = new File("ExperimentsInput");
-  		System.out.println(	"Repertoire ? "+repertoire.isDirectory());
-  		File[] files=repertoire.listFiles();
-  		
-  		/*for(int i = 0; i < files.length ; i++){
-  			
-  			String paramFileName = repertoire.getCanonicalPath()+"/"+files[i].getName()+"/params.sh";
-  			System.out.println(	paramFileName );
-  			Translator translate = new Translator("ExperimentOntology3.owl", paramFileName);
-  			translate.run();
-  			
-  		}*/
-
-  		List<String> absUrlOfExperiments = new ArrayList<String>();
-  		absUrlOfExperiments = getAllXPLink("https://gforge.inria.fr/plugins/mediawiki/wiki/lazylav/index.php/Experiments");
-  			
-		for(String link: absUrlOfExperiments ) {	
-			System.out.println(link);
-			Translator translate = new Translator("ExperimentOntology3.owl", link, "HTML");
-
-  			translate.run();
+		String ontologyName = "ExperimentOntology29-05.owl";
+		String parserType = "";
+		
+		System.out.println("arg :"+args[0]);
+		if (args[0].equals("-c") || args[0].equals("--changeAssociation")) {
+			Translator t = new Translator(ontologyName, null, parserType);
+			t.associationFile();
 		}
+		
+		if (args[0].equals("-a") && args[1].equals("html")) {
+			parserType = "HTML";
+			
+			List<String> absUrlOfExperiments = new ArrayList<String>();
+	  		absUrlOfExperiments = getAllXPLink("https://gforge.inria.fr/plugins/mediawiki/wiki/lazylav/index.php/Experiments");
+	  			
+			for(String link: absUrlOfExperiments ) {	
+				System.out.println(link);
+				Translator translate = new Translator(ontologyName, link, parserType);
+
+	  			translate.run();
+			}
+		}
+		
+		if (args[0].equals("-a") && args[1].equals("bash")) {
+			parserType = "FILE";
+			
+			File repertoire = new File("ExperimentsInput");
+	  		System.out.println(	"Repertoire ? "+repertoire.isDirectory());
+	  		File[] files=repertoire.listFiles();
+			
+	  		for(int i = 0; i < files.length ; i++) {
+	  			String paramFileName = repertoire.getCanonicalPath()+"/"+files[i].getName()+"/params.sh";
+	  			System.out.println(	paramFileName );
+	  			Translator translate = new Translator(ontologyName, paramFileName, parserType);
+	  			translate.run();
+	  		}
+	  		
+		}
+		
+			
+			
+		
+  		
+
+
+  		
 		
 		
 	} 
@@ -76,7 +100,7 @@ public class App {
 	/*
 	 * Return tous les href (Experiments) d'une page donn�e. Pattern "-NOOR"
 	 */
-	public static List<String> getAllXPLink(String s) {
+	private static List<String> getAllXPLink(String s) {
 		List<String> l  = new ArrayList<String>();
 		Document doc; // HTML document
 		try {
