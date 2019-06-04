@@ -33,21 +33,28 @@ public class FileParser extends Parser{
 		this.file = fileDataProperty_Parameter; 
 	}
 	
+	/**
+	 * Read a file and parse it into a {@link DataParsed} list
+	 * @return a {@link List} that contains {@link DataParsed}, 
+	 * in the case of param.sh
+	 * in the first box of {@link DataParsed} there is a params,
+	 * in the second box there is a value
+	 */
 	public List<DataParsed> dataToList(){
 		
-		String line;// Ligne du buffer
-		String[] tmp = null;// Variable pour split
-		String reg = "=";// regex	  
-		List<DataParsed> list = new ArrayList<DataParsed>();// Liste qu'on return
+		String line;// Buffer Line
+		String[] tmp = null;// Split variable
+		String reg = "=";// regex we split the file with =
+		List<DataParsed> list = new ArrayList<DataParsed>();// List to return
 		 
-		// Lecture du fichier
+		// Reading the file
 		try {
-			BufferedReader br = new BufferedReader(new FileReader(file));// Buffer qui permet de lire le fichier
-			// Parcours du fichier par ligne
+			BufferedReader br = new BufferedReader(new FileReader(file));// Buffer take the file
+			// read line by line
 			while ( (line = br.readLine()) != null ) {
-				line = line.replace("\42","");	
+				line = line.replace("\42","");// Delete the char " 
 				if ( line.contains("#") != true  && line.length() > 2) {
-					tmp = line.split(reg,2);
+					tmp = line.split(reg,2);// split into 2 parts
 					//TODO
 					if (tmp.length >= 2) {
 						list.add(new DataParsed( tmp[0], tmp[1] ));
@@ -74,10 +81,6 @@ public class FileParser extends Parser{
 		this.replaceVarEnv(list);
 		
 		return list;
-	}
-
-	public List<DataParsed> htmlToList(){
-		return null;
 	}
 
 	
@@ -119,20 +122,19 @@ public class FileParser extends Parser{
 		return list;
 	}
 
-	/*
-	 * Creation des parametres d'environnements
+	/**
+	 * Creation of list of parameters per example ${Version}
 	 */
+	
 	public void createEnvParameters() throws IOException{		
 		
-		BufferedReader br = new BufferedReader(new FileReader(this.file));// buffer pour lecture du fichier
-		String line;// Ligne du buffer
+		BufferedReader br = new BufferedReader(new FileReader(this.file));
+		String line;
 		int i = 0;
 		while ( (line = br.readLine()) != null ) { 
-			
-			// Init le matcher des var env
-			Matcher m = ENV_VAR_PATTERN.matcher(line);
+			Matcher m = ENV_VAR_PATTERN.matcher(line);// Init matcher
 			Boolean add = true;
-			// On cherche si correspondonce
+			// Search correspondance with ${...}
 			while( m.find() ){
 				Iterator<DataParsed> it = this.listVarEnv.iterator();
 				while (it.hasNext()) {
@@ -143,7 +145,7 @@ public class FileParser extends Parser{
 					}
 				}
 				if ( add ) {
-					this.listVarEnv.add( new DataParsed( m.group(), m.group(1) ));
+					this.listVarEnv.add( new DataParsed( m.group(), m.group(1) ));// firts value ${...} second ...
 					i++;
 				}
 			}
@@ -152,9 +154,11 @@ public class FileParser extends Parser{
 		numberOfEnvVar = i;
 		//this.printDataParsed(this.listVarEnv);
 	}
-	/*
-	 * Set les variables d'envs 
+	
+	/**
+	 * Set all value of parameters of ${} 
 	 */
+	
 	public void setAllEnvParameters(List<DataParsed> list) {
 		//this.printDataParsed(listVarEnv);
         LOG.info("setAllEnvParameters");
@@ -169,9 +173,11 @@ public class FileParser extends Parser{
     	}
         LOG.info(listVarEnv);
 	}
-	/*
-	 * Remplace les variables d'env par leurs valeurs
+	
+	/**
+	 * Replace parameters with value into our List of listVarEnv
 	 */
+	
 	public void setEnvParameters(String s,String res,int i,List<DataParsed> list) {
 		if ( res.contains("{")) {
 			Matcher m = ENV_VAR_PATTERN.matcher(res);
@@ -181,14 +187,15 @@ public class FileParser extends Parser{
 						res = res.replace(m.group(0), listVarEnv.get(j).getSecondBox());
 					}
 				}
-				 
 			}
 		}
 		listVarEnv.get(i).setSecondBox( res );
 	}
-	/*
-	 * Remplace dans nos données les valeurs d'env par leurs valeurs
+	
+	/**
+	 * Replace into a {@link DataParsed} list all the environnment variable per example ${Designer} by Jeuz
 	 */
+	
 	public List<DataParsed> replaceVarEnv(List<DataParsed> list){
 		int j = 0;
 		 for(DataParsed data:list) {

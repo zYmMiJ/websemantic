@@ -37,7 +37,7 @@ public class App {
   			
 		for(String link: absUrlOfExperiments ) {	
 			System.out.println(link);
-			Translator translate = new Translator("ExperimentOntology3.owl", link, "HTML");
+			Translator translate = new Translator("ExperimentOntology29-05.owl", link, "HTML");
 
   			translate.run();
 		}

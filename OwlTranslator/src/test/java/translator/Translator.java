@@ -115,6 +115,7 @@ public class Translator {
 		private String translate(boolean parameterCompleted, String label) throws IOException {
 			HtmlParser parserHTML = null;
 			FileParser parserFILE;
+			
 			if( this.Input_Type == "FILE") {
 				 //parserFILE = new FileParser(label);
 			}

@@ -315,8 +315,7 @@ foaf:Person a owl:Class .
 # http://www.inria.fr/moex/ExperimentOntology#Analysis_null
 
 :Analysis_null a owl:NamedIndividual , :Analysis ;
-	:has_analyst foaf:Person_null ;
-	:hasComment " JEuz (2018-11-09) " .
+	:has_analyst foaf:Person_null .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#Configuration_null
 
@@ -337,9 +336,7 @@ foaf:Person a owl:Class .
 :Experiment_null a owl:NamedIndividual , :Experiment ;
 	:perform :NOORDesign_null ;
 	:reproduces :Experiment_null ;
-	:results :DataResults_null ;
-	:hasExperimentName " JEuz (2018-11-09) " ;
-	:hasHash " JEuz (2018-11-09) " .
+	:results :DataResults_null .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#Hardware_null
 
@@ -364,10 +361,7 @@ foaf:Person a owl:Class .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#Software_null
 
-:Software_null a owl:NamedIndividual , :Software ;
-	:hasJavaPath " JEuz (2018-11-09) " ;
-	:hasLogbackVersion " JEuz (2018-11-09) " ;
-	:hasOSVersion " JEuz (2018-11-09) " .
+:Software_null a owl:NamedIndividual , :Software .
 # 
 # http://xmlns.com/foaf/0.1/Person_null
 

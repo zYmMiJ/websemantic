@@ -33,10 +33,9 @@ public class HtmlParser extends Parser{
 	
 	private String link = "";
 	 
-	
 	/**
 	 * 	Constructor of a Html Parser, Init the link of the document we want to parse
-	 * @param 
+	 * @param link of HTML
 	 */
 	
 	public HtmlParser(String l) {
@@ -45,7 +44,10 @@ public class HtmlParser extends Parser{
 	}
 	
 	/**
-	 * Connect to a web,html page and generate a datalist
+	 * Connect to a web,html page and generate a {@link DataParsed} list
+	 * * @return a {@link List} that contains {@link DataParsed}, 
+	 * in the first box of {@link DataParsed} there is a Datahtml per example Experimentator,
+	 * in the second box there is the value per example Jerome Euzenat
 	 */
 	
 	public List<DataParsed> dataToList() {
