@@ -14,38 +14,26 @@ import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 
-public class Parser{
-	private static final Logger LOG = Logger.getLogger(Parser.class);
-	private File file;
-	//
-	private static Pattern pattern;
-    private static Matcher matcher;
-    private static int numberOfEnvVar;
-    // Liste qu'on return <varenv,nom>
-    private List<DataParsed> listVarEnv = new ArrayList<DataParsed>();
-    
-    // regex de :${...}
-    private final static Pattern ENV_VAR_PATTERN =
-    	    Pattern.compile("\\$\\{([A-Za-z0-9_.-]+)(?::([^\\}]*))?\\}");
+public class FileParser extends Parser{
 	
-	public Parser(File file) { 
-		this.file = file; 
-	}
+	private static final Logger LOG = Logger.getLogger(FileParser.class);// Init LOG
+	private File file;// File we want to parse
 
-	public void printDataParsed(List<DataParsed> list) {
-
-		Iterator<DataParsed> it = list.iterator();
-		 int i = 0;
-		while (it.hasNext()) {
-			DataParsed s = it.next();
-			System.out.print(i+".");
-			System.out.println(s.getFirstBox()+" ; "+s.getSecondBox());
-			System.out.println("-------------------");
-			i ++;
-		}
+    private static int numberOfEnvVar;// number of {$...}
+    private List<DataParsed> listVarEnv = new ArrayList<DataParsed>();// List of  {$...}
+     private final static Pattern ENV_VAR_PATTERN =
+    	    Pattern.compile("\\$\\{([A-Za-z0-9_.-]+)(?::([^\\}]*))?\\}");// regex de : ${...}
+	
+     /**
+      * Constructor of a Html Parser, Init the link of the document we want to parse
+      * @param File we want to parse
+      */
+	public FileParser(File fileDataProperty_Parameter) { 
+		super();
+		this.file = fileDataProperty_Parameter; 
 	}
 	
-	public List<DataParsed> fileToList(){
+	public List<DataParsed> dataToList(){
 		
 		String line;// Ligne du buffer
 		String[] tmp = null;// Variable pour split
@@ -67,6 +55,7 @@ public class Parser{
 					
 				}	
 			  }
+			br.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block Erreur LectureFichier
 			e.printStackTrace();
@@ -93,7 +82,7 @@ public class Parser{
 
 	
 	/**
-	 * Transform a the file contained in the {@link Parser} 
+	 * Transform a the file contained in the {@link FileParser} 
 	 * at {@link List} that contains {@link DataParsed} 
 	 * @return a {@link List} that contains {@link DataParsed}, 
 	 * in the first box of {@link DataParsed} there is a DataProperty,
@@ -118,6 +107,7 @@ public class Parser{
 					list.add(new DataParsed( tmp[0], tmp[1] ));
 				}	
 			  }
+			br.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block Erreur LectureFichier
 			e.printStackTrace();
@@ -157,8 +147,9 @@ public class Parser{
 					i++;
 				}
 			}
+			br.close();
 		}
-		this.numberOfEnvVar = i;
+		numberOfEnvVar = i;
 		//this.printDataParsed(this.listVarEnv);
 	}
 	/*
@@ -182,7 +173,6 @@ public class Parser{
 	 * Remplace les variables d'env par leurs valeurs
 	 */
 	public void setEnvParameters(String s,String res,int i,List<DataParsed> list) {
-		String A = listVarEnv.get(i).getSecondBox();
 		if ( res.contains("{")) {
 			Matcher m = ENV_VAR_PATTERN.matcher(res);
 			if( m.find() ) {

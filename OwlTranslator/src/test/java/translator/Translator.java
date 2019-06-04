@@ -57,7 +57,9 @@ public class Translator {
 		private Map<OWLDataProperty, OWLDataRange> mapDataProperty_DataRange;
 		
 		private File fileOwl;
-		private String fileHTML;
+		private File fileHTML;
+		private String urlHTML;
+		private String Input_Type;
 		
 		private static final Logger LOG = Logger.getLogger(Translator.class);
 		
@@ -65,16 +67,21 @@ public class Translator {
 		 * Transform OWL file and HTML data to RDF dataset.
 		 * @param {{@link String} represents OWL file pointing path.
 		 * @param {{@link String} represents HTML file pointing path.
+		 * @param {{@link String} define if the input is HTML or a File
 		 */
 		
-		public Translator(String fileOwlName, String fileHTMLName) {
+		public Translator(String fileOwlName, String name,String type) {
 			
 			manager = OWLManager.createOWLOntologyManager();
 			this.fileOwl = new File(fileOwlName);
 			loadOntology(fileOwl);
 
-			//this.fileHTML = new File(fileHTMLName);
-			
+			if( type == "HTML" ) {
+				this.urlHTML = name;
+			}else if( type == "FILE" ) {
+				this.fileHTML = new File(name);
+			}
+			this.Input_Type = type; // Initialize type of input parsing
 			//Initialize the makers
 			makerData = new MakerDatatype(manager, ontology);
 			makerIndividual = new MakerIndividual(manager, ontology);
@@ -106,8 +113,15 @@ public class Translator {
 		}
 		
 		private String translate(boolean parameterCompleted, String label) throws IOException {
+			HtmlParser parserHTML = null;
+			FileParser parserFILE;
+			if( this.Input_Type == "FILE") {
+				 //parserFILE = new FileParser(label);
+			}
+			if( this.Input_Type == "HTML") {
+				 parserHTML = new HtmlParser(this.urlHTML);
+			}
 			
-			htmlParser parserHTML = new htmlParser(fileHTML);
 			Generator generator = new Generator(ontology);
 	
 			//CLASS initialization
@@ -127,7 +141,7 @@ public class Translator {
 				fileDataProperty_Parameter = generator.toFileOWLDataProperty("DataProperty_Parameter.txt", mapClass_DataProperty);
 			
 				//Parse of the File DataProperty_ParameterCompleted
-			Parser parserFileAssociation = new Parser(fileDataProperty_Parameter);
+			FileParser parserFileAssociation = new FileParser(fileDataProperty_Parameter);
 			
 			initMapDataProperty_Parameter(parserFileAssociation);
 			initMapDataProperty_Value();
@@ -149,7 +163,7 @@ public class Translator {
 				fileObjectProperty_Parameter = generator.toFileOWLObjectProperty("ObjectProperty_Parameter.txt", mapClass_ObjectProperty);
 			
 				//Parse of the File ObjectProperty_ParameterCompleted
-			Parser parserFileAssociationObject = new Parser(fileObjectProperty_Parameter);
+			FileParser parserFileAssociationObject = new FileParser(fileObjectProperty_Parameter);
 			
 			initMapObjectProperty_Parameter(parserFileAssociationObject);
 			initMapObjectProperty_Value();
@@ -188,11 +202,12 @@ public class Translator {
 				for(OWLDataProperty ppt : mapClass_DataProperty.get(cls)) {
 						String data = mapDataProperty_Value.get(ppt);
 						OWLDataRange dataRange = mapDataProperty_DataRange.get(ppt);
-						if(data!=null)
-							makerData.makeDataType(ppt, dataRange, data, individualOWL);								
+						if( data!=null ) {
+							makerData.makeDataType(ppt, dataRange, data, individualOWL);
+						}
+															
 				}
-
-
+				
 			}
 			
 			//OBJECT_PROPERTY instanced WITHOUT VALUE
@@ -207,7 +222,10 @@ public class Translator {
 						OWLClass classRange = mapObjectPropertyDomain_Range.get(ppt).get(1);
 						OWLNamedIndividual individualRange = mapClass_Individual.get(classRange);
 						
-						makerProperty.makeProperty(ppt, individualDomain, individualRange);
+				
+						
+						if(classRange!=null)
+							makerProperty.makeProperty(ppt, individualDomain, individualRange);
 					}	
 				}
 			}
@@ -278,10 +296,11 @@ public class Translator {
 		 * key and {@link String} that represent a value from {@link File} as value. 
 		 * @param parserHTML, the parser corresponding at the HTML file input.
 		 */
-		private void initMapParameter_Value(htmlParser parserHTML) {
+		private void initMapParameter_Value(Parser parser) {
 			mapParameter_Value = new HashMap<String, String>();
 			
-			List<DataParsed> listParameter_Value = parserHTML.parser();
+			List<DataParsed> listParameter_Value = parser.dataToList();
+
 			for(DataParsed data:listParameter_Value) {
 				mapParameter_Value.put(data.getFirstBox(), data.getSecondBox());
 			}
@@ -292,7 +311,7 @@ public class Translator {
 		 * key and {@link String} as value. 
 		 * @param a {@link Parser} that contains a {@link File} with {@link OWLDataProperty} and the {@link String} parameter associated.
 		 */
-		private void initMapDataProperty_Parameter(Parser parserFileAssociation) {
+		private void initMapDataProperty_Parameter(FileParser parserFileAssociation) {
 			mapDataProperty_Parameter = new HashMap<OWLDataProperty, String>();
 			List<DataParsed> listDataProperty_Parameter = parserFileAssociation.fileAssociationToList();
 			for(DataParsed data : listDataProperty_Parameter) {
@@ -318,7 +337,7 @@ public class Translator {
 		 * key and {@link String} as value. 
 		 * @param a {@link Parser} that contains a {@link File} with {@link OWLObjectProperty} and the {@link String} parameter associated.
 		 */
-		private void initMapObjectProperty_Parameter(Parser parserFileAssociationObject) {
+		private void initMapObjectProperty_Parameter(FileParser parserFileAssociationObject) {
 			mapObjectProperty_Parameter = new HashMap<OWLObjectProperty, String>();
 			List<DataParsed> listObjectProperty_Parameter = parserFileAssociationObject.fileAssociationToList();
 			for(DataParsed data : listObjectProperty_Parameter) {

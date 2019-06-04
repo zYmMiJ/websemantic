@@ -2,11 +2,17 @@ package translator;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.log4j.ConsoleAppender;
 import org.apache.log4j.FileAppender;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 public class App {
 
@@ -25,17 +31,19 @@ public class App {
   			translate.run();
   			
   		}*/
-		
-		htmlParser h = new htmlParser();
-		h.printStringList(h.getabsUrlOfExperiments());
-		for(String link: h.getabsUrlOfExperiments() ) {	
-			
-			Translator translate = new Translator("ExperimentOntology3.owl", link);
+
+  		List<String> absUrlOfExperiments = new ArrayList<String>();
+  		absUrlOfExperiments = getAllXPLink("https://gforge.inria.fr/plugins/mediawiki/wiki/lazylav/index.php/Experiments");
+  			
+		for(String link: absUrlOfExperiments ) {	
+			System.out.println(link);
+			Translator translate = new Translator("ExperimentOntology3.owl", link, "HTML");
+
   			translate.run();
 		}
 		
 		
-	}
+	} 
 	
 	private static void configLOG() {
 		
@@ -64,4 +72,25 @@ public class App {
         rootLogger.addAppender(fileAppender);// Affiche dans le fichier
 	}
 
+	
+	/*
+	 * Return tous les href (Experiments) d'une page donn�e. Pattern "-NOOR"
+	 */
+	public static List<String> getAllXPLink(String s) {
+		List<String> l  = new ArrayList<String>();
+		Document doc; // HTML document
+		try {
+			doc = Jsoup.connect(s).get();// On recup la page html
+			Elements newsHeadlines = doc.select("a");// On veut recup�rer toutes les balises A
+			for (Element headline : newsHeadlines ) {// Parcours les lignes
+				if( headline.attr("title").contains("-NOOR") ) {// On recup Les liens contenants -NOOR soit les experiments
+					l.add(headline.absUrl("href"));// On les ajoutes � une liste pour les garder en m�moires
+				}
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return l;// On retourne cette liste
+	}
 }
