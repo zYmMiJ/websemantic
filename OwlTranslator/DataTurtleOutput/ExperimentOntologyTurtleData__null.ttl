@@ -1,19 +1,12 @@
-@prefix xp: <http://www.inria.fr/moex/ExperimentOntology#> .
+@prefix : <http://www.inria.fr/moex/ExperimentOntology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-_:genid1620643420 a owl:Ontology .
-=======
-_:genid173440626 a owl:Ontology .
->>>>>>> 43afaacd0249b4e3b28f7a99717f9f9219ddd3bf
-=======
-_:genid173440626 a owl:Ontology .
->>>>>>> 43afaacd0249b4e3b28f7a99717f9f9219ddd3bf
+<http://www.inria.fr/moex/ExperimentOntology> a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -36,89 +29,106 @@ _:genid173440626 a owl:Ontology .
 # #################################################################
 # 
 # 
-# http://www.inria.fr/moex/ExperimentOntology#has_ExperimentalEquiment
+# http://www.inria.fr/moex/ExperimentOntology#analysis
 
-xp:has_ExperimentalEquiment a owl:ObjectProperty ;
+:analysis a owl:ObjectProperty ;
 	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:ExperimentalDesign ;
-	rdfs:range xp:ExperimentalEquipment .
+	rdfs:domain :DataResults ;
+	rdfs:range :Analysis .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#explain
+
+:explain a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	rdfs:domain :DataResults ;
+	rdfs:range :Analysis .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#formalizes
+
+:formalizes a owl:ObjectProperty ;
+	rdfs:domain :Hypothesis ;
+	rdfs:range :Script .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#has_analyst
 
-xp:has_analyst a owl:ObjectProperty ;
+:has_analyst a owl:ObjectProperty ;
 	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion> ;
-	rdfs:range <http://www.w3.org/2000/10/swap/pim/contact#Person> .
+	rdfs:domain :Analysis ;
+	rdfs:range foaf:Person .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#has_designer
 
-xp:has_designer a owl:ObjectProperty ;
+:has_designer a owl:ObjectProperty ;
 	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:ExperimentalDesign ;
-	rdfs:range <http://www.w3.org/2000/10/swap/pim/contact#Person> .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#has_experimentalConclusion
-
-xp:has_experimentalConclusion a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:ExperimentalResults ;
-	rdfs:range <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion> .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#has_experimentalDesign
-
-xp:has_experimentalDesign a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:ComputionalExperiment ;
-	rdfs:range xp:ExperimentalDesign .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#has_experimentalGoal
-
-xp:has_experimentalGoal a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:ComputionalExperiment ;
-	rdfs:range xp:ExperimentalGoal .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#has_experimentalHypothesis
-
-xp:has_experimentalHypothesis a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:ComputionalExperiment ;
-	rdfs:range xp:ExperimentalHypothesis .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#has_experimentalObservation
-
-xp:has_experimentalObservation a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:ExperimentalResults ;
-	rdfs:range <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation> .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#has_experimentalResults
-
-xp:has_experimentalResults a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:ComputionalExperiment ;
-	rdfs:range xp:ExperimentalResults .
+	rdfs:domain :NOORDesign ;
+	rdfs:range foaf:Person .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#has_experimenter
 
-xp:has_experimenter a owl:ObjectProperty ;
+:has_experimenter a owl:ObjectProperty ;
 	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:Procedure ;
-	rdfs:range <http://www.w3.org/2000/10/swap/pim/contact#Person> .
+	rdfs:range foaf:Person .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#has_fileResults
+
+:has_fileResults a owl:ObjectProperty ;
+	rdfs:domain :DataResults .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#has_furtherExperiment
+
+:has_furtherExperiment a owl:ObjectProperty ;
+	rdfs:domain :Analysis .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#has_performer
 
-xp:has_performer a owl:ObjectProperty ;
+:has_performer a owl:ObjectProperty ;
 	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:Procedure ;
-	rdfs:range <http://www.w3.org/2000/10/swap/pim/contact#Person> .
+	rdfs:range foaf:Person .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#has_procedure
+# http://www.inria.fr/moex/ExperimentOntology#has_plotDiagram
 
-xp:has_procedure a owl:ObjectProperty ;
+:has_plotDiagram a owl:ObjectProperty ;
+	rdfs:domain :Analysis .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#perform
+
+:perform a owl:ObjectProperty ;
 	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:ExperimentalDesign ;
-	rdfs:range xp:Procedure .
+	rdfs:domain :Experiment ;
+	rdfs:range :NOORDesign .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#reproduces
+
+:reproduces a owl:ObjectProperty ;
+	rdfs:domain :Experiment ;
+	rdfs:range :Experiment .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#results
+
+:results a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	rdfs:domain :Experiment ;
+	rdfs:range :DataResults .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#run_with
+
+:run_with a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	rdfs:domain :NOORDesign ;
+	rdfs:range :Configuration .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#specifiates
+
+:specifiates a owl:ObjectProperty ;
+	rdfs:domain :NOORDesign ;
+	rdfs:range :Script .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#test
+
+:test a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	rdfs:domain :NOORDesign ;
+	rdfs:range :Hypothesis .
 # 
 # 
 # 
@@ -129,144 +139,107 @@ xp:has_procedure a owl:ObjectProperty ;
 # #################################################################
 # 
 # 
-# http://www.inria.fr/moex/ExperimentOntology#hasClassificationExpression
+# http://www.inria.fr/moex/ExperimentOntology#hasComment
 
-xp:hasClassificationExpression a owl:DatatypeProperty ;
-	rdfs:domain xp:ClassificationByDomain ;
+:hasComment a owl:DatatypeProperty ;
+	rdfs:domain :Analysis ;
 	rdfs:range xsd:string .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#hasDesignDate
 
-xp:hasDesignDate a owl:DatatypeProperty ;
-	rdfs:domain xp:ExperimentalDesign ;
+:hasDesignDate a owl:DatatypeProperty ;
+	rdfs:domain :NOORDesign ;
 	rdfs:range xsd:dateTime .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#hasExperimentID
 
-xp:hasExperimentID a owl:DatatypeProperty ;
-	rdfs:domain xp:ComputionalExperiment ;
+:hasExperimentID a owl:DatatypeProperty ;
+	rdfs:domain :Experiment ;
 	rdfs:range xsd:string .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#hasExperimentLabel
 
-xp:hasExperimentLabel a owl:DatatypeProperty ;
-	rdfs:domain xp:ComputionalExperiment ;
+:hasExperimentLabel a owl:DatatypeProperty ;
+	rdfs:domain :Experiment ;
 	rdfs:range xsd:string .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#hasExperimentName
 
-xp:hasExperimentName a owl:DatatypeProperty ;
-	rdfs:domain xp:ComputionalExperiment ;
+:hasExperimentName a owl:DatatypeProperty ;
+	rdfs:domain :Experiment ;
 	rdfs:range xsd:string .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#hasExperimentTitle
 
-xp:hasExperimentTitle a owl:DatatypeProperty ;
-	rdfs:domain xp:ComputionalExperiment ;
+:hasExperimentTitle a owl:DatatypeProperty ;
+	rdfs:domain :Experiment ;
 	rdfs:range xsd:string .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#hasExperimentationDate
 
-xp:hasExperimentationDate a owl:DatatypeProperty ;
-	rdfs:domain xp:ExperimentalResultsEntity ;
+:hasExperimentationDate a owl:DatatypeProperty ;
+	rdfs:domain :Experiment ;
 	rdfs:range xsd:dateTime .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#hasGoalExpression
-
-xp:hasGoalExpression a owl:DatatypeProperty ;
-	rdfs:domain xp:ExperimentalGoal ;
-	rdfs:range xsd:string .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#hasHardwareComponent
 
-xp:hasHardwareComponent a owl:DatatypeProperty ;
-	rdfs:domain <http://www.hozo.jp/owl/EXPOApr19.xml/Hardware> ;
+:hasHardwareComponent a owl:DatatypeProperty ;
+	rdfs:domain :Hardware ;
 	rdfs:range xsd:string .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#hasHash
 
-xp:hasHash a owl:DatatypeProperty ;
-	rdfs:domain xp:ComputionalExperiment ;
-	rdfs:range xsd:string .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#hasHypothesisFormal
-
-xp:hasHypothesisFormal a owl:DatatypeProperty ;
-	rdfs:domain xp:ExperimentalHypothesis ;
-	rdfs:range xsd:string .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#hasHypothesisLabel
-
-xp:hasHypothesisLabel a owl:DatatypeProperty ;
-	rdfs:domain xp:ExperimentalHypothesis ;
+:hasHash a owl:DatatypeProperty ;
+	rdfs:domain :Experiment ;
 	rdfs:range xsd:string .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#hasJavaPath
 
-xp:hasJavaPath a owl:DatatypeProperty ;
-	rdfs:domain <http://www.hozo.jp/owl/EXPOApr19.xml/Software> ;
+:hasJavaPath a owl:DatatypeProperty ;
+	rdfs:domain :Software ;
+	rdfs:range xsd:string .
+# 
+# http://www.inria.fr/moex/ExperimentOntology#hasLabel
+
+:hasLabel a owl:DatatypeProperty ;
+	rdfs:domain :Hypothesis ;
 	rdfs:range xsd:string .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#hasLogbackVersion
 
-xp:hasLogbackVersion a owl:DatatypeProperty ;
-	rdfs:domain <http://www.hozo.jp/owl/EXPOApr19.xml/Software> ;
+:hasLogbackVersion a owl:DatatypeProperty ;
+	rdfs:domain :Software ;
 	rdfs:range xsd:string .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#hasNumberOfAgents
 
-xp:hasNumberOfAgents a owl:DatatypeProperty ;
-	rdfs:domain xp:Procedure ;
+:hasNumberOfAgents a owl:DatatypeProperty ;
+	rdfs:domain :NOORDesign ;
 	rdfs:range xsd:int .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#hasNumberOfIterations
 
-xp:hasNumberOfIterations a owl:DatatypeProperty ;
-	rdfs:domain xp:Procedure ;
+:hasNumberOfIterations a owl:DatatypeProperty ;
+	rdfs:domain :NOORDesign ;
 	rdfs:range xsd:int .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#hasNumberOfRuns
 
-xp:hasNumberOfRuns a owl:DatatypeProperty ;
-	rdfs:domain xp:Procedure ;
+:hasNumberOfRuns a owl:DatatypeProperty ;
+	rdfs:domain :NOORDesign ;
 	rdfs:range xsd:int .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#hasOSVersion
 
-xp:hasOSVersion a owl:DatatypeProperty ;
-	rdfs:domain <http://www.hozo.jp/owl/EXPOApr19.xml/Software> ;
+:hasOSVersion a owl:DatatypeProperty ;
+	rdfs:domain :Software ;
 	rdfs:range xsd:string .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#hasOperators
 
-xp:hasOperators a owl:DatatypeProperty ;
-	rdfs:domain xp:Procedure ;
+:hasOperators a owl:DatatypeProperty ;
+	rdfs:domain :NOORDesign ;
 	rdfs:range xsd:string .
-# 
-# http://www.w3.org/2002/07/owl#topDataProperty
-
-owl:topDataProperty rdfs:domain xp:Procedure ;
-	rdfs:range xsd:string .
-# 
-# http://xmlns.com/foaf/0.1/familyName
-
-<http://xmlns.com/foaf/0.1/familyName> a owl:DatatypeProperty ;
-	rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
-	rdfs:range rdfs:Literal ;
-	rdfs:comment "The family name of some person." ;
-	rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
-	rdfs:label "familyName" ;
-	<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
-# 
-# http://xmlns.com/foaf/0.1/firstName
-
-<http://xmlns.com/foaf/0.1/firstName> a owl:DatatypeProperty ;
-	rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
-	rdfs:range rdfs:Literal ;
-	rdfs:comment "The first name of a person." ;
-	rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
-	rdfs:label "firstName" ;
-	<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "testing" .
 # 
 # 
 # 
@@ -277,137 +250,58 @@ owl:topDataProperty rdfs:domain xp:Procedure ;
 # #################################################################
 # 
 # 
-# http://schema.org/Person
+# http://www.inria.fr/moex/ExperimentOntology#Analysis
 
-<http://schema.org/Person> a owl:Class ;
-	owl:equivalentClass <http://xmlns.com/foaf/0.1/Person> .
+:Analysis a owl:Class ;
+	rdfs:subClassOf :Entity .
 # 
-# http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData
+# http://www.inria.fr/moex/ExperimentOntology#Configuration
 
-<http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData> a owl:Class ;
-	rdfs:subClassOf <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation> .
+:Configuration a owl:Class ;
+	rdfs:subClassOf :Entity .
 # 
-# http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion
+# http://www.inria.fr/moex/ExperimentOntology#DataResults
 
-<http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion> a owl:Class ;
-	rdfs:subClassOf xp:ExperimentalResultsEntity .
-# 
-# http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation
-
-<http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation> a owl:Class ;
-	rdfs:subClassOf xp:ExperimentalResultsEntity .
-# 
-# http://www.hozo.jp/owl/EXPOApr19.xml/Hardware
-
-<http://www.hozo.jp/owl/EXPOApr19.xml/Hardware> a owl:Class ;
-	rdfs:subClassOf xp:ExperimentalEquipment .
-# 
-# http://www.hozo.jp/owl/EXPOApr19.xml/Software
-
-<http://www.hozo.jp/owl/EXPOApr19.xml/Software> a owl:Class ;
-	rdfs:subClassOf xp:ExperimentalEquipment .
-# 
-# http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate
-
-<http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate> a owl:Class ;
-	rdfs:subClassOf <http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData> .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#ClassificationByDomain
-
-xp:ClassificationByDomain a owl:Class ;
-	rdfs:subClassOf xp:ClassificationOfExperiment .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#ClassificationOfExperiment
-
-xp:ClassificationOfExperiment a owl:Class ;
-	rdfs:subClassOf xp:ExperimentEntity .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment
-
-xp:ComputionalExperiment a owl:Class ;
-	rdfs:subClassOf xp:Entity .
+:DataResults a owl:Class ;
+	rdfs:subClassOf :Entity .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#Entity
 
-xp:Entity a owl:Class .
+:Entity a owl:Class .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#ExperimentEntity
+# http://www.inria.fr/moex/ExperimentOntology#Experiment
 
-xp:ExperimentEntity a owl:Class ;
-	rdfs:subClassOf xp:Entity .
+:Experiment a owl:Class ;
+	rdfs:subClassOf :Entity .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign
+# http://www.inria.fr/moex/ExperimentOntology#Hardware
 
-xp:ExperimentalDesign a owl:Class ;
-	rdfs:subClassOf xp:ExperimentEntity .
+:Hardware a owl:Class ;
+	rdfs:subClassOf :Configuration .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesignEntity
+# http://www.inria.fr/moex/ExperimentOntology#Hypothesis
 
-xp:ExperimentalDesignEntity a owl:Class ;
-	rdfs:subClassOf xp:Entity .
+:Hypothesis a owl:Class ;
+	rdfs:subClassOf :Entity .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment
+# http://www.inria.fr/moex/ExperimentOntology#NOORDesign
 
-xp:ExperimentalEquipment a owl:Class ;
-	rdfs:subClassOf xp:ExperimentalDesignEntity .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal
-
-xp:ExperimentalGoal a owl:Class ;
-	rdfs:subClassOf xp:ExperimentEntity .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis
-
-xp:ExperimentalHypothesis a owl:Class ;
-	rdfs:subClassOf xp:ExperimentEntity .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults
-
-xp:ExperimentalResults a owl:Class ;
-	rdfs:subClassOf xp:ExperimentEntity .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity
-
-xp:ExperimentalResultsEntity a owl:Class ;
-	rdfs:subClassOf xp:Entity .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#Procedure
-
-xp:Procedure a owl:Class ;
-	rdfs:subClassOf xp:ExperimentalDesignEntity .
+:NOORDesign a owl:Class ;
+	rdfs:subClassOf :Entity .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#Script
 
-xp:Script a owl:Class ;
-	rdfs:subClassOf xp:Procedure .
+:Script a owl:Class ;
+	rdfs:subClassOf :Entity .
 # 
-# http://www.w3.org/2000/10/swap/pim/contact#Person
+# http://www.inria.fr/moex/ExperimentOntology#Software
 
-<http://www.w3.org/2000/10/swap/pim/contact#Person> a owl:Class ;
-	owl:equivalentClass <http://xmlns.com/foaf/0.1/Person> .
-# 
-# http://xmlns.com/foaf/0.1/Agent
-
-<http://xmlns.com/foaf/0.1/Agent> a owl:Class .
-# 
-# http://xmlns.com/foaf/0.1/Organization
-
-<http://xmlns.com/foaf/0.1/Organization> a owl:Class ;
-	owl:disjointWith <http://xmlns.com/foaf/0.1/Person> .
+:Software a owl:Class ;
+	rdfs:subClassOf :Configuration .
 # 
 # http://xmlns.com/foaf/0.1/Person
 
-<http://xmlns.com/foaf/0.1/Person> a owl:Class ;
-	rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> ;
-	owl:disjointWith <http://xmlns.com/foaf/0.1/Project> ;
-	rdfs:comment "A person." ;
-	rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
-	rdfs:label "Person" ;
-	<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
-# 
-# http://xmlns.com/foaf/0.1/Project
-
-<http://xmlns.com/foaf/0.1/Project> a owl:Class .
+foaf:Person a owl:Class .
 # 
 # 
 # 
@@ -418,134 +312,65 @@ xp:Script a owl:Class ;
 # #################################################################
 # 
 # 
-# http://schema.org/Person_null
+# http://www.inria.fr/moex/ExperimentOntology#Analysis_null
 
-<http://schema.org/Person_null> a owl:NamedIndividual , <http://schema.org/Person> .
+:Analysis_null a owl:NamedIndividual , :Analysis ;
+	:has_analyst foaf:Person_null ;
+	:hasComment " JEuz (2018-11-09) " .
 # 
-# http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData_null
+# http://www.inria.fr/moex/ExperimentOntology#Configuration_null
 
-<http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData_null> a owl:NamedIndividual , <http://www.hozo.jp/owl/EXPOApr19.xml/ComputationalData> .
+:Configuration_null a owl:NamedIndividual , :Configuration .
 # 
-# http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_null
+# http://www.inria.fr/moex/ExperimentOntology#DataResults_null
 
-<http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_null> a owl:NamedIndividual , <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion> ;
-	xp:has_analyst <http://www.w3.org/2000/10/swap/pim/contact#Person_null> .
-# 
-# http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation_null
-
-<http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation_null> a owl:NamedIndividual , <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation> .
-# 
-# http://www.hozo.jp/owl/EXPOApr19.xml/Hardware_null
-
-<http://www.hozo.jp/owl/EXPOApr19.xml/Hardware_null> a owl:NamedIndividual , <http://www.hozo.jp/owl/EXPOApr19.xml/Hardware> .
-# 
-# http://www.hozo.jp/owl/EXPOApr19.xml/Software_null
-
-<http://www.hozo.jp/owl/EXPOApr19.xml/Software_null> a owl:NamedIndividual , <http://www.hozo.jp/owl/EXPOApr19.xml/Software> ;
-	xp:hasJavaPath "lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:." .
-# 
-# http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate_null
-
-<http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate_null> a owl:NamedIndividual , <http://www.hozo.jp/owl/EXPOApr19.xml/ValueEstimate> .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#ClassificationByDomain_null
-
-xp:ClassificationByDomain_null a owl:NamedIndividual , xp:ClassificationByDomain .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#ClassificationOfExperiment_null
-
-xp:ClassificationOfExperiment_null a owl:NamedIndividual , xp:ClassificationOfExperiment .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#ComputionalExperiment_null
-
-xp:ComputionalExperiment_null a owl:NamedIndividual , xp:ComputionalExperiment ;
-	xp:has_experimentalDesign xp:ExperimentalDesign_null ;
-	xp:has_experimentalGoal xp:ExperimentalGoal_null ;
-	xp:has_experimentalHypothesis xp:ExperimentalHypothesis_null ;
-	xp:has_experimentalResults xp:ExperimentalResults_null .
+:DataResults_null a owl:NamedIndividual , :DataResults ;
+	:analysis :Analysis_null ;
+	:explain :Analysis_null .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#Entity_null
 
-xp:Entity_null a owl:NamedIndividual , xp:Entity .
+:Entity_null a owl:NamedIndividual , :Entity .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#ExperimentEntity_null
+# http://www.inria.fr/moex/ExperimentOntology#Experiment_null
 
-xp:ExperimentEntity_null a owl:NamedIndividual , xp:ExperimentEntity .
+:Experiment_null a owl:NamedIndividual , :Experiment ;
+	:perform :NOORDesign_null ;
+	:reproduces :Experiment_null ;
+	:results :DataResults_null ;
+	:hasExperimentName " JEuz (2018-11-09) " ;
+	:hasHash " JEuz (2018-11-09) " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesignEntity_null
+# http://www.inria.fr/moex/ExperimentOntology#Hardware_null
 
-xp:ExperimentalDesignEntity_null a owl:NamedIndividual , xp:ExperimentalDesignEntity .
+:Hardware_null a owl:NamedIndividual , :Hardware .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#ExperimentalDesign_null
+# http://www.inria.fr/moex/ExperimentOntology#Hypothesis_null
 
-xp:ExperimentalDesign_null a owl:NamedIndividual , xp:ExperimentalDesign ;
-	xp:has_ExperimentalEquiment xp:ExperimentalEquipment_null ;
-	xp:has_designer <http://www.w3.org/2000/10/swap/pim/contact#Person_null> ;
-	xp:has_procedure xp:Procedure_null .
+:Hypothesis_null a owl:NamedIndividual , :Hypothesis ;
+	:formalizes :Script_null .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#ExperimentalEquipment_null
+# http://www.inria.fr/moex/ExperimentOntology#NOORDesign_null
 
-xp:ExperimentalEquipment_null a owl:NamedIndividual , xp:ExperimentalEquipment .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#ExperimentalGoal_null
-
-xp:ExperimentalGoal_null a owl:NamedIndividual , xp:ExperimentalGoal .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#ExperimentalHypothesis_null
-
-xp:ExperimentalHypothesis_null a owl:NamedIndividual , xp:ExperimentalHypothesis .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#ExperimentalResultsEntity_null
-
-xp:ExperimentalResultsEntity_null a owl:NamedIndividual , xp:ExperimentalResultsEntity .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#ExperimentalResults_null
-
-xp:ExperimentalResults_null a owl:NamedIndividual , xp:ExperimentalResults ;
-	xp:has_experimentalConclusion <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalConclusion_null> ;
-	xp:has_experimentalObservation <http://www.hozo.jp/owl/EXPOApr19.xml/ExperimentalObservation_null> .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#Procedure_null
-
-xp:Procedure_null a owl:NamedIndividual , xp:Procedure ;
-	xp:has_experimenter <http://www.w3.org/2000/10/swap/pim/contact#Person_null> ;
-	xp:has_performer <http://www.w3.org/2000/10/swap/pim/contact#Person_null> ;
-<<<<<<< HEAD
-<<<<<<< HEAD
-	xp:hasNumberOfIterations "10000" ;
-	xp:hasNumberOfRuns "10" ;
-=======
-	xp:hasNumberOfIterations 10000 ;
-	xp:hasNumberOfRuns 10 ;
->>>>>>> 43afaacd0249b4e3b28f7a99717f9f9219ddd3bf
-=======
-	xp:hasNumberOfIterations 10000 ;
-	xp:hasNumberOfRuns 10 ;
->>>>>>> 43afaacd0249b4e3b28f7a99717f9f9219ddd3bf
-	xp:hasOperators "delete replace refine add addjoin refadd" .
+:NOORDesign_null a owl:NamedIndividual , :NOORDesign ;
+	:has_designer foaf:Person_null ;
+	:run_with :Configuration_null ;
+	:specifiates :Script_null ;
+	:test :Hypothesis_null .
 # 
 # http://www.inria.fr/moex/ExperimentOntology#Script_null
 
-xp:Script_null a owl:NamedIndividual , xp:Script .
+:Script_null a owl:NamedIndividual , :Script .
 # 
-# http://www.w3.org/2000/10/swap/pim/contact#Person_null
+# http://www.inria.fr/moex/ExperimentOntology#Software_null
 
-<http://www.w3.org/2000/10/swap/pim/contact#Person_null> a owl:NamedIndividual , <http://www.w3.org/2000/10/swap/pim/contact#Person> .
-# 
-# http://xmlns.com/foaf/0.1/Agent_null
-
-<http://xmlns.com/foaf/0.1/Agent_null> a owl:NamedIndividual , <http://xmlns.com/foaf/0.1/Agent> .
-# 
-# http://xmlns.com/foaf/0.1/Organization_null
-
-<http://xmlns.com/foaf/0.1/Organization_null> a owl:NamedIndividual , <http://xmlns.com/foaf/0.1/Organization> .
+:Software_null a owl:NamedIndividual , :Software ;
+	:hasJavaPath " JEuz (2018-11-09) " ;
+	:hasLogbackVersion " JEuz (2018-11-09) " ;
+	:hasOSVersion " JEuz (2018-11-09) " .
 # 
 # http://xmlns.com/foaf/0.1/Person_null
 
-<http://xmlns.com/foaf/0.1/Person_null> a owl:NamedIndividual , <http://xmlns.com/foaf/0.1/Person> .
-# 
-# http://xmlns.com/foaf/0.1/Project_null
-
-<http://xmlns.com/foaf/0.1/Project_null> a owl:NamedIndividual , <http://xmlns.com/foaf/0.1/Project> .
+foaf:Person_null a owl:NamedIndividual , foaf:Person .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/
