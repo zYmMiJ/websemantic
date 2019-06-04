@@ -38,7 +38,7 @@ public class Translator {
 		//Map of Parameter with its value, input : Bash
 		private Map<String, String> mapParameter_Value;
 		//Map of OWLDataProperty with the corresponding parameter, input : selected manually (File .txt)
-		private Map<OWLDataProperty, String> mapDataProperty_Parameter;
+		private Map<OWLDataProperty, String[]> mapDataProperty_Parameter;
 		//Map of OWLDataProperty with the corresponding value, join between mapDataProperty_Parameter and mapParameter_Value
 		private Map<OWLDataProperty, String> mapDataProperty_Value;
 		//Map of OWLClass with their OWLObjectProperties, input : Ontology
@@ -96,7 +96,7 @@ public class Translator {
 		public void run() {
 			
 			//The label of the instances in the parameter
-			String label = "LABEL";
+			String label = "Date";
 			
 			try {
 				label = translate(label);
@@ -114,6 +114,7 @@ public class Translator {
 		}
 		
 		private String translate(String label) throws IOException {
+			
 			HtmlParser parserHTML = null;
 			FileParser parserFILE;
 			if( this.Input_Type == "FILE") {
@@ -186,9 +187,12 @@ public class Translator {
 				for(OWLObjectProperty ppt : mapClass_ObjectProperty.get(cls)) {
 					String value = mapParameter_Value.get(mapObjectProperty_Parameter.get(ppt));
 					
+					
 					if(mapValue_Individual.get(value)!=null) {
 						makerProperty.makeProperty(ppt, individualOWL, mapValue_Individual.get(value));
 					}
+					else
+						System.out.println(ppt);
 				}
 				
 				//Building of dataProperty associated at the current Individual
@@ -214,8 +218,6 @@ public class Translator {
 						
 						OWLClass classRange = mapObjectPropertyDomain_Range.get(ppt).get(1);
 						OWLNamedIndividual individualRange = mapClass_Individual.get(classRange);
-						
-				
 						
 						if(classRange!=null)
 							makerProperty.makeProperty(ppt, individualDomain, individualRange);
@@ -324,23 +326,30 @@ public class Translator {
 		 * @param a {@link Parser} that contains a {@link File} with {@link OWLDataProperty} and the {@link String} parameter associated.
 		 */
 		private void initMapDataProperty_Parameter(FileParser parserFileAssociation) {
-			mapDataProperty_Parameter = new HashMap<OWLDataProperty, String>();
+			mapDataProperty_Parameter = new HashMap<OWLDataProperty, String[]>();
 			List<DataParsed> listDataProperty_Parameter = parserFileAssociation.fileAssociationToList();
 			for(DataParsed data : listDataProperty_Parameter) {
 				OWLDataFactory factory = manager.getOWLDataFactory();
-				mapDataProperty_Parameter.put(factory.getOWLDataProperty(data.getFirstBox()), data.getSecondBox());
+				mapDataProperty_Parameter.put(factory.getOWLDataProperty(data.getFirstBox()), data.getSecondBox().split("\\|"));
 			}
 		}
 		
 		/**
 		 * Link in {@link Map} the {@link OWLDataProperty} contained in mapDataProperty_Parameter
-		 * as key and the {@link String} value contained in mapParameter_Value.
+		 * as key and the {@link String} as value contained in mapParameter_Value.
 		 */
 		private void initMapDataProperty_Value() {
 			mapDataProperty_Value = new HashMap<OWLDataProperty, String>();
 			Set<OWLDataProperty> setDataProperty = mapDataProperty_Parameter.keySet();
 			for(OWLDataProperty elem : setDataProperty) {
-				mapDataProperty_Value.put(elem, mapParameter_Value.get(mapDataProperty_Parameter.get(elem)));
+				//Possible parameter
+				String[] param = mapDataProperty_Parameter.get(elem);
+				
+				for(int i = 0; param.length>i; i++) {
+					if(mapParameter_Value.get(param[i])!=null)
+						mapDataProperty_Value.put(elem, mapParameter_Value.get(param[i]));
+				}
+					
 			}
 		}
 		
