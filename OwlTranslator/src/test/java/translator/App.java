@@ -19,10 +19,9 @@ public class App {
 	public static void main(String[] args) throws IOException {
 		configLOG();
 		
-		String ontologyName = "ExperimentOntology29-05.owl";
+		String ontologyName = "ExperimentOntology05-06.owl";
 		String parserType = "";
 		
-		System.out.println("arg :"+args[0]);
 		if (args[0].equals("-c") || args[0].equals("--changeAssociation")) {
 			Translator t = new Translator(ontologyName, null, parserType);
 			t.associationFile();
@@ -38,7 +37,7 @@ public class App {
 				System.out.println(link);
 				Translator translate = new Translator(ontologyName, link, parserType);
 
-	  			translate.run();
+	  			translate.run(true);
 			}
 		}
 		
@@ -53,20 +52,35 @@ public class App {
 	  			String paramFileName = repertoire.getCanonicalPath()+"/"+files[i].getName()+"/params.sh";
 	  			System.out.println(	paramFileName );
 	  			Translator translate = new Translator(ontologyName, paramFileName, parserType);
-	  			translate.run();
+	  			translate.run(true);
 	  		}
 	  		
 		}
 		
+		if (args[0].equals("-m")) {
 			
-			
-		
-  		
-
-
-  		
-		
-		
+			File repertoire = new File("ExperimentsInput");
+	  		System.out.println(	"Repertoire ? "+repertoire.isDirectory());
+	  		File[] files=repertoire.listFiles();
+	  		
+	  		List<String> absUrlOfExperiments = new ArrayList<String>();
+	  		absUrlOfExperiments = getAllXPLink("https://gforge.inria.fr/plugins/mediawiki/wiki/lazylav/index.php/Experiments");
+	  		
+	  		
+	  		for (int i = 0; i < files.length ; i++) {
+	  			String paramFileName = repertoire.getCanonicalPath()+"/"+files[i].getName()+"/params.sh";
+	  				
+	  			for(String link : absUrlOfExperiments)
+	  				if(link.contains(files[i].getName())) {
+	  					System.out.println("match : "+paramFileName+" -- "+link);
+	  					MergeInputs.merge(ontologyName, paramFileName, link);
+	  				}
+	  		}
+	  		
+	  		//for
+	  		
+		}
+	
 	} 
 	
 	private static void configLOG() {

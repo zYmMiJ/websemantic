@@ -127,6 +127,7 @@ public class FileParser extends Parser{
 		BufferedReader br = new BufferedReader(new FileReader(this.file));// buffer pour lecture du fichier
 		String line;// Ligne du buffer
 		int i = 0;
+		System.out.println();
 		while ( (line = br.readLine()) != null ) { 
 			
 			// Init le matcher des var env
@@ -147,8 +148,9 @@ public class FileParser extends Parser{
 					i++;
 				}
 			}
-			br.close();
+			
 		}
+		br.close();
 		numberOfEnvVar = i;
 		//this.printDataParsed(this.listVarEnv);
 	}

@@ -17,8 +17,6 @@ public class View {
 		String str=sc.nextLine();
 		
 		if(str.contentEquals("y")) {
-			System.out.println("Press ENTER when you have completed "+nameFile+".");
-			sc.nextLine();
 			return true;
 		}
 			

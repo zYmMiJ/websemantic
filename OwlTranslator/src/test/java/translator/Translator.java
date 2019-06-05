@@ -93,7 +93,7 @@ public class Translator {
 			
 		}
 		
-		public void run() {
+		public void run(boolean save) {
 			
 			//The label of the instances in the parameter
 			String label = "Date";
@@ -106,24 +106,17 @@ public class Translator {
 			}
 			
 			//SAVE the new Ontology
-			OWLOntology ontologyOutput = ontology;
-			File outFile = new File("DataTurtleOutput/ExperimentOntologyTurtleData_"+label+".ttl");
-			
-			IRI outIRI=IRI.create(outFile);
-			saveOntology(ontologyOutput, outIRI);
+			if(save) {
+				OWLOntology ontologyOutput = ontology;
+				File outFile = new File("DataTurtleOutput/ExperimentOntologyTurtleData_"+label+".ttl");
+				
+				IRI outIRI=IRI.create(outFile);
+				saveOntology(ontologyOutput, outIRI);
+			}	
 		}
 		
 		private String translate(String label) throws IOException {
-			
-			HtmlParser parserHTML = null;
-			FileParser parserFILE;
-			if( this.Input_Type == "FILE") {
-				 //parserFILE = new FileParser(label);
-			}
-			if( this.Input_Type == "HTML") {
-				 parserHTML = new HtmlParser(this.urlHTML);
-			}
-			
+					
 			Generator generator = new Generator(ontology);
 	
 			//CLASS initialization
@@ -133,7 +126,19 @@ public class Translator {
 			
 			//DATA_PROPERTY initialization
 			mapClass_DataProperty = generator.toMapClass_DataProperty(listClass);
-			initMapParameter_Value(parserHTML);
+			
+			HtmlParser parserHTML = null;
+			FileParser parserFILE = null;
+			if( this.Input_Type == "FILE") {
+				 parserFILE = new FileParser(this.file);
+				 initMapParameter_Value(parserFILE);
+				 System.out.println("FILE");
+			}
+			if( this.Input_Type == "HTML") {
+				 parserHTML = new HtmlParser(this.urlHTML);
+				 initMapParameter_Value(parserHTML);
+				 System.out.println("HTML");
+			}
 			
 				//File of OWLDataProperty with the corresponding parameter, need to complete manually or not
 			File fileDataProperty_Parameter = new File(nameFileAssociation+"DataProperty.txt");
@@ -142,7 +147,9 @@ public class Translator {
 			FileParser parserFileAssociation = new FileParser(fileDataProperty_Parameter);
 			
 			initMapDataProperty_Parameter(parserFileAssociation);
-			initMapDataProperty_Value();
+			
+			if(mapDataProperty_Value==null)
+				initMapDataProperty_Value();
 			
 				//
 			Set<OWLDataProperty> setDataProperty = mapDataProperty_Parameter.keySet();
@@ -160,7 +167,9 @@ public class Translator {
 			FileParser parserFileAssociationObject = new FileParser(fileObjectProperty_Parameter);
 			
 			initMapObjectProperty_Parameter(parserFileAssociationObject);
-			initMapObjectProperty_Value();
+			
+			if(mapObjectProperty_Value==null)
+				initMapObjectProperty_Value();
 			
 			//OBJECT_PROPERTY initialization WITHOUT VALUE in fileAssociation
 			mapObjectPropertyDomain_Range = generator.toMapObjectPropertyDomain_Range(listClass);
@@ -191,8 +200,7 @@ public class Translator {
 					if(mapValue_Individual.get(value)!=null) {
 						makerProperty.makeProperty(ppt, individualOWL, mapValue_Individual.get(value));
 					}
-					else
-						System.out.println(ppt);
+					
 				}
 				
 				//Building of dataProperty associated at the current Individual
@@ -201,10 +209,8 @@ public class Translator {
 						OWLDataRange dataRange = mapDataProperty_DataRange.get(ppt);
 						if( data!=null ) {
 							makerData.makeDataType(ppt, dataRange, data, individualOWL);
-						}
-															
+						}									
 				}
-				
 			}
 			
 			//OBJECT_PROPERTY instanced WITHOUT VALUE
@@ -245,6 +251,22 @@ public class Translator {
 			if(View.fileAssociation(nameFileAssociation+ppt[1])) 
 				fileDataProperty_Parameter = generator.toFileOWLObjectProperty(nameFileAssociation+ppt[1], mapClass_ObjectProperty);
 					
+		}
+		
+		public Map<OWLDataProperty, String> getMapDataProperty_Value() {
+			return mapDataProperty_Value;
+		}
+		
+		public void setMapDataProperty_Value(Map<OWLDataProperty, String> mapDataProperty_Value) {
+			this.mapDataProperty_Value = mapDataProperty_Value;
+		}
+		
+		public Map<OWLObjectProperty, String> getMapObjectProperty_Value() {
+			return mapObjectProperty_Value;
+		}
+		
+		public void setMapObjectProperty_Value(Map<OWLObjectProperty, String> mapObjectProperty_Value) {
+			this.mapObjectProperty_Value = mapObjectProperty_Value;
 		}
 		
 		private void managePerson() {
@@ -348,8 +370,7 @@ public class Translator {
 				for(int i = 0; param.length>i; i++) {
 					if(mapParameter_Value.get(param[i])!=null)
 						mapDataProperty_Value.put(elem, mapParameter_Value.get(param[i]));
-				}
-					
+				}	
 			}
 		}
 		
@@ -409,6 +430,6 @@ public class Translator {
 				e.printStackTrace();
 			}
 		}
-
+		
 }
 
