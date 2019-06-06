@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid1661048214 a owl:Ontology .
+_:genid2012011563 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -310,60 +310,68 @@ foaf:Person a owl:Class .
 # #################################################################
 # 
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Analysis_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Analysis_20180915
 
-xp:Analysis_2014-02-04 a owl:NamedIndividual , xp:Analysis ;
-	xp:analyst foaf:Person_2014-02-04 ;
-	xp:comment "  Initial F-measure is .12 (likely corresponding to the 6 correct top-top correspondences), final is .15 (likely corresponding to the increase in precision once discarded all bad correspondences). " .
+xp:Analysis_20180915 a owl:NamedIndividual , xp:Analysis ;
+	xp:analyst foaf:Person_20180915 ;
+	xp:comment "      The hypothesis does not hold besides a larger size for the realistic+generative option, the other measures are very similar   " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Configuration_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Configuration_20180915
 
-xp:Configuration_2014-02-04 a owl:NamedIndividual , xp:Configuration .
+xp:Configuration_20180915 a owl:NamedIndividual , xp:Configuration .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#DataResults_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#DataResults_20180915
 
-xp:DataResults_2014-02-04 a owl:NamedIndividual , xp:DataResults ;
-	xp:analysis xp:Analysis_2014-02-04 ;
-	xp:explains xp:Analysis_2014-02-04 .
+xp:DataResults_20180915 a owl:NamedIndividual , xp:DataResults ;
+	xp:analysis xp:Analysis_20180915 ;
+	xp:explains xp:Analysis_20180915 .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Experiment_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Experiment_20180915
 
-xp:Experiment_2014-02-04 a owl:NamedIndividual , xp:Experiment ;
-	xp:performs xp:NOORDesign_2014-02-04 ;
-	xp:reproduces xp:Experiment_2014-02-04 ;
-	xp:results xp:DataResults_2014-02-04 ;
-	xp:experimentationDate "2014-02-04" .
+xp:Experiment_20180915 a owl:NamedIndividual , xp:Experiment ;
+	xp:performs xp:NOORDesign_20180915 ;
+	xp:reproduces xp:Experiment_20180915 ;
+	xp:results xp:DataResults_20180915 ;
+	xp:experimentLabel "20180915-NOOR" ;
+	xp:experimentName "20180915-NOOR" ;
+	xp:experimentationDate "20180915" .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Hardware_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Hardware_20180915
 
-xp:Hardware_2014-02-04 a owl:NamedIndividual , xp:Hardware ;
-	xp:hardwareComponent " MacBook Pro 15, C2D 2.66GHz, 8GB - MacOS X 6.8 - Java 1.6.0 HotSpot " .
+xp:Hardware_20180915 a owl:NamedIndividual , xp:Hardware ;
+	xp:hardwareComponent " 24 * Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz with 20GB RAM / Linux ProxMox 2 / Linux 4.15.17-1-pve / Java Java(TM) SE Runtime Environment 1.8.0_151 with 4.33G max heap size " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Hypothesis_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Hypothesis_20180915
 
-xp:Hypothesis_2014-02-04 a owl:NamedIndividual , xp:Hypothesis ;
-	xp:formalizes xp:Script_2014-02-04 ;
-	xp:label "  This the same experiment as the First Revision of networks of ontologies 3 agents performing revision of a network of ontology. " .
+xp:Hypothesis_20180915 a owl:NamedIndividual , xp:Hypothesis ;
+	xp:formalizes xp:Script_20180915 ;
+	xp:label "Starting with realistic alignment size should get closer results to starting empty than non realistic size (expansion dominance)" .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#NOORDesign_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#NOORDesign_20180915
 
-xp:NOORDesign_2014-02-04 a owl:NamedIndividual , xp:NOORDesign ;
-	xp:designer foaf:Person_2014-02-04 ;
-	xp:runs_with xp:Configuration_2014-02-04 ;
-	xp:specifiates xp:Script_2014-02-04 ;
-	xp:tests xp:Hypothesis_2014-02-04 .
+xp:NOORDesign_20180915 a owl:NamedIndividual , xp:NOORDesign ;
+	xp:designer foaf:Person_20180915 ;
+	xp:runs_with xp:Configuration_20180915 ;
+	xp:specifiates xp:Script_20180915 ;
+	xp:tests xp:Hypothesis_20180915 ;
+	xp:designDate "2018-08-31" ;
+	xp:numberOfAgents 4 ;
+	xp:numberOfIterations 10000 ;
+	xp:numberOfRuns 10 ;
+	xp:operators "delete replace refine add addjoin refadd" .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Script_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Script_20180915
 
-xp:Script_2014-02-04 a owl:NamedIndividual , xp:Script .
+xp:Script_20180915 a owl:NamedIndividual , xp:Script .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Software_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Software_20180915
 
-xp:Software_2014-02-04 a owl:NamedIndividual , xp:Software ;
-	xp:OSVersion " MacBook Pro 15, C2D 2.66GHz, 8GB - MacOS X 6.8 - Java 1.6.0 HotSpot " .
+xp:Software_20180915 a owl:NamedIndividual , xp:Software ;
+	xp:OSVersion "stretch" ;
+	xp:logbackVersion " File:20180915-NOOR.zip " .
 # 
-# http://xmlns.com/foaf/0.1/Person_2014-02-04
+# http://xmlns.com/foaf/0.1/Person_20180915
 
-foaf:Person_2014-02-04 a owl:NamedIndividual , foaf:Person .
+foaf:Person_20180915 a owl:NamedIndividual , foaf:Person .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

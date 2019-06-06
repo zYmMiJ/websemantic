@@ -227,8 +227,6 @@ public class Generator {
 		Map<OWLDataProperty, OWLDataRange> MapDataProperty_DataRange = new HashMap<OWLDataProperty, OWLDataRange>();
 		
 		for(OWLDataProperty ppt : listDataProperty) {
-			System.out.print(ppt+" : ");
-			
 			
 			//Step1 : declare a OWLAxiom stream
 			Stream<OWLAxiom> streamStep1 = ontology.axioms();

@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid1661048214 a owl:Ontology .
+_:genid191402795 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -310,60 +310,68 @@ foaf:Person a owl:Class .
 # #################################################################
 # 
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Analysis_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Analysis_`date -Idate|sed s:-::g`
 
-xp:Analysis_2014-02-04 a owl:NamedIndividual , xp:Analysis ;
-	xp:analyst foaf:Person_2014-02-04 ;
-	xp:comment "  Initial F-measure is .12 (likely corresponding to the 6 correct top-top correspondences), final is .15 (likely corresponding to the increase in precision once discarded all bad correspondences). " .
+<http://www.inria.fr/moex/ExperimentOntology#Analysis_`date -Idate|sed s:-::g`> a owl:NamedIndividual , xp:Analysis ;
+	xp:analyst <http://xmlns.com/foaf/0.1/Person_`date -Idate|sed s:-::g`> ;
+	xp:comment "      All hypotheses hold, but    The difference between clever and clever-nr may be attributed to the randomness of added correspondences    As observed in 20170216-NOOR, recall is not preserved but overall F-measure is always improved.   " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Configuration_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Configuration_`date -Idate|sed s:-::g`
 
-xp:Configuration_2014-02-04 a owl:NamedIndividual , xp:Configuration .
+<http://www.inria.fr/moex/ExperimentOntology#Configuration_`date -Idate|sed s:-::g`> a owl:NamedIndividual , xp:Configuration .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#DataResults_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#DataResults_`date -Idate|sed s:-::g`
 
-xp:DataResults_2014-02-04 a owl:NamedIndividual , xp:DataResults ;
-	xp:analysis xp:Analysis_2014-02-04 ;
-	xp:explains xp:Analysis_2014-02-04 .
+<http://www.inria.fr/moex/ExperimentOntology#DataResults_`date -Idate|sed s:-::g`> a owl:NamedIndividual , xp:DataResults ;
+	xp:analysis <http://www.inria.fr/moex/ExperimentOntology#Analysis_`date -Idate|sed s:-::g`> ;
+	xp:explains <http://www.inria.fr/moex/ExperimentOntology#Analysis_`date -Idate|sed s:-::g`> .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Experiment_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Experiment_`date -Idate|sed s:-::g`
 
-xp:Experiment_2014-02-04 a owl:NamedIndividual , xp:Experiment ;
-	xp:performs xp:NOORDesign_2014-02-04 ;
-	xp:reproduces xp:Experiment_2014-02-04 ;
-	xp:results xp:DataResults_2014-02-04 ;
-	xp:experimentationDate "2014-02-04" .
+<http://www.inria.fr/moex/ExperimentOntology#Experiment_`date -Idate|sed s:-::g`> a owl:NamedIndividual , xp:Experiment ;
+	xp:performs <http://www.inria.fr/moex/ExperimentOntology#NOORDesign_`date -Idate|sed s:-::g`> ;
+	xp:reproduces <http://www.inria.fr/moex/ExperimentOntology#Experiment_`date -Idate|sed s:-::g`> ;
+	xp:results <http://www.inria.fr/moex/ExperimentOntology#DataResults_`date -Idate|sed s:-::g`> ;
+	xp:experimentLabel "20180529-NOOR" ;
+	xp:experimentName "20180529-NOOR" ;
+	xp:experimentationDate "`date -Idate|sed s:-::g`" .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Hardware_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Hardware_`date -Idate|sed s:-::g`
 
-xp:Hardware_2014-02-04 a owl:NamedIndividual , xp:Hardware ;
-	xp:hardwareComponent " MacBook Pro 15, C2D 2.66GHz, 8GB - MacOS X 6.8 - Java 1.6.0 HotSpot " .
+<http://www.inria.fr/moex/ExperimentOntology#Hardware_`date -Idate|sed s:-::g`> a owl:NamedIndividual , xp:Hardware ;
+	xp:hardwareComponent " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0 HotSpot " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Hypothesis_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Hypothesis_`date -Idate|sed s:-::g`
 
-xp:Hypothesis_2014-02-04 a owl:NamedIndividual , xp:Hypothesis ;
-	xp:formalizes xp:Script_2014-02-04 ;
-	xp:label "  This the same experiment as the First Revision of networks of ontologies 3 agents performing revision of a network of ontology. " .
+<http://www.inria.fr/moex/ExperimentOntology#Hypothesis_`date -Idate|sed s:-::g`> a owl:NamedIndividual , xp:Hypothesis ;
+	xp:formalizes <http://www.inria.fr/moex/ExperimentOntology#Script_`date -Idate|sed s:-::g`> ;
+	xp:label "expanding alignments when deleting correspondence will improve recall in the long run." .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#NOORDesign_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#NOORDesign_`date -Idate|sed s:-::g`
 
-xp:NOORDesign_2014-02-04 a owl:NamedIndividual , xp:NOORDesign ;
-	xp:designer foaf:Person_2014-02-04 ;
-	xp:runs_with xp:Configuration_2014-02-04 ;
-	xp:specifiates xp:Script_2014-02-04 ;
-	xp:tests xp:Hypothesis_2014-02-04 .
+<http://www.inria.fr/moex/ExperimentOntology#NOORDesign_`date -Idate|sed s:-::g`> a owl:NamedIndividual , xp:NOORDesign ;
+	xp:designer <http://xmlns.com/foaf/0.1/Person_`date -Idate|sed s:-::g`> ;
+	xp:runs_with <http://www.inria.fr/moex/ExperimentOntology#Configuration_`date -Idate|sed s:-::g`> ;
+	xp:specifiates <http://www.inria.fr/moex/ExperimentOntology#Script_`date -Idate|sed s:-::g`> ;
+	xp:tests <http://www.inria.fr/moex/ExperimentOntology#Hypothesis_`date -Idate|sed s:-::g`> ;
+	xp:numberOfAgents 4 ;
+	xp:numberOfIterations 10000 ;
+	xp:numberOfRuns 10 ;
+	xp:operators "delete replace refine add addjoin refadd" .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Script_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Script_`date -Idate|sed s:-::g`
 
-xp:Script_2014-02-04 a owl:NamedIndividual , xp:Script .
+<http://www.inria.fr/moex/ExperimentOntology#Script_`date -Idate|sed s:-::g`> a owl:NamedIndividual , xp:Script .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Software_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Software_`date -Idate|sed s:-::g`
 
-xp:Software_2014-02-04 a owl:NamedIndividual , xp:Software ;
-	xp:OSVersion " MacBook Pro 15, C2D 2.66GHz, 8GB - MacOS X 6.8 - Java 1.6.0 HotSpot " .
+<http://www.inria.fr/moex/ExperimentOntology#Software_`date -Idate|sed s:-::g`> a owl:NamedIndividual , xp:Software ;
+	xp:OSVersion "stretch" ;
+	xp:javaPath "lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:." ;
+	xp:logbackVersion " File:20180529-NOOR.zip " .
 # 
-# http://xmlns.com/foaf/0.1/Person_2014-02-04
+# http://xmlns.com/foaf/0.1/Person_`date -Idate|sed s:-::g`
 
-foaf:Person_2014-02-04 a owl:NamedIndividual , foaf:Person .
+<http://xmlns.com/foaf/0.1/Person_`date -Idate|sed s:-::g`> a owl:NamedIndividual , foaf:Person .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

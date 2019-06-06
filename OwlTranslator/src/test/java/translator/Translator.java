@@ -131,13 +131,11 @@ public class Translator {
 			FileParser parserFILE = null;
 			if( this.Input_Type == "FILE") {
 				 parserFILE = new FileParser(this.file);
-				 initMapParameter_Value(parserFILE);
-				 System.out.println("FILE");
+				 initMapParameter_Value(parserFILE); 
 			}
 			if( this.Input_Type == "HTML") {
 				 parserHTML = new HtmlParser(this.urlHTML);
-				 initMapParameter_Value(parserHTML);
-				 System.out.println("HTML");
+				 initMapParameter_Value(parserHTML); 
 			}
 			
 				//File of OWLDataProperty with the corresponding parameter, need to complete manually or not
@@ -181,7 +179,8 @@ public class Translator {
 			managePerson();
 			
 				//Give a label at the NamedIndiviual
-			label = "_"+mapParameter_Value.get(label);
+			OWLDataFactory factory = manager.getOWLDataFactory();
+			label = "_"+mapDataProperty_Value.get(factory.getOWLDataProperty("http://www.inria.fr/moex/ExperimentOntology#experimentationDate"));
 			
 				//For each Class : Instanced ontology
 			for(OWLClass cls : listClass) {
@@ -194,7 +193,7 @@ public class Translator {
 				
 				//Building of ObjectProperty associated at the current Individual
 				for(OWLObjectProperty ppt : mapClass_ObjectProperty.get(cls)) {
-					String value = mapParameter_Value.get(mapObjectProperty_Parameter.get(ppt));
+					String value = mapObjectProperty_Value.get(ppt);
 					
 					
 					if(mapValue_Individual.get(value)!=null) {
@@ -216,7 +215,7 @@ public class Translator {
 			//OBJECT_PROPERTY instanced WITHOUT VALUE
 			for(OWLClass cls : listClass) {
 				for(OWLObjectProperty ppt : mapClass_ObjectProperty.get(cls)) {
-					String value = mapParameter_Value.get(mapObjectProperty_Parameter.get(ppt));
+					String value = mapObjectProperty_Value.get(ppt);
 					//If the value is null itn't a particular case
 					if(value==null) {
 						OWLClass classDomain = mapObjectPropertyDomain_Range.get(ppt).get(0);
@@ -267,6 +266,10 @@ public class Translator {
 		
 		public void setMapObjectProperty_Value(Map<OWLObjectProperty, String> mapObjectProperty_Value) {
 			this.mapObjectProperty_Value = mapObjectProperty_Value;
+		}
+		
+		public Map<OWLDataProperty, String[]> getMapDataProperty_Parameter(){
+			return mapDataProperty_Parameter;
 		}
 		
 		private void managePerson() {

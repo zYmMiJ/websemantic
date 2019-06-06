@@ -1,4 +1,4 @@
-@prefix xp: <http://www.inria.fr/moex/ExperimentOntology#> .
+@prefix xp: <#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid5313207 a owl:Ontology .
+_:genid1933301491 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -299,64 +299,63 @@ foaf:Person a owl:Class .
 # #################################################################
 # 
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Analysis_2018-05-29
+# http://www.inria.fr/moex/ExperimentOntology#Analysis_2014-02-04
 
-xp:Analysis_2018-05-29 a owl:NamedIndividual , xp:Analysis ;
-	xp:has_analyst foaf:Person_2018-05-29 .
+xp:Analysis_2014-02-04 a owl:NamedIndividual , xp:Analysis ;
+	xp:has_analyst foaf:Person_2014-02-04 .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Configuration_2018-05-29
+# http://www.inria.fr/moex/ExperimentOntology#Configuration_2014-02-04
 
-xp:Configuration_2018-05-29 a owl:NamedIndividual , xp:Configuration .
+xp:Configuration_2014-02-04 a owl:NamedIndividual , xp:Configuration .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#DataResults_2018-05-29
+# http://www.inria.fr/moex/ExperimentOntology#DataResults_2014-02-04
 
-xp:DataResults_2018-05-29 a owl:NamedIndividual , xp:DataResults ;
-	xp:analysis xp:Analysis_2018-05-29 ;
-	xp:explain xp:Analysis_2018-05-29 .
+xp:DataResults_2014-02-04 a owl:NamedIndividual , xp:DataResults ;
+	xp:analysis xp:Analysis_2014-02-04 ;
+	xp:explain xp:Analysis_2014-02-04 .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Entity_2018-05-29
+# http://www.inria.fr/moex/ExperimentOntology#Entity_2014-02-04
 
-xp:Entity_2018-05-29 a owl:NamedIndividual , xp:Entity .
+xp:Entity_2014-02-04 a owl:NamedIndividual , xp:Entity .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Experiment_2018-05-29
+# http://www.inria.fr/moex/ExperimentOntology#Experiment_2014-02-04
 
-xp:Experiment_2018-05-29 a owl:NamedIndividual , xp:Experiment ;
-	xp:perform xp:NOORDesign_2018-05-29 ;
-	xp:reproduces xp:Experiment_2018-05-29 ;
-	xp:results xp:DataResults_2018-05-29 ;
-	xp:hasExperimentationDate "2018-05-29" ;
-	xp:hasHash " d50e70f87bca76951ec2f149dc8ae1d42b9a1a28 " .
+xp:Experiment_2014-02-04 a owl:NamedIndividual , xp:Experiment ;
+	xp:perform xp:NOORDesign_2014-02-04 ;
+	xp:reproduces xp:Experiment_2014-02-04 ;
+	xp:results xp:DataResults_2014-02-04 ;
+	xp:hasExperimentationDate "2014-02-04" ;
+	xp:hasHash " 769936317dba7a3a3d7294155ef333e12f5d905a " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Hardware_2018-05-29
+# http://www.inria.fr/moex/ExperimentOntology#Hardware_2014-02-04
 
-xp:Hardware_2018-05-29 a owl:NamedIndividual , xp:Hardware .
+xp:Hardware_2014-02-04 a owl:NamedIndividual , xp:Hardware .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Hypothesis_2018-05-29
+# http://www.inria.fr/moex/ExperimentOntology#Hypothesis_2014-02-04
 
-xp:Hypothesis_2018-05-29 a owl:NamedIndividual , xp:Hypothesis ;
-	xp:formalizes xp:Script_2018-05-29 ;
-	xp:hasLabel "      expanding alignments when deleting correspondence will improve recall in the long run.    random/protected may not converge; clever will.    faster convergence can be obtained from random to clever-nr-comp.    the order between various operators is preserved.    precision is increased; recall preserved   " .
+xp:Hypothesis_2014-02-04 a owl:NamedIndividual , xp:Hypothesis ;
+	xp:formalizes xp:Script_2014-02-04 ;
+	xp:hasLabel "  This the same experiment as the First Revision of networks of ontologies 3 agents performing revision of a network of ontology. " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#NOORDesign_2018-05-29
+# http://www.inria.fr/moex/ExperimentOntology#NOORDesign_2014-02-04
 
-xp:NOORDesign_2018-05-29 a owl:NamedIndividual , xp:NOORDesign ;
-	xp:has_designer foaf:Person_2018-05-29 ;
-	xp:run_with xp:Configuration_2018-05-29 ;
-	xp:specifiates xp:Script_2018-05-29 ;
-	xp:test xp:Hypothesis_2018-05-29 .
+xp:NOORDesign_2014-02-04 a owl:NamedIndividual , xp:NOORDesign ;
+	xp:has_designer foaf:Person_2014-02-04 ;
+	xp:run_with xp:Configuration_2014-02-04 ;
+	xp:specifiates xp:Script_2014-02-04 ;
+	xp:test xp:Hypothesis_2014-02-04 .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Script_2018-05-29
+# http://www.inria.fr/moex/ExperimentOntology#Script_2014-02-04
 
-xp:Script_2018-05-29 a owl:NamedIndividual , xp:Script .
+xp:Script_2014-02-04 a owl:NamedIndividual , xp:Script .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Software_2018-05-29
+# http://www.inria.fr/moex/ExperimentOntology#Software_2014-02-04
 
-xp:Software_2018-05-29 a owl:NamedIndividual , xp:Software ;
-	xp:hasLogbackVersion " File:20180529-NOOR.zip " ;
-	xp:hasOSVersion " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0 HotSpot " .
+xp:Software_2014-02-04 a owl:NamedIndividual , xp:Software ;
+	xp:hasOSVersion " MacBook Pro 15, C2D 2.66GHz, 8GB - MacOS X 6.8 - Java 1.6.0 HotSpot " .
 # 
-# http://xmlns.com/foaf/0.1/Person_2018-05-29
+# http://xmlns.com/foaf/0.1/Person_2014-02-04
 
-foaf:Person_2018-05-29 a owl:NamedIndividual , foaf:Person .
+foaf:Person_2014-02-04 a owl:NamedIndividual , foaf:Person .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

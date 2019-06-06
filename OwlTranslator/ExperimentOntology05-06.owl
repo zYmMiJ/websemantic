@@ -1,4 +1,3 @@
-@prefix : <http://www.inria.fr/moex/ExperimentOntology#> .
 @prefix xp: <http://www.inria.fr/moex/ExperimentOntology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,16 +6,6 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://www.inria.fr/moex/ExperimentOntology> .
-
-<http://www.inria.fr/moex/ExperimentOntology> rdf:type owl:Ontology .
-
-#################################################################
-#    Annotation properties
-#################################################################
-
-###  http://www.w3.org/2003/06/sw-vocab-status/ns#term_status
-<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> rdf:type owl:AnnotationProperty .
-
 
 #################################################################
 #    Object Properties

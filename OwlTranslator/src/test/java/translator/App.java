@@ -66,21 +66,29 @@ public class App {
 	  		List<String> absUrlOfExperiments = new ArrayList<String>();
 	  		absUrlOfExperiments = getAllXPLink("https://gforge.inria.fr/plugins/mediawiki/wiki/lazylav/index.php/Experiments");
 	  		
-	  		
-	  		for (int i = 0; i < files.length ; i++) {
-	  			String paramFileName = repertoire.getCanonicalPath()+"/"+files[i].getName()+"/params.sh";
+	  		List<String> linkMatched = new ArrayList<String>();
 	  				
-	  			for(String link : absUrlOfExperiments)
-	  				if(link.contains(files[i].getName())) {
-	  					System.out.println("match : "+paramFileName+" -- "+link);
-	  					MergeInputs.merge(ontologyName, paramFileName, link);
-	  				}
+	  		for(String link : absUrlOfExperiments) {
+	  				
+	  			for (int i = 0; i < files.length ; i++) {
+	  		  		String paramFileName = repertoire.getCanonicalPath()+"/"+files[i].getName()+"/params.sh";
+	  				
+	  		  		if(link.contains(files[i].getName())) {
+	  		  			System.out.println(" match : "+paramFileName+" -- "+link);
+	  		  			linkMatched.add(link);
+	  		  			MergeInputs.merge(ontologyName, paramFileName, link);
+	  		  		}		
+	  			}		
 	  		}
 	  		
-	  		//for
+	  		absUrlOfExperiments.removeAll(linkMatched);
 	  		
+	  		for(String link : absUrlOfExperiments) {
+	  			Translator translate = new Translator(ontologyName, link, "HTML");
+	  			System.out.println(" no match : "+link);
+	  			translate.run(true);
+	  		}	  		
 		}
-	
 	} 
 	
 	private static void configLOG() {

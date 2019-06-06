@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid1661048214 a owl:Ontology .
+_:genid962507619 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -310,60 +310,68 @@ foaf:Person a owl:Class .
 # #################################################################
 # 
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Analysis_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Analysis_20180723
 
-xp:Analysis_2014-02-04 a owl:NamedIndividual , xp:Analysis ;
-	xp:analyst foaf:Person_2014-02-04 ;
-	xp:comment "  Initial F-measure is .12 (likely corresponding to the 6 correct top-top correspondences), final is .15 (likely corresponding to the increase in precision once discarded all bad correspondences). " .
+xp:Analysis_20180723 a owl:NamedIndividual , xp:Analysis ;
+	xp:analyst foaf:Person_20180723 ;
+	xp:comment "      As expected all operators reach 100% precision    It has a slightly lower (semantic) recall than -clever-nr but achieves a better F-measure than both -clever-nr and -im80    The modality converges more slowly    Globally we observe the same as 20170529-NOOR and 20170215b-NOOR (with lower performance for refine)   " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Configuration_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Configuration_20180723
 
-xp:Configuration_2014-02-04 a owl:NamedIndividual , xp:Configuration .
+xp:Configuration_20180723 a owl:NamedIndividual , xp:Configuration .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#DataResults_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#DataResults_20180723
 
-xp:DataResults_2014-02-04 a owl:NamedIndividual , xp:DataResults ;
-	xp:analysis xp:Analysis_2014-02-04 ;
-	xp:explains xp:Analysis_2014-02-04 .
+xp:DataResults_20180723 a owl:NamedIndividual , xp:DataResults ;
+	xp:analysis xp:Analysis_20180723 ;
+	xp:explains xp:Analysis_20180723 .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Experiment_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Experiment_20180723
 
-xp:Experiment_2014-02-04 a owl:NamedIndividual , xp:Experiment ;
-	xp:performs xp:NOORDesign_2014-02-04 ;
-	xp:reproduces xp:Experiment_2014-02-04 ;
-	xp:results xp:DataResults_2014-02-04 ;
-	xp:experimentationDate "2014-02-04" .
+xp:Experiment_20180723 a owl:NamedIndividual , xp:Experiment ;
+	xp:performs xp:NOORDesign_20180723 ;
+	xp:reproduces xp:Experiment_20180723 ;
+	xp:results xp:DataResults_20180723 ;
+	xp:experimentLabel "20180530-NOOR" ;
+	xp:experimentName "20180530-NOOR" ;
+	xp:experimentationDate "20180723" .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Hardware_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Hardware_20180723
 
-xp:Hardware_2014-02-04 a owl:NamedIndividual , xp:Hardware ;
-	xp:hardwareComponent " MacBook Pro 15, C2D 2.66GHz, 8GB - MacOS X 6.8 - Java 1.6.0 HotSpot " .
+xp:Hardware_20180723 a owl:NamedIndividual , xp:Hardware ;
+	xp:hardwareComponent " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0 HotSpot " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Hypothesis_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Hypothesis_20180723
 
-xp:Hypothesis_2014-02-04 a owl:NamedIndividual , xp:Hypothesis ;
-	xp:formalizes xp:Script_2014-02-04 ;
-	xp:label "  This the same experiment as the First Revision of networks of ontologies 3 agents performing revision of a network of ontology. " .
+xp:Hypothesis_20180723 a owl:NamedIndividual , xp:Hypothesis ;
+	xp:formalizes xp:Script_20180723 ;
+	xp:label "Relaxation improves on expansion by reaching 100% precision" .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#NOORDesign_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#NOORDesign_20180723
 
-xp:NOORDesign_2014-02-04 a owl:NamedIndividual , xp:NOORDesign ;
-	xp:designer foaf:Person_2014-02-04 ;
-	xp:runs_with xp:Configuration_2014-02-04 ;
-	xp:specifiates xp:Script_2014-02-04 ;
-	xp:tests xp:Hypothesis_2014-02-04 .
+xp:NOORDesign_20180723 a owl:NamedIndividual , xp:NOORDesign ;
+	xp:designer foaf:Person_20180723 ;
+	xp:runs_with xp:Configuration_20180723 ;
+	xp:specifiates xp:Script_20180723 ;
+	xp:tests xp:Hypothesis_20180723 ;
+	xp:numberOfAgents 4 ;
+	xp:numberOfIterations 10000 ;
+	xp:numberOfRuns 10 ;
+	xp:operators "delete replace refine add addjoin refadd" .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Script_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Script_20180723
 
-xp:Script_2014-02-04 a owl:NamedIndividual , xp:Script .
+xp:Script_20180723 a owl:NamedIndividual , xp:Script .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Software_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Software_20180723
 
-xp:Software_2014-02-04 a owl:NamedIndividual , xp:Software ;
-	xp:OSVersion " MacBook Pro 15, C2D 2.66GHz, 8GB - MacOS X 6.8 - Java 1.6.0 HotSpot " .
+xp:Software_20180723 a owl:NamedIndividual , xp:Software ;
+	xp:OSVersion "stretch" ;
+	xp:javaPath "lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:." ;
+	xp:logbackVersion " File:20180530-NOOR.zip " .
 # 
-# http://xmlns.com/foaf/0.1/Person_2014-02-04
+# http://xmlns.com/foaf/0.1/Person_20180723
 
-foaf:Person_2014-02-04 a owl:NamedIndividual , foaf:Person .
+foaf:Person_20180723 a owl:NamedIndividual , foaf:Person .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

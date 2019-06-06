@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid1661048214 a owl:Ontology .
+_:genid812415990 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -310,60 +310,69 @@ foaf:Person a owl:Class .
 # #################################################################
 # 
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Analysis_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Analysis_20180828
 
-xp:Analysis_2014-02-04 a owl:NamedIndividual , xp:Analysis ;
-	xp:analyst foaf:Person_2014-02-04 ;
-	xp:comment "  Initial F-measure is .12 (likely corresponding to the 6 correct top-top correspondences), final is .15 (likely corresponding to the increase in precision once discarded all bad correspondences). " .
+xp:Analysis_20180828 a owl:NamedIndividual , xp:Analysis ;
+	xp:analyst foaf:Person_20180828 ;
+	xp:comment "       On delete, replace and refine, strengthening has a negative influence when 'generation' is not used.    This is natural since a correct correspondence is replaced by an eventually incorrect one but when this one is found incorrect, there is no way to recover the previous one (this require 'add').      When used with generation, these three operators enjoy an improved recall.    On the other side of the spectrum, the refadd operator always improves recall, the is not the case for add and addjoin which only improve their recall when relaxation is available. This remains to be explained as relaxation is supposed to improve precision (which it does). It seems that       As already observed, there is little difference between starting empty and random networks. The results with random networks contain less correspondences, likely due to the non realistic size of initial networks.    refadd with expansion + generation + relaxation + strenghen=specific achieves remarkable results with .99 and .97 F-measure.    Some tests have a late convergence rank, hence it is likely that convergence has not been achieved.   " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Configuration_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Configuration_20180828
 
-xp:Configuration_2014-02-04 a owl:NamedIndividual , xp:Configuration .
+xp:Configuration_20180828 a owl:NamedIndividual , xp:Configuration .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#DataResults_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#DataResults_20180828
 
-xp:DataResults_2014-02-04 a owl:NamedIndividual , xp:DataResults ;
-	xp:analysis xp:Analysis_2014-02-04 ;
-	xp:explains xp:Analysis_2014-02-04 .
+xp:DataResults_20180828 a owl:NamedIndividual , xp:DataResults ;
+	xp:analysis xp:Analysis_20180828 ;
+	xp:explains xp:Analysis_20180828 .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Experiment_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Experiment_20180828
 
-xp:Experiment_2014-02-04 a owl:NamedIndividual , xp:Experiment ;
-	xp:performs xp:NOORDesign_2014-02-04 ;
-	xp:reproduces xp:Experiment_2014-02-04 ;
-	xp:results xp:DataResults_2014-02-04 ;
-	xp:experimentationDate "2014-02-04" .
+xp:Experiment_20180828 a owl:NamedIndividual , xp:Experiment ;
+	xp:performs xp:NOORDesign_20180828 ;
+	xp:reproduces xp:Experiment_20180828 ;
+	xp:results xp:DataResults_20180828 ;
+	xp:experimentLabel "20180828-NOOR" ;
+	xp:experimentName "20180828-NOOR" ;
+	xp:experimentationDate "20180828" .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Hardware_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Hardware_20180828
 
-xp:Hardware_2014-02-04 a owl:NamedIndividual , xp:Hardware ;
-	xp:hardwareComponent " MacBook Pro 15, C2D 2.66GHz, 8GB - MacOS X 6.8 - Java 1.6.0 HotSpot " .
+xp:Hardware_20180828 a owl:NamedIndividual , xp:Hardware ;
+	xp:hardwareComponent " 24 * Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz with 20GB RAM / Linux ProxMox 2 / Linux 4.15.17-1-pve / Java Java(TM) SE Runtime Environment 1.8.0_151 with 4.33G max heap size " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Hypothesis_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Hypothesis_20180828
 
-xp:Hypothesis_2014-02-04 a owl:NamedIndividual , xp:Hypothesis ;
-	xp:formalizes xp:Script_2014-02-04 ;
-	xp:label "  This the same experiment as the First Revision of networks of ontologies 3 agents performing revision of a network of ontology. " .
+xp:Hypothesis_20180828 a owl:NamedIndividual , xp:Hypothesis ;
+	xp:formalizes xp:Script_20180828 ;
+	xp:label "Strenghening improves recall over expansion" .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#NOORDesign_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#NOORDesign_20180828
 
-xp:NOORDesign_2014-02-04 a owl:NamedIndividual , xp:NOORDesign ;
-	xp:designer foaf:Person_2014-02-04 ;
-	xp:runs_with xp:Configuration_2014-02-04 ;
-	xp:specifiates xp:Script_2014-02-04 ;
-	xp:tests xp:Hypothesis_2014-02-04 .
+xp:NOORDesign_20180828 a owl:NamedIndividual , xp:NOORDesign ;
+	xp:designer foaf:Person_20180828 ;
+	xp:runs_with xp:Configuration_20180828 ;
+	xp:specifiates xp:Script_20180828 ;
+	xp:tests xp:Hypothesis_20180828 ;
+	xp:designDate "2018-06-01" ;
+	xp:numberOfAgents 4 ;
+	xp:numberOfIterations 10000 ;
+	xp:numberOfRuns 10 ;
+	xp:operators "delete replace refine add addjoin refadd" .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Script_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Script_20180828
 
-xp:Script_2014-02-04 a owl:NamedIndividual , xp:Script .
+xp:Script_20180828 a owl:NamedIndividual , xp:Script .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Software_2014-02-04
+# http://www.inria.fr/moex/ExperimentOntology#Software_20180828
 
-xp:Software_2014-02-04 a owl:NamedIndividual , xp:Software ;
-	xp:OSVersion " MacBook Pro 15, C2D 2.66GHz, 8GB - MacOS X 6.8 - Java 1.6.0 HotSpot " .
+xp:Software_20180828 a owl:NamedIndividual , xp:Software ;
+	xp:OSVersion "stretch" ;
+	xp:javaPath "lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:." ;
+	xp:logbackVersion " File:20180828-NOOR.zip " .
 # 
-# http://xmlns.com/foaf/0.1/Person_2014-02-04
+# http://xmlns.com/foaf/0.1/Person_20180828
 
-foaf:Person_2014-02-04 a owl:NamedIndividual , foaf:Person .
+foaf:Person_20180828 a owl:NamedIndividual , foaf:Person .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

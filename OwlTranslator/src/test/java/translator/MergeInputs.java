@@ -32,14 +32,21 @@ public class MergeInputs {
 		
 		if(true) //priorité
 		{
-			Set<OWLDataProperty> setDataFile = mapDataFile.keySet();
+			Set<OWLDataProperty> setDataFile = translatorFile.getMapDataProperty_Parameter().keySet();
 			
 			//Initialize MapDataMerged with mapDataFile and mapDataHtml
 			for(OWLDataProperty ppt :setDataFile) {
-				if(mapDataFile.get(ppt)==null)
+				
+				if(mapDataFile.get(ppt)==null) {
+					System.out.println("Data Html: "+ppt+ " : "+mapDataHtml.get(ppt));
 					mapDataMerged.put(ppt, mapDataHtml.get(ppt));
-				else
+				}
+					
+				else {
+					System.out.println("Data File : "+ppt+ " : "+mapDataFile.get(ppt));
 					mapDataMerged.put(ppt, mapDataFile.get(ppt));
+				}
+					
 			}
 			
 			translatorMerged.setMapDataProperty_Value(mapDataMerged);
