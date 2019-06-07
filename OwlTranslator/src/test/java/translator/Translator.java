@@ -3,14 +3,18 @@ package translator;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.IRI;
+import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLDataProperty;
@@ -44,10 +48,10 @@ public class Translator {
 		//Map of OWLClass with their OWLObjectProperties, input : Ontology
 		private Map<OWLClass, List<OWLObjectProperty>> mapClass_ObjectProperty;
 		//Map of OWLObjectProperty with corresponding value
-		private Map<OWLObjectProperty, String> mapObjectProperty_Parameter;
+		private Map<OWLObjectProperty, String[]> mapObjectProperty_Parameter;
 		//Map of OWLObjectProperty with the corresponding value, join between mapObjectProperty_Parameter and mapObjectProperty_Value
 		private Map<OWLObjectProperty, String> mapObjectProperty_Value;
-		//Map of a Value and a Instance of Class coressponding, used with person Class
+		//Map of a Value and a Instance of Class coresponding, used with person Class
 		private Map<String, OWLNamedIndividual> mapValue_Individual;
 		//Map of a ObjectProperty a list with two Class, Class 0 : Domain, Class 1 : Range 
 		private Map<OWLObjectProperty, List<OWLClass>> mapObjectPropertyDomain_Range;
@@ -63,6 +67,7 @@ public class Translator {
 		private File file;
 		private String urlHTML;
 		private String Input_Type;
+		private String label;
 		
 		private static final Logger LOG = Logger.getLogger(Translator.class);
 		
@@ -78,11 +83,16 @@ public class Translator {
 			this.manager = OWLManager.createOWLOntologyManager();
 			this.fileOwl = new File(fileOwlName);
 			loadOntology(fileOwl);
-
+			
 			if( type == "HTML" ) {
 				this.urlHTML = targetFile;
+				this.label = labelHtml(targetFile);
 			}else if( type == "FILE" ) {
 				this.file = new File(targetFile);
+				this.label = labelFile(targetFile);
+			}
+			else {
+				this.label = labelHtml(targetFile);
 			}
 			
 			this.Input_Type = type; // Initialize type of input parsing
@@ -94,12 +104,9 @@ public class Translator {
 		}
 		
 		public void run(boolean save) {
-			
-			//The label of the instances in the parameter
-			String label = "Date";
-			
+
 			try {
-				label = translate(label);
+				translate();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -108,14 +115,14 @@ public class Translator {
 			//SAVE the new Ontology
 			if(save) {
 				OWLOntology ontologyOutput = ontology;
-				File outFile = new File("DataTurtleOutput/ExperimentOntologyTurtleData_"+label+".ttl");
+				File outFile = new File("DataTurtleOutput/ExperimentOntologyTurtleData"+label+".ttl");
 				
 				IRI outIRI=IRI.create(outFile);
 				saveOntology(ontologyOutput, outIRI);
-			}	
+			}
 		}
 		
-		private String translate(String label) throws IOException {
+		private void translate() throws IOException {
 					
 			Generator generator = new Generator(ontology);
 	
@@ -176,11 +183,11 @@ public class Translator {
 			//INSTANCIATED ontology
 			
 				//Initialize the person, a same person can having several role
-			managePerson();
+			//managePerson();
 			
 				//Give a label at the NamedIndiviual
 			OWLDataFactory factory = manager.getOWLDataFactory();
-			label = "_"+mapDataProperty_Value.get(factory.getOWLDataProperty("http://www.inria.fr/moex/ExperimentOntology#experimentationDate"));
+			//label = "_"+mapDataProperty_Value.get(factory.getOWLDataProperty("http://www.inria.fr/moex/ExperimentOntology#experimentationDate"));
 			
 				//For each Class : Instanced ontology
 			for(OWLClass cls : listClass) {
@@ -192,15 +199,14 @@ public class Translator {
 				mapClass_Individual.put(cls, individualOWL);
 				
 				//Building of ObjectProperty associated at the current Individual
-				for(OWLObjectProperty ppt : mapClass_ObjectProperty.get(cls)) {
+				/*for(OWLObjectProperty ppt : mapClass_ObjectProperty.get(cls)) {
 					String value = mapObjectProperty_Value.get(ppt);
-					
 					
 					if(mapValue_Individual.get(value)!=null) {
 						makerProperty.makeProperty(ppt, individualOWL, mapValue_Individual.get(value));
 					}
 					
-				}
+				}*/
 				
 				//Building of dataProperty associated at the current Individual
 				for(OWLDataProperty ppt : mapClass_DataProperty.get(cls)) {
@@ -229,8 +235,6 @@ public class Translator {
 					}	
 				}
 			}
-			
-			return label;
 		}
 		
 		public void associationFile() throws IOException {
@@ -245,9 +249,9 @@ public class Translator {
 			
 			String[] ppt = {"DataProperty.txt", "ObjectProperty.txt"};	
 			
-			if(View.fileAssociation(nameFileAssociation+ppt[0])) 
+			if(fileAssociationView(nameFileAssociation+ppt[0])) 
 				fileDataProperty_Parameter = generator.toFileOWLDataProperty(nameFileAssociation+ppt[0], mapClass_DataProperty);
-			if(View.fileAssociation(nameFileAssociation+ppt[1])) 
+			if(fileAssociationView(nameFileAssociation+ppt[1])) 
 				fileDataProperty_Parameter = generator.toFileOWLObjectProperty(nameFileAssociation+ppt[1], mapClass_ObjectProperty);
 					
 		}
@@ -277,43 +281,33 @@ public class Translator {
 			Set<OWLObjectProperty> setProperty =  mapObjectProperty_Parameter.keySet();
 			List<String> listValueProperty = new ArrayList<String>();
 			for(OWLObjectProperty ppt: setProperty) {
-				String param = mapObjectProperty_Parameter.get(ppt);
 				
-				if(!param.isEmpty()) {
-					String value = mapParameter_Value.get(param);
+				String[] param = mapObjectProperty_Parameter.get(ppt);
+				
+				for(int i = 0; param.length>i; i++) {
+					if(mapParameter_Value.get(param[i])!=null) {
+						String value = mapParameter_Value.get(param[i]);
 
-					//Test if the value is present in the list
-					if(value!=null && !listValueProperty.stream().filter(it -> it.contains(value)).findFirst().isPresent())
-						listValueProperty.add(value);
-						
-				}	
-			}
+						//Test if the value is present in the list
+						if(value!=null && !listValueProperty.stream().filter(it -> it.contains(value)).findFirst().isPresent())
+							listValueProperty.add(value);	
+					}
+				}
+			}				
+			
+			
 
 			mapValue_Individual = new HashMap<String, OWLNamedIndividual>();
 			
 			for(String fullname : listValueProperty) {
-				String personIRI = "Person";
+				//String personIRI = "Person";
 				
-				//Decompose fullname : firstname+familyname
-				String[] tmp= new String[2];
-				tmp[0]="";
-				tmp[1]="";
-				
-				if(fullname.equals("JEuz")) {
-					tmp[0]="Jerome";
-					tmp[1]="Euzenat";
-				}
-				else if(fullname.equals("euzenat")) {
-					tmp[0]="Jerome";
-					tmp[1]="Euzenat";
-				}
-				else
-					tmp=fullname.split("\\s+",2);
-				
-				//TODO : gestion erreur
 				//Assign the Class person
-				OWLClass person = listClass.parallelStream().filter(p -> p.getIRI().getShortForm().equals(personIRI)).findFirst().get();
-				OWLNamedIndividual individualOWL = makerIndividual.makeIndividual(person, "_"+tmp[0]);
+				//OWLClass person = listClass.parallelStream().filter(p -> p.getIRI().getShortForm().equals(personIRI)).findFirst().get();
+				OWLDataFactory factory = manager.getOWLDataFactory();
+				OWLClass person = factory.getOWLClass("<Person:name>");
+				
+				OWLNamedIndividual individualOWL = makerIndividual.makeIndividual(person, fullname);
 				mapValue_Individual.put(fullname, individualOWL);
 
 				for(OWLDataProperty ppt : mapClass_DataProperty.get(person)) {
@@ -322,12 +316,8 @@ public class Translator {
 					if(ppt.getIRI().getShortForm().equals("firstName")) 
 						makerData.makeDataType(ppt, dataRange, tmp[0], individualOWL);
 					
-					if(ppt.getIRI().getShortForm().equals("familyName"))
-						makerData.makeDataType(ppt, dataRange, tmp[1], individualOWL);
 				}
-			}
-			
-			
+			}	
 		}
 		
 		/**
@@ -383,12 +373,13 @@ public class Translator {
 		 * @param a {@link Parser} that contains a {@link File} with {@link OWLObjectProperty} and the {@link String} parameter associated.
 		 */
 		private void initMapObjectProperty_Parameter(FileParser parserFileAssociationObject) {
-			mapObjectProperty_Parameter = new HashMap<OWLObjectProperty, String>();
+			mapObjectProperty_Parameter = new HashMap<OWLObjectProperty, String[]>();
 			List<DataParsed> listObjectProperty_Parameter = parserFileAssociationObject.fileAssociationToList();
 			for(DataParsed data : listObjectProperty_Parameter) {
 				OWLDataFactory factory = manager.getOWLDataFactory();
-				mapObjectProperty_Parameter.put(factory.getOWLObjectProperty(data.getFirstBox()), data.getSecondBox());
+				mapObjectProperty_Parameter.put(factory.getOWLObjectProperty(data.getFirstBox()), data.getSecondBox().split("\\|"));
 			}
+			
 		}
 		
 		/**
@@ -399,7 +390,13 @@ public class Translator {
 			mapObjectProperty_Value = new HashMap<OWLObjectProperty, String>();
 			Set<OWLObjectProperty> setObjectProperty = mapObjectProperty_Parameter.keySet();
 			for(OWLObjectProperty elem : setObjectProperty) {
-				mapObjectProperty_Value.put(elem, mapParameter_Value.get(mapObjectProperty_Parameter.get(elem)));
+				
+				String[] param = mapObjectProperty_Parameter.get(elem);
+				
+				for(int i = 0; param.length>i; i++) {
+					if(mapParameter_Value.get(param[i])!=null)
+						mapObjectProperty_Value.put(elem, mapParameter_Value.get(param[i]));
+				}	
 			}
 			
 		}
@@ -434,5 +431,27 @@ public class Translator {
 			}
 		}
 		
+		private String labelHtml(String link) {
+			return "_"+link.substring(link.lastIndexOf("/") + 1);
+		}
+		
+		private String labelFile(String ch) {
+			ch.substring(0, ch.lastIndexOf("/"));
+			return "_"+ch.substring(ch.lastIndexOf("/") + 1);
+		}
+		
+		
+		private boolean fileAssociationView(String nameFile) {
+			System.out.println(nameFile+" will be replaced, continue ? (y/n) ");
+			Scanner sc = new Scanner(System.in);
+			String str=sc.nextLine();
+			
+			if(str.contentEquals("y")) {
+				return true;
+			}
+				
+			else
+				return false;
+		}
 }
 

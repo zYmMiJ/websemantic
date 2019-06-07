@@ -33,8 +33,9 @@ public class MakerIndividual extends MakerAxiom{
 		
 		//Manage prefix
 		String nameClass = classOWL.getIRI().getShortForm();
-		String namespace = classOWL.getIRI().getNamespace();
-			
+		//String namespace = classOWL.getIRI().getNamespace();
+		String namespace = "xpd:";
+		
 		//Make a Individual
 		OWLNamedIndividual individualOWL = factory.getOWLNamedIndividual(namespace, nameClass+label);
 		

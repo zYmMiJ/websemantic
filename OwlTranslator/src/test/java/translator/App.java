@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import org.apache.log4j.ConsoleAppender;
 import org.apache.log4j.FileAppender;
@@ -13,6 +14,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
 public class App {
 
@@ -23,7 +25,7 @@ public class App {
 		String parserType = "";
 		
 		if (args[0].equals("-c") || args[0].equals("--changeAssociation")) {
-			Translator t = new Translator(ontologyName, null, parserType);
+			Translator t = new Translator(ontologyName, "/change", parserType);
 			t.associationFile();
 		}
 		
@@ -37,7 +39,8 @@ public class App {
 				System.out.println(link);
 				Translator translate = new Translator(ontologyName, link, parserType);
 
-	  			translate.run(true);
+					translate.run(true);
+				
 			}
 		}
 		
@@ -52,7 +55,8 @@ public class App {
 	  			String paramFileName = repertoire.getCanonicalPath()+"/"+files[i].getName()+"/params.sh";
 	  			System.out.println(	paramFileName );
 	  			Translator translate = new Translator(ontologyName, paramFileName, parserType);
-	  			translate.run(true);
+
+					translate.run(true);
 	  		}
 	  		
 		}
@@ -67,7 +71,7 @@ public class App {
 	  		absUrlOfExperiments = getAllXPLink("https://gforge.inria.fr/plugins/mediawiki/wiki/lazylav/index.php/Experiments");
 	  		
 	  		List<String> linkMatched = new ArrayList<String>();
-	  				
+	  		
 	  		for(String link : absUrlOfExperiments) {
 	  				
 	  			for (int i = 0; i < files.length ; i++) {
@@ -86,7 +90,8 @@ public class App {
 	  		for(String link : absUrlOfExperiments) {
 	  			Translator translate = new Translator(ontologyName, link, "HTML");
 	  			System.out.println(" no match : "+link);
-	  			translate.run(true);
+
+					translate.run(true);
 	  		}	  		
 		}
 	} 
@@ -123,6 +128,7 @@ public class App {
 	 * Return tous les href (Experiments) d'une page donn�e. Pattern "-NOOR"
 	 */
 	private static List<String> getAllXPLink(String s) {
+
 		List<String> l  = new ArrayList<String>();
 		Document doc; // HTML document
 		try {
@@ -139,4 +145,5 @@ public class App {
 		}
 		return l;// On retourne cette liste
 	}
+	
 }
