@@ -11,6 +11,19 @@ _:genid665846007 a owl:Ontology .
 # 
 # #################################################################
 # #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# xsd:string
+
+<xsd:string> a rdfs:Datatype .
+# 
+# 
+# 
+# #################################################################
+# #
 # #    Object Properties
 # #
 # #################################################################
@@ -251,6 +264,11 @@ xp:operators a owl:DatatypeProperty ;
 	rdfs:domain xp:NOORDesign ;
 	rdfs:range xsd:string .
 # 
+# http://xmlns.com/foaf/0.1/name
+
+foaf:name a owl:DatatypeProperty ;
+	rdfs:range <xsd:string> .
+# 
 # 
 # 
 # #################################################################
@@ -302,6 +320,10 @@ xp:Software a owl:Class ;
 
 foaf:Person a owl:Class .
 # 
+# http://xmlns.com/foaf/0.1/person
+
+foaf:person a owl:Class .
+# 
 # 
 # 
 # #################################################################
@@ -311,67 +333,75 @@ foaf:Person a owl:Class .
 # #################################################################
 # 
 # 
-# xpd:Analysis_20180913-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Analysis_20180913-NOOR
 
-<xpd:Analysis_20180913-NOOR> a owl:NamedIndividual , xp:Analysis ;
+xp:Analysis_20180913-NOOR a owl:NamedIndividual , xp:Analysis ;
+	xp:analyst foaf:person_JEuz ;
 	xp:comment "       The hypothesis is not valid even if some tracks converge after 10000 games, they seem to have converged at 15000 games and they do not reach 100\\% recall   " .
 # 
-# xpd:Configuration_20180913-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Configuration_20180913-NOOR
 
-<xpd:Configuration_20180913-NOOR> a owl:NamedIndividual , xp:Configuration .
+xp:Configuration_20180913-NOOR a owl:NamedIndividual , xp:Configuration .
 # 
-# xpd:DataResults_20180913-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#DataResults_20180913-NOOR
 
-<xpd:DataResults_20180913-NOOR> a owl:NamedIndividual , xp:DataResults ;
-	xp:analysis <xpd:Analysis_20180913-NOOR> ;
-	xp:explains <xpd:Analysis_20180913-NOOR> .
+xp:DataResults_20180913-NOOR a owl:NamedIndividual , xp:DataResults ;
+	xp:analysis xp:Analysis_20180913-NOOR ;
+	xp:explains xp:Analysis_20180913-NOOR .
 # 
-# xpd:Experiment_20180913-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Experiment_20180913-NOOR
 
-<xpd:Experiment_20180913-NOOR> a owl:NamedIndividual , xp:Experiment ;
-	xp:performs <xpd:NOORDesign_20180913-NOOR> ;
-	xp:reproduces <xpd:Experiment_20180913-NOOR> ;
-	xp:results <xpd:DataResults_20180913-NOOR> ;
+xp:Experiment_20180913-NOOR a owl:NamedIndividual , xp:Experiment ;
+	xp:performer foaf:person_JEuz ;
+	xp:performs xp:NOORDesign_20180913-NOOR ;
+	xp:reproduces xp:Experiment_20180913-NOOR ;
+	xp:results xp:DataResults_20180913-NOOR ;
 	xp:experimentLabel "20180913-NOOR" ;
 	xp:experimentName "20180913-NOOR" ;
 	xp:experimentationDate "20180913" .
 # 
-# xpd:Hardware_20180913-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Hardware_20180913-NOOR
 
-<xpd:Hardware_20180913-NOOR> a owl:NamedIndividual , xp:Hardware ;
+xp:Hardware_20180913-NOOR a owl:NamedIndividual , xp:Hardware ;
 	xp:hardwareComponent " 24 * Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz with 20GB RAM / Linux ProxMox 2 / Linux 4.15.17-1-pve / Java Java(TM) SE Runtime Environment 1.8.0_151 with 4.33G max heap size " .
 # 
-# xpd:Hypothesis_20180913-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Hypothesis_20180913-NOOR
 
-<xpd:Hypothesis_20180913-NOOR> a owl:NamedIndividual , xp:Hypothesis ;
-	xp:formalizes <xpd:Script_20180913-NOOR> ;
+xp:Hypothesis_20180913-NOOR a owl:NamedIndividual , xp:Hypothesis ;
+	xp:formalizes xp:Script_20180913-NOOR ;
 	xp:label "Strenghening with refadd, relaxation, expansion, generation reaches 100% recall" .
 # 
-# xpd:NOORDesign_20180913-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#NOORDesign_20180913-NOOR
 
-<xpd:NOORDesign_20180913-NOOR> a owl:NamedIndividual , xp:NOORDesign ;
-	xp:runs_with <xpd:Configuration_20180913-NOOR> ;
-	xp:specifiates <xpd:Script_20180913-NOOR> ;
-	xp:tests <xpd:Hypothesis_20180913-NOOR> ;
+xp:NOORDesign_20180913-NOOR a owl:NamedIndividual , xp:NOORDesign ;
+	xp:designer foaf:person_JEuz ;
+	xp:runs_with xp:Configuration_20180913-NOOR ;
+	xp:specifiates xp:Script_20180913-NOOR ;
+	xp:tests xp:Hypothesis_20180913-NOOR ;
 	xp:designDate "2018-09-13" ;
 	xp:numberOfAgents "4" ;
 	xp:numberOfIterations "20000" ;
 	xp:numberOfRuns "10" ;
 	xp:operators "delete replace refine add addjoin refadd" .
 # 
-# xpd:Person_20180913-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Script_20180913-NOOR
 
-<xpd:Person_20180913-NOOR> a owl:NamedIndividual , foaf:Person .
+xp:Script_20180913-NOOR a owl:NamedIndividual , xp:Script .
 # 
-# xpd:Script_20180913-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Software_20180913-NOOR
 
-<xpd:Script_20180913-NOOR> a owl:NamedIndividual , xp:Script .
-# 
-# xpd:Software_20180913-NOOR
-
-<xpd:Software_20180913-NOOR> a owl:NamedIndividual , xp:Software ;
+xp:Software_20180913-NOOR a owl:NamedIndividual , xp:Software ;
 	xp:OSVersion "stretch" ;
 	xp:javaPath "lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:." ;
 	xp:logbackVersion " File:20180913-NOOR.zip " .
+# 
+# http://xmlns.com/foaf/0.1/Person_20180913-NOOR
+
+foaf:Person_20180913-NOOR a owl:NamedIndividual , foaf:Person .
+# 
+# http://xmlns.com/foaf/0.1/person_JEuz
+
+foaf:person_JEuz a owl:NamedIndividual , foaf:person ;
+	foaf:name "JEuz" .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

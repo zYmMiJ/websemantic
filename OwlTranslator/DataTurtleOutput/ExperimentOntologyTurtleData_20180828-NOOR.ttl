@@ -6,7 +6,20 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid94500728 a owl:Ontology .
+_:genid1463835093 a owl:Ontology .
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# xsd:string
+
+<xsd:string> a rdfs:Datatype .
+# 
 # 
 # 
 # #################################################################
@@ -251,6 +264,11 @@ xp:operators a owl:DatatypeProperty ;
 	rdfs:domain xp:NOORDesign ;
 	rdfs:range xsd:string .
 # 
+# http://xmlns.com/foaf/0.1/name
+
+foaf:name a owl:DatatypeProperty ;
+	rdfs:range <xsd:string> .
+# 
 # 
 # 
 # #################################################################
@@ -302,6 +320,10 @@ xp:Software a owl:Class ;
 
 foaf:Person a owl:Class .
 # 
+# http://xmlns.com/foaf/0.1/person
+
+foaf:person a owl:Class .
+# 
 # 
 # 
 # #################################################################
@@ -311,67 +333,80 @@ foaf:Person a owl:Class .
 # #################################################################
 # 
 # 
-# xpd:Analysis_20180828-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Analysis_20180828-NOOR
 
-<xpd:Analysis_20180828-NOOR> a owl:NamedIndividual , xp:Analysis ;
+xp:Analysis_20180828-NOOR a owl:NamedIndividual , xp:Analysis ;
+	xp:analyst foaf:person_JEuz ;
 	xp:comment "       On delete, replace and refine, strengthening has a negative influence when 'generation' is not used.    This is natural since a correct correspondence is replaced by an eventually incorrect one but when this one is found incorrect, there is no way to recover the previous one (this require 'add').      When used with generation, these three operators enjoy an improved recall.    On the other side of the spectrum, the refadd operator always improves recall, the is not the case for add and addjoin which only improve their recall when relaxation is available. This remains to be explained as relaxation is supposed to improve precision (which it does). It seems that       As already observed, there is little difference between starting empty and random networks. The results with random networks contain less correspondences, likely due to the non realistic size of initial networks.    refadd with expansion + generation + relaxation + strenghen=specific achieves remarkable results with .99 and .97 F-measure.    Some tests have a late convergence rank, hence it is likely that convergence has not been achieved.   " .
 # 
-# xpd:Configuration_20180828-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Configuration_20180828-NOOR
 
-<xpd:Configuration_20180828-NOOR> a owl:NamedIndividual , xp:Configuration .
+xp:Configuration_20180828-NOOR a owl:NamedIndividual , xp:Configuration .
 # 
-# xpd:DataResults_20180828-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#DataResults_20180828-NOOR
 
-<xpd:DataResults_20180828-NOOR> a owl:NamedIndividual , xp:DataResults ;
-	xp:analysis <xpd:Analysis_20180828-NOOR> ;
-	xp:explains <xpd:Analysis_20180828-NOOR> .
+xp:DataResults_20180828-NOOR a owl:NamedIndividual , xp:DataResults ;
+	xp:analysis xp:Analysis_20180828-NOOR ;
+	xp:explains xp:Analysis_20180828-NOOR .
 # 
-# xpd:Experiment_20180828-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Experiment_20180828-NOOR
 
-<xpd:Experiment_20180828-NOOR> a owl:NamedIndividual , xp:Experiment ;
-	xp:performs <xpd:NOORDesign_20180828-NOOR> ;
-	xp:reproduces <xpd:Experiment_20180828-NOOR> ;
-	xp:results <xpd:DataResults_20180828-NOOR> ;
+xp:Experiment_20180828-NOOR a owl:NamedIndividual , xp:Experiment ;
+	xp:performer foaf:person_JEuz ;
+	xp:performs xp:NOORDesign_20180828-NOOR ;
+	xp:reproduces xp:Experiment_20180828-NOOR ;
+	xp:results xp:DataResults_20180828-NOOR ;
 	xp:experimentLabel "20180828-NOOR" ;
 	xp:experimentName "20180828-NOOR" ;
 	xp:experimentationDate "20180828" .
 # 
-# xpd:Hardware_20180828-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Hardware_20180828-NOOR
 
-<xpd:Hardware_20180828-NOOR> a owl:NamedIndividual , xp:Hardware ;
+xp:Hardware_20180828-NOOR a owl:NamedIndividual , xp:Hardware ;
 	xp:hardwareComponent " 24 * Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz with 20GB RAM / Linux ProxMox 2 / Linux 4.15.17-1-pve / Java Java(TM) SE Runtime Environment 1.8.0_151 with 4.33G max heap size " .
 # 
-# xpd:Hypothesis_20180828-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Hypothesis_20180828-NOOR
 
-<xpd:Hypothesis_20180828-NOOR> a owl:NamedIndividual , xp:Hypothesis ;
-	xp:formalizes <xpd:Script_20180828-NOOR> ;
+xp:Hypothesis_20180828-NOOR a owl:NamedIndividual , xp:Hypothesis ;
+	xp:formalizes xp:Script_20180828-NOOR ;
 	xp:label "Strenghening improves recall over expansion" .
 # 
-# xpd:NOORDesign_20180828-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#NOORDesign_20180828-NOOR
 
-<xpd:NOORDesign_20180828-NOOR> a owl:NamedIndividual , xp:NOORDesign ;
-	xp:runs_with <xpd:Configuration_20180828-NOOR> ;
-	xp:specifiates <xpd:Script_20180828-NOOR> ;
-	xp:tests <xpd:Hypothesis_20180828-NOOR> ;
+xp:NOORDesign_20180828-NOOR a owl:NamedIndividual , xp:NOORDesign ;
+	xp:designer <http://xmlns.com/foaf/0.1/person_Iris Lohja> ;
+	xp:runs_with xp:Configuration_20180828-NOOR ;
+	xp:specifiates xp:Script_20180828-NOOR ;
+	xp:tests xp:Hypothesis_20180828-NOOR ;
 	xp:designDate "2018-06-01" ;
 	xp:numberOfAgents "4" ;
 	xp:numberOfIterations "10000" ;
 	xp:numberOfRuns "10" ;
 	xp:operators "delete replace refine add addjoin refadd" .
 # 
-# xpd:Person_20180828-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Script_20180828-NOOR
 
-<xpd:Person_20180828-NOOR> a owl:NamedIndividual , foaf:Person .
+xp:Script_20180828-NOOR a owl:NamedIndividual , xp:Script .
 # 
-# xpd:Script_20180828-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Software_20180828-NOOR
 
-<xpd:Script_20180828-NOOR> a owl:NamedIndividual , xp:Script .
-# 
-# xpd:Software_20180828-NOOR
-
-<xpd:Software_20180828-NOOR> a owl:NamedIndividual , xp:Software ;
+xp:Software_20180828-NOOR a owl:NamedIndividual , xp:Software ;
 	xp:OSVersion "stretch" ;
 	xp:javaPath "lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:." ;
 	xp:logbackVersion " File:20180828-NOOR.zip " .
+# 
+# http://xmlns.com/foaf/0.1/Person_20180828-NOOR
+
+foaf:Person_20180828-NOOR a owl:NamedIndividual , foaf:Person .
+# 
+# http://xmlns.com/foaf/0.1/person_JEuz
+
+foaf:person_JEuz a owl:NamedIndividual , foaf:person ;
+	foaf:name "JEuz" .
+# 
+# http://xmlns.com/foaf/0.1/person_Iris Lohja
+
+<http://xmlns.com/foaf/0.1/person_Iris Lohja> a owl:NamedIndividual , foaf:person ;
+	foaf:name "Iris Lohja" .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

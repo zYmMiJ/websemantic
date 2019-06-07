@@ -1,5 +1,6 @@
 package translator;
 
+import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
@@ -33,11 +34,16 @@ public class MakerIndividual extends MakerAxiom{
 		
 		//Manage prefix
 		String nameClass = classOWL.getIRI().getShortForm();
-		//String namespace = classOWL.getIRI().getNamespace();
-		String namespace = "xpd:";
-		
+		String namespace = null;
+		//if(classOWL.getIRI().getNamespace().equals("http://www.inria.fr/moex/ExperimentOntology#"))
+			namespace = "xpd:";
+		//else if (classOWL.getIRI().getNamespace().equals("http://xmlns.com/foaf/0.1/"))
+			namespace = classOWL.getIRI().getNamespace();	
+			
 		//Make a Individual
+		//System.out.println(individualOWL);
 		OWLNamedIndividual individualOWL = factory.getOWLNamedIndividual(namespace, nameClass+label);
+		System.out.println(individualOWL);
 		
 		//Make the axiom related to the Individual
 		OWLAxiom axiomClassAssertion = factory.getOWLClassAssertionAxiom(classOWL, individualOWL);

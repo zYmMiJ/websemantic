@@ -18,13 +18,18 @@ import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLDataProperty;
+import org.semanticweb.owlapi.model.OWLDataPropertyAssertionAxiom;
 import org.semanticweb.owlapi.model.OWLDataRange;
+import org.semanticweb.owlapi.model.OWLIndividual;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
+
+import uk.ac.manchester.cs.owl.owlapi.OWLDataPropertyImpl;
+import uk.ac.manchester.cs.owl.owlapi.OWLDatatypeImpl;
 
 public class Translator {
 	
@@ -182,9 +187,6 @@ public class Translator {
 			
 			//INSTANCIATED ontology
 			
-				//Initialize the person, a same person can having several role
-			//managePerson();
-			
 				//Give a label at the NamedIndiviual
 			OWLDataFactory factory = manager.getOWLDataFactory();
 			//label = "_"+mapDataProperty_Value.get(factory.getOWLDataProperty("http://www.inria.fr/moex/ExperimentOntology#experimentationDate"));
@@ -232,7 +234,31 @@ public class Translator {
 						
 						if(classRange!=null)
 							makerProperty.makeProperty(ppt, individualDomain, individualRange);
-					}	
+					}
+					else {
+						//make ObjectProperty about Person
+						IRI personIRI = IRI.create("http://xmlns.com/foaf/0.1/person");
+						OWLClass person = factory.getOWLClass(personIRI);
+						OWLNamedIndividual personInstance = makerIndividual.makeIndividual(person, "_"+mapObjectProperty_Value.get(ppt));
+						
+						OWLClass classDomain = mapObjectPropertyDomain_Range.get(ppt).get(0);
+						OWLNamedIndividual individualDomain = mapClass_Individual.get(classDomain);
+						
+						//OWLClass classRange = mapObjectPropertyDomain_Range.get(ppt).get(1);
+						//OWLNamedIndividual individualRange = mapClass_Individual.get(personInstance);
+						
+						//if(individualDomain!=null && individualRange!=null)
+							makerProperty.makeProperty(ppt, individualDomain, personInstance);
+						
+						//make DataProperty about Person
+						IRI nameIRI = IRI.create("http://xmlns.com/foaf/0.1/name");
+						OWLDataProperty name = factory.getOWLDataProperty(nameIRI);
+						
+						//if(individualRange!=null)
+						IRI dataIRI = IRI.create("xsd:string");
+						OWLDatatypeImpl dataRange = new OWLDatatypeImpl(dataIRI); 
+							makerData.makeDataType(name,  dataRange, value, personInstance);
+					}
 				}
 			}
 		}
@@ -274,50 +300,6 @@ public class Translator {
 		
 		public Map<OWLDataProperty, String[]> getMapDataProperty_Parameter(){
 			return mapDataProperty_Parameter;
-		}
-		
-		private void managePerson() {
-			//Add in the listValueProperty the different and unique Value corresponding at the property
-			Set<OWLObjectProperty> setProperty =  mapObjectProperty_Parameter.keySet();
-			List<String> listValueProperty = new ArrayList<String>();
-			for(OWLObjectProperty ppt: setProperty) {
-				
-				String[] param = mapObjectProperty_Parameter.get(ppt);
-				
-				for(int i = 0; param.length>i; i++) {
-					if(mapParameter_Value.get(param[i])!=null) {
-						String value = mapParameter_Value.get(param[i]);
-
-						//Test if the value is present in the list
-						if(value!=null && !listValueProperty.stream().filter(it -> it.contains(value)).findFirst().isPresent())
-							listValueProperty.add(value);	
-					}
-				}
-			}				
-			
-			
-
-			mapValue_Individual = new HashMap<String, OWLNamedIndividual>();
-			
-			for(String fullname : listValueProperty) {
-				//String personIRI = "Person";
-				
-				//Assign the Class person
-				//OWLClass person = listClass.parallelStream().filter(p -> p.getIRI().getShortForm().equals(personIRI)).findFirst().get();
-				OWLDataFactory factory = manager.getOWLDataFactory();
-				OWLClass person = factory.getOWLClass("<Person:name>");
-				
-				OWLNamedIndividual individualOWL = makerIndividual.makeIndividual(person, fullname);
-				mapValue_Individual.put(fullname, individualOWL);
-
-				for(OWLDataProperty ppt : mapClass_DataProperty.get(person)) {
-					OWLDataRange dataRange = mapDataProperty_DataRange.get(ppt); 
-					
-					if(ppt.getIRI().getShortForm().equals("firstName")) 
-						makerData.makeDataType(ppt, dataRange, tmp[0], individualOWL);
-					
-				}
-			}	
 		}
 		
 		/**

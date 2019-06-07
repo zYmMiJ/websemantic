@@ -6,7 +6,20 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid1046211253 a owl:Ontology .
+_:genid871115788 a owl:Ontology .
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# xsd:string
+
+<xsd:string> a rdfs:Datatype .
+# 
 # 
 # 
 # #################################################################
@@ -251,6 +264,11 @@ xp:operators a owl:DatatypeProperty ;
 	rdfs:domain xp:NOORDesign ;
 	rdfs:range xsd:string .
 # 
+# http://xmlns.com/foaf/0.1/name
+
+foaf:name a owl:DatatypeProperty ;
+	rdfs:range <xsd:string> .
+# 
 # 
 # 
 # #################################################################
@@ -302,6 +320,10 @@ xp:Software a owl:Class ;
 
 foaf:Person a owl:Class .
 # 
+# http://xmlns.com/foaf/0.1/person
+
+foaf:person a owl:Class .
+# 
 # 
 # 
 # #################################################################
@@ -311,67 +333,75 @@ foaf:Person a owl:Class .
 # #################################################################
 # 
 # 
-# xpd:Analysis_20180826-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Analysis_20180826-NOOR
 
-<xpd:Analysis_20180826-NOOR> a owl:NamedIndividual , xp:Analysis ;
+xp:Analysis_20180826-NOOR a owl:NamedIndividual , xp:Analysis ;
+	xp:analyst foaf:person_JEuz ;
 	xp:comment " This experiment fully confirms 20180305-NOOR, i.e., addjoin is now working properly, with the observation that:      add and addjoin eventually achieve the same results (as shown by Size and Syntactic/Semantic Precision/Recall)    addjoin converges faster    In addition, it shows that this is true with realistic and non realistic starting size and that the true convergence was indeed after 1000. " .
 # 
-# xpd:Configuration_20180826-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Configuration_20180826-NOOR
 
-<xpd:Configuration_20180826-NOOR> a owl:NamedIndividual , xp:Configuration .
+xp:Configuration_20180826-NOOR a owl:NamedIndividual , xp:Configuration .
 # 
-# xpd:DataResults_20180826-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#DataResults_20180826-NOOR
 
-<xpd:DataResults_20180826-NOOR> a owl:NamedIndividual , xp:DataResults ;
-	xp:analysis <xpd:Analysis_20180826-NOOR> ;
-	xp:explains <xpd:Analysis_20180826-NOOR> .
+xp:DataResults_20180826-NOOR a owl:NamedIndividual , xp:DataResults ;
+	xp:analysis xp:Analysis_20180826-NOOR ;
+	xp:explains xp:Analysis_20180826-NOOR .
 # 
-# xpd:Experiment_20180826-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Experiment_20180826-NOOR
 
-<xpd:Experiment_20180826-NOOR> a owl:NamedIndividual , xp:Experiment ;
-	xp:performs <xpd:NOORDesign_20180826-NOOR> ;
-	xp:reproduces <xpd:Experiment_20180826-NOOR> ;
-	xp:results <xpd:DataResults_20180826-NOOR> ;
+xp:Experiment_20180826-NOOR a owl:NamedIndividual , xp:Experiment ;
+	xp:performer foaf:person_JEuz ;
+	xp:performs xp:NOORDesign_20180826-NOOR ;
+	xp:reproduces xp:Experiment_20180826-NOOR ;
+	xp:results xp:DataResults_20180826-NOOR ;
 	xp:experimentLabel "20180826-NOOR" ;
 	xp:experimentName "20180826-NOOR" ;
 	xp:experimentationDate "20180826" .
 # 
-# xpd:Hardware_20180826-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Hardware_20180826-NOOR
 
-<xpd:Hardware_20180826-NOOR> a owl:NamedIndividual , xp:Hardware ;
+xp:Hardware_20180826-NOOR a owl:NamedIndividual , xp:Hardware ;
 	xp:hardwareComponent " This is the first time that an experiment is rerun using the Docker environment instead as being replayed directly. The Docker file generated for 20180305-NOOR is found in the zip file above. It has been tweaked, in particular to run the experiments on 2000 runs and with non realistic size " .
 # 
-# xpd:Hypothesis_20180826-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Hypothesis_20180826-NOOR
 
-<xpd:Hypothesis_20180826-NOOR> a owl:NamedIndividual , xp:Hypothesis ;
-	xp:formalizes <xpd:Script_20180826-NOOR> ;
+xp:Hypothesis_20180826-NOOR a owl:NamedIndividual , xp:Hypothesis ;
+	xp:formalizes xp:Script_20180826-NOOR ;
 	xp:label "Addjoin achieves the same as add but faster" .
 # 
-# xpd:NOORDesign_20180826-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#NOORDesign_20180826-NOOR
 
-<xpd:NOORDesign_20180826-NOOR> a owl:NamedIndividual , xp:NOORDesign ;
-	xp:runs_with <xpd:Configuration_20180826-NOOR> ;
-	xp:specifiates <xpd:Script_20180826-NOOR> ;
-	xp:tests <xpd:Hypothesis_20180826-NOOR> ;
+xp:NOORDesign_20180826-NOOR a owl:NamedIndividual , xp:NOORDesign ;
+	xp:designer foaf:person_JEuz ;
+	xp:runs_with xp:Configuration_20180826-NOOR ;
+	xp:specifiates xp:Script_20180826-NOOR ;
+	xp:tests xp:Hypothesis_20180826-NOOR ;
 	xp:designDate "2018-05-03" ;
 	xp:numberOfAgents "4" ;
 	xp:numberOfIterations "2000" ;
 	xp:numberOfRuns "10" ;
 	xp:operators "add addjoin" .
 # 
-# xpd:Person_20180826-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Script_20180826-NOOR
 
-<xpd:Person_20180826-NOOR> a owl:NamedIndividual , foaf:Person .
+xp:Script_20180826-NOOR a owl:NamedIndividual , xp:Script .
 # 
-# xpd:Script_20180826-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Software_20180826-NOOR
 
-<xpd:Script_20180826-NOOR> a owl:NamedIndividual , xp:Script .
-# 
-# xpd:Software_20180826-NOOR
-
-<xpd:Software_20180826-NOOR> a owl:NamedIndividual , xp:Software ;
+xp:Software_20180826-NOOR a owl:NamedIndividual , xp:Software ;
 	xp:OSVersion "stretch" ;
 	xp:javaPath "lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:." ;
 	xp:logbackVersion " File:20180826-NOOR.zip " .
+# 
+# http://xmlns.com/foaf/0.1/Person_20180826-NOOR
+
+foaf:Person_20180826-NOOR a owl:NamedIndividual , foaf:Person .
+# 
+# http://xmlns.com/foaf/0.1/person_JEuz
+
+foaf:person_JEuz a owl:NamedIndividual , foaf:person ;
+	foaf:name "JEuz" .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

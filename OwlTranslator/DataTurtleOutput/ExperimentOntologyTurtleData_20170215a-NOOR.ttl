@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid2134545149 a owl:Ontology .
+_:genid1041117256 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -311,62 +311,62 @@ foaf:Person a owl:Class .
 # #################################################################
 # 
 # 
-# xpd:Analysis_20170215a-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Analysis_20170215a-NOOR
 
-<xpd:Analysis_20170215a-NOOR> a owl:NamedIndividual , xp:Analysis ;
-	xp:analyst <xpd:Person_20170215a-NOOR> ;
+xp:Analysis_20170215a-NOOR a owl:NamedIndividual , xp:Analysis ;
+	xp:analyst foaf:Person_20170215a-NOOR ;
 	xp:comment "      The results converge in all cases to 100% precision and 0% incoherence.    The behaviour of addjoin as related to add is still unclear    Recall and F-measure are however lower   " .
 # 
-# xpd:Configuration_20170215a-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Configuration_20170215a-NOOR
 
-<xpd:Configuration_20170215a-NOOR> a owl:NamedIndividual , xp:Configuration .
+xp:Configuration_20170215a-NOOR a owl:NamedIndividual , xp:Configuration .
 # 
-# xpd:DataResults_20170215a-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#DataResults_20170215a-NOOR
 
-<xpd:DataResults_20170215a-NOOR> a owl:NamedIndividual , xp:DataResults ;
-	xp:analysis <xpd:Analysis_20170215a-NOOR> ;
-	xp:explains <xpd:Analysis_20170215a-NOOR> .
+xp:DataResults_20170215a-NOOR a owl:NamedIndividual , xp:DataResults ;
+	xp:analysis xp:Analysis_20170215a-NOOR ;
+	xp:explains xp:Analysis_20170215a-NOOR .
 # 
-# xpd:Experiment_20170215a-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Experiment_20170215a-NOOR
 
-<xpd:Experiment_20170215a-NOOR> a owl:NamedIndividual , xp:Experiment ;
-	xp:performer <xpd:Person_20170215a-NOOR> ;
-	xp:performs <xpd:NOORDesign_20170215a-NOOR> ;
-	xp:reproduces <xpd:Experiment_20170215a-NOOR> ;
-	xp:results <xpd:DataResults_20170215a-NOOR> ;
+xp:Experiment_20170215a-NOOR a owl:NamedIndividual , xp:Experiment ;
+	xp:performer foaf:Person_20170215a-NOOR ;
+	xp:performs xp:NOORDesign_20170215a-NOOR ;
+	xp:reproduces xp:Experiment_20170215a-NOOR ;
+	xp:results xp:DataResults_20170215a-NOOR ;
 	xp:experimentationDate "20170215" .
 # 
-# xpd:Hardware_20170215a-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Hardware_20170215a-NOOR
 
-<xpd:Hardware_20170215a-NOOR> a owl:NamedIndividual , xp:Hardware ;
+xp:Hardware_20170215a-NOOR a owl:NamedIndividual , xp:Hardware ;
 	xp:hardwareComponent " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0 HotSpot " .
 # 
-# xpd:Hypothesis_20170215a-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Hypothesis_20170215a-NOOR
 
-<xpd:Hypothesis_20170215a-NOOR> a owl:NamedIndividual , xp:Hypothesis ;
-	xp:formalizes <xpd:Script_20170215a-NOOR> ;
+xp:Hypothesis_20170215a-NOOR a owl:NamedIndividual , xp:Hypothesis ;
+	xp:formalizes xp:Script_20170215a-NOOR ;
 	xp:label "      introducing the capability for agent to sometimes ignore the most specific applicable correspondences (with given immediate consumption probability) will improve precision by fighting shadowing.   " .
 # 
-# xpd:NOORDesign_20170215a-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#NOORDesign_20170215a-NOOR
 
-<xpd:NOORDesign_20170215a-NOOR> a owl:NamedIndividual , xp:NOORDesign ;
-	xp:designer <xpd:Person_20170215a-NOOR> ;
-	xp:runs_with <xpd:Configuration_20170215a-NOOR> ;
-	xp:specifiates <xpd:Script_20170215a-NOOR> ;
-	xp:tests <xpd:Hypothesis_20170215a-NOOR> .
+xp:NOORDesign_20170215a-NOOR a owl:NamedIndividual , xp:NOORDesign ;
+	xp:designer foaf:Person_20170215a-NOOR ;
+	xp:runs_with xp:Configuration_20170215a-NOOR ;
+	xp:specifiates xp:Script_20170215a-NOOR ;
+	xp:tests xp:Hypothesis_20170215a-NOOR .
 # 
-# xpd:Person_20170215a-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Script_20170215a-NOOR
 
-<xpd:Person_20170215a-NOOR> a owl:NamedIndividual , foaf:Person .
+xp:Script_20170215a-NOOR a owl:NamedIndividual , xp:Script .
 # 
-# xpd:Script_20170215a-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Software_20170215a-NOOR
 
-<xpd:Script_20170215a-NOOR> a owl:NamedIndividual , xp:Script .
-# 
-# xpd:Software_20170215a-NOOR
-
-<xpd:Software_20170215a-NOOR> a owl:NamedIndividual , xp:Software ;
+xp:Software_20170215a-NOOR a owl:NamedIndividual , xp:Software ;
 	xp:OSVersion " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0 HotSpot " ;
 	xp:logbackVersion " File:20170215b-NOOR-4-10000-delete-im80.txt,File:20170215b-NOOR-4-10000-delete-im80.tsv.txt, File:20170215b-NOOR-4-10000-replace-im80.txt,File:20170215b-NOOR-4-10000-replace-im80.tsv.txt, File:20170215b-NOOR-4-10000-refine-im80.txt,File:20170215b-NOOR-4-10000-refine-im80.tsv.txt, File:20170215b-NOOR-4-10000-add-im80.txt,File:20170215b-NOOR-4-10000-add-im80.tsv.txt, File:20170215b-NOOR-4-10000-addjoin-im80.txt,File:20170215b-NOOR-4-10000-addjoin-im80.tsv.txt, File:20170215b-NOOR-4-10000-refadd-im80.txt,File:20170215b-NOOR-4-10000-refadd-im80.tsv.txt " .
+# 
+# http://xmlns.com/foaf/0.1/Person_20170215a-NOOR
+
+foaf:Person_20170215a-NOOR a owl:NamedIndividual , foaf:Person .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

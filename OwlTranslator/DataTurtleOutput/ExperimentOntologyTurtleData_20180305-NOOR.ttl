@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid1273093350 a owl:Ontology .
+_:genid2046611860 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -311,62 +311,62 @@ foaf:Person a owl:Class .
 # #################################################################
 # 
 # 
-# xpd:Analysis_20180305-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Analysis_20180305-NOOR
 
-<xpd:Analysis_20180305-NOOR> a owl:NamedIndividual , xp:Analysis ;
-	xp:analyst <xpd:Person_20180305-NOOR> ;
+xp:Analysis_20180305-NOOR a owl:NamedIndividual , xp:Analysis ;
+	xp:analyst foaf:Person_20180305-NOOR ;
 	xp:comment " It seems that a bug has indeed been fixed. " .
 # 
-# xpd:Configuration_20180305-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Configuration_20180305-NOOR
 
-<xpd:Configuration_20180305-NOOR> a owl:NamedIndividual , xp:Configuration .
+xp:Configuration_20180305-NOOR a owl:NamedIndividual , xp:Configuration .
 # 
-# xpd:DataResults_20180305-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#DataResults_20180305-NOOR
 
-<xpd:DataResults_20180305-NOOR> a owl:NamedIndividual , xp:DataResults ;
-	xp:analysis <xpd:Analysis_20180305-NOOR> ;
-	xp:explains <xpd:Analysis_20180305-NOOR> .
+xp:DataResults_20180305-NOOR a owl:NamedIndividual , xp:DataResults ;
+	xp:analysis xp:Analysis_20180305-NOOR ;
+	xp:explains xp:Analysis_20180305-NOOR .
 # 
-# xpd:Experiment_20180305-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Experiment_20180305-NOOR
 
-<xpd:Experiment_20180305-NOOR> a owl:NamedIndividual , xp:Experiment ;
-	xp:performer <xpd:Person_20180305-NOOR> ;
-	xp:performs <xpd:NOORDesign_20180305-NOOR> ;
-	xp:reproduces <xpd:Experiment_20180305-NOOR> ;
-	xp:results <xpd:DataResults_20180305-NOOR> ;
+xp:Experiment_20180305-NOOR a owl:NamedIndividual , xp:Experiment ;
+	xp:performer foaf:Person_20180305-NOOR ;
+	xp:performs xp:NOORDesign_20180305-NOOR ;
+	xp:reproduces xp:Experiment_20180305-NOOR ;
+	xp:results xp:DataResults_20180305-NOOR ;
 	xp:experimentationDate "2018-03-05" .
 # 
-# xpd:Hardware_20180305-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Hardware_20180305-NOOR
 
-<xpd:Hardware_20180305-NOOR> a owl:NamedIndividual , xp:Hardware ;
+xp:Hardware_20180305-NOOR a owl:NamedIndividual , xp:Hardware ;
 	xp:hardwareComponent " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0_131-b11 HotSpot " .
 # 
-# xpd:Hypothesis_20180305-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Hypothesis_20180305-NOOR
 
-<xpd:Hypothesis_20180305-NOOR> a owl:NamedIndividual , xp:Hypothesis ;
-	xp:formalizes <xpd:Script_20180305-NOOR> ;
+xp:Hypothesis_20180305-NOOR a owl:NamedIndividual , xp:Hypothesis ;
+	xp:formalizes xp:Script_20180305-NOOR ;
 	xp:label " The goal of this test is to check that the operators add and addjoin performs correctly. It enabled to verify that this was not the case. For that purpose, we use the new facility of Lazy lavender to redo exactly the same test. The hypotheses to be observed are:      They have the same size at convergence    Addjoin converges faster    Addjoin has a higher semantic precision all the time (idem for syntactic)    Addjoin has a lower semantic recall all the time (syntactic are equal)   " .
 # 
-# xpd:NOORDesign_20180305-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#NOORDesign_20180305-NOOR
 
-<xpd:NOORDesign_20180305-NOOR> a owl:NamedIndividual , xp:NOORDesign ;
-	xp:designer <xpd:Person_20180305-NOOR> ;
-	xp:runs_with <xpd:Configuration_20180305-NOOR> ;
-	xp:specifiates <xpd:Script_20180305-NOOR> ;
-	xp:tests <xpd:Hypothesis_20180305-NOOR> .
+xp:NOORDesign_20180305-NOOR a owl:NamedIndividual , xp:NOORDesign ;
+	xp:designer foaf:Person_20180305-NOOR ;
+	xp:runs_with xp:Configuration_20180305-NOOR ;
+	xp:specifiates xp:Script_20180305-NOOR ;
+	xp:tests xp:Hypothesis_20180305-NOOR .
 # 
-# xpd:Person_20180305-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Script_20180305-NOOR
 
-<xpd:Person_20180305-NOOR> a owl:NamedIndividual , foaf:Person .
+xp:Script_20180305-NOOR a owl:NamedIndividual , xp:Script .
 # 
-# xpd:Script_20180305-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Software_20180305-NOOR
 
-<xpd:Script_20180305-NOOR> a owl:NamedIndividual , xp:Script .
-# 
-# xpd:Software_20180305-NOOR
-
-<xpd:Software_20180305-NOOR> a owl:NamedIndividual , xp:Software ;
+xp:Software_20180305-NOOR a owl:NamedIndividual , xp:Software ;
 	xp:OSVersion " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0_131-b11 HotSpot " ;
 	xp:logbackVersion " File:20180305-LOG.zip (The full log contains a .tex and .pdf indicating that the fourth hypothesis is not observed. This is leftover text of the previous test and actually does not apply to the data in this experiment and zip file.) " .
+# 
+# http://xmlns.com/foaf/0.1/Person_20180305-NOOR
+
+foaf:Person_20180305-NOOR a owl:NamedIndividual , foaf:Person .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

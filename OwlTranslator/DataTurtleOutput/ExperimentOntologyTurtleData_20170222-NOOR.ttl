@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid1512290769 a owl:Ontology .
+_:genid830710652 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -311,62 +311,62 @@ foaf:Person a owl:Class .
 # #################################################################
 # 
 # 
-# xpd:Analysis_20170222-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Analysis_20170222-NOOR
 
-<xpd:Analysis_20170222-NOOR> a owl:NamedIndividual , xp:Analysis ;
-	xp:analyst <xpd:Person_20170222-NOOR> ;
+xp:Analysis_20170222-NOOR a owl:NamedIndividual , xp:Analysis ;
+	xp:analyst foaf:Person_20170222-NOOR ;
 	xp:comment "      There does not seem to be any notable convergence    The values at 10000 and those at 100000 are roughly the same    However, precision seems to be very slowly increasing, but not recall (likely due to shadowing/functionality)   " .
 # 
-# xpd:Configuration_20170222-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Configuration_20170222-NOOR
 
-<xpd:Configuration_20170222-NOOR> a owl:NamedIndividual , xp:Configuration .
+xp:Configuration_20170222-NOOR a owl:NamedIndividual , xp:Configuration .
 # 
-# xpd:DataResults_20170222-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#DataResults_20170222-NOOR
 
-<xpd:DataResults_20170222-NOOR> a owl:NamedIndividual , xp:DataResults ;
-	xp:analysis <xpd:Analysis_20170222-NOOR> ;
-	xp:explains <xpd:Analysis_20170222-NOOR> .
+xp:DataResults_20170222-NOOR a owl:NamedIndividual , xp:DataResults ;
+	xp:analysis xp:Analysis_20170222-NOOR ;
+	xp:explains xp:Analysis_20170222-NOOR .
 # 
-# xpd:Experiment_20170222-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Experiment_20170222-NOOR
 
-<xpd:Experiment_20170222-NOOR> a owl:NamedIndividual , xp:Experiment ;
-	xp:performer <xpd:Person_20170222-NOOR> ;
-	xp:performs <xpd:NOORDesign_20170222-NOOR> ;
-	xp:reproduces <xpd:Experiment_20170222-NOOR> ;
-	xp:results <xpd:DataResults_20170222-NOOR> ;
+xp:Experiment_20170222-NOOR a owl:NamedIndividual , xp:Experiment ;
+	xp:performer foaf:Person_20170222-NOOR ;
+	xp:performs xp:NOORDesign_20170222-NOOR ;
+	xp:reproduces xp:Experiment_20170222-NOOR ;
+	xp:results xp:DataResults_20170222-NOOR ;
 	xp:experimentationDate "20170222" .
 # 
-# xpd:Hardware_20170222-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Hardware_20170222-NOOR
 
-<xpd:Hardware_20170222-NOOR> a owl:NamedIndividual , xp:Hardware ;
+xp:Hardware_20170222-NOOR a owl:NamedIndividual , xp:Hardware ;
 	xp:hardwareComponent "  Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0 HotSpot " .
 # 
-# xpd:Hypothesis_20170222-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Hypothesis_20170222-NOOR
 
-<xpd:Hypothesis_20170222-NOOR> a owl:NamedIndividual , xp:Hypothesis ;
-	xp:formalizes <xpd:Script_20170222-NOOR> ;
+xp:Hypothesis_20170222-NOOR a owl:NamedIndividual , xp:Hypothesis ;
+	xp:formalizes xp:Script_20170222-NOOR ;
 	xp:label "      eventually the random modality would reach a 100% recall   " .
 # 
-# xpd:NOORDesign_20170222-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#NOORDesign_20170222-NOOR
 
-<xpd:NOORDesign_20170222-NOOR> a owl:NamedIndividual , xp:NOORDesign ;
-	xp:designer <xpd:Person_20170222-NOOR> ;
-	xp:runs_with <xpd:Configuration_20170222-NOOR> ;
-	xp:specifiates <xpd:Script_20170222-NOOR> ;
-	xp:tests <xpd:Hypothesis_20170222-NOOR> .
+xp:NOORDesign_20170222-NOOR a owl:NamedIndividual , xp:NOORDesign ;
+	xp:designer foaf:Person_20170222-NOOR ;
+	xp:runs_with xp:Configuration_20170222-NOOR ;
+	xp:specifiates xp:Script_20170222-NOOR ;
+	xp:tests xp:Hypothesis_20170222-NOOR .
 # 
-# xpd:Person_20170222-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Script_20170222-NOOR
 
-<xpd:Person_20170222-NOOR> a owl:NamedIndividual , foaf:Person .
+xp:Script_20170222-NOOR a owl:NamedIndividual , xp:Script .
 # 
-# xpd:Script_20170222-NOOR
+# http://www.inria.fr/moex/ExperimentOntology#Software_20170222-NOOR
 
-<xpd:Script_20170222-NOOR> a owl:NamedIndividual , xp:Script .
-# 
-# xpd:Software_20170222-NOOR
-
-<xpd:Software_20170222-NOOR> a owl:NamedIndividual , xp:Software ;
+xp:Software_20170222-NOOR a owl:NamedIndividual , xp:Software ;
 	xp:OSVersion "  Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0 HotSpot " ;
 	xp:logbackVersion " File:20170222-NOOR-4-100000-replace-random.txt,File:20170222-NOOR-4-100000-replace-random.tsv.txt, also look at File:20170215b-NOOR-4-10000-replace-random.txt,File:20170215b-NOOR-4-10000-replace-random.tsv.txt, " .
+# 
+# http://xmlns.com/foaf/0.1/Person_20170222-NOOR
+
+foaf:Person_20170222-NOOR a owl:NamedIndividual , foaf:Person .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/
