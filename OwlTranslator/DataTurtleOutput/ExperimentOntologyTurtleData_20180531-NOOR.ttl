@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid1496332643 a owl:Ontology .
+_:genid1436218006 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -320,10 +320,6 @@ xp:Software a owl:Class ;
 
 foaf:Person a owl:Class .
 # 
-# http://xmlns.com/foaf/0.1/person
-
-foaf:person a owl:Class .
-# 
 # 
 # 
 # #################################################################
@@ -333,74 +329,74 @@ foaf:person a owl:Class .
 # #################################################################
 # 
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Analysis_20180531-NOOR
+# xpd:Analysis_20180531-NOOR
 
-xp:Analysis_20180531-NOOR a owl:NamedIndividual , xp:Analysis ;
-	xp:analyst foaf:person_euzenat ;
+<xpd:Analysis_20180531-NOOR> a owl:NamedIndividual , xp:Analysis ;
+	xp:analyst <xpd:Person_euzenat> ;
 	xp:comment "      The realistic alignments obtained tend to have a higher size    They seem to converge faster    They indeed obtain better results         Precision reaches 100% when used with relaxation      Recall and F-measure seems to be at least higher (2 points exception for refadd may be attributed to randomness)        All this is comparable to the results obtained in 20180307-NOOR. " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Configuration_20180531-NOOR
+# xpd:Configuration_20180531-NOOR
 
-xp:Configuration_20180531-NOOR a owl:NamedIndividual , xp:Configuration .
+<xpd:Configuration_20180531-NOOR> a owl:NamedIndividual , xp:Configuration .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#DataResults_20180531-NOOR
+# xpd:DataResults_20180531-NOOR
 
-xp:DataResults_20180531-NOOR a owl:NamedIndividual , xp:DataResults ;
-	xp:analysis xp:Analysis_20180531-NOOR ;
-	xp:explains xp:Analysis_20180531-NOOR .
+<xpd:DataResults_20180531-NOOR> a owl:NamedIndividual , xp:DataResults ;
+	xp:analysis <xpd:Analysis_20180531-NOOR> ;
+	xp:explains <xpd:Analysis_20180531-NOOR> .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Experiment_20180531-NOOR
+# xpd:Experiment_20180531-NOOR
 
-xp:Experiment_20180531-NOOR a owl:NamedIndividual , xp:Experiment ;
-	xp:performer foaf:person_euzenat ;
-	xp:performs xp:NOORDesign_20180531-NOOR ;
-	xp:reproduces xp:Experiment_20180531-NOOR ;
-	xp:results xp:DataResults_20180531-NOOR ;
+<xpd:Experiment_20180531-NOOR> a owl:NamedIndividual , xp:Experiment ;
+	xp:performer <xpd:Person_euzenat> ;
+	xp:performs <xpd:NOORDesign_20180531-NOOR> ;
+	xp:reproduces <xpd:Experiment_20180531-NOOR> ;
+	xp:results <xpd:DataResults_20180531-NOOR> ;
 	xp:experimentLabel "20180531-NOOR" ;
 	xp:experimentName "20180531-NOOR" ;
 	xp:experimentationDate "20180723" .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Hardware_20180531-NOOR
+# xpd:Hardware_20180531-NOOR
 
-xp:Hardware_20180531-NOOR a owl:NamedIndividual , xp:Hardware ;
+<xpd:Hardware_20180531-NOOR> a owl:NamedIndividual , xp:Hardware ;
 	xp:hardwareComponent " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0 HotSpot " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Hypothesis_20180531-NOOR
+# xpd:Hypothesis_20180531-NOOR
 
-xp:Hypothesis_20180531-NOOR a owl:NamedIndividual , xp:Hypothesis ;
-	xp:formalizes xp:Script_20180531-NOOR ;
+<xpd:Hypothesis_20180531-NOOR> a owl:NamedIndividual , xp:Hypothesis ;
+	xp:formalizes <xpd:Script_20180531-NOOR> ;
 	xp:label "Starting with a realistic alignment size improves the final size (hence recall and F-measure)" .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#NOORDesign_20180531-NOOR
+# xpd:NOORDesign_20180531-NOOR
 
-xp:NOORDesign_20180531-NOOR a owl:NamedIndividual , xp:NOORDesign ;
-	xp:designer foaf:person_euzenat ;
-	xp:runs_with xp:Configuration_20180531-NOOR ;
-	xp:specifiates xp:Script_20180531-NOOR ;
-	xp:tests xp:Hypothesis_20180531-NOOR ;
+<xpd:NOORDesign_20180531-NOOR> a owl:NamedIndividual , xp:NOORDesign ;
+	xp:designer <xpd:Person_euzenat> ;
+	xp:runs_with <xpd:Configuration_20180531-NOOR> ;
+	xp:specifiates <xpd:Script_20180531-NOOR> ;
+	xp:tests <xpd:Hypothesis_20180531-NOOR> ;
 	xp:numberOfAgents "4" ;
 	xp:numberOfIterations "10000" ;
 	xp:numberOfRuns "10" ;
 	xp:operators "delete replace refine add addjoin refadd" .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Script_20180531-NOOR
+# xpd:Person_20180531-NOOR
 
-xp:Script_20180531-NOOR a owl:NamedIndividual , xp:Script .
+<xpd:Person_20180531-NOOR> a owl:NamedIndividual , foaf:Person .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Software_20180531-NOOR
+# xpd:Person_euzenat
 
-xp:Software_20180531-NOOR a owl:NamedIndividual , xp:Software ;
+<xpd:Person_euzenat> a owl:NamedIndividual , foaf:Person ;
+	foaf:name "euzenat" .
+# 
+# xpd:Script_20180531-NOOR
+
+<xpd:Script_20180531-NOOR> a owl:NamedIndividual , xp:Script .
+# 
+# xpd:Software_20180531-NOOR
+
+<xpd:Software_20180531-NOOR> a owl:NamedIndividual , xp:Software ;
 	xp:OSVersion "stretch" ;
 	xp:javaPath "lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:." ;
 	xp:logbackVersion " File:20180531-NOOR.zip " .
-# 
-# http://xmlns.com/foaf/0.1/Person_20180531-NOOR
-
-foaf:Person_20180531-NOOR a owl:NamedIndividual , foaf:Person .
-# 
-# http://xmlns.com/foaf/0.1/person_euzenat
-
-foaf:person_euzenat a owl:NamedIndividual , foaf:person ;
-	foaf:name "euzenat" .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

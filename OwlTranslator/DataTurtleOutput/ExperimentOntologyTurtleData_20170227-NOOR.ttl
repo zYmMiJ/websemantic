@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid963383848 a owl:Ontology .
+_:genid336395359 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -311,62 +311,62 @@ foaf:Person a owl:Class .
 # #################################################################
 # 
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Analysis_20170227-NOOR
+# xpd:Analysis_20170227-NOOR
 
-xp:Analysis_20170227-NOOR a owl:NamedIndividual , xp:Analysis ;
-	xp:analyst foaf:Person_20170227-NOOR ;
+<xpd:Analysis_20170227-NOOR> a owl:NamedIndividual , xp:Analysis ;
+	xp:analyst <xpd:Person_20170227-NOOR> ;
 	xp:comment "      Except for the last case, it is clear that the logical repairers do not improve over the agents    However, the fact that incoherence is not reduced to 0.0 in the second and last case, let suspect a bug   " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Configuration_20170227-NOOR
+# xpd:Configuration_20170227-NOOR
 
-xp:Configuration_20170227-NOOR a owl:NamedIndividual , xp:Configuration .
+<xpd:Configuration_20170227-NOOR> a owl:NamedIndividual , xp:Configuration .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#DataResults_20170227-NOOR
+# xpd:DataResults_20170227-NOOR
 
-xp:DataResults_20170227-NOOR a owl:NamedIndividual , xp:DataResults ;
-	xp:analysis xp:Analysis_20170227-NOOR ;
-	xp:explains xp:Analysis_20170227-NOOR .
+<xpd:DataResults_20170227-NOOR> a owl:NamedIndividual , xp:DataResults ;
+	xp:analysis <xpd:Analysis_20170227-NOOR> ;
+	xp:explains <xpd:Analysis_20170227-NOOR> .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Experiment_20170227-NOOR
+# xpd:Experiment_20170227-NOOR
 
-xp:Experiment_20170227-NOOR a owl:NamedIndividual , xp:Experiment ;
-	xp:performer foaf:Person_20170227-NOOR ;
-	xp:performs xp:NOORDesign_20170227-NOOR ;
-	xp:reproduces xp:Experiment_20170227-NOOR ;
-	xp:results xp:DataResults_20170227-NOOR ;
+<xpd:Experiment_20170227-NOOR> a owl:NamedIndividual , xp:Experiment ;
+	xp:performer <xpd:Person_20170227-NOOR> ;
+	xp:performs <xpd:NOORDesign_20170227-NOOR> ;
+	xp:reproduces <xpd:Experiment_20170227-NOOR> ;
+	xp:results <xpd:DataResults_20170227-NOOR> ;
 	xp:experimentationDate "2017-02-27" .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Hardware_20170227-NOOR
+# xpd:Hardware_20170227-NOOR
 
-xp:Hardware_20170227-NOOR a owl:NamedIndividual , xp:Hardware ;
+<xpd:Hardware_20170227-NOOR> a owl:NamedIndividual , xp:Hardware ;
 	xp:hardwareComponent " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0 HotSpot " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Hypothesis_20170227-NOOR
+# xpd:Hypothesis_20170227-NOOR
 
-xp:Hypothesis_20170227-NOOR a owl:NamedIndividual , xp:Hypothesis ;
-	xp:formalizes xp:Script_20170227-NOOR ;
+<xpd:Hypothesis_20170227-NOOR> a owl:NamedIndividual , xp:Hypothesis ;
+	xp:formalizes <xpd:Script_20170227-NOOR> ;
 	xp:label "      Using repair systems does not improve F-measure whatever the level achieved by agents.   " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#NOORDesign_20170227-NOOR
+# xpd:NOORDesign_20170227-NOOR
 
-xp:NOORDesign_20170227-NOOR a owl:NamedIndividual , xp:NOORDesign ;
-	xp:designer foaf:Person_20170227-NOOR ;
-	xp:runs_with xp:Configuration_20170227-NOOR ;
-	xp:specifiates xp:Script_20170227-NOOR ;
-	xp:tests xp:Hypothesis_20170227-NOOR .
+<xpd:NOORDesign_20170227-NOOR> a owl:NamedIndividual , xp:NOORDesign ;
+	xp:designer <xpd:Person_20170227-NOOR> ;
+	xp:runs_with <xpd:Configuration_20170227-NOOR> ;
+	xp:specifiates <xpd:Script_20170227-NOOR> ;
+	xp:tests <xpd:Hypothesis_20170227-NOOR> .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Script_20170227-NOOR
+# xpd:Person_20170227-NOOR
 
-xp:Script_20170227-NOOR a owl:NamedIndividual , xp:Script .
+<xpd:Person_20170227-NOOR> a owl:NamedIndividual , foaf:Person .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Software_20170227-NOOR
+# xpd:Script_20170227-NOOR
 
-xp:Software_20170227-NOOR a owl:NamedIndividual , xp:Software ;
+<xpd:Script_20170227-NOOR> a owl:NamedIndividual , xp:Script .
+# 
+# xpd:Software_20170227-NOOR
+
+<xpd:Software_20170227-NOOR> a owl:NamedIndividual , xp:Software ;
 	xp:OSVersion " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0 HotSpot " ;
 	xp:logbackVersion " File:20170227-NOOR-4-10000-refadd-rr.txt,File:20170227-NOOR-4-10000-refadd-rr.tsv.txt, File:20170227-NOOR-4-10000-refadd-clever-nr-rr.txt,File:20170227-NOOR-4-10000-refadd-clever-nr-rr.tsv.txt, File:20170227-NOOR-4-10000-refadd-im80-rr.txt,File:20170227-NOOR-4-10000-refadd-im80-rr.tsv.txt, File:20170227-NOOR-4-10000-refadd-clever-nr-im80-rr.txt,File:20170227-NOOR-4-10000-refadd-clever-nr-im80-rr.tsv.txt, " .
-# 
-# http://xmlns.com/foaf/0.1/Person_20170227-NOOR
-
-foaf:Person_20170227-NOOR a owl:NamedIndividual , foaf:Person .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

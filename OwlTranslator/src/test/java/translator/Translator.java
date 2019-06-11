@@ -237,7 +237,7 @@ public class Translator {
 					}
 					else {
 						//make ObjectProperty about Person
-						IRI personIRI = IRI.create("http://xmlns.com/foaf/0.1/person");
+						IRI personIRI = IRI.create("http://xmlns.com/foaf/0.1/Person");
 						OWLClass person = factory.getOWLClass(personIRI);
 						OWLNamedIndividual personInstance = makerIndividual.makeIndividual(person, "_"+mapObjectProperty_Value.get(ppt));
 						

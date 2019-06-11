@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid476499202 a owl:Ontology .
+_:genid169505492 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -311,62 +311,62 @@ foaf:Person a owl:Class .
 # #################################################################
 # 
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Analysis_20171128-NOOR
+# xpd:Analysis_20171128-NOOR
 
-xp:Analysis_20171128-NOOR a owl:NamedIndividual , xp:Analysis ;
-	xp:analyst foaf:Person_20171128-NOOR ;
+<xpd:Analysis_20171128-NOOR> a owl:NamedIndividual , xp:Analysis ;
+	xp:analyst <xpd:Person_20171128-NOOR> ;
 	xp:comment "      The behaviour or 'add' is highly different, hence must be investigated. Actually, the way operators have been designed predicts that 'add' is slower to converge than 'addjoin'. However, looking at the curves it is a clear outlier.    Some other situations clever-nr-gen do not seem to converge towards 100% precision at that stage;    The trends of 20170530-NOOR and 20170531-NOOR are observed, except that starting empty leads to more quickly to correct correspondence when im80 is not used    Recall and thus F-measure are lower than with 4 agents (this is inline with the observations of 20150219-NOOR)   " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Configuration_20171128-NOOR
+# xpd:Configuration_20171128-NOOR
 
-xp:Configuration_20171128-NOOR a owl:NamedIndividual , xp:Configuration .
+<xpd:Configuration_20171128-NOOR> a owl:NamedIndividual , xp:Configuration .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#DataResults_20171128-NOOR
+# xpd:DataResults_20171128-NOOR
 
-xp:DataResults_20171128-NOOR a owl:NamedIndividual , xp:DataResults ;
-	xp:analysis xp:Analysis_20171128-NOOR ;
-	xp:explains xp:Analysis_20171128-NOOR .
+<xpd:DataResults_20171128-NOOR> a owl:NamedIndividual , xp:DataResults ;
+	xp:analysis <xpd:Analysis_20171128-NOOR> ;
+	xp:explains <xpd:Analysis_20171128-NOOR> .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Experiment_20171128-NOOR
+# xpd:Experiment_20171128-NOOR
 
-xp:Experiment_20171128-NOOR a owl:NamedIndividual , xp:Experiment ;
-	xp:performer foaf:Person_20171128-NOOR ;
-	xp:performs xp:NOORDesign_20171128-NOOR ;
-	xp:reproduces xp:Experiment_20171128-NOOR ;
-	xp:results xp:DataResults_20171128-NOOR ;
+<xpd:Experiment_20171128-NOOR> a owl:NamedIndividual , xp:Experiment ;
+	xp:performer <xpd:Person_20171128-NOOR> ;
+	xp:performs <xpd:NOORDesign_20171128-NOOR> ;
+	xp:reproduces <xpd:Experiment_20171128-NOOR> ;
+	xp:results <xpd:DataResults_20171128-NOOR> ;
 	xp:experimentationDate "2017-11-28" .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Hardware_20171128-NOOR
+# xpd:Hardware_20171128-NOOR
 
-xp:Hardware_20171128-NOOR a owl:NamedIndividual , xp:Hardware ;
+<xpd:Hardware_20171128-NOOR> a owl:NamedIndividual , xp:Hardware ;
 	xp:hardwareComponent " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0_131-b11 HotSpot " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Hypothesis_20171128-NOOR
+# xpd:Hypothesis_20171128-NOOR
 
-xp:Hypothesis_20171128-NOOR a owl:NamedIndividual , xp:Hypothesis ;
-	xp:formalizes xp:Script_20171128-NOOR ;
+<xpd:Hypothesis_20171128-NOOR> a owl:NamedIndividual , xp:Hypothesis ;
+	xp:formalizes <xpd:Script_20171128-NOOR> ;
 	xp:label "      The trends observed in 20170530-NOOR and 20170531-NOOR do not depend on the number of agents   " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#NOORDesign_20171128-NOOR
+# xpd:NOORDesign_20171128-NOOR
 
-xp:NOORDesign_20171128-NOOR a owl:NamedIndividual , xp:NOORDesign ;
-	xp:designer foaf:Person_20171128-NOOR ;
-	xp:runs_with xp:Configuration_20171128-NOOR ;
-	xp:specifiates xp:Script_20171128-NOOR ;
-	xp:tests xp:Hypothesis_20171128-NOOR .
+<xpd:NOORDesign_20171128-NOOR> a owl:NamedIndividual , xp:NOORDesign ;
+	xp:designer <xpd:Person_20171128-NOOR> ;
+	xp:runs_with <xpd:Configuration_20171128-NOOR> ;
+	xp:specifiates <xpd:Script_20171128-NOOR> ;
+	xp:tests <xpd:Hypothesis_20171128-NOOR> .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Script_20171128-NOOR
+# xpd:Person_20171128-NOOR
 
-xp:Script_20171128-NOOR a owl:NamedIndividual , xp:Script .
+<xpd:Person_20171128-NOOR> a owl:NamedIndividual , foaf:Person .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Software_20171128-NOOR
+# xpd:Script_20171128-NOOR
 
-xp:Software_20171128-NOOR a owl:NamedIndividual , xp:Software ;
+<xpd:Script_20171128-NOOR> a owl:NamedIndividual , xp:Script .
+# 
+# xpd:Software_20171128-NOOR
+
+<xpd:Software_20171128-NOOR> a owl:NamedIndividual , xp:Software ;
 	xp:OSVersion " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0_131-b11 HotSpot " ;
 	xp:logbackVersion " File:20171128-NOOR.zip " .
-# 
-# http://xmlns.com/foaf/0.1/Person_20171128-NOOR
-
-foaf:Person_20171128-NOOR a owl:NamedIndividual , foaf:Person .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

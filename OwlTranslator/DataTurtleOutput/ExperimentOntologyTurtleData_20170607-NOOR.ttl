@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid1279013285 a owl:Ontology .
+_:genid448700909 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -311,62 +311,62 @@ foaf:Person a owl:Class .
 # #################################################################
 # 
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Analysis_20170607-NOOR
+# xpd:Analysis_20170607-NOOR
 
-xp:Analysis_20170607-NOOR a owl:NamedIndividual , xp:Analysis ;
-	xp:analyst foaf:Person_20170607-NOOR ;
+<xpd:Analysis_20170607-NOOR> a owl:NamedIndividual , xp:Analysis ;
+	xp:analyst <xpd:Person_20170607-NOOR> ;
 	xp:comment "      Since the agents never fail (alignments are all fully correct), they never have the occasion to apply any operator and thus to generate any new correspondences    The hypothesis is thus refuted.   " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Configuration_20170607-NOOR
+# xpd:Configuration_20170607-NOOR
 
-xp:Configuration_20170607-NOOR a owl:NamedIndividual , xp:Configuration .
+<xpd:Configuration_20170607-NOOR> a owl:NamedIndividual , xp:Configuration .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#DataResults_20170607-NOOR
+# xpd:DataResults_20170607-NOOR
 
-xp:DataResults_20170607-NOOR a owl:NamedIndividual , xp:DataResults ;
-	xp:analysis xp:Analysis_20170607-NOOR ;
-	xp:explains xp:Analysis_20170607-NOOR .
+<xpd:DataResults_20170607-NOOR> a owl:NamedIndividual , xp:DataResults ;
+	xp:analysis <xpd:Analysis_20170607-NOOR> ;
+	xp:explains <xpd:Analysis_20170607-NOOR> .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Experiment_20170607-NOOR
+# xpd:Experiment_20170607-NOOR
 
-xp:Experiment_20170607-NOOR a owl:NamedIndividual , xp:Experiment ;
-	xp:performer foaf:Person_20170607-NOOR ;
-	xp:performs xp:NOORDesign_20170607-NOOR ;
-	xp:reproduces xp:Experiment_20170607-NOOR ;
-	xp:results xp:DataResults_20170607-NOOR ;
+<xpd:Experiment_20170607-NOOR> a owl:NamedIndividual , xp:Experiment ;
+	xp:performer <xpd:Person_20170607-NOOR> ;
+	xp:performs <xpd:NOORDesign_20170607-NOOR> ;
+	xp:reproduces <xpd:Experiment_20170607-NOOR> ;
+	xp:results <xpd:DataResults_20170607-NOOR> ;
 	xp:experimentationDate "2017060720" .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Hardware_20170607-NOOR
+# xpd:Hardware_20170607-NOOR
 
-xp:Hardware_20170607-NOOR a owl:NamedIndividual , xp:Hardware ;
+<xpd:Hardware_20170607-NOOR> a owl:NamedIndividual , xp:Hardware ;
 	xp:hardwareComponent " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0 HotSpot " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Hypothesis_20170607-NOOR
+# xpd:Hypothesis_20170607-NOOR
 
-xp:Hypothesis_20170607-NOOR a owl:NamedIndividual , xp:Hypothesis ;
-	xp:formalizes xp:Script_20170607-NOOR ;
+<xpd:Hypothesis_20170607-NOOR> a owl:NamedIndividual , xp:Hypothesis ;
+	xp:formalizes <xpd:Script_20170607-NOOR> ;
 	xp:label "      Agents may be able to complete alignments   " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#NOORDesign_20170607-NOOR
+# xpd:NOORDesign_20170607-NOOR
 
-xp:NOORDesign_20170607-NOOR a owl:NamedIndividual , xp:NOORDesign ;
-	xp:designer foaf:Person_20170607-NOOR ;
-	xp:runs_with xp:Configuration_20170607-NOOR ;
-	xp:specifiates xp:Script_20170607-NOOR ;
-	xp:tests xp:Hypothesis_20170607-NOOR .
+<xpd:NOORDesign_20170607-NOOR> a owl:NamedIndividual , xp:NOORDesign ;
+	xp:designer <xpd:Person_20170607-NOOR> ;
+	xp:runs_with <xpd:Configuration_20170607-NOOR> ;
+	xp:specifiates <xpd:Script_20170607-NOOR> ;
+	xp:tests <xpd:Hypothesis_20170607-NOOR> .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Script_20170607-NOOR
+# xpd:Person_20170607-NOOR
 
-xp:Script_20170607-NOOR a owl:NamedIndividual , xp:Script .
+<xpd:Person_20170607-NOOR> a owl:NamedIndividual , foaf:Person .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Software_20170607-NOOR
+# xpd:Script_20170607-NOOR
 
-xp:Software_20170607-NOOR a owl:NamedIndividual , xp:Software ;
+<xpd:Script_20170607-NOOR> a owl:NamedIndividual , xp:Script .
+# 
+# xpd:Software_20170607-NOOR
+
+<xpd:Software_20170607-NOOR> a owl:NamedIndividual , xp:Software ;
 	xp:OSVersion " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0 HotSpot " ;
 	xp:logbackVersion " We do not provide the ``full logs as all tsv log files are the same (as MediaWiki detects them), on we only updated the two first ones. File:20170607-NOOR-4-10000-delete-clever-nr-empty.txt,File:20170607-NOOR-4-10000-delete-clever-nr-empty.tsv.txt, File:20170607-NOOR-4-10000-replace-clever-nr-empty.txt,File:20170607-NOOR-4-10000-replace-clever-nr-empty.tsv.txt, File:20170607-NOOR-4-10000-refine-clever-nr-empty.txt, File:20170607-NOOR-4-10000-add-clever-nr-empty.txt, File:20170607-NOOR-4-10000-addjoin-clever-nr-empty.txt, File:20170607-NOOR-4-10000-refadd-clever-nr-empty.txt, File:20170607-NOOR-4-10000-delete-clever-nr-im80-empty.txt, File:20170607-NOOR-4-10000-replace-clever-nr-im80-empty.txt, File:20170607-NOOR-4-10000-refine-clever-nr-im80-empty.txt, File:20170607-NOOR-4-10000-add-clever-nr-im80-empty.txt, File:20170607-NOOR-4-10000-addjoin-clever-nr-im80-empty.txt, File:20170607-NOOR-4-10000-refadd-clever-nr-im80-empty.txt, " .
-# 
-# http://xmlns.com/foaf/0.1/Person_20170607-NOOR
-
-foaf:Person_20170607-NOOR a owl:NamedIndividual , foaf:Person .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

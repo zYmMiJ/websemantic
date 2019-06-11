@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid1181947538 a owl:Ontology .
+_:genid1551263930 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -320,10 +320,6 @@ xp:Software a owl:Class ;
 
 foaf:Person a owl:Class .
 # 
-# http://xmlns.com/foaf/0.1/person
-
-foaf:person a owl:Class .
-# 
 # 
 # 
 # #################################################################
@@ -333,80 +329,80 @@ foaf:person a owl:Class .
 # #################################################################
 # 
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Analysis_20181112-NOOR
+# xpd:Analysis_20181112-NOOR
 
-xp:Analysis_20181112-NOOR a owl:NamedIndividual , xp:Analysis ;
-	xp:analyst foaf:person_JEuz ;
+<xpd:Analysis_20181112-NOOR> a owl:NamedIndividual , xp:Analysis ;
+	xp:analyst <xpd:Person_JEuz> ;
 	xp:comment "      Random strenghening performs just like most specific and most general strenghening   " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Configuration_20181112-NOOR
+# xpd:Configuration_20181112-NOOR
 
-xp:Configuration_20181112-NOOR a owl:NamedIndividual , xp:Configuration .
+<xpd:Configuration_20181112-NOOR> a owl:NamedIndividual , xp:Configuration .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#DataResults_20181112-NOOR
+# xpd:DataResults_20181112-NOOR
 
-xp:DataResults_20181112-NOOR a owl:NamedIndividual , xp:DataResults ;
-	xp:analysis xp:Analysis_20181112-NOOR ;
-	xp:explains xp:Analysis_20181112-NOOR .
+<xpd:DataResults_20181112-NOOR> a owl:NamedIndividual , xp:DataResults ;
+	xp:analysis <xpd:Analysis_20181112-NOOR> ;
+	xp:explains <xpd:Analysis_20181112-NOOR> .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Experiment_20181112-NOOR
+# xpd:Experiment_20181112-NOOR
 
-xp:Experiment_20181112-NOOR a owl:NamedIndividual , xp:Experiment ;
-	xp:performer foaf:person_JEuz ;
-	xp:performs xp:NOORDesign_20181112-NOOR ;
-	xp:reproduces xp:Experiment_20181112-NOOR ;
-	xp:results xp:DataResults_20181112-NOOR ;
+<xpd:Experiment_20181112-NOOR> a owl:NamedIndividual , xp:Experiment ;
+	xp:performer <xpd:Person_JEuz> ;
+	xp:performs <xpd:NOORDesign_20181112-NOOR> ;
+	xp:reproduces <xpd:Experiment_20181112-NOOR> ;
+	xp:results <xpd:DataResults_20181112-NOOR> ;
 	xp:experimentLabel "20181112-NOOR" ;
 	xp:experimentName "20181112-NOOR" ;
 	xp:experimentationDate "20181112" .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Hardware_20181112-NOOR
+# xpd:Hardware_20181112-NOOR
 
-xp:Hardware_20181112-NOOR a owl:NamedIndividual , xp:Hardware ;
+<xpd:Hardware_20181112-NOOR> a owl:NamedIndividual , xp:Hardware ;
 	xp:hardwareComponent " 24 * Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz with 20GB RAM / Linux 4.15.17-1-pve / Java(TM) SE Runtime Environment 1.8.0_151 with 4.33G max heap size " .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Hypothesis_20181112-NOOR
+# xpd:Hypothesis_20181112-NOOR
 
-xp:Hypothesis_20181112-NOOR a owl:NamedIndividual , xp:Hypothesis ;
-	xp:formalizes xp:Script_20181112-NOOR ;
+<xpd:Hypothesis_20181112-NOOR> a owl:NamedIndividual , xp:Hypothesis ;
+	xp:formalizes <xpd:Script_20181112-NOOR> ;
 	xp:label "The random version of strengthening does not differ much from the most specific and most general ones" .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#NOORDesign_20181112-NOOR
+# xpd:NOORDesign_20181112-NOOR
 
-xp:NOORDesign_20181112-NOOR a owl:NamedIndividual , xp:NOORDesign ;
-	xp:designer <http://xmlns.com/foaf/0.1/person_Iris Lohja> ;
-	xp:runs_with xp:Configuration_20181112-NOOR ;
-	xp:specifiates xp:Script_20181112-NOOR ;
-	xp:tests xp:Hypothesis_20181112-NOOR ;
+<xpd:NOORDesign_20181112-NOOR> a owl:NamedIndividual , xp:NOORDesign ;
+	xp:designer <xpd:Person_IrisLohja> ;
+	xp:runs_with <xpd:Configuration_20181112-NOOR> ;
+	xp:specifiates <xpd:Script_20181112-NOOR> ;
+	xp:tests <xpd:Hypothesis_20181112-NOOR> ;
 	xp:designDate "2018-06-01" ;
 	xp:numberOfAgents "4" ;
 	xp:numberOfIterations "10000" ;
 	xp:numberOfRuns "10" ;
 	xp:operators "delete replace refine add addjoin refadd" .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Script_20181112-NOOR
+# xpd:Person_20181112-NOOR
 
-xp:Script_20181112-NOOR a owl:NamedIndividual , xp:Script .
+<xpd:Person_20181112-NOOR> a owl:NamedIndividual , foaf:Person .
 # 
-# http://www.inria.fr/moex/ExperimentOntology#Software_20181112-NOOR
+# xpd:Person_IrisLohja
 
-xp:Software_20181112-NOOR a owl:NamedIndividual , xp:Software ;
+<xpd:Person_IrisLohja> a owl:NamedIndividual , foaf:Person ;
+	foaf:name "Iris Lohja" .
+# 
+# xpd:Person_JEuz
+
+<xpd:Person_JEuz> a owl:NamedIndividual , foaf:Person ;
+	foaf:name "JEuz" .
+# 
+# xpd:Script_20181112-NOOR
+
+<xpd:Script_20181112-NOOR> a owl:NamedIndividual , xp:Script .
+# 
+# xpd:Software_20181112-NOOR
+
+<xpd:Software_20181112-NOOR> a owl:NamedIndividual , xp:Software ;
 	xp:OSVersion "stretch" ;
 	xp:javaPath "lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:." ;
 	xp:logbackVersion " File:20181112-NOOR.zip " .
-# 
-# http://xmlns.com/foaf/0.1/Person_20181112-NOOR
-
-foaf:Person_20181112-NOOR a owl:NamedIndividual , foaf:Person .
-# 
-# http://xmlns.com/foaf/0.1/person_JEuz
-
-foaf:person_JEuz a owl:NamedIndividual , foaf:person ;
-	foaf:name "JEuz" .
-# 
-# http://xmlns.com/foaf/0.1/person_Iris Lohja
-
-<http://xmlns.com/foaf/0.1/person_Iris Lohja> a owl:NamedIndividual , foaf:person ;
-	foaf:name "Iris Lohja" .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/
