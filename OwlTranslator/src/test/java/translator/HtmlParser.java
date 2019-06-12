@@ -108,7 +108,7 @@ public class HtmlParser extends Parser{
 							}
 							
 						}
-						// Special Case
+							// Special Case
 						if(params.contains("Date")){
 							String titleValue = value;
 							value = value.replaceAll(" ", "");
@@ -120,12 +120,14 @@ public class HtmlParser extends Parser{
 								dataparsedHTML.add(d);
 							}
 							// Get different pattern of String date
-							if( value.length() >= 10 && value.contains("-") ) {
-								value  = value.substring(0, 10);
-							}else if( value.length() >= 8 ) {
-								value  = value.substring(0, 8);
-							}
+							value = value.replace("-", "");
+							value  = value.substring(0, 4)+"-"+value.substring(4, 6)+"-"+value.substring(6, 8);
+							
 						}
+						params = params.replace(":", "");// Clean some char into our params
+						params = params.trim();
+						value = value.trim();
+			
 						DataParsed d = new DataParsed(params, value);
 						dataparsedHTML.add(d);
 						j ++;// to check next (params,datas)
