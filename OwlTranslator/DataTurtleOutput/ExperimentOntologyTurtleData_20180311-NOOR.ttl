@@ -18,7 +18,7 @@
 
 xpd:Analysis_20180311-NOOR a owl:NamedIndividual , xp:Analysis ;
 	xp:analyst xpd:Person_20180311-NOOR ;
-	xp:comment "      The results are commensurate with 20170215a-NOOR    Except that now, as expected, final results for add and addjoin are the same    As a consequence results of refadd are even better (they use addjoin)    Applying the same set of events shows that addjoin converges faster, but add reaches the same resulting alignments    The results have the same relation with 20180308-NOOR (smaller size, 100% precision, lower recall) as 20170215a-NOOR has with 20170214a-NOOR and 20170214b-NOOR   " .
+	xp:comment "The results are commensurate with 20170215a-NOOR    Except that now, as expected, final results for add and addjoin are the same    As a consequence results of refadd are even better (they use addjoin)    Applying the same set of events shows that addjoin converges faster, but add reaches the same resulting alignments    The results have the same relation with 20180308-NOOR (smaller size, 100% precision, lower recall) as 20170215a-NOOR has with 20170214a-NOOR and 20170214b-NOOR" .
 # 
 # xpd:Configuration_20180311-NOOR
 
@@ -39,18 +39,18 @@ xpd:Experiment_20180311-NOOR a owl:NamedIndividual , xp:Experiment ;
 	xp:results xpd:DataResults_20180311-NOOR ;
 	xp:variationOf xpd:Experiment_20180311-NOOR ;
 	xp:experimentationDate "2018-03-11" ;
-	xp:hash " b86d0cb89108ca78d0ead507098e14683e4d39fb " .
+	xp:hash "b86d0cb89108ca78d0ead507098e14683e4d39fb" .
 # 
 # xpd:Hardware_20180311-NOOR
 
 xpd:Hardware_20180311-NOOR a owl:NamedIndividual , xp:Hardware ;
-	xp:hardwareComponent " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0_151-b12 HotSpot " .
+	xp:hardwareComponent "Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0_151-b12 HotSpot" .
 # 
 # xpd:Hypothesis_20180311-NOOR
 
 xpd:Hypothesis_20180311-NOOR a owl:NamedIndividual , xp:Hypothesis ;
 	xp:formalizes xpd:Script_20180311-NOOR ;
-	xp:label "      reproduction of results of 20170215a-NOOR    clearer behaviour of add/addjoin after bug correction (3fcf33/2018-03-05) affecting addjoin/refadd   " .
+	xp:label "reproduction of results of 20170215a-NOOR    clearer behaviour of add/addjoin after bug correction (3fcf33/2018-03-05) affecting addjoin/refadd" .
 # 
 # xpd:NOORDesign_20180311-NOOR
 
@@ -59,7 +59,7 @@ xpd:NOORDesign_20180311-NOOR a owl:NamedIndividual , xp:NOORDesign ;
 	xp:runs_with xpd:Configuration_20180311-NOOR ;
 	xp:specifiates xpd:Script_20180311-NOOR ;
 	xp:tests xpd:Hypothesis_20180311-NOOR ;
-	xp:experimentalSetting " Same as the initial experiments 20170215a-NOOR with:      fixed errors in the implementation of addjoin (affects addjoin and refadd)    comparison on the exact same set of games (replayGames)   " ;
+	xp:experimentalSetting "Same as the initial experiments 20170215a-NOOR with:      fixed errors in the implementation of addjoin (affects addjoin and refadd)    comparison on the exact same set of games (replayGames)" ;
 	xp:numberOfAgents "4" ;
 	xp:numberOfIterations "10000" ;
 	xp:numberOfRuns "10" ;
@@ -72,13 +72,13 @@ xpd:Person_20180311-NOOR a owl:NamedIndividual , foaf:Person .
 # xpd:Script_20180311-NOOR
 
 xpd:Script_20180311-NOOR a owl:NamedIndividual , xp:Script ;
-	xp:code "      JPATH=lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:.   OPT=\"-DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec\"      # Dry test only for generating the runs   bash scripts/runexp.sh -d 4-10000-nothing java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=nothing -DsaveDir=expeRun -DsaveInit -DsaveParams -DsaveGames      LOADOPT=\"-DloadDir=expeRun -DloadEnv -DloadAgents -DreplayGames\"      for mod in delete replace refine add addjoin refadd   do      bash scripts/runexp.sh -d 4-10000-${mod} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${mod} -DimmediateRatio=80   done " .
+	xp:code "JPATH=lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:.   OPT=\"-DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec\"      # Dry test only for generating the runs   bash scripts/runexp.sh -d 4-10000-nothing java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=nothing -DsaveDir=expeRun -DsaveInit -DsaveParams -DsaveGames      LOADOPT=\"-DloadDir=expeRun -DloadEnv -DloadAgents -DreplayGames\"      for mod in delete replace refine add addjoin refadd   do      bash scripts/runexp.sh -d 4-10000-${mod} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${mod} -DimmediateRatio=80   done" .
 # 
 # xpd:Software_20180311-NOOR
 
 xpd:Software_20180311-NOOR a owl:NamedIndividual , xp:Software ;
-	xp:OSVersion " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0_151-b12 HotSpot " ;
+	xp:OSVersion "Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0_151-b12 HotSpot" ;
 	xp:javaPath "lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:." ;
-	xp:logbackVersion " File:20180311-LOG.zip " .
+	xp:logbackVersion "File:20180311-LOG.zip" .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

@@ -18,7 +18,7 @@
 
 xpd:Analysis_20180828-NOOR a owl:NamedIndividual , xp:Analysis ;
 	xp:analyst xpd:Person_JEuz ;
-	xp:comment "       On delete, replace and refine, strengthening has a negative influence when 'generation' is not used.    This is natural since a correct correspondence is replaced by an eventually incorrect one but when this one is found incorrect, there is no way to recover the previous one (this require 'add').      When used with generation, these three operators enjoy an improved recall.    On the other side of the spectrum, the refadd operator always improves recall, the is not the case for add and addjoin which only improve their recall when relaxation is available. This remains to be explained as relaxation is supposed to improve precision (which it does). It seems that       As already observed, there is little difference between starting empty and random networks. The results with random networks contain less correspondences, likely due to the non realistic size of initial networks.    refadd with expansion + generation + relaxation + strenghen=specific achieves remarkable results with .99 and .97 F-measure.    Some tests have a late convergence rank, hence it is likely that convergence has not been achieved.   " .
+	xp:comment "On delete, replace and refine, strengthening has a negative influence when 'generation' is not used.    This is natural since a correct correspondence is replaced by an eventually incorrect one but when this one is found incorrect, there is no way to recover the previous one (this require 'add').      When used with generation, these three operators enjoy an improved recall.    On the other side of the spectrum, the refadd operator always improves recall, the is not the case for add and addjoin which only improve their recall when relaxation is available. This remains to be explained as relaxation is supposed to improve precision (which it does). It seems that       As already observed, there is little difference between starting empty and random networks. The results with random networks contain less correspondences, likely due to the non realistic size of initial networks.    refadd with expansion + generation + relaxation + strenghen=specific achieves remarkable results with .99 and .97 F-measure.    Some tests have a late convergence rank, hence it is likely that convergence has not been achieved." .
 # 
 # xpd:Configuration_20180828-NOOR
 
@@ -45,12 +45,12 @@ xpd:Experiment_20180828-NOOR a owl:NamedIndividual , xp:Experiment ;
 	xp:experimentLabel "20180828-NOOR" ;
 	xp:experimentName "20180828-NOOR" ;
 	xp:experimentationDate "20180828" ;
-	xp:hash " 759ff097b96520c12aa84f3749927f9a22022e62 " .
+	xp:hash "759ff097b96520c12aa84f3749927f9a22022e62" .
 # 
 # xpd:Hardware_20180828-NOOR
 
 xpd:Hardware_20180828-NOOR a owl:NamedIndividual , xp:Hardware ;
-	xp:hardwareComponent " 24 * Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz with 20GB RAM / Linux ProxMox 2 / Linux 4.15.17-1-pve / Java Java(TM) SE Runtime Environment 1.8.0_151 with 4.33G max heap size " .
+	xp:hardwareComponent "24 * Intel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz with 20GB RAM / Linux ProxMox 2 / Linux 4.15.17-1-pve / Java Java(TM) SE Runtime Environment 1.8.0_151 with 4.33G max heap size" .
 # 
 # xpd:Hypothesis_20180828-NOOR
 
@@ -66,7 +66,7 @@ xpd:NOORDesign_20180828-NOOR a owl:NamedIndividual , xp:NOORDesign ;
 	xp:specifiates xpd:Script_20180828-NOOR ;
 	xp:tests xpd:Hypothesis_20180828-NOOR ;
 	xp:designDate "2018-06-01" ;
-	xp:experimentalSetting " Same as 20180601-NOOR replaying the same runs as 20180308-NOOR with most specific strengthening. " ;
+	xp:experimentalSetting "Same as 20180601-NOOR replaying the same runs as 20180308-NOOR with most specific strengthening." ;
 	xp:numberOfAgents "4" ;
 	xp:numberOfIterations "10000" ;
 	xp:numberOfRuns "10" ;
@@ -89,13 +89,13 @@ xpd:Person_JEuz a owl:NamedIndividual , foaf:Person ;
 # xpd:Script_20180828-NOOR
 
 xpd:Script_20180828-NOOR a owl:NamedIndividual , xp:Script ;
-	xp:code "   . params.shOUTPUT=${OUTPUT}${LABEL}for op in ${OPS}do   bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} ${PARAMS}   bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy ${PARAMS}   bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-im80-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DimmediateRatio=80 ${PARAMS}   bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 ${PARAMS}   bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-gen-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 -Dgenerative ${PARAMS}   bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-gen-empty-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 -Dgenerative -DstartEmpty ${PARAMS}done " .
+	xp:code ". params.shOUTPUT=${OUTPUT}${LABEL}for op in ${OPS}do   bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} ${PARAMS}   bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy ${PARAMS}   bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-im80-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DimmediateRatio=80 ${PARAMS}   bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 ${PARAMS}   bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-gen-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 -Dgenerative ${PARAMS}   bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-gen-empty-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 -Dgenerative -DstartEmpty ${PARAMS}done" .
 # 
 # xpd:Software_20180828-NOOR
 
 xpd:Software_20180828-NOOR a owl:NamedIndividual , xp:Software ;
 	xp:OSVersion "stretch" ;
 	xp:javaPath "lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:." ;
-	xp:logbackVersion " File:20180828-NOOR.zip " .
+	xp:logbackVersion "File:20180828-NOOR.zip" .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

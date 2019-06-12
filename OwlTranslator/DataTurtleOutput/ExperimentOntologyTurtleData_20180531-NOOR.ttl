@@ -18,7 +18,7 @@
 
 xpd:Analysis_20180531-NOOR a owl:NamedIndividual , xp:Analysis ;
 	xp:analyst xpd:Person_euzenat ;
-	xp:comment "      The realistic alignments obtained tend to have a higher size    They seem to converge faster    They indeed obtain better results         Precision reaches 100% when used with relaxation      Recall and F-measure seems to be at least higher (2 points exception for refadd may be attributed to randomness)        All this is comparable to the results obtained in 20180307-NOOR. " .
+	xp:comment "The realistic alignments obtained tend to have a higher size    They seem to converge faster    They indeed obtain better results         Precision reaches 100% when used with relaxation      Recall and F-measure seems to be at least higher (2 points exception for refadd may be attributed to randomness)        All this is comparable to the results obtained in 20180307-NOOR." .
 # 
 # xpd:Configuration_20180531-NOOR
 
@@ -45,12 +45,12 @@ xpd:Experiment_20180531-NOOR a owl:NamedIndividual , xp:Experiment ;
 	xp:experimentLabel "20180531-NOOR" ;
 	xp:experimentName "20180531-NOOR" ;
 	xp:experimentationDate "20180723" ;
-	xp:hash " d50e70f87bca76951ec2f149dc8ae1d42b9a1a28 " .
+	xp:hash "d50e70f87bca76951ec2f149dc8ae1d42b9a1a28" .
 # 
 # xpd:Hardware_20180531-NOOR
 
 xpd:Hardware_20180531-NOOR a owl:NamedIndividual , xp:Hardware ;
-	xp:hardwareComponent " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0 HotSpot " .
+	xp:hardwareComponent "Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0 HotSpot" .
 # 
 # xpd:Hypothesis_20180531-NOOR
 
@@ -65,7 +65,7 @@ xpd:NOORDesign_20180531-NOOR a owl:NamedIndividual , xp:NOORDesign ;
 	xp:runs_with xpd:Configuration_20180531-NOOR ;
 	xp:specifiates xpd:Script_20180531-NOOR ;
 	xp:tests xpd:Hypothesis_20180531-NOOR ;
-	xp:experimentalSetting " Same as 20180307-NOOR replaying the same runs as 20180308-NOOR (with different initial alignments) and after fixing addjoin, expansion and real size estimation. " ;
+	xp:experimentalSetting "Same as 20180307-NOOR replaying the same runs as 20180308-NOOR (with different initial alignments) and after fixing addjoin, expansion and real size estimation." ;
 	xp:numberOfAgents "4" ;
 	xp:numberOfIterations "10000" ;
 	xp:numberOfRuns "10" ;
@@ -83,13 +83,13 @@ xpd:Person_euzenat a owl:NamedIndividual , foaf:Person ;
 # xpd:Script_20180531-NOOR
 
 xpd:Script_20180531-NOOR a owl:NamedIndividual , xp:Script ;
-	xp:code "   #!/bin/bashJPATH=lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:.OPT=\"-DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec\"LOADOPT=\"-DloadDir=expeRun -DloadEnv -DloadAgents -DreplayGames\"for op in delete replace refine add addjoin refadddo   bash scripts/runexp.sh -d 4-10000-${op}-real java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:. fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op}   bash scripts/runexp.sh -d 4-10000-${op}-im80-real java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:. fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DimmediateRatio=80   bash scripts/runexp.sh -d 4-10000-${op}-clever-nr-real java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:. fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy   bash scripts/runexp.sh -d 4-10000-${op}-clever-nr-im80-real java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:. fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80done " .
+	xp:code "#!/bin/bashJPATH=lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:.OPT=\"-DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec\"LOADOPT=\"-DloadDir=expeRun -DloadEnv -DloadAgents -DreplayGames\"for op in delete replace refine add addjoin refadddo   bash scripts/runexp.sh -d 4-10000-${op}-real java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:. fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op}   bash scripts/runexp.sh -d 4-10000-${op}-im80-real java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:. fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DimmediateRatio=80   bash scripts/runexp.sh -d 4-10000-${op}-clever-nr-real java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:. fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy   bash scripts/runexp.sh -d 4-10000-${op}-clever-nr-im80-real java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:. fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80done" .
 # 
 # xpd:Software_20180531-NOOR
 
 xpd:Software_20180531-NOOR a owl:NamedIndividual , xp:Software ;
 	xp:OSVersion "stretch" ;
 	xp:javaPath "lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:." ;
-	xp:logbackVersion " File:20180531-NOOR.zip " .
+	xp:logbackVersion "File:20180531-NOOR.zip" .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

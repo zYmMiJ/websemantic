@@ -3,24 +3,19 @@ package translator;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.IRI;
-import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLDataProperty;
-import org.semanticweb.owlapi.model.OWLDataPropertyAssertionAxiom;
 import org.semanticweb.owlapi.model.OWLDataRange;
-import org.semanticweb.owlapi.model.OWLIndividual;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLOntology;
@@ -28,7 +23,6 @@ import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 
-import uk.ac.manchester.cs.owl.owlapi.OWLDataPropertyImpl;
 import uk.ac.manchester.cs.owl.owlapi.OWLDatatypeImpl;
 
 public class Translator {
@@ -56,8 +50,6 @@ public class Translator {
 		private Map<OWLObjectProperty, String[]> mapObjectProperty_Parameter;
 		//Map of OWLObjectProperty with the corresponding value, join between mapObjectProperty_Parameter and mapObjectProperty_Value
 		private Map<OWLObjectProperty, String> mapObjectProperty_Value;
-		//Map of a Value and a Instance of Class coresponding, used with person Class
-		private Map<String, OWLNamedIndividual> mapValue_Individual;
 		//Map of a ObjectProperty a list with two Class, Class 0 : Domain, Class 1 : Range 
 		private Map<OWLObjectProperty, List<OWLClass>> mapObjectPropertyDomain_Range;
 		//Map of Class associate at their NamedIndividual
@@ -237,7 +229,7 @@ public class Translator {
 							makerProperty.makeProperty(ppt, individualDomain, individualRange);
 					}
 					else if(ppt.getIRI().getShortForm().equals("variationOf")){
-						System.out.println(mapObjectProperty_Value.get(ppt));
+						
 						//Create IRI with the nameSpace of the current Class and ShortForm is Experiment
 						IRI experimentIRI = IRI.create(cls.getIRI().getNamespace()+"Experiment");
 						OWLClass experiment = factory.getOWLClass(experimentIRI);
@@ -252,8 +244,7 @@ public class Translator {
 						IRI personIRI = IRI.create("http://xmlns.com/foaf/0.1/Person");
 						OWLClass person = factory.getOWLClass(personIRI);
 						OWLNamedIndividual personInstance = makerIndividual.makeIndividual(person, "_"+mapObjectProperty_Value.get(ppt));
-						
-						System.out.println(cls+" : "+mapObjectProperty_Value.get(ppt));
+		
 						
 						OWLClass classDomain = mapObjectPropertyDomain_Range.get(ppt).get(0);
 						OWLNamedIndividual individualDomain = mapClass_Individual.get(classDomain);

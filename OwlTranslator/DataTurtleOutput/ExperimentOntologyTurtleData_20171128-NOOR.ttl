@@ -18,7 +18,7 @@
 
 xpd:Analysis_20171128-NOOR a owl:NamedIndividual , xp:Analysis ;
 	xp:analyst xpd:Person_20171128-NOOR ;
-	xp:comment "      The behaviour or 'add' is highly different, hence must be investigated. Actually, the way operators have been designed predicts that 'add' is slower to converge than 'addjoin'. However, looking at the curves it is a clear outlier.    Some other situations clever-nr-gen do not seem to converge towards 100% precision at that stage;    The trends of 20170530-NOOR and 20170531-NOOR are observed, except that starting empty leads to more quickly to correct correspondence when im80 is not used    Recall and thus F-measure are lower than with 4 agents (this is inline with the observations of 20150219-NOOR)   " .
+	xp:comment "The behaviour or 'add' is highly different, hence must be investigated. Actually, the way operators have been designed predicts that 'add' is slower to converge than 'addjoin'. However, looking at the curves it is a clear outlier.    Some other situations clever-nr-gen do not seem to converge towards 100% precision at that stage;    The trends of 20170530-NOOR and 20170531-NOOR are observed, except that starting empty leads to more quickly to correct correspondence when im80 is not used    Recall and thus F-measure are lower than with 4 agents (this is inline with the observations of 20150219-NOOR)" .
 # 
 # xpd:Configuration_20171128-NOOR
 
@@ -33,24 +33,24 @@ xpd:DataResults_20171128-NOOR a owl:NamedIndividual , xp:DataResults ;
 # xpd:Experiment_20171128-NOOR
 
 xpd:Experiment_20171128-NOOR a owl:NamedIndividual , xp:Experiment ;
-	xp:performer xpd:Person_20171128-NOOR ;
+	xp:performer xpd:Person_JEuz ;
 	xp:performs xpd:NOORDesign_20171128-NOOR ;
 	xp:reproduces xpd:Experiment_20171128-NOOR ;
 	xp:results xpd:DataResults_20171128-NOOR ;
 	xp:variationOf xpd:Experiment_20171128-NOOR ;
 	xp:experimentationDate "2017-11-28" ;
-	xp:hash "  9af56486cfe565bca783c866ed9c0f7d4ca520e5 " .
+	xp:hash "9af56486cfe565bca783c866ed9c0f7d4ca520e5" .
 # 
 # xpd:Hardware_20171128-NOOR
 
 xpd:Hardware_20171128-NOOR a owl:NamedIndividual , xp:Hardware ;
-	xp:hardwareComponent " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0_131-b11 HotSpot " .
+	xp:hardwareComponent "Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0_131-b11 HotSpot" .
 # 
 # xpd:Hypothesis_20171128-NOOR
 
 xpd:Hypothesis_20171128-NOOR a owl:NamedIndividual , xp:Hypothesis ;
 	xp:formalizes xpd:Script_20171128-NOOR ;
-	xp:label "      The trends observed in 20170530-NOOR and 20170531-NOOR do not depend on the number of agents   " .
+	xp:label "The trends observed in 20170530-NOOR and 20170531-NOOR do not depend on the number of agents" .
 # 
 # xpd:NOORDesign_20171128-NOOR
 
@@ -59,21 +59,26 @@ xpd:NOORDesign_20171128-NOOR a owl:NamedIndividual , xp:NOORDesign ;
 	xp:runs_with xpd:Configuration_20171128-NOOR ;
 	xp:specifiates xpd:Script_20171128-NOOR ;
 	xp:tests xpd:Hypothesis_20171128-NOOR ;
-	xp:experimentalSetting " After 20171001-NOOR, we estimated that the convergence should be reached by 45000. Hence the experimental setting is the same as 20171001-NOOR with 45000 iterations " .
+	xp:experimentalSetting "After 20171001-NOOR, we estimated that the convergence should be reached by 45000. Hence the experimental setting is the same as 20171001-NOOR with 45000 iterations" .
 # 
 # xpd:Person_20171128-NOOR
 
 xpd:Person_20171128-NOOR a owl:NamedIndividual , foaf:Person .
 # 
+# xpd:Person_JEuz
+
+xpd:Person_JEuz a owl:NamedIndividual , foaf:Person ;
+	foaf:name "JEuz" .
+# 
 # xpd:Script_20171128-NOOR
 
 xpd:Script_20171128-NOOR a owl:NamedIndividual , xp:Script ;
-	xp:code "   for op in delete replace refine add addjoin refadddo   java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=5 -DnbIterations=45000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy   java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=5 -DnbIterations=45000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80   java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=5 -DnbIterations=45000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -Dgenerative   java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=5 -DnbIterations=45000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 -Dgenerative   java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=5 -DnbIterations=45000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -Dgenerative -Dstartempty   java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=5 -DnbIterations=45000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 -Dgenerative -Dstartemptydone " .
+	xp:code "for op in delete replace refine add addjoin refadddo   java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=5 -DnbIterations=45000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy   java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=5 -DnbIterations=45000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80   java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=5 -DnbIterations=45000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -Dgenerative   java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=5 -DnbIterations=45000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 -Dgenerative   java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=5 -DnbIterations=45000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -Dgenerative -Dstartempty   java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=5 -DnbIterations=45000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 -Dgenerative -Dstartemptydone" .
 # 
 # xpd:Software_20171128-NOOR
 
 xpd:Software_20171128-NOOR a owl:NamedIndividual , xp:Software ;
-	xp:OSVersion " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0_131-b11 HotSpot " ;
-	xp:logbackVersion " File:20171128-NOOR.zip " .
+	xp:OSVersion "Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0_131-b11 HotSpot" ;
+	xp:logbackVersion "File:20171128-NOOR.zip" .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

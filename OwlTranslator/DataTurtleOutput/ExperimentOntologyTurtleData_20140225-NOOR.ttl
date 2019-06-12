@@ -18,7 +18,7 @@
 
 xpd:Analysis_20140225-NOOR a owl:NamedIndividual , xp:Analysis ;
 	xp:analyst xpd:Person_20140225-NOOR ;
-	xp:comment "     The situation is better than with three agents in which case very often the revision deletes all the correspondences which are not top=top   Clearly add outperforms replace which is slightly better than delete   Add has not converged after 500 iterations (on 10 runs), it takes around 1200 iterations   Again, the baseline is reached, but not improved.    Among the runs, there is a lot of variety, any of the system may reach the highest F-measure (with the add modality). " .
+	xp:comment "The situation is better than with three agents in which case very often the revision deletes all the correspondences which are not top=top   Clearly add outperforms replace which is slightly better than delete   Add has not converged after 500 iterations (on 10 runs), it takes around 1200 iterations   Again, the baseline is reached, but not improved.    Among the runs, there is a lot of variety, any of the system may reach the highest F-measure (with the add modality)." .
 # 
 # xpd:Configuration_20140225-NOOR
 
@@ -33,24 +33,24 @@ xpd:DataResults_20140225-NOOR a owl:NamedIndividual , xp:DataResults ;
 # xpd:Experiment_20140225-NOOR
 
 xpd:Experiment_20140225-NOOR a owl:NamedIndividual , xp:Experiment ;
-	xp:performer xpd:Person_20140225-NOOR ;
+	xp:performer xpd:Person_JEuz ;
 	xp:performs xpd:NOORDesign_20140225-NOOR ;
 	xp:reproduces xpd:Experiment_20140225-NOOR ;
 	xp:results xpd:DataResults_20140225-NOOR ;
 	xp:variationOf xpd:Experiment_20140225-NOOR ;
 	xp:experimentationDate "2014-02-25" ;
-	xp:hash " 402eae910f33cf73a4663fe83308d0b0be6d7b5b " .
+	xp:hash "402eae910f33cf73a4663fe83308d0b0be6d7b5b" .
 # 
 # xpd:Hardware_20140225-NOOR
 
 xpd:Hardware_20140225-NOOR a owl:NamedIndividual , xp:Hardware ;
-	xp:hardwareComponent " MacBook Pro 15, C2D 2.66GHz, 8GB - MacOS X 6.8 - Java 1.6.0 HotSpot " .
+	xp:hardwareComponent "MacBook Pro 15, C2D 2.66GHz, 8GB - MacOS X 6.8 - Java 1.6.0 HotSpot" .
 # 
 # xpd:Hypothesis_20140225-NOOR
 
 xpd:Hypothesis_20140225-NOOR a owl:NamedIndividual , xp:Hypothesis ;
 	xp:formalizes xpd:Script_20140225-NOOR ;
-	xp:label "     The add modality reaches a better F-measure than replace which reaches a better F-measure than delete.   The add modality on 4 agents outperforms LogMap and Alcomo   " .
+	xp:label "The add modality reaches a better F-measure than replace which reaches a better F-measure than delete.   The add modality on 4 agents outperforms LogMap and Alcomo" .
 # 
 # xpd:NOORDesign_20140225-NOOR
 
@@ -59,21 +59,26 @@ xpd:NOORDesign_20140225-NOOR a owl:NamedIndividual , xp:NOORDesign ;
 	xp:runs_with xpd:Configuration_20140225-NOOR ;
 	xp:specifiates xpd:Script_20140225-NOOR ;
 	xp:tests xpd:Hypothesis_20140225-NOOR ;
-	xp:experimentalSetting " This is the same setting as 20140224-NOOR, except that:     the exercise run 10 times for 500 iteration   " .
+	xp:experimentalSetting "This is the same setting as 20140224-NOOR, except that:     the exercise run 10 times for 500 iteration" .
 # 
 # xpd:Person_20140225-NOOR
 
 xpd:Person_20140225-NOOR a owl:NamedIndividual , foaf:Person .
 # 
+# xpd:Person_JEuz
+
+xpd:Person_JEuz a owl:NamedIndividual , foaf:Person ;
+	foaf:name "JEuz" .
+# 
 # xpd:Script_20140225-NOOR
 
 xpd:Script_20140225-NOOR a owl:NamedIndividual , xp:Script ;
-	xp:code "  $ java -Xms500M -Xmx1G -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.0.9.jar:lib/slf4j/logback-core-1.0.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DrevisionModality=delete -DnbRuns=10 -DnbAgents=4 -DnbIterations=500 -o ~/plot12del.table  $ java -Xms500M -Xmx1G -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.0.9.jar:lib/slf4j/logback-core-1.0.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DrevisionModality=replace -DnbRuns=10 -DnbAgents=4 -DnbIterations=500 -o ~/plot12repl.table  $ java -Xms500M -Xmx1G -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.0.9.jar:lib/slf4j/logback-core-1.0.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DrevisionModality=add -DnbRuns=10 -DnbAgents=4 -DnbIterations=500 -o ~/plot12add.table " .
+	xp:code "$ java -Xms500M -Xmx1G -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.0.9.jar:lib/slf4j/logback-core-1.0.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DrevisionModality=delete -DnbRuns=10 -DnbAgents=4 -DnbIterations=500 -o ~/plot12del.table  $ java -Xms500M -Xmx1G -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.0.9.jar:lib/slf4j/logback-core-1.0.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DrevisionModality=replace -DnbRuns=10 -DnbAgents=4 -DnbIterations=500 -o ~/plot12repl.table  $ java -Xms500M -Xmx1G -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.0.9.jar:lib/slf4j/logback-core-1.0.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DrevisionModality=add -DnbRuns=10 -DnbAgents=4 -DnbIterations=500 -o ~/plot12add.table" .
 # 
 # xpd:Software_20140225-NOOR
 
 xpd:Software_20140225-NOOR a owl:NamedIndividual , xp:Software ;
-	xp:OSVersion " MacBook Pro 15, C2D 2.66GHz, 8GB - MacOS X 6.8 - Java 1.6.0 HotSpot " ;
-	xp:logbackVersion " 20140225-LOG " .
+	xp:OSVersion "MacBook Pro 15, C2D 2.66GHz, 8GB - MacOS X 6.8 - Java 1.6.0 HotSpot" ;
+	xp:logbackVersion "20140225-LOG" .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

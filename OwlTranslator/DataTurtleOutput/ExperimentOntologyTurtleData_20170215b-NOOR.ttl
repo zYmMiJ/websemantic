@@ -18,7 +18,7 @@
 
 xpd:Analysis_20170215b-NOOR a owl:NamedIndividual , xp:Analysis ;
 	xp:analyst xpd:Person_20170215b-NOOR ;
-	xp:comment "      The results converge in all cases to 100% precision and 0% incoherence.    refadd has the best F-measure so far while the others have lower F-measure and recall than in the simple expansion with memory!    The behaviour of addjoin as related to add is still unclear (see 20180530-NOOR)   " .
+	xp:comment "The results converge in all cases to 100% precision and 0% incoherence.    refadd has the best F-measure so far while the others have lower F-measure and recall than in the simple expansion with memory!    The behaviour of addjoin as related to add is still unclear (see 20180530-NOOR)" .
 # 
 # xpd:Configuration_20170215b-NOOR
 
@@ -33,24 +33,24 @@ xpd:DataResults_20170215b-NOOR a owl:NamedIndividual , xp:DataResults ;
 # xpd:Experiment_20170215b-NOOR
 
 xpd:Experiment_20170215b-NOOR a owl:NamedIndividual , xp:Experiment ;
-	xp:performer xpd:Person_20170215b-NOOR ;
+	xp:performer xpd:Person_JEuz ;
 	xp:performs xpd:NOORDesign_20170215b-NOOR ;
 	xp:reproduces xpd:Experiment_20170215b-NOOR ;
 	xp:results xpd:DataResults_20170215b-NOOR ;
 	xp:variationOf xpd:Experiment_20170215b-NOOR ;
-	xp:experimentationDate "20170215" ;
-	xp:hash " dc342dca26a5a6feff895b2a1829b04e7dfaa5ae " .
+	xp:experimentationDate "2017-02-15" ;
+	xp:hash "dc342dca26a5a6feff895b2a1829b04e7dfaa5ae" .
 # 
 # xpd:Hardware_20170215b-NOOR
 
 xpd:Hardware_20170215b-NOOR a owl:NamedIndividual , xp:Hardware ;
-	xp:hardwareComponent " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0 HotSpot " .
+	xp:hardwareComponent "Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0 HotSpot" .
 # 
 # xpd:Hypothesis_20170215b-NOOR
 
 xpd:Hypothesis_20170215b-NOOR a owl:NamedIndividual , xp:Hypothesis ;
 	xp:formalizes xpd:Script_20170215b-NOOR ;
-	xp:label "      introducing the capability for agent to sometimes ignore the most specific applicable correspondences (with given immediate consumption probability) will improve precision by fighting shadowing.   " .
+	xp:label "introducing the capability for agent to sometimes ignore the most specific applicable correspondences (with given immediate consumption probability) will improve precision by fighting shadowing." .
 # 
 # xpd:NOORDesign_20170215b-NOOR
 
@@ -59,21 +59,26 @@ xpd:NOORDesign_20170215b-NOOR a owl:NamedIndividual , xp:NOORDesign ;
 	xp:runs_with xpd:Configuration_20170215b-NOOR ;
 	xp:specifiates xpd:Script_20170215b-NOOR ;
 	xp:tests xpd:Hypothesis_20170215b-NOOR ;
-	xp:experimentalSetting " Repetition of part of 20170216-NOOR with consumption probability set to 80% (or repetition of 20170215a-NOOR with expansion-clever-nr) " .
+	xp:experimentalSetting "Repetition of part of 20170216-NOOR with consumption probability set to 80% (or repetition of 20170215a-NOOR with expansion-clever-nr)" .
 # 
 # xpd:Person_20170215b-NOOR
 
 xpd:Person_20170215b-NOOR a owl:NamedIndividual , foaf:Person .
 # 
+# xpd:Person_JEuz
+
+xpd:Person_JEuz a owl:NamedIndividual , foaf:Person ;
+	foaf:name "JEuz" .
+# 
 # xpd:Script_20170215b-NOOR
 
 xpd:Script_20170215b-NOOR a owl:NamedIndividual , xp:Script ;
-	xp:code "   for mod in delete replace refine add addjoin refadddo   java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.1.9.jar:lib/slf4j/logback-core-1.1.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${mod} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80done " .
+	xp:code "for mod in delete replace refine add addjoin refadddo   java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.1.9.jar:lib/slf4j/logback-core-1.1.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${mod} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80done" .
 # 
 # xpd:Software_20170215b-NOOR
 
 xpd:Software_20170215b-NOOR a owl:NamedIndividual , xp:Software ;
-	xp:OSVersion " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0 HotSpot " ;
-	xp:logbackVersion " File:20170215b-NOOR-4-10000-delete-clever-nr-im80.txt,File:20170215b-NOOR-4-10000-delete-clever-nr-im80.tsv.txt, File:20170215b-NOOR-4-10000-replace-clever-nr-im80.txt,File:20170215b-NOOR-4-10000-replace-clever-nr-im80.tsv.txt, File:20170215b-NOOR-4-10000-refine-clever-nr-im80.txt,File:20170215b-NOOR-4-10000-refine-clever-nr-im80.tsv.txt, File:20170215b-NOOR-4-10000-add-clever-nr-im80.txt,File:20170215b-NOOR-4-10000-add-clever-nr-im80.tsv.txt, File:20170215b-NOOR-4-10000-addjoin-clever-nr-im80.txt,File:20170215b-NOOR-4-10000-addjoin-clever-nr-im80.tsv.txt, File:20170215b-NOOR-4-10000-refadd-clever-nr-im80.txt,File:20170215b-NOOR-4-10000-refadd-clever-nr-im80.tsv.txt " .
+	xp:OSVersion "Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0 HotSpot" ;
+	xp:logbackVersion "File:20170215b-NOOR-4-10000-delete-clever-nr-im80.txt,File:20170215b-NOOR-4-10000-delete-clever-nr-im80.tsv.txt, File:20170215b-NOOR-4-10000-replace-clever-nr-im80.txt,File:20170215b-NOOR-4-10000-replace-clever-nr-im80.tsv.txt, File:20170215b-NOOR-4-10000-refine-clever-nr-im80.txt,File:20170215b-NOOR-4-10000-refine-clever-nr-im80.tsv.txt, File:20170215b-NOOR-4-10000-add-clever-nr-im80.txt,File:20170215b-NOOR-4-10000-add-clever-nr-im80.tsv.txt, File:20170215b-NOOR-4-10000-addjoin-clever-nr-im80.txt,File:20170215b-NOOR-4-10000-addjoin-clever-nr-im80.tsv.txt, File:20170215b-NOOR-4-10000-refadd-clever-nr-im80.txt,File:20170215b-NOOR-4-10000-refadd-clever-nr-im80.tsv.txt" .
 # 
 # Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/
