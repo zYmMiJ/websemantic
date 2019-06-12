@@ -57,9 +57,13 @@ public class FileParser extends Parser{
 					tmp = line.split(reg,2);// split into 2 parts
 					//TODO
 					if (tmp.length >= 2) {
+						if( tmp[0].contains("Date") || tmp[0].contains("DATE")  ) {
+							
+							tmp[1] = tmp[1].replace("-", "");
+							tmp[1]  = tmp[1].substring(0, 4)+"-"+tmp[1].substring(4, 6)+"-"+tmp[1].substring(6, 8);
+						}
 						list.add(new DataParsed( tmp[0], tmp[1] ));
-					}
-					
+					}	
 				}	
 			  }
 			br.close();
@@ -107,7 +111,7 @@ public class FileParser extends Parser{
 				line = line.replace('"',' ');	
 				if (line.length() > 2) {
 					tmp = line.split(reg,2);
-					list.add(new DataParsed( tmp[0], tmp[1] ));
+					list.add(new DataParsed( tmp[0], tmp[1] ));			
 				}	
 			  }
 			br.close();

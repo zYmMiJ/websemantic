@@ -42,9 +42,9 @@ xpd:Experiment_20180927-NOOR a owl:NamedIndividual , xp:Experiment ;
 	xp:reproduces xpd:Experiment_20180927-NOOR ;
 	xp:results xpd:DataResults_20180927-NOOR ;
 	xp:variationOf xpd:Experiment_20171231-NOOR ;
-	xp:experimentLabel "20180927-NOOR" ;
-	xp:experimentName "20180927-NOOR" ;
-	xp:experimentationDate "20180927" ;
+	xp:experimentLabel "2018-09-27-NOOR" ;
+	xp:experimentName "2018-09-27-NOOR" ;
+	xp:experimentationDate "2018-09-27" ;
 	xp:hash "759ff097b96520c12aa84f3749927f9a22022e62" .
 # 
 # xpd:Hardware_20180927-NOOR

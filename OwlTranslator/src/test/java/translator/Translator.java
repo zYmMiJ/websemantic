@@ -430,7 +430,7 @@ public class Translator {
 		
 		
 		private boolean fileAssociationView(String nameFile) {
-			System.out.println(nameFile+" will be replaced, continue ? (y/n) ");
+			//System.out.println(nameFile+" will be replaced, continue ? (y/n) ");
 			Scanner sc = new Scanner(System.in);
 			String str=sc.nextLine();
 			

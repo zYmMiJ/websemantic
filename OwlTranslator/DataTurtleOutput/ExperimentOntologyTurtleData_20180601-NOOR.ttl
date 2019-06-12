@@ -44,7 +44,7 @@ xpd:Experiment_20180601-NOOR a owl:NamedIndividual , xp:Experiment ;
 	xp:variationOf xpd:Experiment_20170530-NOOR ;
 	xp:experimentLabel "20180601-NOOR" ;
 	xp:experimentName "20180601-NOOR" ;
-	xp:experimentationDate "20180723" ;
+	xp:experimentationDate "2018-07-23" ;
 	xp:hash "d50e70f87bca76951ec2f149dc8ae1d42b9a1a28" .
 # 
 # xpd:Hardware_20180601-NOOR
