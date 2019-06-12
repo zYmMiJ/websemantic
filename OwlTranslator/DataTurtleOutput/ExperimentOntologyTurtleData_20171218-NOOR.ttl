@@ -37,6 +37,7 @@ xpd:Experiment_20171218-NOOR a owl:NamedIndividual , xp:Experiment ;
 	xp:performs xpd:NOORDesign_20171218-NOOR ;
 	xp:reproduces xpd:Experiment_20171218-NOOR ;
 	xp:results xpd:DataResults_20171218-NOOR ;
+	xp:variationOf xpd:Experiment_20171218-NOOR ;
 	xp:experimentationDate "2017-12-18" ;
 	xp:hash " ab0edf530d7d832b2da9b6f208f729917fbe8e59 " .
 # 

@@ -118,6 +118,12 @@ xp:tests rdf:type owl:ObjectProperty ;
          rdfs:range xp:Hypothesis .
 
 
+###  http://www.inria.fr/moex/ExperimentOntology#variationOf
+xp:variationOf rdf:type owl:ObjectProperty ;
+               rdfs:domain xp:Experiment ;
+               rdfs:range xp:Experiment .
+
+
 ###  http://www.w3.org/2002/07/owl#topObjectProperty
 owl:topObjectProperty rdfs:subPropertyOf owl:topObjectProperty .
 
@@ -150,12 +156,6 @@ xp:designDate rdf:type owl:DatatypeProperty ;
               rdfs:range xsd:dateTime .
 
 
-###  http://www.inria.fr/moex/ExperimentOntology#experimentID
-xp:experimentID rdf:type owl:DatatypeProperty ;
-                rdfs:domain xp:Experiment ;
-                rdfs:range xsd:string .
-
-
 ###  http://www.inria.fr/moex/ExperimentOntology#experimentLabel
 xp:experimentLabel rdf:type owl:DatatypeProperty ;
                    rdfs:domain xp:Experiment ;
@@ -166,12 +166,6 @@ xp:experimentLabel rdf:type owl:DatatypeProperty ;
 xp:experimentName rdf:type owl:DatatypeProperty ;
                   rdfs:domain xp:Experiment ;
                   rdfs:range xsd:string .
-
-
-###  http://www.inria.fr/moex/ExperimentOntology#experimentTitle
-xp:experimentTitle rdf:type owl:DatatypeProperty ;
-                   rdfs:domain xp:Experiment ;
-                   rdfs:range xsd:string .
 
 
 ###  http://www.inria.fr/moex/ExperimentOntology#experimentalSetting

@@ -30,6 +30,10 @@ xpd:DataResults_20181110-NOOR a owl:NamedIndividual , xp:DataResults ;
 	xp:analysis xpd:Analysis_20181110-NOOR ;
 	xp:explains xpd:Analysis_20181110-NOOR .
 # 
+# xpd:Experiment_20180828-NOOR
+
+xpd:Experiment_20180828-NOOR a owl:NamedIndividual , xp:Experiment .
+# 
 # xpd:Experiment_20181110-NOOR
 
 xpd:Experiment_20181110-NOOR a owl:NamedIndividual , xp:Experiment ;
@@ -37,6 +41,7 @@ xpd:Experiment_20181110-NOOR a owl:NamedIndividual , xp:Experiment ;
 	xp:performs xpd:NOORDesign_20181110-NOOR ;
 	xp:reproduces xpd:Experiment_20181110-NOOR ;
 	xp:results xpd:DataResults_20181110-NOOR ;
+	xp:variationOf xpd:Experiment_20180828-NOOR ;
 	xp:experimentLabel "20181110-NOOR" ;
 	xp:experimentName "20181110-NOOR" ;
 	xp:experimentationDate "20181110" ;

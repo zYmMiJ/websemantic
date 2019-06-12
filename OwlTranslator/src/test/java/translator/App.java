@@ -21,7 +21,7 @@ public class App {
 	public static void main(String[] args) throws IOException {
 		configLOG();
 		
-		String ontologyName = "ExperimentOntology05-06.owl";
+		String ontologyName = "ExperimentOntology12-10.owl";
 		String parserType = "";
 		
 		if (args[0].equals("-c") || args[0].equals("--changeAssociation")) {

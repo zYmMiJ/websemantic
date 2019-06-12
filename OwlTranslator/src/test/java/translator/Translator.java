@@ -223,6 +223,7 @@ public class Translator {
 			//OBJECT_PROPERTY instanced WITHOUT VALUE
 			for(OWLClass cls : listClass) {
 				for(OWLObjectProperty ppt : mapClass_ObjectProperty.get(cls)) {
+					
 					String value = mapObjectProperty_Value.get(ppt);
 					//If the value is null itn't a particular case
 					if(value==null) {
@@ -235,11 +236,24 @@ public class Translator {
 						if(classRange!=null)
 							makerProperty.makeProperty(ppt, individualDomain, individualRange);
 					}
+					else if(ppt.getIRI().getShortForm().equals("variationOf")){
+						System.out.println(mapObjectProperty_Value.get(ppt));
+						//Create IRI with the nameSpace of the current Class and ShortForm is Experiment
+						IRI experimentIRI = IRI.create(cls.getIRI().getNamespace()+"Experiment");
+						OWLClass experiment = factory.getOWLClass(experimentIRI);
+						OWLNamedIndividual experimentVariation = makerIndividual.makeIndividual(experiment, "_"+mapObjectProperty_Value.get(ppt));
+						
+						OWLClass classDomain = mapObjectPropertyDomain_Range.get(ppt).get(0);
+						OWLNamedIndividual individualDomain = mapClass_Individual.get(classDomain);
+						makerProperty.makeProperty(ppt, individualDomain, experimentVariation);
+					}
 					else {
 						//make ObjectProperty about Person
 						IRI personIRI = IRI.create("http://xmlns.com/foaf/0.1/Person");
 						OWLClass person = factory.getOWLClass(personIRI);
 						OWLNamedIndividual personInstance = makerIndividual.makeIndividual(person, "_"+mapObjectProperty_Value.get(ppt));
+						
+						System.out.println(cls+" : "+mapObjectProperty_Value.get(ppt));
 						
 						OWLClass classDomain = mapObjectPropertyDomain_Range.get(ppt).get(0);
 						OWLNamedIndividual individualDomain = mapClass_Individual.get(classDomain);

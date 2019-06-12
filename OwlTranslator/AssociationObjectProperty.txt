@@ -13,3 +13,4 @@ http://www.inria.fr/moex/ExperimentOntology#designer=Designer|DESIGNER
 http://www.inria.fr/moex/ExperimentOntology#runs_with=
 http://www.inria.fr/moex/ExperimentOntology#specifiates=
 http://www.inria.fr/moex/ExperimentOntology#tests=
+http://www.inria.fr/moex/ExperimentOntology#variationOf=VARIATIONOF

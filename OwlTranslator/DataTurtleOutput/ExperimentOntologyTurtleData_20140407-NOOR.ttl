@@ -37,6 +37,7 @@ xpd:Experiment_20140407-NOOR a owl:NamedIndividual , xp:Experiment ;
 	xp:performs xpd:NOORDesign_20140407-NOOR ;
 	xp:reproduces xpd:Experiment_20140407-NOOR ;
 	xp:results xpd:DataResults_20140407-NOOR ;
+	xp:variationOf xpd:Experiment_20140407-NOOR ;
 	xp:experimentationDate "2014-04-07" ;
 	xp:hash " 89f0656ffc28a6c4560a7a55cf1508d866528a96  Context This tests the influence of the number of initial correspondences on the results " .
 # 

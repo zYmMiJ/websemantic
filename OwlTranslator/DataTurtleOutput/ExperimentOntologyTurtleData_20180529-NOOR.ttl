@@ -37,6 +37,7 @@ xpd:Experiment_20180529-NOOR a owl:NamedIndividual , xp:Experiment ;
 	xp:performs xpd:NOORDesign_20180529-NOOR ;
 	xp:reproduces xpd:Experiment_20180529-NOOR ;
 	xp:results xpd:DataResults_20180529-NOOR ;
+	xp:variationOf xpd:Experiment_20180529-NOOR ;
 	xp:experimentLabel "20180529-NOOR" ;
 	xp:experimentName "20180529-NOOR" ;
 	xp:experimentationDate "`date -Idate|sed s:-::g`" ;
