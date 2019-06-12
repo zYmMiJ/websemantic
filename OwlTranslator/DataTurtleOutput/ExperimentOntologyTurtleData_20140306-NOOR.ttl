@@ -1,3 +1,4 @@
+@prefix xpd: <#> .
 @prefix xp: <http://www.inria.fr/moex/ExperimentOntology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -6,304 +7,6 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid718262907 a owl:Ontology .
-# 
-# 
-# #################################################################
-# #
-# #    Object Properties
-# #
-# #################################################################
-# 
-# 
-# http://www.inria.fr/moex/ExperimentOntology#analysis
-
-xp:analysis a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:DataResults ;
-	rdfs:range xp:Analysis .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#analyst
-
-xp:analyst a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:Analysis ;
-	rdfs:range foaf:Person .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#designer
-
-xp:designer a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:NOORDesign ;
-	rdfs:range foaf:Person .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#experimenter
-
-xp:experimenter a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:range foaf:Person .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#explains
-
-xp:explains a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:DataResults ;
-	rdfs:range xp:Analysis .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#fileResults
-
-xp:fileResults a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:DataResults .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#formalizes
-
-xp:formalizes a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:Hypothesis ;
-	rdfs:range xp:Script .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#furtherExperiment
-
-xp:furtherExperiment a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:Analysis .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#performer
-
-xp:performer a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:Experiment ;
-	rdfs:range foaf:Person .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#performs
-
-xp:performs a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:Experiment ;
-	rdfs:range xp:NOORDesign .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#plotDiagram
-
-xp:plotDiagram a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:Analysis .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#reproduces
-
-xp:reproduces a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:Experiment ;
-	rdfs:range xp:Experiment .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#results
-
-xp:results a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:Experiment ;
-	rdfs:range xp:DataResults .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#runs_with
-
-xp:runs_with a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:NOORDesign ;
-	rdfs:range xp:Configuration .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#specifiates
-
-xp:specifiates a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:NOORDesign ;
-	rdfs:range xp:Script .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#tests
-
-xp:tests a owl:ObjectProperty ;
-	rdfs:subPropertyOf owl:topObjectProperty ;
-	rdfs:domain xp:NOORDesign ;
-	rdfs:range xp:Hypothesis .
-# 
-# http://www.w3.org/2002/07/owl#topObjectProperty
-
-owl:topObjectProperty rdfs:subPropertyOf owl:topObjectProperty .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Data properties
-# #
-# #################################################################
-# 
-# 
-# http://www.inria.fr/moex/ExperimentOntology#OSVersion
-
-xp:OSVersion a owl:DatatypeProperty ;
-	rdfs:domain xp:Software ;
-	rdfs:range xsd:string .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#code
-
-xp:code a owl:DatatypeProperty ;
-	rdfs:domain xp:Script ;
-	rdfs:range xsd:string .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#comment
-
-xp:comment a owl:DatatypeProperty ;
-	rdfs:domain xp:Analysis ;
-	rdfs:range xsd:string .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#designDate
-
-xp:designDate a owl:DatatypeProperty ;
-	rdfs:domain xp:NOORDesign ;
-	rdfs:range xsd:dateTime .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#experimentID
-
-xp:experimentID a owl:DatatypeProperty ;
-	rdfs:domain xp:Experiment ;
-	rdfs:range xsd:string .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#experimentLabel
-
-xp:experimentLabel a owl:DatatypeProperty ;
-	rdfs:domain xp:Experiment ;
-	rdfs:range xsd:string .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#experimentName
-
-xp:experimentName a owl:DatatypeProperty ;
-	rdfs:domain xp:Experiment ;
-	rdfs:range xsd:string .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#experimentTitle
-
-xp:experimentTitle a owl:DatatypeProperty ;
-	rdfs:domain xp:Experiment ;
-	rdfs:range xsd:string .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#experimentalSetting
-
-xp:experimentalSetting a owl:DatatypeProperty ;
-	rdfs:domain xp:NOORDesign ;
-	rdfs:range xsd:string .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#experimentationDate
-
-xp:experimentationDate a owl:DatatypeProperty ;
-	rdfs:domain xp:Experiment ;
-	rdfs:range xsd:dateTime .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#hardwareComponent
-
-xp:hardwareComponent a owl:DatatypeProperty ;
-	rdfs:domain xp:Hardware ;
-	rdfs:range xsd:string .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#hash
-
-xp:hash a owl:DatatypeProperty ;
-	rdfs:domain xp:Experiment ;
-	rdfs:range xsd:string .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#javaPath
-
-xp:javaPath a owl:DatatypeProperty ;
-	rdfs:domain xp:Software ;
-	rdfs:range xsd:string .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#label
-
-xp:label a owl:DatatypeProperty ;
-	rdfs:domain xp:Hypothesis ;
-	rdfs:range xsd:string .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#logbackVersion
-
-xp:logbackVersion a owl:DatatypeProperty ;
-	rdfs:domain xp:Software ;
-	rdfs:range xsd:string .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#numberOfAgents
-
-xp:numberOfAgents a owl:DatatypeProperty ;
-	rdfs:domain xp:NOORDesign ;
-	rdfs:range xsd:int .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#numberOfIterations
-
-xp:numberOfIterations a owl:DatatypeProperty ;
-	rdfs:domain xp:NOORDesign ;
-	rdfs:range xsd:int .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#numberOfRuns
-
-xp:numberOfRuns a owl:DatatypeProperty ;
-	rdfs:domain xp:NOORDesign ;
-	rdfs:range xsd:int .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#operators
-
-xp:operators a owl:DatatypeProperty ;
-	rdfs:domain xp:NOORDesign ;
-	rdfs:range xsd:string .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Classes
-# #
-# #################################################################
-# 
-# 
-# http://www.inria.fr/moex/ExperimentOntology#Analysis
-
-xp:Analysis a owl:Class .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#Configuration
-
-xp:Configuration a owl:Class .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#DataResults
-
-xp:DataResults a owl:Class .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#Experiment
-
-xp:Experiment a owl:Class .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#Hardware
-
-xp:Hardware a owl:Class ;
-	rdfs:subClassOf xp:Configuration .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#Hypothesis
-
-xp:Hypothesis a owl:Class .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#NOORDesign
-
-xp:NOORDesign a owl:Class .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#Script
-
-xp:Script a owl:Class .
-# 
-# http://www.inria.fr/moex/ExperimentOntology#Software
-
-xp:Software a owl:Class ;
-	rdfs:subClassOf xp:Configuration .
-# 
-# http://xmlns.com/foaf/0.1/Person
-
-foaf:Person a owl:Class .
-# 
-# 
-# 
 # #################################################################
 # #
 # #    Individuals
@@ -313,62 +16,62 @@ foaf:Person a owl:Class .
 # 
 # xpd:Analysis_20140306-NOOR
 
-<xpd:Analysis_20140306-NOOR> a owl:NamedIndividual , xp:Analysis ;
-	xp:analyst <xpd:Person_20140306-NOOR> ;
+xpd:Analysis_20140306-NOOR a owl:NamedIndividual , xp:Analysis ;
+	xp:analyst xpd:Person_20140306-NOOR ;
 	xp:comment "  As expected it converges, but 10 runs and 4 agents shows more variablility. " .
 # 
 # xpd:Configuration_20140306-NOOR
 
-<xpd:Configuration_20140306-NOOR> a owl:NamedIndividual , xp:Configuration .
+xpd:Configuration_20140306-NOOR a owl:NamedIndividual , xp:Configuration .
 # 
 # xpd:DataResults_20140306-NOOR
 
-<xpd:DataResults_20140306-NOOR> a owl:NamedIndividual , xp:DataResults ;
-	xp:analysis <xpd:Analysis_20140306-NOOR> ;
-	xp:explains <xpd:Analysis_20140306-NOOR> .
+xpd:DataResults_20140306-NOOR a owl:NamedIndividual , xp:DataResults ;
+	xp:analysis xpd:Analysis_20140306-NOOR ;
+	xp:explains xpd:Analysis_20140306-NOOR .
 # 
 # xpd:Experiment_20140306-NOOR
 
-<xpd:Experiment_20140306-NOOR> a owl:NamedIndividual , xp:Experiment ;
-	xp:performer <xpd:Person_20140306-NOOR> ;
-	xp:performs <xpd:NOORDesign_20140306-NOOR> ;
-	xp:reproduces <xpd:Experiment_20140306-NOOR> ;
-	xp:results <xpd:DataResults_20140306-NOOR> ;
+xpd:Experiment_20140306-NOOR a owl:NamedIndividual , xp:Experiment ;
+	xp:performer xpd:Person_20140306-NOOR ;
+	xp:performs xpd:NOORDesign_20140306-NOOR ;
+	xp:reproduces xpd:Experiment_20140306-NOOR ;
+	xp:results xpd:DataResults_20140306-NOOR ;
 	xp:experimentationDate "2014-03-06" ;
 	xp:hash " 2aec5fe496c2b95760dba0ef87e82ac13264879b " .
 # 
 # xpd:Hardware_20140306-NOOR
 
-<xpd:Hardware_20140306-NOOR> a owl:NamedIndividual , xp:Hardware ;
+xpd:Hardware_20140306-NOOR a owl:NamedIndividual , xp:Hardware ;
 	xp:hardwareComponent " MacBook Pro 15, C2D 2.66GHz, 8GB - MacOS X 6.8 - Java 1.6.0 HotSpot " .
 # 
 # xpd:Hypothesis_20140306-NOOR
 
-<xpd:Hypothesis_20140306-NOOR> a owl:NamedIndividual , xp:Hypothesis ;
-	xp:formalizes <xpd:Script_20140306-NOOR> ;
+xpd:Hypothesis_20140306-NOOR a owl:NamedIndividual , xp:Hypothesis ;
+	xp:formalizes xpd:Script_20140306-NOOR ;
 	xp:label " Success rate converges. " .
 # 
 # xpd:NOORDesign_20140306-NOOR
 
-<xpd:NOORDesign_20140306-NOOR> a owl:NamedIndividual , xp:NOORDesign ;
-	xp:designer <xpd:Person_20140306-NOOR> ;
-	xp:runs_with <xpd:Configuration_20140306-NOOR> ;
-	xp:specifiates <xpd:Script_20140306-NOOR> ;
-	xp:tests <xpd:Hypothesis_20140306-NOOR> ;
+xpd:NOORDesign_20140306-NOOR a owl:NamedIndividual , xp:NOORDesign ;
+	xp:designer xpd:Person_20140306-NOOR ;
+	xp:runs_with xpd:Configuration_20140306-NOOR ;
+	xp:specifiates xpd:Script_20140306-NOOR ;
+	xp:tests xpd:Hypothesis_20140306-NOOR ;
 	xp:experimentalSetting " A remake of First_Revision_of_networks_of_ontologies, except that:     The number of iterations is 2000;   The number of agents is 4;    The number of runs is 10.   " .
 # 
 # xpd:Person_20140306-NOOR
 
-<xpd:Person_20140306-NOOR> a owl:NamedIndividual , foaf:Person .
+xpd:Person_20140306-NOOR a owl:NamedIndividual , foaf:Person .
 # 
 # xpd:Script_20140306-NOOR
 
-<xpd:Script_20140306-NOOR> a owl:NamedIndividual , xp:Script ;
+xpd:Script_20140306-NOOR a owl:NamedIndividual , xp:Script ;
 	xp:code "  $ java -Xms500M -Xmx1G -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.0.9.jar:lib/slf4j/logback-core-1.0.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DrevisionModality=add -DnbRuns=1 -DnbAgents=4 -DnbIterations=2000 &gt; plot14-0.table " .
 # 
 # xpd:Software_20140306-NOOR
 
-<xpd:Software_20140306-NOOR> a owl:NamedIndividual , xp:Software ;
+xpd:Software_20140306-NOOR a owl:NamedIndividual , xp:Software ;
 	xp:OSVersion " MacBook Pro 15, C2D 2.66GHz, 8GB - MacOS X 6.8 - Java 1.6.0 HotSpot " ;
 	xp:logbackVersion " no logs available " .
 # 
