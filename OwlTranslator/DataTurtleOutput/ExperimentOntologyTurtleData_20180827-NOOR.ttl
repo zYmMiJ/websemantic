@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid1451700171 a owl:Ontology .
+_:genid1040493509 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -354,7 +354,8 @@ foaf:Person a owl:Class .
 	xp:results <xpd:DataResults_20180827-NOOR> ;
 	xp:experimentLabel "20180827-NOOR" ;
 	xp:experimentName "20180827-NOOR" ;
-	xp:experimentationDate "20180827" .
+	xp:experimentationDate "20180827" ;
+	xp:hash " 759ff097b96520c12aa84f3749927f9a22022e62 " .
 # 
 # xpd:Hardware_20180827-NOOR
 
@@ -375,6 +376,7 @@ foaf:Person a owl:Class .
 	xp:specifiates <xpd:Script_20180827-NOOR> ;
 	xp:tests <xpd:Hypothesis_20180827-NOOR> ;
 	xp:designDate "2017-05-31" ;
+	xp:experimentalSetting " Same as 20170531-NOOR replaying the same runs as 20180308-NOOR and after fixing addjoin and expansion. " ;
 	xp:numberOfAgents "4" ;
 	xp:numberOfIterations "10000" ;
 	xp:numberOfRuns "10" ;
@@ -396,7 +398,8 @@ foaf:Person a owl:Class .
 # 
 # xpd:Script_20180827-NOOR
 
-<xpd:Script_20180827-NOOR> a owl:NamedIndividual , xp:Script .
+<xpd:Script_20180827-NOOR> a owl:NamedIndividual , xp:Script ;
+	xp:code "   . params.shfor op in delete replace refine add addjoin refadddo   bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-${POSTFIX} java -Dlog.level=INFO -cp ${CLASSPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -Dgenerative -DstartEmpty   bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-${POSTFIX} java -Dlog.level=INFO -cp ${CLASSPATH} fr.inria.exmo.lazylaven) whider.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 -Dgenerative -DstartEmptydone " .
 # 
 # xpd:Software_20180827-NOOR
 

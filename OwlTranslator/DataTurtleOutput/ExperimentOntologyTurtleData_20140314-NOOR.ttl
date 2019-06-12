@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid396926129 a owl:Ontology .
+_:genid752286440 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -334,7 +334,8 @@ foaf:Person a owl:Class .
 	xp:performs <xpd:NOORDesign_20140314-NOOR> ;
 	xp:reproduces <xpd:Experiment_20140314-NOOR> ;
 	xp:results <xpd:DataResults_20140314-NOOR> ;
-	xp:experimentationDate "2014-03-14" .
+	xp:experimentationDate "2014-03-14" ;
+	xp:hash " 2aec5fe496c2b95760dba0ef87e82ac13264879b " .
 # 
 # xpd:Hardware_20140314-NOOR
 
@@ -353,7 +354,8 @@ foaf:Person a owl:Class .
 	xp:designer <xpd:Person_20140314-NOOR> ;
 	xp:runs_with <xpd:Configuration_20140314-NOOR> ;
 	xp:specifiates <xpd:Script_20140314-NOOR> ;
-	xp:tests <xpd:Hypothesis_20140314-NOOR> .
+	xp:tests <xpd:Hypothesis_20140314-NOOR> ;
+	xp:experimentalSetting " As 20140304-NOOR, except that:     The number of iterations is 100000;   " .
 # 
 # xpd:Person_20140314-NOOR
 
@@ -361,7 +363,8 @@ foaf:Person a owl:Class .
 # 
 # xpd:Script_20140314-NOOR
 
-<xpd:Script_20140314-NOOR> a owl:NamedIndividual , xp:Script .
+<xpd:Script_20140314-NOOR> a owl:NamedIndividual , xp:Script ;
+	xp:code "  $ java -Xms500M -Xmx1G -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.0.9.jar:lib/slf4j/logback-core-1.0.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DrevisionModality=add -DnbRuns=10 -DnbAgents=6 -DnbIterations=100000 &gt; log6-100000.txt " .
 # 
 # xpd:Software_20140314-NOOR
 

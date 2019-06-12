@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid1551263930 a owl:Ontology .
+_:genid1181947538 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -354,7 +354,8 @@ foaf:Person a owl:Class .
 	xp:results <xpd:DataResults_20181112-NOOR> ;
 	xp:experimentLabel "20181112-NOOR" ;
 	xp:experimentName "20181112-NOOR" ;
-	xp:experimentationDate "20181112" .
+	xp:experimentationDate "20181112" ;
+	xp:hash " d230f8c69b7c97c4c570785e554aabcb2bbe09e1 " .
 # 
 # xpd:Hardware_20181112-NOOR
 
@@ -375,6 +376,7 @@ foaf:Person a owl:Class .
 	xp:specifiates <xpd:Script_20181112-NOOR> ;
 	xp:tests <xpd:Hypothesis_20181112-NOOR> ;
 	xp:designDate "2018-06-01" ;
+	xp:experimentalSetting " Repeating 20180828-NOOR replaying the runs of 20180308-NOOR with random strengthening " ;
 	xp:numberOfAgents "4" ;
 	xp:numberOfIterations "10000" ;
 	xp:numberOfRuns "10" ;
@@ -396,7 +398,8 @@ foaf:Person a owl:Class .
 # 
 # xpd:Script_20181112-NOOR
 
-<xpd:Script_20181112-NOOR> a owl:NamedIndividual , xp:Script .
+<xpd:Script_20181112-NOOR> a owl:NamedIndividual , xp:Script ;
+	xp:code "   . params.shOUTPUT=${OUTPUT}${LABEL}for op in ${OPS}do    bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} ${PARAMS}    bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy ${PARAMS}    bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-im80-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DimmediateRatio=80 ${PARAMS}    bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 ${PARAMS}    bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-gen-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 -Dgenerative ${PARAMS}    bash scripts/runexp.sh -p ${OUTPUT} -d ${DIRPREF}-${op}-clever-nr-im80-gen-empty-${postfix} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 -Dgenerative -DstartEmpty ${PARAMS}done " .
 # 
 # xpd:Software_20181112-NOOR
 

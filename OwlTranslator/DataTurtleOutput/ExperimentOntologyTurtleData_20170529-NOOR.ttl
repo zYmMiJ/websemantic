@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid1329489396 a owl:Ontology .
+_:genid731256267 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -334,7 +334,8 @@ foaf:Person a owl:Class .
 	xp:performs <xpd:NOORDesign_20170529-NOOR> ;
 	xp:reproduces <xpd:Experiment_20170529-NOOR> ;
 	xp:results <xpd:DataResults_20170529-NOOR> ;
-	xp:experimentationDate "20170530" .
+	xp:experimentationDate "20170530" ;
+	xp:hash " 997c4a9c1b698616c49342bb1fa5a6b8adf7faf8 " .
 # 
 # xpd:Hardware_20170529-NOOR
 
@@ -353,7 +354,8 @@ foaf:Person a owl:Class .
 	xp:designer <xpd:Person_20170529-NOOR> ;
 	xp:runs_with <xpd:Configuration_20170529-NOOR> ;
 	xp:specifiates <xpd:Script_20170529-NOOR> ;
-	xp:tests <xpd:Hypothesis_20170529-NOOR> .
+	xp:tests <xpd:Hypothesis_20170529-NOOR> ;
+	xp:experimentalSetting " Same as 20170215b-NOOR and 20170216-NOOR (for clever+non redundant) with generation modality. " .
 # 
 # xpd:Person_20170529-NOOR
 
@@ -361,7 +363,8 @@ foaf:Person a owl:Class .
 # 
 # xpd:Script_20170529-NOOR
 
-<xpd:Script_20170529-NOOR> a owl:NamedIndividual , xp:Script .
+<xpd:Script_20170529-NOOR> a owl:NamedIndividual , xp:Script ;
+	xp:code "    for op in delete replace refine add addjoin refadd do    java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.1.9.jar:lib/slf4j/logback-core-1.1.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy    java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.1.9.jar:lib/slf4j/logback-core-1.1.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 done " .
 # 
 # xpd:Software_20170529-NOOR
 

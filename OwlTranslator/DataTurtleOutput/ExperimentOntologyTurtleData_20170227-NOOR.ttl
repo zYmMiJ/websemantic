@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid336395359 a owl:Ontology .
+_:genid963383848 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -334,7 +334,8 @@ foaf:Person a owl:Class .
 	xp:performs <xpd:NOORDesign_20170227-NOOR> ;
 	xp:reproduces <xpd:Experiment_20170227-NOOR> ;
 	xp:results <xpd:DataResults_20170227-NOOR> ;
-	xp:experimentationDate "2017-02-27" .
+	xp:experimentationDate "2017-02-27" ;
+	xp:hash " a0ed90e78c55040a5514ed57e750d5a73e4472f5 " .
 # 
 # xpd:Hardware_20170227-NOOR
 
@@ -353,7 +354,8 @@ foaf:Person a owl:Class .
 	xp:designer <xpd:Person_20170227-NOOR> ;
 	xp:runs_with <xpd:Configuration_20170227-NOOR> ;
 	xp:specifiates <xpd:Script_20170227-NOOR> ;
-	xp:tests <xpd:Hypothesis_20170227-NOOR> .
+	xp:tests <xpd:Hypothesis_20170227-NOOR> ;
+	xp:experimentalSetting " Repetition of 20170209-NOOR, 20170215a-NOOR, 20170215b-NOOR and 20170216-NOOR for refadd with logmap and alcomo revision every 400 games " .
 # 
 # xpd:Person_20170227-NOOR
 
@@ -361,7 +363,8 @@ foaf:Person a owl:Class .
 # 
 # xpd:Script_20170227-NOOR
 
-<xpd:Script_20170227-NOOR> a owl:NamedIndividual , xp:Script .
+<xpd:Script_20170227-NOOR> a owl:NamedIndividual , xp:Script ;
+	xp:code "   java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.1.9.jar:lib/slf4j/logback-core-1.1.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=refadd -DrepeatRepairs=400 -Drepairers=logmap,alcomojava -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.1.9.jar:lib/slf4j/logback-core-1.1.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=refadd -DrepeatRepairs=400 -Drepairers=logmap,alcomo -DexpandAlignments=clever -DnonRedundancyjava -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.1.9.jar:lib/slf4j/logback-core-1.1.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=refadd -DrepeatRepairs=400 -Drepairers=logmap,alcomo -DimmediateRatio=80java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.1.9.jar:lib/slf4j/logback-core-1.1.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=refadd -DrepeatRepairs=400 -Drepairers=logmap,alcomo -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 " .
 # 
 # xpd:Software_20170227-NOOR
 

@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid528042460 a owl:Ontology .
+_:genid965874704 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -334,7 +334,8 @@ foaf:Person a owl:Class .
 	xp:performs <xpd:NOORDesign_20170216-NOOR> ;
 	xp:reproduces <xpd:Experiment_20170216-NOOR> ;
 	xp:results <xpd:DataResults_20170216-NOOR> ;
-	xp:experimentationDate "20170215-2" .
+	xp:experimentationDate "20170215-2" ;
+	xp:hash " dc342dca26a5a6feff895b2a1829b04e7dfaa5ae " .
 # 
 # xpd:Hardware_20170216-NOOR
 
@@ -353,7 +354,8 @@ foaf:Person a owl:Class .
 	xp:designer <xpd:Person_20170216-NOOR> ;
 	xp:runs_with <xpd:Configuration_20170216-NOOR> ;
 	xp:specifiates <xpd:Script_20170216-NOOR> ;
-	xp:tests <xpd:Hypothesis_20170216-NOOR> .
+	xp:tests <xpd:Hypothesis_20170216-NOOR> ;
+	xp:experimentalSetting " Repetition of 20170214a-NOOR and 20170214b-NOOR with expansion operators So all operators: delete/replace/refine/add/addjoin/refadd and modalities random/protected/clever with nonRedundancy and ontology look-up variants " .
 # 
 # xpd:Person_20170216-NOOR
 
@@ -361,7 +363,8 @@ foaf:Person a owl:Class .
 # 
 # xpd:Script_20170216-NOOR
 
-<xpd:Script_20170216-NOOR> a owl:NamedIndividual , xp:Script .
+<xpd:Script_20170216-NOOR> a owl:NamedIndividual , xp:Script ;
+	xp:code "   for mod in delete replace refine add addjoin refadddo   java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.1.9.jar:lib/slf4j/logback-core-1.1.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${mod} -DexpandAlignments=random   java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.1.9.jar:lib/slf4j/logback-core-1.1.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${mod} -DexpandAlignments=protected   java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.1.9.jar:lib/slf4j/logback-core-1.1.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${mod} -DexpandAlignments=protected -DnonRedundancy   java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.1.9.jar:lib/slf4j/logback-core-1.1.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${mod} -DexpandAlignments=clever   java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.1.9.jar:lib/slf4j/logback-core-1.1.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${mod} -DexpandAlignments=clever -DnonRedundancy   java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.1.9.jar:lib/slf4j/logback-core-1.1.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${mod} -DexpandAlignments=clever -DnonRedundancy -DontoLookupdone " .
 # 
 # xpd:Software_20170216-NOOR
 

@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid484166022 a owl:Ontology .
+_:genid1833158785 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -334,7 +334,8 @@ foaf:Person a owl:Class .
 	xp:performs <xpd:NOORDesign_20140208-NOOR> ;
 	xp:reproduces <xpd:Experiment_20140208-NOOR> ;
 	xp:results <xpd:DataResults_20140208-NOOR> ;
-	xp:experimentationDate "2014-02-08" .
+	xp:experimentationDate "2014-02-08" ;
+	xp:hash " 9cbfdf7e043a4dd82d8d4f7d06bd70ec6527dd0c " .
 # 
 # xpd:Hardware_20140208-NOOR
 
@@ -353,7 +354,8 @@ foaf:Person a owl:Class .
 	xp:designer <xpd:Person_20140208-NOOR> ;
 	xp:runs_with <xpd:Configuration_20140208-NOOR> ;
 	xp:specifiates <xpd:Script_20140208-NOOR> ;
-	xp:tests <xpd:Hypothesis_20140208-NOOR> .
+	xp:tests <xpd:Hypothesis_20140208-NOOR> ;
+	xp:experimentalSetting " Same as 20140207-NOOR but it is possible to compare with LogMap and Alcomo. " .
 # 
 # xpd:Person_20140208-NOOR
 
@@ -361,7 +363,8 @@ foaf:Person a owl:Class .
 # 
 # xpd:Script_20140208-NOOR
 
-<xpd:Script_20140208-NOOR> a owl:NamedIndividual , xp:Script .
+<xpd:Script_20140208-NOOR> a owl:NamedIndividual , xp:Script ;
+	xp:code " java -Xms500M -Xmx1G -Dlog.level=DEBUG -cp lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.0.9.jar:lib/slf4j/logback-core-1.0.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DreportIncoherence=1 " .
 # 
 # xpd:Software_20140208-NOOR
 

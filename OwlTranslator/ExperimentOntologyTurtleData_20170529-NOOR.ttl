@@ -1,0 +1,77 @@
+@prefix xp: <http://www.inria.fr/moex/ExperimentOntology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# xpd:Analysis_20170529-NOOR
+
+xpd:Analysis_20170529-NOOR a owl:NamedIndividual , xp:Analysis ;
+	xp:analyst xpd:Person_20170529-NOOR ;
+	xp:comment "      We obtain the expected results, those of 20170215b-NOOR and 20170216-NOOR   " .
+# 
+# xpd:Configuration_20170529-NOOR
+
+xpd:Configuration_20170529-NOOR a owl:NamedIndividual , xp:Configuration .
+# 
+# xpd:DataResults_20170529-NOOR
+
+xpd:DataResults_20170529-NOOR a owl:NamedIndividual , xp:DataResults ;
+	xp:analysis xpd:Analysis_20170529-NOOR ;
+	xp:explains xpd:Analysis_20170529-NOOR .
+# 
+# xpd:Experiment_20170529-NOOR
+
+xpd:Experiment_20170529-NOOR a owl:NamedIndividual , xp:Experiment ;
+	xp:performer xpd:Person_20170529-NOOR ;
+	xp:performs xpd:NOORDesign_20170529-NOOR ;
+	xp:reproduces xpd:Experiment_20170529-NOOR ;
+	xp:results xpd:DataResults_20170529-NOOR ;
+	xp:experimentationDate "20170530" ;
+	xp:hash " 997c4a9c1b698616c49342bb1fa5a6b8adf7faf8 " .
+# 
+# xpd:Hardware_20170529-NOOR
+
+xpd:Hardware_20170529-NOOR a owl:NamedIndividual , xp:Hardware ;
+	xp:hardwareComponent " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0 HotSpot " .
+# 
+# xpd:Hypothesis_20170529-NOOR
+
+xpd:Hypothesis_20170529-NOOR a owl:NamedIndividual , xp:Hypothesis ;
+	xp:formalizes xpd:Script_20170529-NOOR ;
+	xp:label "      reproduction of experiments with new code; relaxation improves on expansion by reaching 100% precision   " .
+# 
+# xpd:NOORDesign_20170529-NOOR
+
+xpd:NOORDesign_20170529-NOOR a owl:NamedIndividual , xp:NOORDesign ;
+	xp:designer xpd:Person_20170529-NOOR ;
+	xp:runs_with xpd:Configuration_20170529-NOOR ;
+	xp:specifiates xpd:Script_20170529-NOOR ;
+	xp:tests xpd:Hypothesis_20170529-NOOR ;
+	xp:experimentalSetting " Same as 20170215b-NOOR and 20170216-NOOR (for clever+non redundant) with generation modality. " .
+# 
+# xpd:Person_20170529-NOOR
+
+xpd:Person_20170529-NOOR a owl:NamedIndividual , foaf:Person .
+# 
+# xpd:Script_20170529-NOOR
+
+xpd:Script_20170529-NOOR a owl:NamedIndividual , xp:Script ;
+	xp:code "    for op in delete replace refine add addjoin refadd do    java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.1.9.jar:lib/slf4j/logback-core-1.1.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy    java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.1.9.jar:lib/slf4j/logback-core-1.1.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=${op} -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80 done " .
+# 
+# xpd:Software_20170529-NOOR
+
+xpd:Software_20170529-NOOR a owl:NamedIndividual , xp:Software ;
+	xp:OSVersion " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0 HotSpot " ;
+	xp:logbackVersion " File:20170530-NOOR-4-10000-delete-clever-nr.txt,File:20170530-NOOR-4-10000-delete-clever-nr.tsv.txt, File:20170530-NOOR-4-10000-replace-clever-nr.txt,File:20170530-NOOR-4-10000-replace-clever-nr.tsv.txt, File:20170530-NOOR-4-10000-refine-clever-nr.txt,File:20170530-NOOR-4-10000-refine-clever-nr.tsv.txt, File:20170530-NOOR-4-10000-add-clever-nr.txt,File:20170530-NOOR-4-10000-add-clever-nr.tsv.txt, File:20170530-NOOR-4-10000-addjoin-clever-nr.txt,File:20170530-NOOR-4-10000-addjoin-clever-nr.tsv.txt, File:20170530-NOOR-4-10000-refadd-clever-nr.txt,File:20170530-NOOR-4-10000-refadd-clever-nr.tsv.txt, File:20170530-NOOR-4-10000-delete-clever-nr-im80.txt,File:20170530-NOOR-4-10000-delete-clever-nr-im80.tsv.txt, File:20170530-NOOR-4-10000-replace-clever-nr-im80.txt,File:20170530-NOOR-4-10000-replace-clever-nr-im80.tsv.txt, File:20170530-NOOR-4-10000-refine-clever-nr-im80.txt,File:20170530-NOOR-4-10000-refine-clever-nr-im80.tsv.txt, File:20170530-NOOR-4-10000-add-clever-nr-im80.txt,File:20170530-NOOR-4-10000-add-clever-nr-im80.tsv.txt, File:20170530-NOOR-4-10000-addjoin-clever-nr-im80.txt,File:20170530-NOOR-4-10000-addjoin-clever-nr-im80.tsv.txt, File:20170530-NOOR-4-10000-refadd-clever-nr-im80.txt,File:20170530-NOOR-4-10000-refadd-clever-nr-im80.tsv.txt, " .
+# 
+# Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

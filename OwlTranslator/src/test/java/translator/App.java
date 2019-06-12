@@ -92,7 +92,13 @@ public class App {
 	  			System.out.println(" no match : "+link);
 
 					translate.run(true);
-	  		}	  		
+			
+			
+	  		}
+	  		
+	  		File directoryOut = new File("DataTurtleOutput");
+			CleanFile cleaner = new CleanFile(directoryOut.getName());
+			cleaner.cleanAll();
 		}
 	} 
 	

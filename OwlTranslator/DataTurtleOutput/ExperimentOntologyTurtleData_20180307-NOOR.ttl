@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid542212688 a owl:Ontology .
+_:genid1693662702 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -334,7 +334,8 @@ foaf:Person a owl:Class .
 	xp:performs <xpd:NOORDesign_20180307-NOOR> ;
 	xp:reproduces <xpd:Experiment_20180307-NOOR> ;
 	xp:results <xpd:DataResults_20180307-NOOR> ;
-	xp:experimentationDate "2018-03-07" .
+	xp:experimentationDate "2018-03-07" ;
+	xp:hash " fa69a4569fb2ecd7d8f24759d1ce0cd71080811a " .
 # 
 # xpd:Hardware_20180307-NOOR
 
@@ -353,7 +354,8 @@ foaf:Person a owl:Class .
 	xp:designer <xpd:Person_20180307-NOOR> ;
 	xp:runs_with <xpd:Configuration_20180307-NOOR> ;
 	xp:specifiates <xpd:Script_20180307-NOOR> ;
-	xp:tests <xpd:Hypothesis_20180307-NOOR> .
+	xp:tests <xpd:Hypothesis_20180307-NOOR> ;
+	xp:experimentalSetting " Same as 20180308-NOOR with realistic numbers of correspondences in each initial alignment " .
 # 
 # xpd:Person_20180307-NOOR
 
@@ -361,7 +363,8 @@ foaf:Person a owl:Class .
 # 
 # xpd:Script_20180307-NOOR
 
-<xpd:Script_20180307-NOOR> a owl:NamedIndividual , xp:Script .
+<xpd:Script_20180307-NOOR> a owl:NamedIndividual , xp:Script ;
+	xp:code "      JPATH=lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:.   OPT=\"-DnbAgents=4 -DnbIterations=5000 -DnbRuns=10 -Drealistic -DreportPrecRec\"      # Dry test only for generating the runs   bash scripts/runexp.sh -d 4-10000-nothing java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=nothing -DsaveDir=expeRun -DsaveInit -DsaveParams -DsaveGames      LOADOPT=\"-DloadDir=expeRun -DloadEnv -DloadAgents -DreplayGames\"      for mod in delete replace refine add addjoin refadd   do      bash scripts/runexp.sh -d 4-5000-${mod} java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} ${LOADOPT} -DrevisionModality=${mod}   done " .
 # 
 # xpd:Software_20180307-NOOR
 

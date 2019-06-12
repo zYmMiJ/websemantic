@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid832578794 a owl:Ontology .
+_:genid2046611860 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -334,7 +334,8 @@ foaf:Person a owl:Class .
 	xp:performs <xpd:NOORDesign_20180305-NOOR> ;
 	xp:reproduces <xpd:Experiment_20180305-NOOR> ;
 	xp:results <xpd:DataResults_20180305-NOOR> ;
-	xp:experimentationDate "2018-03-05" .
+	xp:experimentationDate "2018-03-05" ;
+	xp:hash " fa69a4569fb2ecd7d8f24759d1ce0cd71080811a " .
 # 
 # xpd:Hardware_20180305-NOOR
 
@@ -353,7 +354,8 @@ foaf:Person a owl:Class .
 	xp:designer <xpd:Person_20180305-NOOR> ;
 	xp:runs_with <xpd:Configuration_20180305-NOOR> ;
 	xp:specifiates <xpd:Script_20180305-NOOR> ;
-	xp:tests <xpd:Hypothesis_20180305-NOOR> .
+	xp:tests <xpd:Hypothesis_20180305-NOOR> ;
+	xp:experimentalSetting " Same as the initial experiments 20140208-NOOR with:      repeatable series of events    precision and recall collected semantically and syntactically   " .
 # 
 # xpd:Person_20180305-NOOR
 
@@ -361,7 +363,8 @@ foaf:Person a owl:Class .
 # 
 # xpd:Script_20180305-NOOR
 
-<xpd:Script_20180305-NOOR> a owl:NamedIndividual , xp:Script .
+<xpd:Script_20180305-NOOR> a owl:NamedIndividual , xp:Script ;
+	xp:code "      JPATH=lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:.   OPT=\"-DnbAgents=4 -DnbIterations=1000 -DnbRuns=10 -DreportPrecRec -Drealistic\"      # Dry test only for generating the runs   bash scripts/runexp.sh -d 4-10000-real-nothing java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=nothing -DsaveDir=expeRun -DsaveInit -DsaveParams -DsaveGames      LOADOPT=\"-DloadDir=expeRun -DloadEnv -DloadAgents -DreplayGames\"      bash scripts/runexp.sh -d 4-10000-real-add java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=add ${LOADOPT}      bash scripts/runexp.sh -d 4-10000-real-addjoin java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=addjoin ${LOADOPT}      bash scripts/runexp.sh -d 4-10000-real-add-syntactic java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=add -Dsyntactic=true ${LOADOPT} -DsaveDir=addRes -DsaveFinal      bash scripts/runexp.sh -d 4-10000-real-addjoin-syntactic java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=addjoin -Dsyntactic=true ${LOADOPT} -DsaveDir=addjoinRes -DsaveFinal " .
 # 
 # xpd:Software_20180305-NOOR
 

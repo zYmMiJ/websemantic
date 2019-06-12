@@ -1,0 +1,77 @@
+@prefix xp: <http://www.inria.fr/moex/ExperimentOntology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# xpd:Analysis_20180305-NOOR
+
+xpd:Analysis_20180305-NOOR a owl:NamedIndividual , xp:Analysis ;
+	xp:analyst xpd:Person_20180305-NOOR ;
+	xp:comment " It seems that a bug has indeed been fixed. " .
+# 
+# xpd:Configuration_20180305-NOOR
+
+xpd:Configuration_20180305-NOOR a owl:NamedIndividual , xp:Configuration .
+# 
+# xpd:DataResults_20180305-NOOR
+
+xpd:DataResults_20180305-NOOR a owl:NamedIndividual , xp:DataResults ;
+	xp:analysis xpd:Analysis_20180305-NOOR ;
+	xp:explains xpd:Analysis_20180305-NOOR .
+# 
+# xpd:Experiment_20180305-NOOR
+
+xpd:Experiment_20180305-NOOR a owl:NamedIndividual , xp:Experiment ;
+	xp:performer xpd:Person_20180305-NOOR ;
+	xp:performs xpd:NOORDesign_20180305-NOOR ;
+	xp:reproduces xpd:Experiment_20180305-NOOR ;
+	xp:results xpd:DataResults_20180305-NOOR ;
+	xp:experimentationDate "2018-03-05" ;
+	xp:hash " fa69a4569fb2ecd7d8f24759d1ce0cd71080811a " .
+# 
+# xpd:Hardware_20180305-NOOR
+
+xpd:Hardware_20180305-NOOR a owl:NamedIndividual , xp:Hardware ;
+	xp:hardwareComponent " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0_131-b11 HotSpot " .
+# 
+# xpd:Hypothesis_20180305-NOOR
+
+xpd:Hypothesis_20180305-NOOR a owl:NamedIndividual , xp:Hypothesis ;
+	xp:formalizes xpd:Script_20180305-NOOR ;
+	xp:label " The goal of this test is to check that the operators add and addjoin performs correctly. It enabled to verify that this was not the case. For that purpose, we use the new facility of Lazy lavender to redo exactly the same test. The hypotheses to be observed are:      They have the same size at convergence    Addjoin converges faster    Addjoin has a higher semantic precision all the time (idem for syntactic)    Addjoin has a lower semantic recall all the time (syntactic are equal)   " .
+# 
+# xpd:NOORDesign_20180305-NOOR
+
+xpd:NOORDesign_20180305-NOOR a owl:NamedIndividual , xp:NOORDesign ;
+	xp:designer xpd:Person_20180305-NOOR ;
+	xp:runs_with xpd:Configuration_20180305-NOOR ;
+	xp:specifiates xpd:Script_20180305-NOOR ;
+	xp:tests xpd:Hypothesis_20180305-NOOR ;
+	xp:experimentalSetting " Same as the initial experiments 20140208-NOOR with:      repeatable series of events    precision and recall collected semantically and syntactically   " .
+# 
+# xpd:Person_20180305-NOOR
+
+xpd:Person_20180305-NOOR a owl:NamedIndividual , foaf:Person .
+# 
+# xpd:Script_20180305-NOOR
+
+xpd:Script_20180305-NOOR a owl:NamedIndividual , xp:Script ;
+	xp:code "      JPATH=lib/lazylav/ll.jarlib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:.   OPT=\"-DnbAgents=4 -DnbIterations=1000 -DnbRuns=10 -DreportPrecRec -Drealistic\"      # Dry test only for generating the runs   bash scripts/runexp.sh -d 4-10000-real-nothing java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=nothing -DsaveDir=expeRun -DsaveInit -DsaveParams -DsaveGames      LOADOPT=\"-DloadDir=expeRun -DloadEnv -DloadAgents -DreplayGames\"      bash scripts/runexp.sh -d 4-10000-real-add java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=add ${LOADOPT}      bash scripts/runexp.sh -d 4-10000-real-addjoin java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=addjoin ${LOADOPT}      bash scripts/runexp.sh -d 4-10000-real-add-syntactic java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=add -Dsyntactic=true ${LOADOPT} -DsaveDir=addRes -DsaveFinal      bash scripts/runexp.sh -d 4-10000-real-addjoin-syntactic java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=addjoin -Dsyntactic=true ${LOADOPT} -DsaveDir=addjoinRes -DsaveFinal " .
+# 
+# xpd:Software_20180305-NOOR
+
+xpd:Software_20180305-NOOR a owl:NamedIndividual , xp:Software ;
+	xp:OSVersion " Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0_131-b11 HotSpot " ;
+	xp:logbackVersion " File:20180305-LOG.zip (The full log contains a .tex and .pdf indicating that the fourth hypothesis is not observed. This is leftover text of the previous test and actually does not apply to the data in this experiment and zip file.) " .
+# 
+# Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

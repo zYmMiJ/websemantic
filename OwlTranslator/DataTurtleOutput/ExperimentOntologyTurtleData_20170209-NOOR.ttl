@@ -6,7 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:genid1338734959 a owl:Ontology .
+_:genid1278700356 a owl:Ontology .
 # 
 # 
 # #################################################################
@@ -334,7 +334,8 @@ foaf:Person a owl:Class .
 	xp:performs <xpd:NOORDesign_20170209-NOOR> ;
 	xp:reproduces <xpd:Experiment_20170209-NOOR> ;
 	xp:results <xpd:DataResults_20170209-NOOR> ;
-	xp:experimentationDate "20170209" .
+	xp:experimentationDate "20170209" ;
+	xp:hash " 738f55c3e7dc6fc16ebcfe070adc314dd4703d21 " .
 # 
 # xpd:Hardware_20170209-NOOR
 
@@ -353,7 +354,8 @@ foaf:Person a owl:Class .
 	xp:designer <xpd:Person_20170209-NOOR> ;
 	xp:runs_with <xpd:Configuration_20170209-NOOR> ;
 	xp:specifiates <xpd:Script_20170209-NOOR> ;
-	xp:tests <xpd:Hypothesis_20170209-NOOR> .
+	xp:tests <xpd:Hypothesis_20170209-NOOR> ;
+	xp:experimentalSetting " Exactly the same as 20170208-NOOR with:      new operators   " .
 # 
 # xpd:Person_20170209-NOOR
 
@@ -361,7 +363,8 @@ foaf:Person a owl:Class .
 # 
 # xpd:Script_20170209-NOOR
 
-<xpd:Script_20170209-NOOR> a owl:NamedIndividual , xp:Script .
+<xpd:Script_20170209-NOOR> a owl:NamedIndividual , xp:Script ;
+	xp:code " $ java -Dlog.level=INFO -cp lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.1.9.jar:lib/slf4j/logback-core-1.1.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DrevisionModality=refine -DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec  $ java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.1.9.jar:lib/slf4j/logback-core-1.1.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DrevisionModality=addjoin -DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec  $ java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.1.9.jar:lib/slf4j/logback-core-1.1.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DrevisionModality=refadd -DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec " .
 # 
 # xpd:Software_20170209-NOOR
 
