@@ -1,0 +1,16 @@
+http://www.inria.fr/moex/ExperimentOntology#formalizes=
+http://www.inria.fr/moex/ExperimentOntology#explains=
+http://www.inria.fr/moex/ExperimentOntology#analysis=
+http://www.inria.fr/moex/ExperimentOntology#fileResults=
+http://www.inria.fr/moex/ExperimentOntology#furtherExperiment=
+http://www.inria.fr/moex/ExperimentOntology#analyst=Analyst|ANALYST
+http://www.inria.fr/moex/ExperimentOntology#plotDiagram=
+http://www.inria.fr/moex/ExperimentOntology#reproduces=
+http://www.inria.fr/moex/ExperimentOntology#results=
+http://www.inria.fr/moex/ExperimentOntology#performer=Experimenter|EXPERIMENTER
+http://www.inria.fr/moex/ExperimentOntology#performs=
+http://www.inria.fr/moex/ExperimentOntology#designer=Designer|DESIGNER
+http://www.inria.fr/moex/ExperimentOntology#runs_with=
+http://www.inria.fr/moex/ExperimentOntology#specifiates=
+http://www.inria.fr/moex/ExperimentOntology#tests=
+http://www.inria.fr/moex/ExperimentOntology#variationOf=

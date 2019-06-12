@@ -19,8 +19,6 @@ public abstract class MakerAxiom {
 	protected OWLDataFactory factory;
 	protected OWLOntologyManager manager;
 	
-
-	
 	public MakerAxiom(OWLOntologyManager manager, OWLOntology ontology) {
 		this.ontology = ontology;
 		this.manager = manager;

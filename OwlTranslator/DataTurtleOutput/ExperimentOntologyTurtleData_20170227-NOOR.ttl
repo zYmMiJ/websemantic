@@ -1,0 +1,84 @@
+@prefix xpd: <#> .
+@prefix xp: <http://www.inria.fr/moex/ExperimentOntology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# xpd:Analysis_20170227-NOOR
+
+xpd:Analysis_20170227-NOOR a owl:NamedIndividual , xp:Analysis ;
+	xp:analyst xpd:Person_20170227-NOOR ;
+	xp:comment "Except for the last case, it is clear that the logical repairers do not improve over the agents    However, the fact that incoherence is not reduced to 0.0 in the second and last case, let suspect a bug" .
+# 
+# xpd:Configuration_20170227-NOOR
+
+xpd:Configuration_20170227-NOOR a owl:NamedIndividual , xp:Configuration .
+# 
+# xpd:DataResults_20170227-NOOR
+
+xpd:DataResults_20170227-NOOR a owl:NamedIndividual , xp:DataResults ;
+	xp:analysis xpd:Analysis_20170227-NOOR ;
+	xp:explains xpd:Analysis_20170227-NOOR .
+# 
+# xpd:Experiment_20170227-NOOR
+
+xpd:Experiment_20170227-NOOR a owl:NamedIndividual , xp:Experiment ;
+	xp:performer xpd:Person_JEuz ;
+	xp:performs xpd:NOORDesign_20170227-NOOR ;
+	xp:reproduces xpd:Experiment_20170227-NOOR ;
+	xp:results xpd:DataResults_20170227-NOOR ;
+	xp:variationOf xpd:Experiment_20170227-NOOR ;
+	xp:experimentationDate "2017-02-27" ;
+	xp:hash "a0ed90e78c55040a5514ed57e750d5a73e4472f5" .
+# 
+# xpd:Hardware_20170227-NOOR
+
+xpd:Hardware_20170227-NOOR a owl:NamedIndividual , xp:Hardware ;
+	xp:hardwareComponent "Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0 HotSpot" .
+# 
+# xpd:Hypothesis_20170227-NOOR
+
+xpd:Hypothesis_20170227-NOOR a owl:NamedIndividual , xp:Hypothesis ;
+	xp:formalizes xpd:Script_20170227-NOOR ;
+	xp:label "Using repair systems does not improve F-measure whatever the level achieved by agents." .
+# 
+# xpd:NOORDesign_20170227-NOOR
+
+xpd:NOORDesign_20170227-NOOR a owl:NamedIndividual , xp:NOORDesign ;
+	xp:designer xpd:Person_20170227-NOOR ;
+	xp:runs_with xpd:Configuration_20170227-NOOR ;
+	xp:specifiates xpd:Script_20170227-NOOR ;
+	xp:tests xpd:Hypothesis_20170227-NOOR ;
+	xp:experimentalSetting "Repetition of 20170209-NOOR, 20170215a-NOOR, 20170215b-NOOR and 20170216-NOOR for refadd with logmap and alcomo revision every 400 games" .
+# 
+# xpd:Person_20170227-NOOR
+
+xpd:Person_20170227-NOOR a owl:NamedIndividual , foaf:Person .
+# 
+# xpd:Person_JEuz
+
+xpd:Person_JEuz a owl:NamedIndividual , foaf:Person ;
+	foaf:name "JEuz" .
+# 
+# xpd:Script_20170227-NOOR
+
+xpd:Script_20170227-NOOR a owl:NamedIndividual , xp:Script ;
+	xp:code "java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.1.9.jar:lib/slf4j/logback-core-1.1.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=refadd -DrepeatRepairs=400 -Drepairers=logmap,alcomojava -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.1.9.jar:lib/slf4j/logback-core-1.1.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=refadd -DrepeatRepairs=400 -Drepairers=logmap,alcomo -DexpandAlignments=clever -DnonRedundancyjava -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.1.9.jar:lib/slf4j/logback-core-1.1.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=refadd -DrepeatRepairs=400 -Drepairers=logmap,alcomo -DimmediateRatio=80java -Dlog.level=INFO -cp lib/lazylav/ll.jarlib/slf4j/logback-classic-1.1.9.jar:lib/slf4j/logback-core-1.1.9.jar:. fr.inria.exmo.lazylavender.engine.Monitor -DnbAgents=4 -DnbIterations=10000 -DnbRuns=10 -DreportPrecRec -DrevisionModality=refadd -DrepeatRepairs=400 -Drepairers=logmap,alcomo -DexpandAlignments=clever -DnonRedundancy -DimmediateRatio=80" .
+# 
+# xpd:Software_20170227-NOOR
+
+xpd:Software_20170227-NOOR a owl:NamedIndividual , xp:Software ;
+	xp:OSVersion "Debian Linux virtual machine configured with four processors and 20GB of RAM running under a Dell PowerEdge T610 with 4*Intel Xeon Quad Core 1.9GHz E5-2420 processors, under Linux ProxMox 2 (Debian). - Java 1.8.0 HotSpot" ;
+	xp:logbackVersion "File:20170227-NOOR-4-10000-refadd-rr.txt,File:20170227-NOOR-4-10000-refadd-rr.tsv.txt, File:20170227-NOOR-4-10000-refadd-clever-nr-rr.txt,File:20170227-NOOR-4-10000-refadd-clever-nr-rr.tsv.txt, File:20170227-NOOR-4-10000-refadd-im80-rr.txt,File:20170227-NOOR-4-10000-refadd-im80-rr.tsv.txt, File:20170227-NOOR-4-10000-refadd-clever-nr-im80-rr.txt,File:20170227-NOOR-4-10000-refadd-clever-nr-im80-rr.tsv.txt," .
+# 
+# Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

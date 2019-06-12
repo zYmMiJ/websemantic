@@ -1,0 +1,289 @@
+@prefix xp: <http://www.inria.fr/moex/ExperimentOntology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.inria.fr/moex/ExperimentOntology#analysis
+xp:analysis rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain xp:DataResults ;
+            rdfs:range xp:Analysis .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#analyst
+xp:analyst rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain xp:Analysis ;
+           rdfs:range foaf:Person .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#designer
+xp:designer rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain xp:NOORDesign ;
+            rdfs:range foaf:Person .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#experimenter
+xp:experimenter rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:range foaf:Person .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#explains
+xp:explains rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain xp:DataResults ;
+            rdfs:range xp:Analysis .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#fileResults
+xp:fileResults rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain xp:DataResults .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#formalizes
+xp:formalizes rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain xp:Hypothesis ;
+              rdfs:range xp:Script .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#furtherExperiment
+xp:furtherExperiment rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:domain xp:Analysis .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#performer
+xp:performer rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain xp:Experiment ;
+             rdfs:range foaf:Person .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#performs
+xp:performs rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain xp:Experiment ;
+            rdfs:range xp:NOORDesign .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#plotDiagram
+xp:plotDiagram rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain xp:Analysis .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#reproduces
+xp:reproduces rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain xp:Experiment ;
+              rdfs:range xp:Experiment .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#results
+xp:results rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain xp:Experiment ;
+           rdfs:range xp:DataResults .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#runs_with
+xp:runs_with rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain xp:NOORDesign ;
+             rdfs:range xp:Configuration .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#specifiates
+xp:specifiates rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain xp:NOORDesign ;
+               rdfs:range xp:Script .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#tests
+xp:tests rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:domain xp:NOORDesign ;
+         rdfs:range xp:Hypothesis .
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty rdfs:subPropertyOf owl:topObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.inria.fr/moex/ExperimentOntology#OSVersion
+xp:OSVersion rdf:type owl:DatatypeProperty ;
+             rdfs:domain xp:Software ;
+             rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#code
+xp:code rdf:type owl:DatatypeProperty ;
+        rdfs:domain xp:Script ;
+        rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#comment
+xp:comment rdf:type owl:DatatypeProperty ;
+           rdfs:domain xp:Analysis ;
+           rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#designDate
+xp:designDate rdf:type owl:DatatypeProperty ;
+              rdfs:domain xp:NOORDesign ;
+              rdfs:range xsd:dateTime .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#experimentID
+xp:experimentID rdf:type owl:DatatypeProperty ;
+                rdfs:domain xp:Experiment ;
+                rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#experimentLabel
+xp:experimentLabel rdf:type owl:DatatypeProperty ;
+                   rdfs:domain xp:Experiment ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#experimentName
+xp:experimentName rdf:type owl:DatatypeProperty ;
+                  rdfs:domain xp:Experiment ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#experimentTitle
+xp:experimentTitle rdf:type owl:DatatypeProperty ;
+                   rdfs:domain xp:Experiment ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#experimentalSetting
+xp:experimentalSetting rdf:type owl:DatatypeProperty ;
+                       rdfs:domain xp:NOORDesign ;
+                       rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#experimentationDate
+xp:experimentationDate rdf:type owl:DatatypeProperty ;
+                       rdfs:domain xp:Experiment ;
+                       rdfs:range xsd:dateTime .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#hardwareComponent
+xp:hardwareComponent rdf:type owl:DatatypeProperty ;
+                     rdfs:domain xp:Hardware ;
+                     rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#hash
+xp:hash rdf:type owl:DatatypeProperty ;
+        rdfs:domain xp:Experiment ;
+        rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#javaPath
+xp:javaPath rdf:type owl:DatatypeProperty ;
+            rdfs:domain xp:Software ;
+            rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#label
+xp:label rdf:type owl:DatatypeProperty ;
+         rdfs:domain xp:Hypothesis ;
+         rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#logbackVersion
+xp:logbackVersion rdf:type owl:DatatypeProperty ;
+                  rdfs:domain xp:Software ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#numberOfAgents
+xp:numberOfAgents rdf:type owl:DatatypeProperty ;
+                  rdfs:domain xp:NOORDesign ;
+                  rdfs:range xsd:int .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#numberOfIterations
+xp:numberOfIterations rdf:type owl:DatatypeProperty ;
+                      rdfs:domain xp:NOORDesign ;
+                      rdfs:range xsd:int .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#numberOfRuns
+xp:numberOfRuns rdf:type owl:DatatypeProperty ;
+                rdfs:domain xp:NOORDesign ;
+                rdfs:range xsd:int .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#operators
+xp:operators rdf:type owl:DatatypeProperty ;
+             rdfs:domain xp:NOORDesign ;
+             rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.inria.fr/moex/ExperimentOntology#Analysis
+xp:Analysis rdf:type owl:Class .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#Configuration
+xp:Configuration rdf:type owl:Class .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#DataResults
+xp:DataResults rdf:type owl:Class .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#Experiment
+xp:Experiment rdf:type owl:Class .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#Hardware
+xp:Hardware rdf:type owl:Class ;
+            rdfs:subClassOf xp:Configuration .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#Hypothesis
+xp:Hypothesis rdf:type owl:Class .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#NOORDesign
+xp:NOORDesign rdf:type owl:Class .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#Script
+xp:Script rdf:type owl:Class .
+
+
+###  http://www.inria.fr/moex/ExperimentOntology#Software
+xp:Software rdf:type owl:Class ;
+            rdfs:subClassOf xp:Configuration .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+foaf:Person rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

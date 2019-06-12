@@ -19,30 +19,85 @@ public class App {
 	public static void main(String[] args) throws IOException {
 		configLOG();
 		
-		File repertoire = new File("ExperimentsInput");
-  		System.out.println(	"Repertoire ? "+repertoire.isDirectory());
-  		File[] files=repertoire.listFiles();
-  		
-  		/*for(int i = 0; i < files.length ; i++){
-  			
-  			String paramFileName = repertoire.getCanonicalPath()+"/"+files[i].getName()+"/params.sh";
-  			System.out.println(	paramFileName );
-  			Translator translate = new Translator("ExperimentOntology3.owl", paramFileName);
-  			translate.run();
-  			
-  		}*/
-
-  		List<String> absUrlOfExperiments = new ArrayList<String>();
-  		absUrlOfExperiments = getAllXPLink("https://gforge.inria.fr/plugins/mediawiki/wiki/lazylav/index.php/Experiments");
-  			
-		for(String link: absUrlOfExperiments ) {	
-			System.out.println(link);
-			Translator translate = new Translator("ExperimentOntology29-05.owl", link, "HTML");
-
-  			translate.run();
+		String ontologyName = "ExperimentOntology12-10.owl";
+		String parserType = "";
+		
+		if (args[0].equals("-c") || args[0].equals("--changeAssociation")) {
+			Translator t = new Translator(ontologyName, "/change", parserType);
+			t.associationFile();
 		}
 		
+		if (args[0].equals("-a") && args[1].equals("html")) {
+			parserType = "HTML";
+			
+			List<String> absUrlOfExperiments = new ArrayList<String>();
+	  		absUrlOfExperiments = getAllXPLink("https://gforge.inria.fr/plugins/mediawiki/wiki/lazylav/index.php/Experiments");
+	  			
+			for(String link: absUrlOfExperiments ) {	
+				System.out.println(link);
+				Translator translate = new Translator(ontologyName, link, parserType);
+
+					translate.run(true);
+				
+			}
+		}
 		
+		if (args[0].equals("-a") && args[1].equals("bash")) {
+			parserType = "FILE";
+			
+			File repertoire = new File("ExperimentsInput");
+	  		System.out.println(	"Repertoire ? "+repertoire.isDirectory());
+	  		File[] files=repertoire.listFiles();
+			
+	  		for(int i = 0; i < files.length ; i++) {
+	  			String paramFileName = repertoire.getCanonicalPath()+"/"+files[i].getName()+"/params.sh";
+	  			System.out.println(	paramFileName );
+	  			Translator translate = new Translator(ontologyName, paramFileName, parserType);
+
+					translate.run(true);
+	  		}
+	  		
+		}
+		
+		if (args[0].equals("-m")) {
+			
+			File repertoire = new File("ExperimentsInput");
+	  		System.out.println(	"Repertoire ? "+repertoire.isDirectory());
+	  		File[] files=repertoire.listFiles();
+	  		
+	  		List<String> absUrlOfExperiments = new ArrayList<String>();
+	  		absUrlOfExperiments = getAllXPLink("https://gforge.inria.fr/plugins/mediawiki/wiki/lazylav/index.php/Experiments");
+	  		
+	  		List<String> linkMatched = new ArrayList<String>();
+	  		
+	  		for(String link : absUrlOfExperiments) {
+	  				
+	  			for (int i = 0; i < files.length ; i++) {
+	  		  		String paramFileName = repertoire.getCanonicalPath()+"/"+files[i].getName()+"/params.sh";
+	  				
+	  		  		if(link.contains(files[i].getName())) {
+	  		  			System.out.println(" match : "+paramFileName+" -- "+link);
+	  		  			linkMatched.add(link);
+	  		  			MergeInputs.merge(ontologyName, paramFileName, link);
+	  		  		}		
+	  			}		
+	  		}
+	  		
+	  		absUrlOfExperiments.removeAll(linkMatched);
+	  		
+	  		for(String link : absUrlOfExperiments) {
+	  			Translator translate = new Translator(ontologyName, link, "HTML");
+	  			System.out.println(" no match : "+link);
+
+					translate.run(true);
+			
+			
+	  		}
+	  		
+	  		File directoryOut = new File("DataTurtleOutput");
+			CleanFile cleaner = new CleanFile(directoryOut.getName());
+			cleaner.cleanAll();
+		}
 	} 
 	
 	private static void configLOG() {
@@ -76,7 +131,8 @@ public class App {
 	/*
 	 * Return tous les href (Experiments) d'une page donn�e. Pattern "-NOOR"
 	 */
-	public static List<String> getAllXPLink(String s) {
+	private static List<String> getAllXPLink(String s) {
+
 		List<String> l  = new ArrayList<String>();
 		Document doc; // HTML document
 		try {
@@ -93,4 +149,5 @@ public class App {
 		}
 		return l;// On retourne cette liste
 	}
+	
 }

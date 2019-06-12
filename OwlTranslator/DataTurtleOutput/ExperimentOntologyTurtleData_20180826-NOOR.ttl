@@ -1,0 +1,96 @@
+@prefix xpd: <#> .
+@prefix xp: <http://www.inria.fr/moex/ExperimentOntology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# xpd:Analysis_20180826-NOOR
+
+xpd:Analysis_20180826-NOOR a owl:NamedIndividual , xp:Analysis ;
+	xp:analyst xpd:Person_JEuz ;
+	xp:comment "This experiment fully confirms 20180305-NOOR, i.e., addjoin is now working properly, with the observation that:      add and addjoin eventually achieve the same results (as shown by Size and Syntactic/Semantic Precision/Recall)    addjoin converges faster    In addition, it shows that this is true with realistic and non realistic starting size and that the true convergence was indeed after 1000." .
+# 
+# xpd:Configuration_20180826-NOOR
+
+xpd:Configuration_20180826-NOOR a owl:NamedIndividual , xp:Configuration .
+# 
+# xpd:DataResults_20180826-NOOR
+
+xpd:DataResults_20180826-NOOR a owl:NamedIndividual , xp:DataResults ;
+	xp:analysis xpd:Analysis_20180826-NOOR ;
+	xp:explains xpd:Analysis_20180826-NOOR .
+# 
+# xpd:Experiment_20180305-NOOR
+
+xpd:Experiment_20180305-NOOR a owl:NamedIndividual , xp:Experiment .
+# 
+# xpd:Experiment_20180826-NOOR
+
+xpd:Experiment_20180826-NOOR a owl:NamedIndividual , xp:Experiment ;
+	xp:performer xpd:Person_JEuz ;
+	xp:performs xpd:NOORDesign_20180826-NOOR ;
+	xp:reproduces xpd:Experiment_20180826-NOOR ;
+	xp:results xpd:DataResults_20180826-NOOR ;
+	xp:variationOf xpd:Experiment_20180305-NOOR ;
+	xp:experimentLabel "20180826-NOOR" ;
+	xp:experimentName "20180826-NOOR" ;
+	xp:experimentationDate "20180826" ;
+	xp:hash "759ff097b96520c12aa84f3749927f9a22022e62" .
+# 
+# xpd:Hardware_20180826-NOOR
+
+xpd:Hardware_20180826-NOOR a owl:NamedIndividual , xp:Hardware ;
+	xp:hardwareComponent "This is the first time that an experiment is rerun using the Docker environment instead as being replayed directly. The Docker file generated for 20180305-NOOR is found in the zip file above. It has been tweaked, in particular to run the experiments on 2000 runs and with non realistic size" .
+# 
+# xpd:Hypothesis_20180826-NOOR
+
+xpd:Hypothesis_20180826-NOOR a owl:NamedIndividual , xp:Hypothesis ;
+	xp:formalizes xpd:Script_20180826-NOOR ;
+	xp:label "Addjoin achieves the same as add but faster" .
+# 
+# xpd:NOORDesign_20180826-NOOR
+
+xpd:NOORDesign_20180826-NOOR a owl:NamedIndividual , xp:NOORDesign ;
+	xp:designer xpd:Person_JEuz ;
+	xp:runs_with xpd:Configuration_20180826-NOOR ;
+	xp:specifiates xpd:Script_20180826-NOOR ;
+	xp:tests xpd:Hypothesis_20180826-NOOR ;
+	xp:designDate "2018-05-03" ;
+	xp:experimentalSetting "Same as 20180305-NOOR after correction of expansion... (and likely realistic size estimation)" ;
+	xp:numberOfAgents "4" ;
+	xp:numberOfIterations "2000" ;
+	xp:numberOfRuns "10" ;
+	xp:operators "add addjoin" .
+# 
+# xpd:Person_20180826-NOOR
+
+xpd:Person_20180826-NOOR a owl:NamedIndividual , foaf:Person .
+# 
+# xpd:Person_JEuz
+
+xpd:Person_JEuz a owl:NamedIndividual , foaf:Person ;
+	foaf:name "JEuz" .
+# 
+# xpd:Script_20180826-NOOR
+
+xpd:Script_20180826-NOOR a owl:NamedIndividual , xp:Script ;
+	xp:code ". params.shbash scripts/runexp.sh -d ${DIRPREF}-nothing java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=nothing -DsaveDir=expeRun -DsaveInit -DsaveParams -DsaveGamesbash scripts/runexp.sh -d ${DIRPREF}-add java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=add ${LOADOPT}bash scripts/runexp.sh -d ${DIRPREF}-addjoin java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=addjoin ${LOADOPT}bash scripts/runexp.sh -d ${DIRPREF}-add-syntactic java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=add -Dsyntactic=true ${LOADOPT} -DsaveDir=addRes -DsaveFinalbash scripts/runexp.sh -d ${DIRPREF}-addjoin-syntactic java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -DrevisionModality=addjoin -Dsyntactic=true ${LOADOPT} -DsaveDir=addjoinRes -DsaveFinalbash scripts/runexp.sh -d ${DIRPREF}-real-nothing java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -Drealistic -DrevisionModality=nothing -DsaveDir=expeRun -DsaveInit -DsaveParams -DsaveGamesbash scripts/runexp.sh -d ${DIRPREF}-real-add java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -Drealistic -DrevisionModality=add ${LOADOPT}bash scripts/runexp.sh -d ${DIRPREF}-real-addjoin java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -Drealistic -DrevisionModality=addjoin ${LOADOPT}bash scripts/runexp.sh -d ${DIRPREF}-real-add-syntactic java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -Drealistic -DrevisionModality=add -Dsyntactic=true ${LOADOPT} -DsaveDir=addRes -DsaveFinalbash scripts/runexp.sh -d ${DIRPREF}-real-addjoin-syntactic java -Dlog.level=INFO -cp ${JPATH} fr.inria.exmo.lazylavender.engine.Monitor ${OPT} -Drealistic -DrevisionModality=addjoin -Dsyntactic=true ${LOADOPT} -DsaveDir=addjoinRes -DsaveFinal" .
+# 
+# xpd:Software_20180826-NOOR
+
+xpd:Software_20180826-NOOR a owl:NamedIndividual , xp:Software ;
+	xp:OSVersion "stretch" ;
+	xp:javaPath "lib/lazylav/ll.jar:lib/slf4j/logback-classic-1.2.3.jar:lib/slf4j/logback-core-1.2.3.jar:." ;
+	xp:logbackVersion "File:20180826-NOOR.zip" .
+# 
+# Generated by the OWL API (version 5.0.0.20160228-2008) https://github.com/owlcs/owlapi/

@@ -36,9 +36,9 @@ public class MakerDatatype extends MakerAxiom{
 	public void makeDataType(OWLDataProperty dataProperty, OWLDataRange dataRange, String data, OWLNamedIndividual individualOWL) {
 		
 		OWLAxiom axiomDataAssertion = null;
-		if(dataRange.toString().contains("int"))
+		/*if(dataRange.toString().contains("int"))
 			axiomDataAssertion = factory.getOWLDataPropertyAssertionAxiom(dataProperty, individualOWL, Integer.parseInt(data));
-		else
+		else*/
 			axiomDataAssertion = factory.getOWLDataPropertyAssertionAxiom(dataProperty, individualOWL, data);
 			
 		//Make the axiom related to the DataType
@@ -48,14 +48,8 @@ public class MakerDatatype extends MakerAxiom{
 		addAxiom(axiomRange);
 		addAxiom(axiomDataAssertion);
 		addAxiom(axiomDeclaration);
-		
-		
-		
-		
+
 		LOG.info("ADD : OWLDataProperty - "+dataProperty.toString()+" : "+data);
 	}
 	
-	private Predicate<OWLDataProperty> dataPropertyEquals(OWLDataProperty ppt){
-		return p -> p.dataPropertiesInSignature().findFirst().get().equals(ppt);
-	}
 }

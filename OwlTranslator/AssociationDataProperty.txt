@@ -1,0 +1,17 @@
+http://www.inria.fr/moex/ExperimentOntology#label=Hypothesis|Hypotheses|HYPOTHESIS
+http://www.inria.fr/moex/ExperimentOntology#javaPath=JPATH
+http://www.inria.fr/moex/ExperimentOntology#logbackVersion=Full log
+http://www.inria.fr/moex/ExperimentOntology#OSVersion=Execution environment|OSVERS
+http://www.inria.fr/moex/ExperimentOntology#code=Script|Command line
+http://www.inria.fr/moex/ExperimentOntology#comment=Analysis
+http://www.inria.fr/moex/ExperimentOntology#hash=HASH|Hash
+http://www.inria.fr/moex/ExperimentOntology#experimentationDate=Date|DATE
+http://www.inria.fr/moex/ExperimentOntology#experimentName=NAME
+http://www.inria.fr/moex/ExperimentOntology#experimentLabel=LABEL
+http://www.inria.fr/moex/ExperimentOntology#numberOfRuns=NBRUNS
+http://www.inria.fr/moex/ExperimentOntology#numberOfIterations=NBITERATIONS
+http://www.inria.fr/moex/ExperimentOntology#designDate=DESIGNDATE
+http://www.inria.fr/moex/ExperimentOntology#numberOfAgents=NBAGENTS
+http://www.inria.fr/moex/ExperimentOntology#operators=OPS
+http://www.inria.fr/moex/ExperimentOntology#experimentalSetting=Experimental setting
+http://www.inria.fr/moex/ExperimentOntology#hardwareComponent=Execution environment
