@@ -9,7 +9,7 @@ import org.semanticweb.owlapi.model.OWLOntologyManager;
 /**
  * Represent the Axiom makers.
  * Make a axiom means to add a Axiom in a ontology instance. 
- * More information about OWL axiom : {@link https://www.w3.org/TR/owl2-syntax/#Axioms}.
+ * More information about OWL axiom : @see <a href="https://www.w3.org/TR/owl2-syntax/#Axioms">
  * @author Robin Couret
  */
 

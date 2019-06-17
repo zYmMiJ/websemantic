@@ -9,21 +9,19 @@ public class CleanFile {
     public CleanFile(String directoryName){
         directory = new File(directoryName);
         System.out.println(	"directoryName ? "+directory.isDirectory());
-
+    }
+    
+    public CleanFile(){
     }
 
     public void cleanAll() throws IOException {
-
         File[] files = directory.listFiles();
         for(int i = 0; i < files.length ; i++){
-            String dataFileName = directory.getCanonicalPath();
-            clean(files[i]);
-            //System.out.println(files[i]);
+            clean(files[i], "DataTurtleOutput");
         }
-
     }
 
-    public void clean(File file){
+    public void clean(File file, String pathOut){
 
         File sortie = new File("tmp.ttl"); 	
         try {
@@ -37,7 +35,8 @@ public class CleanFile {
           
 
             Boolean Individuals = false;// To delete ontology in  datas.ttl
-            String precedentline = "";
+            @SuppressWarnings("unused")
+			String precedentline = "";
             while ( (line = br.readLine()) != null ) { // read line by line
 
 
@@ -67,8 +66,8 @@ public class CleanFile {
             bw.close();
             br.close();
 
-            String name = file.getName();
-            sortie.renameTo( new File("DataTurtleOutput/"+name) );
+            String name = "/"+file.getName();
+            sortie.renameTo( new File(pathOut+name) );
 
 
         } catch (FileNotFoundException e) {

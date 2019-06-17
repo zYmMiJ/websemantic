@@ -10,7 +10,7 @@ import org.semanticweb.owlapi.model.OWLOntologyManager;
 
 /**
  * is a specific {@link MakerAxiom}, 
- * for OWL Property {@link https://www.w3.org/TR/owl-ref/#Property}
+ * for OWL Property @see <a href="https://www.w3.org/TR/owl-ref/#Property>
  * @author Robin Couret
  */
 

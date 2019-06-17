@@ -57,6 +57,7 @@ public class Translator {
 		//Map of OWLDataProperty and OWLDataRange, used to set the type of data
 		private Map<OWLDataProperty, OWLDataRange> mapDataProperty_DataRange;
 		
+		
 		//The state of association file, true : the file is completed, false the file will be created
 		private static final String nameFileAssociation = "Association";
 		
@@ -65,21 +66,25 @@ public class Translator {
 		private String urlHTML;
 		private String Input_Type;
 		private String label;
+		private String pathOutput;
 		
 		private static final Logger LOG = Logger.getLogger(Translator.class);
 		
 		/**
 		 * Transform OWL file and HTML data to RDF dataset.
-		 * @param {{@link String} represents OWL file pointing path.
-		 * @param {{@link String} represents HTML file pointing path.
-		 * @param {{@link String} define if the input is HTML or a File
+		 * @param {@link String} represents OWL file pointing path.
+		 * @param {@link String} represents HTML file pointing path.
+		 * @param {@link String} define if the input is HTML or a File
+		 * @param {@link String} the output file.
 		 */
 		
-		public Translator(String fileOwlName, String targetFile, String type) {
+		public Translator(String fileOwlName, String targetFile, String type, String pathOutput) {
 			
 			this.manager = OWLManager.createOWLOntologyManager();
 			this.fileOwl = new File(fileOwlName);
 			loadOntology(fileOwl);
+			
+			this.pathOutput=pathOutput;
 			
 			if( type == "HTML" ) {
 				this.urlHTML = targetFile;
@@ -100,7 +105,7 @@ public class Translator {
 			
 		}
 		
-		public void run(boolean save) {
+		public File run(boolean save) {
 
 			try {
 				translate();
@@ -109,14 +114,15 @@ public class Translator {
 				e.printStackTrace();
 			}
 			
+			File outFile = new File(pathOutput+"/ExperimentOntologyTurtleData"+label+".ttl");
 			//SAVE the new Ontology
-			if(save) {
+			if(save) {		
 				OWLOntology ontologyOutput = ontology;
-				File outFile = new File("DataTurtleOutput/ExperimentOntologyTurtleData"+label+".ttl");
-				
 				IRI outIRI=IRI.create(outFile);
 				saveOntology(ontologyOutput, outIRI);
 			}
+			
+			return outFile;
 		}
 		
 
@@ -182,7 +188,6 @@ public class Translator {
 			
 				//Give a label at the NamedIndiviual
 			OWLDataFactory factory = manager.getOWLDataFactory();
-			//label = "_"+mapDataProperty_Value.get(factory.getOWLDataProperty("http://www.inria.fr/moex/ExperimentOntology#experimentationDate"));
 			
 				//For each Class : Instanced ontology
 			for(OWLClass cls : listClass) {
@@ -192,16 +197,6 @@ public class Translator {
 				//Make a Instance with the class
 				OWLNamedIndividual individualOWL = makerIndividual.makeIndividual(cls, label);
 				mapClass_Individual.put(cls, individualOWL);
-				
-				//Building of ObjectProperty associated at the current Individual
-				/*for(OWLObjectProperty ppt : mapClass_ObjectProperty.get(cls)) {
-					String value = mapObjectProperty_Value.get(ppt);
-					
-					if(mapValue_Individual.get(value)!=null) {
-						makerProperty.makeProperty(ppt, individualOWL, mapValue_Individual.get(value));
-					}
-					
-				}*/
 				
 				//Building of dataProperty associated at the current Individual
 				for(OWLDataProperty ppt : mapClass_DataProperty.get(cls)) {
@@ -250,9 +245,6 @@ public class Translator {
 						OWLClass classDomain = mapObjectPropertyDomain_Range.get(ppt).get(0);
 						OWLNamedIndividual individualDomain = mapClass_Individual.get(classDomain);
 						
-						//OWLClass classRange = mapObjectPropertyDomain_Range.get(ppt).get(1);
-						//OWLNamedIndividual individualRange = mapClass_Individual.get(personInstance);
-						
 						//if(individualDomain!=null && individualRange!=null)
 							makerProperty.makeProperty(ppt, individualDomain, personInstance);
 						
@@ -260,7 +252,6 @@ public class Translator {
 						IRI nameIRI = IRI.create("http://xmlns.com/foaf/0.1/name");
 						OWLDataProperty name = factory.getOWLDataProperty(nameIRI);
 						
-						//if(individualRange!=null)
 						IRI dataIRI = IRI.create("xsd:string");
 						OWLDatatypeImpl dataRange = new OWLDatatypeImpl(dataIRI); 
 							makerData.makeDataType(name,  dataRange, value, personInstance);
@@ -424,7 +415,7 @@ public class Translator {
 		}
 		
 		private String labelFile(String ch) {
-			ch.substring(0, ch.lastIndexOf("/"));
+			ch=ch.substring(0, ch.lastIndexOf("/"));
 			return "_"+ch.substring(ch.lastIndexOf("/") + 1);
 		}
 		

@@ -8,13 +8,11 @@ import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 
-import java.util.function.Predicate;
-
 import org.apache.log4j.Logger;
 
 /**
  * is a specific {@link MakerAxiom}, 
- * for OWL DataType {@link https://www.w3.org/TR/owl-ref/#Datatype}
+ * for OWL DataType @see <a href="https://www.w3.org/TR/owl-ref/#Datatype">
  * @author Robin Couret
  */
 

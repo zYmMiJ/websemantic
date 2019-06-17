@@ -26,43 +26,73 @@ public class App {
 			System.out.println("You need to use a argument.");
 		}
 		
+		//Change Association File
 		else if (args[0].equals("-c") || args[0].equals("--changeAssociation")) {
-			Translator t = new Translator(ontologyName, "/change", parserType);
+			Translator t = new Translator(ontologyName, "/change", parserType, null);
 			t.associationFile();
 		}
 		
-		else if (args[0].equals("-a") && args[1].equals("html")) {
+		//Translate a Html File, with a link
+		else if (args[0].equals("-t") && args[1].equals("html") && !args[2].isEmpty()) {
 			parserType = "HTML";
 			
-			List<String> absUrlOfExperiments = new ArrayList<String>();
-	  		absUrlOfExperiments = getAllXPLink("https://gforge.inria.fr/plugins/mediawiki/wiki/lazylav/index.php/Experiments");
-	  			
-			for(String link: absUrlOfExperiments ) {	
-				System.out.println(link);
-				Translator translate = new Translator(ontologyName, link, parserType);
-
-					translate.run(true);
-			}
+	  		String absUrlOfExperiments = args[2];
+	  		String pathOutput;
+	  		
+	  		if(args.length<4)
+	  			pathOutput="DataTurtleOutput";
+	  		else
+	  			pathOutput=args[3];
+	 	
+			System.out.println(absUrlOfExperiments);
+			Translator translate = new Translator(ontologyName, absUrlOfExperiments, parserType, pathOutput);
+			File outputFile = translate.run(true);
+			
+			CleanFile cleaner = new CleanFile();
+	  		cleaner.clean(outputFile, pathOutput);
 		}
 		
-		else if (args[0].equals("-a") && args[1].equals("bash")) {
+		//Translate a bash File
+		else if (args[0].equals("-t") && args[1].equals("bash") && !args[2].isEmpty()) {
 			parserType = "FILE";
 			
-			File repertoire = new File("ExperimentsInput");
-	  		System.out.println(	"Repertoire ? "+repertoire.isDirectory());
-	  		File[] files=repertoire.listFiles();
+			String pathOutput;
+	  		
+			if(args.length<4)
+	  			pathOutput="DataTurtleOutput";
+	  		else
+	  			pathOutput=args[3];
 			
-	  		for(int i = 0; i < files.length ; i++) {
-	  			String paramFileName = repertoire.getCanonicalPath()+"/"+files[i].getName()+"/params.sh";
-	  			System.out.println(	paramFileName );
-	  			Translator translate = new Translator(ontologyName, paramFileName, parserType);
-
-					translate.run(true);
-	  		}
+	  		String paramFileName = args[2];
+	  		System.out.println(paramFileName);
+	  		Translator translate = new Translator(ontologyName, paramFileName, parserType, pathOutput);
+	  		File outputFile = translate.run(true);
+	  		
+	  		CleanFile cleaner = new CleanFile();
+	  		cleaner.clean(outputFile, pathOutput);
 	  		
 		}
 		
-		else if (args[0].equals("-m")) {
+		//args 1 : File, args 2 : HTML
+		else if(args[0].equals("-m") && !args[1].isEmpty() && !args[2].isEmpty()) {
+			String pathOutput;
+			
+			if(args.length<4)
+	  			pathOutput="DataTurtleOutput";
+	  		else
+	  			pathOutput=args[3];
+			
+			Translator translate = new Translator(ontologyName, args[1], "FILE", pathOutput);
+			File outputFile = translate.run(false);
+			MergeInputs.merge(ontologyName, args[1], args[2], pathOutput);
+			
+			CleanFile cleaner = new CleanFile();
+	  		
+	  		cleaner.clean(outputFile, pathOutput);
+		}
+		
+		//Merge : browse all link in LazyLavender Wiki, and Bash in Experiment Input
+		else if (args[0].equals("-m all")) {
 			
 			File repertoire = new File("ExperimentsInput");
 	  		File[] files=repertoire.listFiles();
@@ -80,7 +110,7 @@ public class App {
 	  		  		if(link.contains(files[i].getName())) {
 	  		  			System.out.println("Parse with Bash and HTML : "+paramFileName+" -- "+link);
 	  		  			linkMatched.add(link);
-	  		  			MergeInputs.merge(ontologyName, paramFileName, link);
+	  		  			MergeInputs.merge(ontologyName, paramFileName, link, "DataTurtleOutput");
 	  		  		}		
 	  			}		
 	  		}
@@ -88,17 +118,20 @@ public class App {
 	  		absUrlOfExperiments.removeAll(linkMatched);
 	  		
 	  		for(String link : absUrlOfExperiments) {
-	  			Translator translate = new Translator(ontologyName, link, "HTML");
+	  			Translator translate = new Translator(ontologyName, link, "HTML", "DataTurtleOutput");
 	  			System.out.println("Parse with HTML only: "+link);
 
-					translate.run(true);
-			
-			
+					translate.run(true);	
 	  		}
 	  		
 	  		File directoryOut = new File("DataTurtleOutput");
 			CleanFile cleaner = new CleanFile(directoryOut.getName());
 			cleaner.cleanAll();
+		}
+		
+		//help
+		else {
+			
 		}
 	} 
 	

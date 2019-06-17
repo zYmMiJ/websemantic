@@ -16,12 +16,13 @@ public class MergeInputs {
 	 * @param fileOwlName
 	 * @param targetFile
 	 * @param targetHtml
+	 * @param pathOutput
 	 */
-	public static void merge(String fileOwlName, String targetFile, String targetHtml) {
+	public static void merge(String fileOwlName, String targetFile, String targetHtml, String pathOutput) {
 		
-		Translator translatorFile = new Translator(fileOwlName, targetFile, "FILE");
-		Translator translatorHtml = new Translator(fileOwlName, targetHtml, "HTML");
-		Translator translatorMerged = new Translator(fileOwlName, targetHtml, null);
+		Translator translatorFile = new Translator(fileOwlName, targetFile, "FILE", pathOutput);
+		Translator translatorHtml = new Translator(fileOwlName, targetHtml, "HTML", pathOutput);
+		Translator translatorMerged = new Translator(fileOwlName, targetHtml, null, pathOutput);
 		
 		translatorFile.run(false);
 		translatorHtml.run(false);

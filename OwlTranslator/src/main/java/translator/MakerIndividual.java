@@ -1,18 +1,15 @@
 package translator;
 
-import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
-import org.semanticweb.owlapi.model.PrefixManager;
-import org.semanticweb.owlapi.util.DefaultPrefixManager;
 import org.apache.log4j.Logger;
 
 /**
  * is a specific {@link MakerAxiom}, 
- * for OWLIndividual {@link https://www.w3.org/TR/owl-ref/#Individual}
+ * for OWLIndividual @see <a href="https://www.w3.org/TR/owl-ref/#Individual">
  * @author Robin Couret
  */
 
