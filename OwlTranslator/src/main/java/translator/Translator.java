@@ -9,7 +9,6 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
-import org.apache.log4j.Logger;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClass;
@@ -24,6 +23,13 @@ import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 
 import uk.ac.manchester.cs.owl.owlapi.OWLDatatypeImpl;
+
+/**
+ * Translate a file (HTML or bash) in semantic data (RDF/turtle).
+ * Use a OWL file to translate data.
+ * @author rcouret
+ *
+ */
 
 public class Translator {
 	
@@ -68,8 +74,6 @@ public class Translator {
 		private String label;
 		private String pathOutput;
 		
-		private static final Logger LOG = Logger.getLogger(Translator.class);
-		
 		/**
 		 * Transform OWL file and HTML data to RDF dataset.
 		 * @param {@link String} represents OWL file pointing path.
@@ -104,6 +108,12 @@ public class Translator {
 			makerProperty = new MakerProperty(manager, ontology);
 			
 		}
+		
+		/**
+		 * Run the translator with the parameter initialized in the constructor
+		 * @param {@link boolean} true to save turtle data else false
+		 * @return the destination where the file can be save
+		 */
 		
 		public File run(boolean save) {
 
@@ -192,8 +202,6 @@ public class Translator {
 				//For each Class : Instanced ontology
 			for(OWLClass cls : listClass) {
 				
-				LOG.info("CLASS : "+cls);
-				
 				//Make a Instance with the class
 				OWLNamedIndividual individualOWL = makerIndividual.makeIndividual(cls, label);
 				mapClass_Individual.put(cls, individualOWL);
@@ -260,6 +268,12 @@ public class Translator {
 			}
 		}
 		
+		/**
+		 * Generate the association files (DataProperty.txt and ObjectProperty.txt).
+		 * A association file need to complete manually, it's the logic correspondence between OWL properties and file properties.
+		 * @throws IOException
+		 */
+		
 		public void associationFile() throws IOException {
 			
 			@SuppressWarnings("unused")
@@ -279,22 +293,42 @@ public class Translator {
 					
 		}
 		
+		/**
+		 * Getter
+		 * @return {@link Map} collection that contains {@link OWLDataProperty} as key and {@link String} as value which corresponding at the value from the data file.
+		 */
 		public Map<OWLDataProperty, String> getMapDataProperty_Value() {
 			return mapDataProperty_Value;
 		}
 		
+		/**
+		 * Setter
+		 * @param {@link Map} collection that contains {@link OWLDataProperty} as key and {@link String} as value which corresponding at the value from the data file.
+		 */
 		public void setMapDataProperty_Value(Map<OWLDataProperty, String> mapDataProperty_Value) {
 			this.mapDataProperty_Value = mapDataProperty_Value;
 		}
 		
+		/**
+		 * Getter
+		 * @return {@link Map} collection that contains {@link OWLObjectProperty} as key and {@link String} as value which corresponding at the value from the data file.
+		 */
 		public Map<OWLObjectProperty, String> getMapObjectProperty_Value() {
 			return mapObjectProperty_Value;
 		}
 		
+		/**
+		 * Setter
+		 * @param {@link Map} collection that contains {@link OWLObjectProperty} as key and {@link String} as value which corresponding at the value from the data file.
+		 */
 		public void setMapObjectProperty_Value(Map<OWLObjectProperty, String> mapObjectProperty_Value) {
 			this.mapObjectProperty_Value = mapObjectProperty_Value;
 		}
 		
+		/**
+		 * Getter
+		 * @return {@link Map} collection that contains {@link OWLDataProperty} as key and {@link String[]} as value which corresponding at the parameters from the association file.
+		 */
 		public Map<OWLDataProperty, String[]> getMapDataProperty_Parameter(){
 			return mapDataProperty_Parameter;
 		}
@@ -403,7 +437,6 @@ public class Translator {
 		private void saveOntology(OWLOntology ontologyOutput, IRI outIRI) {
 			try {
 				manager.saveOntology(ontologyOutput,outIRI);
-				LOG.info("Ontology Saved.");
 			} catch (OWLOntologyStorageException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

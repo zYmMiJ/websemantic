@@ -16,8 +16,6 @@ import org.semanticweb.owlapi.model.OWLOntologyManager;
 
 public class MakerProperty extends MakerAxiom{
 	
-	private static final Logger LOG = Logger.getLogger(MakerProperty.class);
-	
 	public MakerProperty(OWLOntologyManager manager, OWLOntology ontology) {
 		super(manager, ontology);
 		
@@ -37,8 +35,6 @@ public class MakerProperty extends MakerAxiom{
 				
 		addAxiom(axiomObjectProperty);
 		addAxiom(axiomDeclaration);
-				
-		LOG.info("ADD : OWLDataProperty - "+property.toString()+" : "+individualOWL+" --> "+object);
 	}
 
 }

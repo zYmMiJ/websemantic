@@ -4,7 +4,6 @@ import java.util.List;
 
 public class Parser {
 	
-	
 	public Parser() {}
 	
 	public List<DataParsed> dataToList(){return null;};

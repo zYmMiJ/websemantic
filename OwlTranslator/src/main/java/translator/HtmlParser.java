@@ -9,8 +9,12 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.apache.log4j.Logger;
 
+/**
+ * Parse a HTML file (type :https://gforge.inria.fr/plugins/mediawiki/wiki/lazylav/index.php/Experiments)
+ * @author javae
+ *
+ */
 public class HtmlParser extends Parser{
-	private static final Logger LOG = Logger.getLogger(MakerIndividual.class);
 	private String datas[] = {
 			"Date",
 			"Hash",
@@ -141,9 +145,6 @@ public class HtmlParser extends Parser{
 					i = memo_i;
 					j ++;
 				}
-			}
-			for(DataParsed d : dataparsedHTML) {
-				LOG.info( d.getFirstBox() + " ; " + d.getSecondBox() );
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

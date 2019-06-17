@@ -12,11 +12,9 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.log4j.Logger;
 
 public class FileParser extends Parser{
 	
-	private static final Logger LOG = Logger.getLogger(FileParser.class);// Init LOG
 	private File file;// File we want to parse
 
     private static int numberOfEnvVar;// number of {$...}
@@ -166,9 +164,6 @@ public class FileParser extends Parser{
 	 */
 	
 	public void setAllEnvParameters(List<DataParsed> list) {
-		//this.printDataParsed(listVarEnv);
-        LOG.info("setAllEnvParameters");
-        //this.printDataParsed(listVarEnv);
         for(DataParsed data:list) {
         	for( int i = 0;i < numberOfEnvVar; i ++) {
             	if( listVarEnv.get(i).getSecondBox().contains(data.getFirstBox()) ) {
@@ -177,7 +172,6 @@ public class FileParser extends Parser{
             	}
             }
     	}
-        LOG.info(listVarEnv);
 	}
 	
 	/**
@@ -214,7 +208,6 @@ public class FileParser extends Parser{
 	            }
 			 j ++;
 		 }
-		LOG.info(list);
 		return list;
 	}
 }

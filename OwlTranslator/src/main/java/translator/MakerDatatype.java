@@ -17,8 +17,6 @@ import org.apache.log4j.Logger;
  */
 
 public class MakerDatatype extends MakerAxiom{
-	
-	private static final Logger LOG = Logger.getLogger(MakerDatatype.class);
 		
 	public MakerDatatype(OWLOntologyManager manager, OWLOntology ontology) {
 		super(manager, ontology);
@@ -46,8 +44,6 @@ public class MakerDatatype extends MakerAxiom{
 		addAxiom(axiomRange);
 		addAxiom(axiomDataAssertion);
 		addAxiom(axiomDeclaration);
-
-		LOG.info("ADD : OWLDataProperty - "+dataProperty.toString()+" : "+data);
 	}
 	
 }

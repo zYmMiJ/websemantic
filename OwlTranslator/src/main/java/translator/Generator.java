@@ -33,7 +33,6 @@ public class Generator {
 	
 	private OWLOntology ontology;
 	
-	private static final Logger LOG = Logger.getLogger(Generator.class);
 	
 	public Generator(OWLOntology ontology) {
 		this.ontology=ontology;
@@ -115,8 +114,6 @@ public class Generator {
 			}
 		}
 		bw.close();
-		
-		LOG.info("File created : "+filePath);
 		
 		return new File(filePath);
 	}
@@ -217,9 +214,6 @@ public class Generator {
 			}
 		}
 		bw.close();
-		
-		LOG.info("File created : "+filePath);
-		
 		return new File(filePath);
 	}
 	

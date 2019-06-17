@@ -6,9 +6,15 @@ import java.util.Set;
 import org.semanticweb.owlapi.model.OWLDataProperty;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 
-public class MergeInputs {
+/**
+ * Merge two method parsing, html and file, the priority is file bash data and html data is to complete.
+ * @author rcouret
+ *
+ */
+
+public class TranslateTwoType {
 	
-	public MergeInputs() {
+	public TranslateTwoType() {
 		
 	}
 	/**

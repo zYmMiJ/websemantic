@@ -14,12 +14,21 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class App {
+/**
+ * Main Class
+ * Execute the Translator, with different argument configurations.
+ * @author rcouret
+ *
+ */
 
+public class App {
+	
+	private static final Logger LOG = Logger.getLogger(App.class);
+	
 	public static void main(String[] args) throws IOException {
 		configLOG();
 		
-		String ontologyName = "ExperimentOntology12-10.owl";
+		String ontologyName = "ExperimentOntology.owl";
 		String parserType = "";
 		
 		if(args.length == 0) {
@@ -27,13 +36,13 @@ public class App {
 		}
 		
 		//Change Association File
-		else if (args[0].equals("-c") || args[0].equals("--changeAssociation")) {
+		if (args[0].equals("-c") || args[0].equals("--changeAssociation")) {
 			Translator t = new Translator(ontologyName, "/change", parserType, null);
 			t.associationFile();
 		}
 		
 		//Translate a Html File, with a link
-		else if (args[0].equals("-t") && args[1].equals("html") && !args[2].isEmpty()) {
+		else if (args[0].equals("-t") || args[0].equals("--translate") && args[1].equals("html") && args.length>3) {
 			parserType = "HTML";
 			
 	  		String absUrlOfExperiments = args[2];
@@ -44,16 +53,18 @@ public class App {
 	  		else
 	  			pathOutput=args[3];
 	 	
-			System.out.println(absUrlOfExperiments);
+			
 			Translator translate = new Translator(ontologyName, absUrlOfExperiments, parserType, pathOutput);
 			File outputFile = translate.run(true);
 			
 			CleanFile cleaner = new CleanFile();
 	  		cleaner.clean(outputFile, pathOutput);
+	  		
+	  		LOG.info("Translated HTML: "+absUrlOfExperiments);
 		}
 		
 		//Translate a bash File
-		else if (args[0].equals("-t") && args[1].equals("bash") && !args[2].isEmpty()) {
+		else if (args[0].equals("-t") || args[0].equals("--translate") && args[1].equals("bash") && args.length>3) {
 			parserType = "FILE";
 			
 			String pathOutput;
@@ -64,17 +75,20 @@ public class App {
 	  			pathOutput=args[3];
 			
 	  		String paramFileName = args[2];
-	  		System.out.println(paramFileName);
+	  		
+	  		
 	  		Translator translate = new Translator(ontologyName, paramFileName, parserType, pathOutput);
 	  		File outputFile = translate.run(true);
 	  		
 	  		CleanFile cleaner = new CleanFile();
 	  		cleaner.clean(outputFile, pathOutput);
 	  		
+	  		LOG.info("Translated Bash: "+paramFileName);
+	  		
 		}
 		
 		//args 1 : File, args 2 : HTML
-		else if(args[0].equals("-m") && !args[1].isEmpty() && !args[2].isEmpty()) {
+		else if(args[0].equals("-t both") || args[0].equals("--translate both") && args.length>3) {
 			String pathOutput;
 			
 			if(args.length<4)
@@ -84,15 +98,17 @@ public class App {
 			
 			Translator translate = new Translator(ontologyName, args[1], "FILE", pathOutput);
 			File outputFile = translate.run(false);
-			MergeInputs.merge(ontologyName, args[1], args[2], pathOutput);
+			TranslateTwoType.merge(ontologyName, args[1], args[2], pathOutput);
 			
 			CleanFile cleaner = new CleanFile();
 	  		
 	  		cleaner.clean(outputFile, pathOutput);
+	  		
+	  		LOG.info("Translated Bash && HTML: "+args[1]+"&&"+args[2]);
 		}
 		
 		//Merge : browse all link in LazyLavender Wiki, and Bash in Experiment Input
-		else if (args[0].equals("-m all")) {
+		else if (args[0].equals("-t all") || args[0].equals("--translate all")) {
 			
 			File repertoire = new File("ExperimentsInput");
 	  		File[] files=repertoire.listFiles();
@@ -110,7 +126,7 @@ public class App {
 	  		  		if(link.contains(files[i].getName())) {
 	  		  			System.out.println("Parse with Bash and HTML : "+paramFileName+" -- "+link);
 	  		  			linkMatched.add(link);
-	  		  			MergeInputs.merge(ontologyName, paramFileName, link, "DataTurtleOutput");
+	  		  			TranslateTwoType.merge(ontologyName, paramFileName, link, "DataTurtleOutput");
 	  		  		}		
 	  			}		
 	  		}
@@ -149,7 +165,7 @@ public class App {
  
         // creates file appender
         FileAppender fileAppender = new FileAppender();
-        fileAppender.setFile("logAll.txt");
+        fileAppender.setFile("log.txt");
         fileAppender.setLayout(layout);
         fileAppender.activateOptions();
  

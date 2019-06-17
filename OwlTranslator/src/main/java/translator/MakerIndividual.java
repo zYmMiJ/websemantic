@@ -16,7 +16,6 @@ import org.apache.log4j.Logger;
 public class MakerIndividual extends MakerAxiom{
 		
 	private OWLClass classOWL;
-	private static final Logger LOG = Logger.getLogger(MakerIndividual.class);
 	
 	public MakerIndividual(OWLOntologyManager manager, OWLOntology ontology) {
 		super(manager, ontology);
@@ -48,8 +47,6 @@ public class MakerIndividual extends MakerAxiom{
 		
 		addAxiom(axiomClassAssertion);
 		addAxiom(axiomDeclaration);
-		
-		LOG.info("ADD : Individual - "+individualOWL.getIRI());
 		
 		return individualOWL;
 	}
