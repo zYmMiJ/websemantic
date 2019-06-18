@@ -12,7 +12,12 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
+/**
+ * Subclass of {@link Parser}
+ * Parse a HTML file (type :https://gforge.inria.fr/plugins/mediawiki/wiki/lazylav/index.php/Experiments).
+ * @author javae
+ *
+ */
 public class FileParser extends Parser{
 	
 	private File file;// File we want to parse

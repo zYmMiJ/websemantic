@@ -10,9 +10,9 @@ import org.jsoup.nodes.Element;
 import org.apache.log4j.Logger;
 
 /**
+ * Subclass of {@link Parser}
  * Parse a HTML file (type :https://gforge.inria.fr/plugins/mediawiki/wiki/lazylav/index.php/Experiments)
  * @author javae
- *
  */
 public class HtmlParser extends Parser{
 	private String datas[] = {
@@ -31,8 +31,7 @@ public class HtmlParser extends Parser{
 			"Designer",
 			"Experimenter",
 			"Experimentator",
-			"Analyst",
-			"END"
+			"Analyst"
 			};
 	
 	private String link = "";
@@ -49,7 +48,7 @@ public class HtmlParser extends Parser{
 	
 	/**
 	 * Connect to a web,html page and generate a {@link DataParsed} list
-	 * * @return a {@link List} that contains {@link DataParsed}, 
+	 *  @return a {@link List} that contains {@link DataParsed}, 
 	 * in the first box of {@link DataParsed} there is a Datahtml per example Experimentator,
 	 * in the second box there is the value per example Jerome Euzenat
 	 */

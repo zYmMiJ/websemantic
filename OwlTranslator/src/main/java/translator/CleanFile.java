@@ -1,7 +1,10 @@
 package translator;
 
 import java.io.*;
-
+/**
+ *Cleans files that are parsing of unwanted characters.
+ * @author javae
+*/
 public class CleanFile {
 
     private File directory;
@@ -13,14 +16,21 @@ public class CleanFile {
     
     public CleanFile(){
     }
-
+    /**
+	 * Cleans files that are parsing of unwanted characters from a folders
+	 */
     public void cleanAll() throws IOException {
         File[] files = directory.listFiles();
         for(int i = 0; i < files.length ; i++){
             clean(files[i], "DataTurtleOutput");
         }
     }
-
+    
+    /**
+	 * Cleans files that are parsing of unwanted characters
+	 * @param a {@link File} that contains the data to clean 
+	 *  @param a {@link String} that contains the path of file
+	 */
     public void clean(File file, String pathOut){
 
         File sortie = new File("tmp.ttl"); 	
@@ -35,8 +45,6 @@ public class CleanFile {
           
 
             Boolean Individuals = false;// To delete ontology in  datas.ttl
-            @SuppressWarnings("unused")
-			String precedentline = "";
             while ( (line = br.readLine()) != null ) { // read line by line
 
 
@@ -61,7 +69,6 @@ public class CleanFile {
                     bw.write(line+"\n");
                     bw.flush();
                 }
-                precedentline = line;
             }
             bw.close();
             br.close();

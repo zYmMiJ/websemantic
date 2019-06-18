@@ -1,10 +1,16 @@
 package translator;
 
+/**
+ * List of two String.
+ */
 public class DataParsed {
 	
 	private String box1;
 	private String box2;
 	
+	/**
+	 * List<String,String>
+	 */
 	public DataParsed(String a,String b) {
 		this.box1 = a;
 		this.box2 = b;

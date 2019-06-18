@@ -1,7 +1,11 @@
 package translator;
 
 import java.util.List;
-
+/**
+ * Superclass of {@link FileParser} and {@link HtmlParser}.
+ * @author javae
+ * 
+ */
 public class Parser {
 	
 	public Parser() {}
