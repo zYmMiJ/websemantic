@@ -138,7 +138,6 @@ public class FileParser extends Parser{
 		BufferedReader br = new BufferedReader(new FileReader(this.file));
 		String line;
 		int i = 0;
-		System.out.println();
 		while ( (line = br.readLine()) != null ) { 
 			Matcher m = ENV_VAR_PATTERN.matcher(line);// Init matcher
 			Boolean add = true;

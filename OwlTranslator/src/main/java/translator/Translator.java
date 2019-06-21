@@ -83,17 +83,28 @@ public class Translator {
 		 */
 		
 		public Translator(String fileOwlName, String targetFile, String type, String pathOutput) {
-			
 			this.manager = OWLManager.createOWLOntologyManager();
 			this.fileOwl = new File(fileOwlName);
-			loadOntology(fileOwl);
+			if( fileOwl.exists() ) {
+				try {
+					loadOntology(fileOwl);
+				}catch(Exception e) {
+					System.out.println("Erreur Ontologie incorrecte ou invalide");
+					System.exit(0);
+				}
+			}else {
+				System.out.println("Ontology Introuvable, ou nom incorrecte, nom obligatoire(ExperimentOntology.owl) ");
+				System.exit(0);
+			}
+			
 			
 			this.pathOutput=pathOutput;
 			
-			if( type == "HTML" ) {
+			if( type.equals("HTML") ) {
 				this.urlHTML = targetFile;
 				this.label = labelHtml(targetFile);
-			}else if( type == "FILE" ) {
+				System.out.println(label);
+			}else if( type.equals("FILE") ) {
 				this.file = new File(targetFile);
 				this.label = labelFile(targetFile);
 			}
@@ -147,21 +158,20 @@ public class Translator {
 			
 			//DATA_PROPERTY initialization
 			mapClass_DataProperty = generator.toMapClass_DataProperty(listClass);
-			
+
 			HtmlParser parserHTML = null;
 			FileParser parserFILE = null;
-			if( this.Input_Type == "FILE") {
+			if( this.Input_Type!= null &&  Input_Type.equals("FILE") ) {
 				 parserFILE = new FileParser(this.file);
 				 initMapParameter_Value(parserFILE); 
 			}
-			if( this.Input_Type == "HTML") {
+			if( this.Input_Type!= null && this.Input_Type.equals("HTML")) {
 				 parserHTML = new HtmlParser(this.urlHTML);
 				 initMapParameter_Value(parserHTML); 
 			}
 			
 				//File of OWLDataProperty with the corresponding parameter, need to complete manually or not
 			File fileDataProperty_Parameter = new File(nameFileAssociation+"DataProperty.txt");
-			
 				//Parse of the File DataProperty_ParameterCompleted
 			FileParser parserFileAssociation = new FileParser(fileDataProperty_Parameter);
 			
@@ -169,6 +179,8 @@ public class Translator {
 			
 			if(mapDataProperty_Value==null)
 				initMapDataProperty_Value();
+
+				
 			
 				//
 			Set<OWLDataProperty> setDataProperty = mapDataProperty_Parameter.keySet();
@@ -286,6 +298,11 @@ public class Translator {
 			
 			String[] ppt = {"DataProperty.txt", "ObjectProperty.txt"};	
 			
+			if( !new File(nameFileAssociation+ppt[0]).exists() ) {
+				new File(nameFileAssociation+ppt[0]).createNewFile();
+				new File(nameFileAssociation+ppt[1]).createNewFile();
+			}
+
 			if(fileAssociationView(nameFileAssociation+ppt[0])) 
 				fileDataProperty_Parameter = generator.toFileOWLDataProperty(nameFileAssociation+ppt[0], mapClass_DataProperty);
 			if(fileAssociationView(nameFileAssociation+ppt[1])) 
@@ -355,7 +372,9 @@ public class Translator {
 		 */
 		private void initMapDataProperty_Parameter(FileParser parserFileAssociation) {
 			mapDataProperty_Parameter = new HashMap<OWLDataProperty, String[]>();
+
 			List<DataParsed> listDataProperty_Parameter = parserFileAssociation.fileAssociationToList();
+			
 			for(DataParsed data : listDataProperty_Parameter) {
 				OWLDataFactory factory = manager.getOWLDataFactory();
 				mapDataProperty_Parameter.put(factory.getOWLDataProperty(data.getFirstBox()), data.getSecondBox().split("\\|"));
@@ -374,8 +393,11 @@ public class Translator {
 				String[] param = mapDataProperty_Parameter.get(elem);
 				
 				for(int i = 0; param.length>i; i++) {
-					if(mapParameter_Value.get(param[i])!=null)
+					
+					if(mapParameter_Value.get(param[i])!=null) {
 						mapDataProperty_Value.put(elem, mapParameter_Value.get(param[i]));
+					}
+						
 				}	
 			}
 		}
@@ -454,11 +476,13 @@ public class Translator {
 		
 		
 		private boolean fileAssociationView(String nameFile) {
-			//System.out.println(nameFile+" will be replaced, continue ? (y/n) ");
+			System.out.println(nameFile+" will be replaced, continue ? (y/n) ");
+
 			Scanner sc = new Scanner(System.in);
 			String str=sc.nextLine();
 			
-			if(str.contentEquals("y")) {
+			if( str.contentEquals("y") || str.contentEquals("yes") || str.contentEquals("") ) {
+				System.out.println(nameFile+" is replace.");
 				return true;
 			}
 				

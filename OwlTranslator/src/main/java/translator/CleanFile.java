@@ -10,8 +10,7 @@ public class CleanFile {
     private File directory;
 
     public CleanFile(String directoryName){
-        directory = new File(directoryName);
-        System.out.println(	"directoryName ? "+directory.isDirectory());
+        this.directory = new File(directoryName);
     }
     
     public CleanFile(){
@@ -33,7 +32,7 @@ public class CleanFile {
 	 */
     public void clean(File file, String pathOut){
 
-        File sortie = new File("tmp.ttl"); 	
+        File sortie = new File(pathOut+"/tmp.ttl"); 	
         try {
             String line;// Buffer Line
 
@@ -60,7 +59,6 @@ public class CleanFile {
 
 
                 if ( line.contains("Individuals")  ) {
-
                     line = "\n# #################################################################" + "\n" +  "# #"+ "\n" + line;
                     Individuals = true;
                 }
@@ -73,8 +71,9 @@ public class CleanFile {
             bw.close();
             br.close();
 
-            String name = "/"+file.getName();
-            sortie.renameTo( new File(pathOut+name) );
+            String name = file.getName();     
+            file.delete();
+            sortie.renameTo(  new File(pathOut+"/"+name) );
 
 
         } catch (FileNotFoundException e) {

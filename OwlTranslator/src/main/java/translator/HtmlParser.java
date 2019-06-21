@@ -31,7 +31,8 @@ public class HtmlParser extends Parser{
 			"Designer",
 			"Experimenter",
 			"Experimentator",
-			"Analyst"
+			"Analyst",
+			"END"
 			};
 	
 	private String link = "";
@@ -146,8 +147,15 @@ public class HtmlParser extends Parser{
 				}
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Connection Error check your connection");
+			System.out.println("-help for more informations");
+			System.exit(0);
+		}
+		catch (IllegalArgumentException e) {
+			System.out.println( "Malformed URL: "+this.link);
+			System.out.println("-help for more informations");
+			System.exit(0);
+			
 		}
 		return dataparsedHTML;
 	}

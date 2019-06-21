@@ -221,15 +221,21 @@ public class Generator {
 		Map<OWLDataProperty, OWLDataRange> MapDataProperty_DataRange = new HashMap<OWLDataProperty, OWLDataRange>();
 		
 		for(OWLDataProperty ppt : listDataProperty) {
-			
 			//Step1 : declare a OWLAxiom stream
 			Stream<OWLAxiom> streamStep1 = ontology.axioms();
 			//Step2 : select the stream of DATA_PROPERTY_RANGE Axiom
 			Stream<OWLAxiom> streamStep2 = streamStep1.filter(isDataPropertyRange());
 			//Step3 : select the OWLDataProperty
 			Stream<OWLAxiom> streamStep3 = streamStep2.filter(dataPropertyEquals(ppt));
-			OWLDataRange result = (streamStep3.findFirst().get().datatypesInSignature().findFirst().get());
-			MapDataProperty_DataRange.put(ppt, result);
+			try {				
+				OWLDataRange result = ( streamStep3.findFirst().get().datatypesInSignature().findFirst().get() );
+				MapDataProperty_DataRange.put(ppt, result);
+			}
+			catch(Exception e) {
+				System.out.println("Error verify FileAssociation");
+				System.exit(0);
+			}	
+			
 		}
 		
 		return MapDataProperty_DataRange;
