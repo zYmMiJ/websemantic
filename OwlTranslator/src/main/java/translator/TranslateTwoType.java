@@ -1,5 +1,6 @@
 package translator;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -28,8 +29,12 @@ public class TranslateTwoType {
 		
 		Translator translatorFile = new Translator(fileOwlName, targetFile, "FILE", pathOutput);
 		Translator translatorHtml = new Translator(fileOwlName, targetHtml, "HTML", pathOutput);
-		Translator translatorMerged = new Translator(fileOwlName, targetHtml, null, pathOutput);
+		Translator translatorMerged = new Translator(fileOwlName, targetHtml, "BOTH", pathOutput);
 		
+		if (!new File(pathOutput).isDirectory() ) {
+			File dir = new File(pathOutput);
+			dir.mkdir();
+		}
 		translatorFile.run(false);
 		translatorHtml.run(false);
 		

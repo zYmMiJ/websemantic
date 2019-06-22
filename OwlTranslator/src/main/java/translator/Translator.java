@@ -85,6 +85,7 @@ public class Translator {
 		public Translator(String fileOwlName, String targetFile, String type, String pathOutput) {
 			this.manager = OWLManager.createOWLOntologyManager();
 			this.fileOwl = new File(fileOwlName);
+
 			if( fileOwl.exists() ) {
 				try {
 					loadOntology(fileOwl);
@@ -99,14 +100,20 @@ public class Translator {
 			
 			
 			this.pathOutput=pathOutput;
-			
+			File param = null;
 			if( type.equals("HTML") ) {
 				this.urlHTML = targetFile;
 				this.label = labelHtml(targetFile);
-				System.out.println(label);
 			}else if( type.equals("FILE") ) {
+				if( ! new File(targetFile).exists() ) {
+					System.out.println("TargetFile Inexistant");
+					System.exit(0);
+				}else {
+					param = new File(targetFile);
+				}
 				this.file = new File(targetFile);
-				this.label = labelFile(targetFile);
+				File dirNameParam = new File(param.getParent());
+				this.label = labelFile(dirNameParam.getName());
 			}
 			else {
 				this.label = labelHtml(targetFile);
@@ -470,8 +477,8 @@ public class Translator {
 		}
 		
 		private String labelFile(String ch) {
-			ch=ch.substring(0, ch.lastIndexOf("/"));
-			return "_"+ch.substring(ch.lastIndexOf("/") + 1);
+
+			return "_"+ch;
 		}
 		
 		
